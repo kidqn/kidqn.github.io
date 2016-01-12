@@ -42,7 +42,7 @@
 	Parse.initialize("kReISxMSTo25qfuyGoHZy9tPQoWncJZK7t8R1xIo", "Kqj6ayMrf2COFdjhoaUT1Ai7eOgODsPiEGYbYqD1");    
     var TestObject = Parse.Object.extend("TestObject");
     var testObject = new TestObject();
-      testObject.save([{foo: "bar1"}, {
+      testObject.save({foo: "bar1"}, {
       success: function(object) {
         $(".success").show();
       },
