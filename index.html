@@ -53,6 +53,7 @@
     testObject.destroy({foo: "bar1"},{
       success: function(myObject) {
         // The object was deleted from the Parse Cloud.
+        console.log(myObject)
       },
       error: function(myObject, error) {
         // The delete failed.
