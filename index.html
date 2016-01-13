@@ -42,12 +42,21 @@
 	Parse.initialize("kReISxMSTo25qfuyGoHZy9tPQoWncJZK7t8R1xIo", "Kqj6ayMrf2COFdjhoaUT1Ai7eOgODsPiEGYbYqD1");    
     var TestObject = Parse.Object.extend("TestObject");
     var testObject = new TestObject();
-      testObject.save({foo: "bar1"}, {
+    testObject.save({foo: "bar1"}, {
       success: function(object) {
         $(".success").show();
       },
       error: function(model, error) {
         $(".error").show();
+      }
+    });
+    testObject.destroy({foo: "bar1"},{
+      success: function(myObject) {
+        // The object was deleted from the Parse Cloud.
+      },
+      error: function(myObject, error) {
+        // The delete failed.
+        // error is a Parse.Error with an error code and message.
       }
     });
   </script>
