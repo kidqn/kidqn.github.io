@@ -1,67 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-
-  <title>My Parse App</title>
-  <meta name="description" content="My Parse App">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+<!-- add font Open Sans -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700,600italic,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- main css -->
+<link rel="stylesheet" href="main.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	<title>Flimba</title>
 </head>
-
 <body>
-  
-  <div id="main">
-    <h1>You're ready to use Parse!</h1>
-
-    <p>Read the documentation and start building your JavaScript app:</p>
-
-    <ul>
-      <li><a href="https://www.parse.com/docs/js_guide">Parse JavaScript Guide</a></li>
-      <li><a href="https://www.parse.com/docs/js">Parse JavaScript API Documentation</a></li>
-    </ul>
-
-    <div style="display:none" class="error">
-      Looks like there was a problem saving the test object. Make sure you've set your application ID and javascript key correctly in the call to <code>Parse.initialize</code> in this file.
+<!-- header -->
+<div class="header">
+  <nav class="navbar navbar-default navbar-tall navbar-full" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#global-nav" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <img src="images/logo.jpg">
+      </a>
     </div>
 
-    <div style="display:none" class="success">
-      <p>We've also just created your first object using the following code:</p>
-      
-        <code>
-          var TestObject = Parse.Object.extend("TestObject");<br/>
-          var testObject = new TestObject();<br/>
-          testObject.save({foo: "bar"});
-        </code>
+    <div class="navbar-collapse collapse" id="global-nav" aria-expanded="false" style="height: 1px;">
+      <div class="navbar-right">
+        <ul class="nav navbar-nav">
+          
+            <li>
+              <a href="/collections/all">HOME</a>
+            </li>
+          
+            <li>
+              <a href="/pages/about-us">MAP</a>
+            </li>
+          <li>
+            <a href="/pages/about-us">LOGIN</a>
+          </li>
+          <li>
+            <a href="/pages/about-us">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<!-- welcome section -->
+<div class="welcome-section row">
+  <div class="wrap-mask">
+      <div class="greet">
+        <h3>Welcome to Plimpa.com</h3>
+        <p>The <b>first</b> location-based individual advertisements board</p>
+        <a class="btn btn-default">GO TO MAP</a>
+      </div>
+  </div>
+</div>
+<!-- about -->
+<div class="about row">
+   <div class="info col-lg-4 col-md-4 col-sm-4">
+     <h3>
+       What we are?
+     </h3>
+     <p>
+       First, let us tell you the concept of location-based individual advertisements: Simply, our service represents to online the advertisement board which many buildings/houses/apts have as a place for local individual advertisement.
+     </p>
+   </div>
+    <div class="image col-lg-4 col-md-4 col-sm-4">
+      <img src="images/about.jpg">
+   </div>
+</div>
+<!-- reason -->
+<div class="reason row"> 
+  <div class="title col-lg-6 col-md-6 col-sm-6 center-col">
+    <h3>
+      Why should you use us?
+    </h3>
+    <p>Currently available internet advertisments are represented by the 3 main concepts</p>
+  </div>
+  <div class="process row">
+     <div class="ads col-lg-4 col-sm-4 col-md-4">
+         <div class="image">
+           <img src="images/classified_ads.png">
+         </div>
+         <p>CLASSIFIED ADS</p>
+     </div>
+      <div class="col-lg-4 col-sm-4 col-md-4">
+        <div class="image">
+          <img src="images/auction.png">
+        </div>
+        <p>AUCTION</p>
+     </div>
+      <div class="col-lg-4 col-sm-4 col-md-4">
+        <div class="image">
+          <img src="images/forum.png">
+        </div>
+        <p>FORUM</p>
+     </div>
+  </div>
+  <div class="summary col-lg-12">Instead of this, we are offering completely "New Concept" of location-based individual advertisements
+  </div>
+</div>
+<!-- map -->
+<div class="map">
+  <div class="search-field col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search Location...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Search</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div>
+<!-- service -->
+<div class="service row">
+  <div class="image col-lg-4 col-md-4 col-sm-4">
+      <img src="images/sell_find.png">
+   </div>
+      <div class="info col-lg-4 col-md-4 col-sm-4">
+     <h3>
+       What can you sell/find here?
+     </h3>
+     <p>
+       You can use the web-service for buying/selling anything you want as an individual. It is a good idea to use plimba.com if you want to sell/buy furniture, household items, etc, because it is easier to move around a chair withing your neighborhood, isn't it?
+     </p>
+   </div>
+</div>
+<!-- footer -->
+<footer>
+  <ul class="footer-nav nav navbar-nav">
+    <li>
+      <a href="/collections/all">HOME</a>
+    </li>
+    <li>
+      <a href="/pages/about-us">MAP</a>
+    </li>
+    <li>
+      <a href="/pages/about-us">LOGIN</a>
+    </li>
+    <li>
+      <a href="/pages/about-us">CONTACT</a>
+    </li>
+  </ul>
+  <div class="license row">
+    <div class="col-lg-6 col-sm-6 col-md-6">
+      Copyright @ 2016. All rights reserved
+    </div>
+    <div class="col-lg-6 col-sm-6 col-md-6">
+      DEVELOPED BY PLIMBA.COM
     </div>
   </div>
-
-  <script type="text/javascript">
-	Parse.initialize("kReISxMSTo25qfuyGoHZy9tPQoWncJZK7t8R1xIo", "Kqj6ayMrf2COFdjhoaUT1Ai7eOgODsPiEGYbYqD1");    
-    var TestObject = Parse.Object.extend("TestObject");
-    var testObject = new TestObject();
-    testObject.save({foo: "bar1"}, {
-      success: function(object) {
-        $(".success").show();
-      },
-      error: function(model, error) {
-        $(".error").show();
-      }
-    });
-    testObject.destroy({foo: "bar1"},{
-      success: function(myObject) {
-        // The object was deleted from the Parse Cloud.
-        console.log(myObject)
-      },
-      error: function(myObject, error) {
-        // The delete failed.
-        // error is a Parse.Error with an error code and message
-        console.log('error',error)
-      }
-    });
-  </script>
+</footer>
 </body>
-
 </html>
