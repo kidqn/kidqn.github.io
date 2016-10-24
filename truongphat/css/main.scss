@@ -1,0 +1,261 @@
+/* main scss. Reformat css file to find duplicated CSS classes */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+* {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+html,
+body {
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix {
+    zoom:1;
+}
+button{
+    &:focus{
+        outline: 0;
+    }
+}
+a {
+    text-decoration: none;
+    color: #a9aaac;
+    cursor: pointer;
+}
+a:focus, a:hover{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.container{
+    position: relative;
+    padding: 0;
+}
+.carousel-dots{
+    .owl-controls{
+        width: 100%;
+        height: 30px;
+        background: transparent;
+        text-align: center;
+        position: relative;
+        bottom: 30px;
+        line-height: normal;
+        .owl-dots{
+            text-align: center;
+            position: absolute;
+            background: transparent;
+            bottom: 0;
+            right: 0;
+            padding: 12px 2px;
+            .owl-dot{
+                width: 6px;
+                height: 6px;
+                opacity: 0.2;
+                background-color: #333333;
+                margin-right: 8px;
+                border-radius: 50%;
+                display: inline-block;
+                vertical-align: top;
+            }
+            .owl-dot.active{
+                opacity: 1;
+                background-color: #f58221;
+            }
+        }
+    }
+}
+.video-overlay{
+/*     background-image: url(../images/black-dot.png);
+ */ 
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    background-repeat: repeat;
+}
+.title-heading{
+    position: relative;
+    font-size: 36px;
+    line-height: 1.17;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 4px;
+        background-color: #ffffff;
+        left: 50%;
+        margin-left: -20px;
+        bottom: -16px;
+    }
+}
+p.info{
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.63;
+    text-align: center;
+    color: #ffffff;
+}
+.btn-border_right-icon_right{
+    min-width: 180px;
+    height: 50px;
+    border-radius: 2px;
+    border: solid 2px #ffffff;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color: #ffffff;
+    &:hover, &:active{
+        background-color: #ffffff;
+        font-size: 18px;
+        font-weight: 500;
+        text-align: center;
+        color: #f58221;
+        border: solid 2px #f58221;
+    }
+    span{
+        float: right;
+        display: block;
+        background-size: 16px 16px;
+        background-position: center center;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+    }
+    .right-arrow{
+        background-image: url(../images/ic-arrow-downward.svg);
+    }
+}
+@media (min-width: 1200px){
+    .container{
+        width: 1180px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+  
+}
+
+@import "../css/font.scss";
+@import "../css/home.scss";
