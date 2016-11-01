@@ -82,14 +82,17 @@ td {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
 }
-
-html,
-body {
-    font-size: 16px;
+html,body{
     width: 100%;
     height: 100%;
+    margin:0;
+}
+body {
+    font-size: 16px;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
 }
 
 *,
@@ -129,6 +132,115 @@ img{
     max-width: 100%;
     height: auto;
 }
+footer{
+    background-color: #333333;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555555;
+    padding: 0 0 55px 0;
+    .footer-list{
+        padding: 47px 0 30px 0;
+        margin: 0 0 22px 0;
+        border-bottom: 1px solid #fbb845;
+        &> li{
+            list-style: none;
+            float: left;
+            &>p{
+                margin: 0 0 5px 0;
+            }
+        }
+        li.logo{
+            margin: 7px 100px 0 0;
+        }
+        li.headquarter, li.branches{
+            margin: 0 140px 0 0;
+        }
+        .tel{
+            margin-right: 24px;
+        }
+        .tel, .fax{
+            display: inline-block;
+            label{
+                margin: 0 5px 0 0;
+            }
+        }
+        .title{
+            line-height: 115.38%;
+        }
+        .text{
+            font-size: 1em;
+            color: #888888;
+            font-weight:normal;
+            line-height: 169.23%;
+        }
+    }
+    .social-network{
+        & > .title{
+            margin: 0 0 22px 0;
+        }
+        & > a{
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            vertical-align: top;
+            img:nth-last-of-type(1){
+                display: none;
+            }
+            &:hover{
+                img:nth-last-of-type(1){
+                    display: block;
+                }
+                img:nth-of-type(1){
+                    display: none;
+                }
+            }
+        }
+        & > a:not(:nth-last-of-type(1)){
+            margin: 0 30px 0 0;
+        }
+        & > a:nth-last-of-type(1){
+            margin:0;
+        }
+        .twitter{
+            padding: 2px 0 0 0;
+        }
+        .youtube{
+            padding: 3px 0 0 0;
+        }
+        .email{
+            padding: 3px 0 0 0;
+        }
+    }
+    .copyright{
+        .conditions,.lang{
+            display: inline-block;
+            vertical-align: top;
+        }
+        .conditions{
+            margin: 0 20px 0 0;
+            font-size: 13px;
+            font-weight: normal;
+            text-align: right;
+            color: #555555;
+            line-height: 115.38%;
+        }
+        .lang{
+            width: 30px;
+            height: 20px;
+            border-radius: 2px;
+            margin: -2px 0 0 0;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+#logo-footer{
+    width: 99px;
+    height: 60px;
+    display: block;
+}
 .container{
     position: relative;
     padding: 0;
@@ -150,8 +262,8 @@ img{
             right: 0;
             padding: 12px 2px;
             .owl-dot{
-                width: 6px;
-                height: 6px;
+                width: 8px;
+                height: 8px;
                 opacity: 0.2;
                 background-color: #333333;
                 margin-right: 8px;
@@ -160,6 +272,7 @@ img{
                 vertical-align: top;
             }
             .owl-dot.active{
+                border: 0;
                 opacity: 1;
                 background-color: #f58221;
             }
@@ -167,9 +280,7 @@ img{
     }
 }
 .video-overlay{
-/*     background-image: url(../images/black-dot.png);
- */ 
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%);
     position: absolute;
     top: 0;
     left: 0;
@@ -204,13 +315,22 @@ p.info{
     text-align: center;
     color: #ffffff;
 }
+/*handle animation */
+.tp-animation{
+  opacity: 0;
+}
+
+.tp-animation.animated{
+    opacity: 1;
+}
+/*Define button */
 .btn-border_right-icon_right{
+    width: 180px;
     min-width: 180px;
     height: 50px;
     border-radius: 2px;
     border: solid 2px #ffffff;
     background: transparent;
-    color: #fff;
     font-size: 18px;
     font-weight: 500;
     text-align: center;
@@ -225,7 +345,7 @@ p.info{
     }
     span{
         float: right;
-        display: block;
+        display: inline-block;
         background-size: 16px 16px;
         background-position: center center;
         width: 24px;
@@ -234,6 +354,54 @@ p.info{
     }
     .right-arrow{
         background-image: url(../images/ic-arrow-downward.svg);
+    }
+}
+.btn-animate_left_to_right{
+    width: 180px;
+    min-width: 180px;
+    height: 50px;
+    border-radius: 2px;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    color:#fff;
+    background: #f58221;
+    border:0;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    &:hover{
+        color: #f58221;
+        &:before{
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:#fff;
+        border-radius: 2px;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
     }
 }
 @media (min-width: 1200px){
