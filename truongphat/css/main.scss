@@ -377,6 +377,7 @@ p.info{
     transition-duration: 0.3s;
     &:hover{
         color: #f58221;
+        border: 1px solid #f58221;
         &:before{
             -webkit-transform: scaleX(1);
             transform: scaleX(1);
