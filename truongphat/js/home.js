@@ -66,15 +66,30 @@ $(function(){
     });
   }
   onScrollAnimationInit( $('.tp-animation') );
+
+  var iScrollPos = 0;
+  var heightHeader = $('#top-nav');
+  $(window).scroll(function () {
+      var iCurScrollPos = $(this).scrollTop();
+      if (iCurScrollPos > iScrollPos) {
+        //Scrolling Down
+        console.log('scroll down',iCurScrollPos);
+        $('#top-nav').removeClass('open');
+      } else {
+        //Scrolling Up
+        console.log('scroll up',iCurScrollPos)
+        $('#top-nav').addClass('open');
+      }
+      
+      iScrollPos = iCurScrollPos;
+  });
   $('#customer').waypoint(function(direction) {
-    if (direction == 'down') {
-      $('#top-nav').addClass('active');
+    if(direction == 'down'){
+      $('#top-nav').addClass('fixed-top');
+    }else{
+      $('#top-nav').removeClass('fixed-top');
     }
-    else {
-      $('#top-nav').removeClass('active');
-    }
-     $('#top-nav').toggleClass('active');
-  }, { 
-    offset: '0%' 
+  }, {
+    offset:'50%'
   });
 })
