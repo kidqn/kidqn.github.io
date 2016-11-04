@@ -78,8 +78,10 @@ $(function(){
         }
       } else {
         //Scrolling Up
-        $('#top-nav').addClass('open');
-        $('#top-nav').attr('style','');
+        if( $('#top-nav').hasClass('fixed-top')){
+          $('#top-nav').addClass('open');
+          $('#top-nav').attr('style','');
+        }
       }
       
       iScrollPos = iCurScrollPos;
