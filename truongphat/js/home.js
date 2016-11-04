@@ -73,21 +73,23 @@ $(function(){
       var iCurScrollPos = $(this).scrollTop();
       if (iCurScrollPos > iScrollPos) {
         //Scrolling Down
-        console.log('scroll down',iCurScrollPos);
-        $('#top-nav').removeClass('open');
+        if( $('#top-nav').hasClass('fixed-top')){
+          $('#top-nav').attr('style','top: -90px');
+        }
       } else {
         //Scrolling Up
-        console.log('scroll up',iCurScrollPos)
         $('#top-nav').addClass('open');
+        $('#top-nav').attr('style','');
       }
       
       iScrollPos = iCurScrollPos;
   });
   $('#customer').waypoint(function(direction) {
+
     if(direction == 'down'){
       $('#top-nav').addClass('fixed-top');
     }else{
-      $('#top-nav').removeClass('fixed-top');
+      $('#top-nav').removeClass('fixed-top open');
     }
   }, {
     offset:'50%'
