@@ -1,0 +1,183 @@
+/* main scss. Reformat css file to find duplicated CSS classes */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+* {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    /*
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+    -ms-user-select: none;
+    user-select: none;
+    outline: none !important;
+}
+html,body{
+    margin: 0 auto;
+}
+body {
+    font-size: 14px;
+    color: #444;
+    font-family: 'DINRoundOT';
+    padding: 120px 0 0 0;
+
+}
+.body-bg{
+    width: 100%;
+    background: url(../images/bg_sky_mou.jpg);
+    background-size: 100% auto;
+    background-position: center 120px;
+    animation: MoveUpDown 10s linear infinite;
+    animation-direction: alternate;
+    -webkit-animation: MoveUpDown 10s linear infinite;
+    -webkit-animation-direction: alternate;
+}
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+/* close commented backslash hack */
+.container{
+    position: relative;
+}
+.full-height{
+    height: 100%;
+}
+.image{
+    text-align: center;
+}
+button{
+    &:focus{
+        outline: 0;
+    }
+}
+a {
+    text-decoration: none;
+    color:#444444;
+    cursor: pointer;
+}
+a:focus, a:hover{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+p{
+    font-size: 16px;
+    line-height: 1.375;
+}
+@media (min-width: 1900px){
+    .container{
+        width: 1300px;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1899px){
+    .container{
+        width: 1200px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+  
+}
+
+@import "../css/font.scss";
+@import "../css/home.scss";
