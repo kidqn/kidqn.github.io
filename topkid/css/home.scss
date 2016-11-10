@@ -60,7 +60,7 @@
 		    width: 147px;
 		    height: 73px;
 	        top: -18px;
-			left: -20px;
+			left: -24px;
 		    background-image: url(../images/bg_sign_up.png);
 	    }
 	}
@@ -90,20 +90,19 @@
 	}
 }
 #discovery-tools-mi{
-	padding: 90px 0 0 0;
+	padding: 130px 0 0 0;
 	& > .container{
 		padding-bottom: 370px;
 		padding-top: 206px;
 	}
 	.image{
 	    width: 760px;
-	    height: 796px;
 	    position: absolute;
 	    bottom: 0;
 	    left: -108px;
 	}
 	.title{
-		margin: 0 0 40px 14px;
+		margin: 0 0 40px 0;
 		color: #51bfed;
 		font-size: 36px;
 		line-height: 0.66;
@@ -123,7 +122,7 @@
 			margin: 24px 0 0 0;
 		    color: #fff;
 		    background: url(../images/hero_box.png) 0 0 no-repeat;
-		    background-size: 100% auto;
+		    background-size: cover;
 		    .content{
 		    	width: 100%;
 			    height: 100%;
@@ -433,9 +432,119 @@
 			width: 500px;
 		}
 	}
+	#discovery-tools-mi {
+		padding: 0;
+		& > .container{
+			padding-top: 150px;
+		}
+		.image{
+			width: 570px;
+		    left: 0;
+		}
+	}
+	#discovery-journey {
+		.register-box{
+			&:before, &:after{
+				width: 150px;
+    			height: 184px;
+			}
+			&:before{
+				left: 10px;
+			}
+			&:after{
+				right: 10px;
+			}
+		}
+	}
+	#topkid-yogurt-product{
+		.item:nth-of-type(3){
+			.hero{
+				width: 350px;
+			    left: -20px;
+			    top: -190px;
+			}
+		}
+	}
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+	#logo-home{
+		margin-left: 0;
+	}
+	#top-nav{
+		.menu-home{
+			.nav-link{
+				padding: 0 8px;
+			}
+		}
+		.header-btn-group{
+			right: 5px;
+		}
+	}
+	#discovery-dream{
+		iframe{
+			width: 50%;
+		}
+		.image{
+			margin: 106px 0 0 0;
+		    width: 420px;
+		}
+	}
+	#discovery-tools-mi{
+		padding: 30px 0 0 0;
+		& > .container{
+			padding-top: 40px;
+		}
+		.info{
+			.note-box{
+			    right: 10px;
+			    width: 540px;
+			    height: 158px;
+			    .content{
+				    padding: 55px 20px 26px 170px;
+			    }
+			}
+		}
+		.image{
+			width: 500px;
+			left: -8px;
+		}
+	}
+	#discovery-journey {
+		.register-box{
+			&:before, &:after{
+				width: 150px;
+    			height: 184px;
+			}
+			&:before{
+				left: -15px;
+			}
+			&:after{
+				bottom: -70px;
+				right: -10px;
+			}
+		}
+	}
+	#topkid-yogurt-product{
+		padding: 180px 0 160px 0;
+		.item:nth-of-type(1){
+			.hero{
+				width: 150px;
+			}
+		}
+		.item:nth-of-type(2){
+			.hero{
+				width: 190px;
+			}
+		}
+		.item:nth-of-type(3){
+			.hero{
+			    width: 250px;
+			    left: 50px;
+			    top: -120px;
+			}
+		}
+	}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
