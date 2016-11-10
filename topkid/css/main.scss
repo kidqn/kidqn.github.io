@@ -85,7 +85,7 @@ html,body{
     margin: 0 auto;
 }
 body {
-    font-size: 14px;
+    font-size: 16px;
     color: #444;
     font-family: 'DINRoundOT';
     padding: 120px 0 0 0;
@@ -94,12 +94,13 @@ body {
 .body-bg{
     width: 100%;
     background: url(../images/bg_sky_mou.jpg);
-    background-size: 100% auto;
-    background-position: center 120px;
+    background-size: cover;
+    background-position: 0% 100%;
+/*     background-position: center 120px;
     animation: MoveUpDown 10s linear infinite;
     animation-direction: alternate;
     -webkit-animation: MoveUpDown 10s linear infinite;
-    -webkit-animation-direction: alternate;
+    -webkit-animation-direction: alternate; */
 }
 *,
 *:after,
@@ -152,6 +153,46 @@ img{
 p{
     font-size: 16px;
     line-height: 1.375;
+}
+footer{
+    padding: 66px 0 40px 0;
+    background: #fff;
+    color: #000;
+    .footer-nav{
+        li{
+            float: left;
+            font-size: 16px;
+        }
+        li:nth-of-type(1){
+            a {
+                padding: 0 20px 0 0;
+            }
+        }
+        li:nth-last-of-type(1){
+            a {
+                border-right:0;
+            }
+        }
+        li a {
+            padding: 0 20px;
+            text-align: center;
+            display: inline-block;
+            border-right: 1px solid #cccccc;
+        }
+    }
+    .social-network{
+        text-align: right;
+        li{
+            display: inline-block;
+            margin: 0 20px 0 0;
+        }
+        li:nth-last-of-type(1){
+            margin: 0;
+        }
+    }
+    .footer-info{
+        margin: 80px 0 0 0;
+    }
 }
 @media (min-width: 1900px){
     .container{
