@@ -88,8 +88,11 @@ body {
     font-size: 16px;
     color: #444;
     font-family: 'DINRoundOT';
+}
+#main{
     padding: 120px 0 0 0;
-
+    position: relative;
+    z-index: 1;
 }
 .body-bg{
     width: 100%;
@@ -110,8 +113,6 @@ body {
     box-sizing: border-box;
 }
 
-
-/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:after {
      visibility: hidden;
      display: block;
@@ -121,9 +122,8 @@ body {
      height: 0;
      }
 .clearfix { display: block; }
-/* start commented backslash hack \*/
 * html .clearfix { height: 1%; }
-/* close commented backslash hack */
+
 .container{
     position: relative;
 }

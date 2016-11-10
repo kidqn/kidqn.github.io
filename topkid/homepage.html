@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./lib/font_awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/owl_carousel/assets/owl.carousel.css">
     <link rel="stylesheet" href="./lib/animation/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css?v=1.0" />
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="./lib/waypoint/jquery.waypoints.min.js"></script>
@@ -22,113 +22,127 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 
-<body class="body-bg">
-<header>
-    <div id="top-nav">
-        <div class="container">
-            <a id="logo-home" href="topkid.com">
-                <img src="images/logo.png" alt="logo topkid">
-            </a>
-            <nav class="menu-home">
-                <a href="#" class="nav-link">Khám Phá Tiềm Năng</a>
-                <a href="#" class="nav-link">Khám Phá Ước mơ</a>
-                <a href="#" class="nav-link">Chinh phục ước mơ</a>
-                <a href="#" class="nav-link">Trở thành TOPKID</a>
-            </nav>
-            <div class="header-btn-group">
-                <button type="submit" id="signIn" class="btn btn-default">Đăng Nhập</button>
-                <button type="submit" id="signUp" class="btn btn-default">Đăng Ký</button>
+<body>
+<nav id="menu-mobile-left">
+    <ul class="clearfix">
+        <li><a target="_blank" href="http://www.thmilk.vn/">Trang chủ</a></li>
+        <li><a target="_blank" href="http://www.thmilk.vn/information/true_story">Câu chuyện thật TH</a></li>
+        <li class="menu-click"><a href="javascript:;" data-frame="#frame-pro">Sản phẩm</a></li>
+        <li><a target="_blank" href="http://www.thmilk.vn/news/all">Truyền thông</a></li>
+        <li><a target="_blank" href="http://www.thmilk.vn/news/health">Góc sức khỏe</a></li>
+        <li><a target="_blank" href="http://www.thmilk.vn/information/conquer">Góc thiếu nhi</a></li>
+    </ul>
+</nav>
+<main id="main" class="body-bg">
+    <header>
+        <div id="top-nav">
+            <div class="container">
+                <a id="menu-mobile-btn"><span class="hamburger-btn"></span></a>
+                <a id="logo-home" href="topkid.com">
+                    <img src="images/logo.png" alt="logo topkid">
+                </a>
+                <nav class="menu-home">
+                    <a href="#" class="nav-link">Khám Phá Tiềm Năng</a>
+                    <a href="#" class="nav-link">Khám Phá Ước mơ</a>
+                    <a href="#" class="nav-link">Chinh phục ước mơ</a>
+                    <a href="#" class="nav-link">Trở thành TOPKID</a>
+                </nav>
+                <div class="user"><span></span></div>
+                <div class="header-btn-group">
+                    <button type="submit" id="signIn" class="btn btn-default">Đăng Nhập</button>
+                    <button type="submit" id="signUp" class="btn btn-default">Đăng Ký</button>
+                </div>
             </div>
         </div>
-    </div>
-</header>
-<section id="discovery-dream">
-    <div class="container clearfix">
-        <h2 class="title">Cùng Con Khám Phá Ước mơ</h2>
-        <iframe width="700" height="396" src="https://www.youtube.com/embed/mEXnGHgWwTQ?autoplay=1"frameborder="0" allowfullscreen>
-        </iframe>
-        <div class="image">
-            <img src="images/dream_img1.png" alt="topkid kham pha giac mo">
-        </div>
-        <button id="direct-down" class="btn"></button>
-    </div>
-</section>
-<section id="discovery-tools-mi">
-    <div class="container clearfix">
-        <div class="info pull-right">
-            <h3 class="title">Khám Phá Bộ Công Cụ MI</h3>
-            <p>
-                Mỗi bé sở hữu 1 loại hình thông minh khác nhau. MI – học thuyết thông minh đa diện – sẽ giúp bố mẹ nắm rõ sở trường của bé thông qua 8 loại hình thông mình, từ đó tạo nên nền tảng cho bé phát triển vượt trội.
-            </p>
-            <div class="note-box">
-               <div class="content">
-                    <p>Hãy cùng giải mã sở trường của bé qua bộ câu hỏi thông minh Thông qua bộ công cụ thông minh TopKID.</p>
-               </div>
-            </div>
-        </div>
-        <div class="image"><img src="images/embe.png"></div>
-    </div>
-</section>
-<section id="discovery-journey">
-    <div class="container">
-        <div class="journey-steps row">
-            <div class="col-lg-4 item">
-                <img src="images/hero_1.png" alt="">
-                <h1 class="title">Khám Phá Tài Năng</h1>
-                <p>Bắt đầu tham gia bằng cách trả lời bộ câu hỏi thông minh TopKID</p>
-            </div>
-            <div class="col-lg-4 item">
-                <img src="images/hero_2.png" alt="">
-                <h1 class="title">Khám Phá Ước Mơ</h1>
-                <p>Sau đó cùng xem kết quả về ước mơ của con</p>
-            </div>
-            <div class="col-lg-4 item">
-                <img src="images/hero_3.png" alt="">
-                <h1 class="title">Chinh Phục Ước Mơ</h1>
-                <p>Đồng hành cùng bé để hô biến giấc mơ thành hiện thực</p>
-            </div>
-        </div>
-        <div class="register-box">
+    </header>
+    <section id="discovery-dream">
+        <div class="container clearfix">
+            <h2 class="title">Cùng Con Khám Phá Ước mơ</h2>
+            <iframe width="700" height="396" src="https://www.youtube.com/embed/mEXnGHgWwTQ?autoplay=1"frameborder="0" allowfullscreen>
+            </iframe>
             <div class="image">
-                <img src="images/register_box.png" alt="">
+                <img src="images/dream_img1.png" alt="topkid kham pha giac mo">
             </div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum, felis condimentum egestas pellentesque, odio nibh auctor dolor, ullamcorper ullamcorper dui erat a tellus. Nullam pellentesque odio vitae purus tempor iaculis. Cras in urna id eros aliquet convallis. Ut viverra leo ultricies vestibulum pretium. 
-            </p>
-            <button type="submit" id="register-now" class="btn btn-default">Tham Gia Ngay<span></span></button>
+            <button id="direct-down" class="btn"></button>
         </div>
+    </section>
+    <section id="discovery-tools-mi">
+        <div class="container clearfix">
+            <div class="info pull-right">
+                <h3 class="title">Khám Phá Bộ Công Cụ MI</h3>
+                <p>
+                    Mỗi bé sở hữu 1 loại hình thông minh khác nhau. MI – học thuyết thông minh đa diện – sẽ giúp bố mẹ nắm rõ sở trường của bé thông qua 8 loại hình thông mình, từ đó tạo nên nền tảng cho bé phát triển vượt trội.
+                </p>
+                <div class="note-box">
+                   <div class="content">
+                        <p>Hãy cùng giải mã sở trường của bé qua bộ câu hỏi thông minh Thông qua bộ công cụ thông minh TopKID.</p>
+                   </div>
+                </div>
+            </div>
+            <div class="image"><img src="images/embe.png"></div>
+        </div>
+    </section>
+    <section id="discovery-journey">
+        <div class="container">
+            <div class="journey-steps row">
+                <div class="col-lg-4 item">
+                    <img src="images/hero_1.png" alt="">
+                    <h1 class="title">Khám Phá Tài Năng</h1>
+                    <p>Bắt đầu tham gia bằng cách trả lời bộ câu hỏi thông minh TopKID</p>
+                </div>
+                <div class="col-lg-4 item">
+                    <img src="images/hero_2.png" alt="">
+                    <h1 class="title">Khám Phá Ước Mơ</h1>
+                    <p>Sau đó cùng xem kết quả về ước mơ của con</p>
+                </div>
+                <div class="col-lg-4 item">
+                    <img src="images/hero_3.png" alt="">
+                    <h1 class="title">Chinh Phục Ước Mơ</h1>
+                    <p>Đồng hành cùng bé để hô biến giấc mơ thành hiện thực</p>
+                </div>
+            </div>
+            <div class="register-box">
+                <div class="image">
+                    <img src="images/register_box.png" alt="">
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum, felis condimentum egestas pellentesque, odio nibh auctor dolor, ullamcorper ullamcorper dui erat a tellus. Nullam pellentesque odio vitae purus tempor iaculis. Cras in urna id eros aliquet convallis. Ut viverra leo ultricies vestibulum pretium. 
+                </p>
+                <button type="submit" id="register-now" class="btn btn-default">Tham Gia Ngay<span></span></button>
+            </div>
 
-    </div>
-</section>
-<section id="topkid-yogurt-slogan">
-    <div class="container">
-        <div class="image"><img src="images/topkid_phattrien.png" alt="tri tue phat trien"></div>
-        <h3 class="title">Sữa Chua Ăn TOP<span>KID</span> Ngon Mê Tít</h3>
-    </div>
-</section>
-<section id="topkid-yogurt-product">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 text-center item">
-                <img src="images/sp/decor1.png" alt="" class="decor">
-                <img src="images/sp/hero1.png" alt="" class="hero">
-                <img src="images/sp/sp1.png" alt="" class="product">
-                <h4 class="text">Sô cô la Tự Nhiên</h4>
-            </div>
-            <div class="col-sm-4 text-center item">
-                <img src="images/sp/decor2.png" alt="" class="decor">
-                <img src="images/sp/hero2.png" alt="" class="hero">
-                <img src="images/sp/sp2.png" alt="" class="product">
-                <h4 class="text">Sô cô la Tự Nhiên</h4>
-            </div>
-            <div class="col-sm-4 text-center item">
-                <img src="images/sp/hero3.png" alt="" class="hero">
-                <img src="images/sp/sp3.png" alt="" class="product">
-                <h4 class="text">Sô cô la Tự Nhiên</h4>
+        </div>
+    </section>
+    <section id="topkid-yogurt-slogan">
+        <div class="container">
+            <div class="image"><img src="images/topkid_phattrien.png" alt="tri tue phat trien"></div>
+            <h3 class="title">Sữa Chua Ăn TOP<span>KID</span> Ngon Mê Tít</h3>
+        </div>
+    </section>
+    <section id="topkid-yogurt-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 text-center item">
+                    <img src="images/sp/decor1.png" alt="" class="decor">
+                    <img src="images/sp/hero1.png" alt="" class="hero">
+                    <img src="images/sp/sp1.png" alt="" class="product">
+                    <h4 class="text">Sô cô la Tự Nhiên</h4>
+                </div>
+                <div class="col-sm-4 text-center item">
+                    <img src="images/sp/decor2.png" alt="" class="decor">
+                    <img src="images/sp/hero2.png" alt="" class="hero">
+                    <img src="images/sp/sp2.png" alt="" class="product">
+                    <h4 class="text">Sô cô la Tự Nhiên</h4>
+                </div>
+                <div class="col-sm-4 text-center item">
+                    <img src="images/sp/hero3.png" alt="" class="hero">
+                    <img src="images/sp/sp3.png" alt="" class="product">
+                    <h4 class="text">Sô cô la Tự Nhiên</h4>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</main>
 
 <footer>
     <div class="container clearfix">

@@ -18,6 +18,21 @@
 			padding: 0 25px;
 		}
 	}
+	.user{
+	    display: inline-block;
+	    right: 0;
+	    position: absolute;
+	    width: 50px;
+	    height: 50px;
+	    padding: 14px 12px;
+		span{
+			background-image:url(../images/user.png);
+			background-size: 100%;
+			width: 24px;
+			height: 24px;
+			display: block;
+		}
+	}
 	.header-btn-group{
 	    position: absolute;
 	    right: 15px;
@@ -68,6 +83,44 @@
 #logo-home{
 	display: inline-block;
     margin: 31px 125px 0 33px;
+}
+#menu-mobile-left{
+	position: fixed;
+	left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    width: 256px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+}
+#menu-mobile-btn{
+	display: block;
+	width: 46px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 16px 12px;
+}
+.hamburger-btn{
+	position: relative;
+    display: inline-block;
+    font-size: 32px;
+    width: 22px;
+    height: 18px;
+    border-top: 4px solid #104885;
+    border-bottom: 4px solid #104885;
+    &:before{
+	    content: "";
+	    position: absolute;
+	    top: 3px;
+	    left: 0px;
+	    width: 100%;
+	    border-top: 4px solid #104885;
+    }
 }
 #discovery-dream{
 	padding:50px 0 100px 0;
@@ -306,11 +359,11 @@
 		}
 		&:hover{
 			.hero, .decor{
-				-webkit-animation: move-the-object 5s ease 0s infinite reverse both running;
-			    -moz-animation: move-the-object 5s ease 0s infinite reverse both running;
-			    -ms-animation: move-the-object 5s ease 0s infinite reverse both running;
-			    -o-animation: move-the-object 5s ease 0s infinite reverse both running;
-			    animation: move-the-object 5s ease 0s infinite reverse both running;
+				-webkit-animation: move-the-object 1.5s ease 0s infinite reverse both running;
+			    -moz-animation: move-the-object 1.5s ease 0s infinite reverse both running;
+			    -ms-animation: move-the-object 1.5s ease 0s infinite reverse both running;
+			    -o-animation: move-the-object 1.5s ease 0s infinite reverse both running;
+			    animation: move-the-object 1.5s ease 0s infinite reverse both running;
 			    -webkit-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
 			    -moz-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
 			    -ms-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
@@ -371,17 +424,18 @@
         background-position: center 120px;
     }
 }
+
 @-webkit-keyframes move-the-object {
     0% {
-        margin-top: -10px
+       -webkit-transform: translateY(-10px);
     }
 
     50% {
-        margin-top: 10px
+        -webkit-transform: translateY(10px);
     }
 
     100% {
-        margin-top: -10px
+        -webkit-transform: translateY(-10px);
     }
 }
 
@@ -415,15 +469,15 @@
 
 @keyframes move-the-object {
     0% {
-        margin-top: -10px
+       -webkit-transform: translateY(-10px);
     }
 
     50% {
-        margin-top: 10px
+        -webkit-transform: translateY(10px);
     }
 
     100% {
-        margin-top: -10px
+        -webkit-transform: translateY(-10px);
     }
 }
 @media (min-width: 1200px) and (max-width: 1899px){
@@ -556,7 +610,20 @@
 }
 
 @media (min-width: 601px) and (max-width: 767px) {
-
+	#top-nav{
+		height: 50px;
+    	text-align: center;
+		.menu-home{
+			display: none;
+		}
+	}
+	#menu-mobile-btn{
+		display: block;
+	}
+	#logo-home{
+		margin: 9px 0 0 0;
+    	width: 68px;
+	}
 }
 
 @media only screen and (max-width: 600px) {
