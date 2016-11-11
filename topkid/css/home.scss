@@ -237,8 +237,19 @@
 			img{
 				position: absolute;
 			}
+			.order{
+				font-size: 420px;
+			    position: absolute;
+			    font-weight: 900;
+			    line-height: 0.66;
+			    opacity: 0.2;
+			}
 		}
 		.item:nth-of-type(1){
+			.order{
+			    top: 0;
+			    left: -40px;
+			}
 			img{
 			    width: 157px;
 			    height: 199px;
@@ -247,6 +258,10 @@
 			}
 		}
 		.item:nth-of-type(2){
+			.order{
+				top: 0;
+    			left: -20px;
+			}
 			img{
 			    width: 180px;
 			    height: 246px;
@@ -255,6 +270,10 @@
 			}
 		}
 		.item:nth-of-type(3){
+			.order{
+				top: 0;
+    			left: -20px;
+			}
 			img{
 			    width: 183px;
 			    height: 186px;
@@ -588,7 +607,13 @@
 		}
 	}
 	#discovery-journey {
-
+		.journey-steps{
+			.item{
+				.order{
+					font-size: 505px;
+				}
+			}
+		}
 		.register-box{
 			&:before, &:after{
 				width: 150px;
@@ -741,8 +766,14 @@
     					display: block;
     				}
     			}
+    			.order{
+    				font-size: 320px;
+    			}
 			}
 			.item:nth-of-type(1){
+				.order{
+					left: -30px;
+				}
 				img{
 					width: 157px;
 				    height: 199px;
@@ -751,6 +782,9 @@
 				}
 			}
 			.item:nth-of-type(2){
+				.order{
+					left: -18px;
+				}
 				img{
 					width: 157px;
 				    height: 199px;
@@ -759,6 +793,9 @@
 				}
 			}
 			.item:nth-of-type(3){
+				.order{
+					left: -15px;
+				}
 				img{
 					width: 157px;
 				    height: 199px;
@@ -964,6 +1001,9 @@
 				p{
 					font-size: 0.611em;
     				line-height: normal;
+				}
+				.order{
+					display: none;
 				}
 			}
 		}
