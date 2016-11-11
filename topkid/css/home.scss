@@ -694,10 +694,14 @@
 		}
 		iframe{
 			margin: 20px 0 0 0;
-			width: 100%;
+			width: 86.25%;
+			height: 150px;
 		}
 		.image{
 			margin: 15px 0 0 0;
+			img{
+				max-width: 80%;
+			}
 		}
 		button{
 			display: none;
