@@ -626,7 +626,197 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-
+	#top-nav{
+		height: 50px;
+    	text-align: center;
+		.menu-home{
+			display: none;
+		}
+		.user{
+			display: inline-block;
+		}
+		.header-btn-group{
+			visibility: hidden; 
+    		opacity: 0;
+			top: 50px;
+		    padding: 20px;
+		    height: 160px;
+		    right: 1px;
+		    z-index: 100;
+			background: #fff;
+		    border: 1px solid #8cd4f2;
+		    border-top: 0;
+		    line-height: normal;
+		    -webkit-transition: opacity 300ms ease;
+			-moz-transition: opacity 300ms ease;
+			-ms-transition: opacity 300ms ease;
+			-o-transition: opacity 300ms ease;
+			transition: opacity 300ms ease;
+		    &.open{
+		    	visibility: visible; 
+		    	opacity: 1
+		    }
+		    & button:before, & button:after{
+		    	display: none;
+		    }
+		    & button:nth-of-type(1){
+		    	margin: 0 0 20px 0;
+		    }
+		    & button {
+		    	height: 50px;
+		    	width: 100%;
+		    }
+		}
+	}
+	#menu-mobile-btn{
+		display: block;
+	}
+	#menu-mobile-btn{
+		display: block;
+	}
+	#logo-home{
+		margin: 9px 0 0 0;
+    	width: 68px;
+	}
+	#main{
+		padding: 50px 0 0 0;
+	}
+	#logo-home{
+		margin-left: 0;
+	}
+	#discovery-dream{
+		iframe{
+			width: 50%;
+    		height: 312px;
+		}
+		.image{
+			margin: 110px 0 0 0;
+		    width: 45%;
+		}
+	}
+	#discovery-tools-mi{
+		padding: 25px 0 0 0;
+    	text-align: center;
+    	& > .container{
+    		padding-top: 0;
+    		padding-bottom: 150px;
+    	}
+    	.image{
+    		display: inline-block;
+    		position: static;
+    		width: 80%;
+    	}
+    	.info{
+    		float: none;    
+    		width: 100%;
+    		margin: 20px 0 0 0;
+		    .note-box{
+			    right: 0;
+			    width: 650px;
+			    height: 150px;
+			    position: static;
+			    display: inline-block;
+			    margin: 15px 0 0 0;
+			    .content{
+				    width: 100%;
+				    height: 100%;
+				    padding: 20px 10px 0 170px;
+				    display: table;
+				    p{
+				    	display: table-cell;
+	    				vertical-align: middle;
+				    }
+			    }
+	    	}
+    	}
+	}
+	#discovery-journey{
+		.journey-steps{
+			.item{
+				padding: 40px 30px;
+    			min-height: 200px;
+    			.title{
+    				font-size: 30px;
+    				span{
+    					display: block;
+    				}
+    			}
+			}
+			.item:nth-of-type(1){
+				img{
+					width: 157px;
+				    height: 199px;
+				    top: -115px;
+				    right: 0px;
+				}
+			}
+			.item:nth-of-type(2){
+				img{
+					width: 157px;
+				    height: 199px;
+				    top: -115px;
+				    right: 0px;
+				}
+			}
+			.item:nth-of-type(3){
+				img{
+					width: 157px;
+				    height: 199px;
+				    top: -130px;
+				    right: -30px;
+				}
+			}
+		}
+		.register-box{
+			padding: 30px 20px;
+			p{
+				width: 100%;
+			}
+			&:before{
+				top: 0;
+			    left: 0;
+			    width: 57px;
+			    height: 69px;
+			}
+			&:after{
+			    bottom: 0;
+			    right: 0;
+			    width: 57px;
+			    height: 69px;
+			}
+		}
+	}
+	#topkid-yogurt-product{
+		.item:nth-of-type(1){
+			.hero{
+			    width: 160px;
+			    top: -60%;
+			    left: 22%;
+			}
+			.decor{
+			    top: -80%;
+			    left: 0%;
+			}
+		}
+		.item:nth-of-type(2){
+			.hero{
+			    width: 220px;
+			    top: -60%;
+    			left: 0%;
+			}
+			.decor{
+			    top: -90%;
+			    left: -16%;
+			}
+		}
+		.item:nth-of-type(3){
+			.hero{
+			    width: 380px;
+			    left: -5%;
+			    top: -70%;
+    		}
+		}
+	}
 }
 
 @media only screen and (max-width: 767px) {
