@@ -11,8 +11,8 @@ $(function(){
       $elm.attr('style','transform: translate3d(256px, 0px, 0px);');
       $('#menu-mobile-left').addClass('slideout');
       setTimeout(function(){
-        $('html').attr('style','overflow:hidden;');
-        $('body').attr('style','overflow:hidden;');
+        $('html').attr('style','overflow:hidden; height: 100%;');
+        $('body').attr('style','overflow:hidden; height: 100%;');
       },100);
     }
   });
