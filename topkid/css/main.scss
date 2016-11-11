@@ -230,6 +230,10 @@ footer{
 @media only screen and (max-width: 767px) {
     .container{
         width: 100%;
+        padding: 0 10px;
+    }
+    .row{
+        margin: 0;
     }
     p{
         font-size: 0.704em;
@@ -240,6 +244,7 @@ footer{
         .footer-nav{
             text-align: center;
             margin: 0 0 8px 0;
+            padding: 0;
             li{
                 font-size: 0.68em;
             }
