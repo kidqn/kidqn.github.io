@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./lib/font_awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./lib/owl_carousel/assets/owl.carousel.css">
     <link rel="stylesheet" href="./lib/animation/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css?v=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="./lib/waypoint/jquery.waypoints.min.js"></script>
@@ -26,11 +26,10 @@
 <nav id="menu-mobile-left">
     <ul class="clearfix">
         <li><a target="_blank" href="http://www.thmilk.vn/">Trang chủ</a></li>
-        <li><a target="_blank" href="http://www.thmilk.vn/information/true_story">Câu chuyện thật TH</a></li>
-        <li class="menu-click"><a href="javascript:;" data-frame="#frame-pro">Sản phẩm</a></li>
-        <li><a target="_blank" href="http://www.thmilk.vn/news/all">Truyền thông</a></li>
-        <li><a target="_blank" href="http://www.thmilk.vn/news/health">Góc sức khỏe</a></li>
-        <li><a target="_blank" href="http://www.thmilk.vn/information/conquer">Góc thiếu nhi</a></li>
+        <li><a target="_blank" href="http://www.thmilk.vn/information/true_story">Khám Phá Tiềm Năng</a></li>
+        <li class="menu-click"><a href="javascript:;" data-frame="#frame-pro">Khám Phá Ước mơ</a></li>
+        <li><a target="_blank" href="http://www.thmilk.vn/news/all">Chinh phục ước mơ</a></li>
+        <li><a target="_blank" href="http://www.thmilk.vn/news/health">Trở thành TOPKID</a></li>
     </ul>
 </nav>
 <main id="main" class="body-bg">
@@ -47,8 +46,8 @@
                     <a href="#" class="nav-link">Chinh phục ước mơ</a>
                     <a href="#" class="nav-link">Trở thành TOPKID</a>
                 </nav>
-                <div class="user"><span></span></div>
-                <div class="header-btn-group">
+                <div id="account-btn" class="user"><span></span></div>
+                <div id="account-panel" class="header-btn-group">
                     <button type="submit" id="signIn" class="btn btn-default">Đăng Nhập</button>
                     <button type="submit" id="signUp" class="btn btn-default">Đăng Ký</button>
                 </div>
@@ -68,7 +67,8 @@
     </section>
     <section id="discovery-tools-mi">
         <div class="container clearfix">
-            <div class="info pull-right">
+            <div class="image"><img src="images/embe.png"></div>
+            <div class="info">
                 <h3 class="title">Khám Phá Bộ Công Cụ MI</h3>
                 <p>
                     Mỗi bé sở hữu 1 loại hình thông minh khác nhau. MI – học thuyết thông minh đa diện – sẽ giúp bố mẹ nắm rõ sở trường của bé thông qua 8 loại hình thông mình, từ đó tạo nên nền tảng cho bé phát triển vượt trội.
@@ -79,25 +79,24 @@
                    </div>
                 </div>
             </div>
-            <div class="image"><img src="images/embe.png"></div>
         </div>
     </section>
     <section id="discovery-journey">
         <div class="container">
             <div class="journey-steps row">
-                <div class="col-lg-4 item">
+                <div class="col-xs-4 item">
                     <img src="images/hero_1.png" alt="">
-                    <h1 class="title">Khám Phá Tài Năng</h1>
+                    <h1 class="title"><span>Khám Phá</span> <span>Tài Năng</span></h1>
                     <p>Bắt đầu tham gia bằng cách trả lời bộ câu hỏi thông minh TopKID</p>
                 </div>
-                <div class="col-lg-4 item">
+                <div class="col-xs-4 item">
                     <img src="images/hero_2.png" alt="">
-                    <h1 class="title">Khám Phá Ước Mơ</h1>
+                    <h1 class="title"><span>Khám Phá</span> <span>Ước Mơ</span></h1>
                     <p>Sau đó cùng xem kết quả về ước mơ của con</p>
                 </div>
-                <div class="col-lg-4 item">
+                <div class="col-xs-4 item">
                     <img src="images/hero_3.png" alt="">
-                    <h1 class="title">Chinh Phục Ước Mơ</h1>
+                    <h1 class="title"><span>Chinh Phục</span> <span>Ước Mơ</span></h1>
                     <p>Đồng hành cùng bé để hô biến giấc mơ thành hiện thực</p>
                 </div>
             </div>
@@ -147,7 +146,7 @@
 <footer>
     <div class="container clearfix">
         <div class="row">
-            <div class="footer-nav col-lg-6">
+            <div class="footer-nav col-xs-12 col-lg-6">
                 <ul class="nav">
                     <li><a href="http://www.thmilk.vn/information/faq">CÂU HỎI <br>THƯỜNG
                             GẶP</a></li>
@@ -157,7 +156,7 @@
                             QUY ĐỊNH CHUNG</a></li>
                 </ul>
             </div>
-            <div class="col-lg-6">
+            <div class="col-xs-12 col-lg-6">
                 <ul class="nav social-network">
                     <li class="fb"><img src="images/fb-ic.png" alt="facebook"></li>
                     <li class="youtube"><img src="images/youtube-ic.png" alt="youtube"></li>
