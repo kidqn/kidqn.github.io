@@ -93,7 +93,7 @@ body {
     padding: 120px 0 0 0;
     position: relative;
     z-index: 1;
-    transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease-out;
 }
 .body-bg{
     width: 100%;
@@ -154,6 +154,18 @@ img{
 p{
     font-size: 16px;
     line-height: 1.375;
+}
+#overlay{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.8;
+    z-index: 9999;
+
 }
 footer{
     padding: 66px 0 40px 0;
