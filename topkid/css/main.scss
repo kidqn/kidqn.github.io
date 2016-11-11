@@ -173,6 +173,7 @@ footer{
         li:nth-last-of-type(1){
             a {
                 border-right:0;
+                padding: 0 0 0 20px;
             }
         }
         li a {
@@ -229,6 +230,22 @@ footer{
             margin: 0 0 8px 0;
             li{
                 font-size: 0.68em;
+            }
+            li:nth-of-type(1){
+                a {
+                    padding: 0 15px 0 0;
+                }
+            }
+            li {
+                a{
+                    padding: 0 15px;
+                }
+            }
+            li:nth-last-of-type(1){
+                a {
+                    border-right:0;
+                    padding: 0 0 0 15px;
+                }
             }
         }
         .social-network{

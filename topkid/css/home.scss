@@ -19,7 +19,7 @@
 		}
 	}
 	.user{
-	    display: inline-block;
+	    display: none;
 	    right: 0;
 	    position: absolute;
 	    width: 50px;
@@ -113,7 +113,7 @@
     }
 }
 #menu-mobile-btn{
-	display: block;
+	display: none;
 	width: 46px;
 	height: 50px;
 	position: absolute;
@@ -635,6 +635,9 @@
 		.menu-home{
 			display: none;
 		}
+		.user{
+			display: inline-block;
+		}
 		.header-btn-group{
 			visibility: hidden; 
     		opacity: 0;
@@ -667,6 +670,9 @@
 		    	width: 100%;
 		    }
 		}
+	}
+	#menu-mobile-btn{
+		display: block;
 	}
 	#menu-mobile-btn{
 		display: block;
@@ -756,6 +762,9 @@
 					font-size: 0.93em;
 					line-height: 111.94%;
 					margin-bottom: 8px;
+					span{
+						display: block;
+					}
 				}
 				p{
 					font-size: 0.611em;
@@ -806,33 +815,52 @@
 		}
 		.item:nth-of-type(1){
 			.hero{
-				width: 147px;
-			    top: -2%;
-			    left: 40%;
+			    width: 147px;
+			    top: -22%;
+			    left: 37%;
 			}
 			.decor{
-				width: 105px;
-			    top: -10%;
-			    left: 26%;
+			    width: 105px;
+			    top: -32%;
+			    left: 22%;
 			}
 		}
 		.item:nth-of-type(2){
 			.hero{
-				width: 150px;
-			    top: 2%;
-			    left: 42%;
+			    width: 150px;
+			    top: -15%;
+			    left: 35%;
 			}
 			.decor{
-				width: 102px;
-			    top: -18%;
-			    left: 34%;
+			    width: 102px;
+			    top: -40%;
+			    left: 25%
 			}
 		}
 		.item:nth-of-type(3){
 			.hero{
 			    width: 220px;
-			    top: -15%;
+			    top: -30%;
 			    left: 24%;
+			}
+		}
+		.item{
+			.hero, .decor{
+				-webkit-animation: move-the-object 1.5s ease 0s infinite reverse both running;
+			    -moz-animation: move-the-object 1.5s ease 0s infinite reverse both running;
+			    -ms-animation: move-the-object 1.5s ease 0s infinite reverse both running;
+			    -o-animation: move-the-object 1.5s ease 0s infinite reverse both running;
+			    animation: move-the-object 1.5s ease 0s infinite reverse both running;
+			    -webkit-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
+			    -moz-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
+			    -ms-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
+			    -o-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
+			    transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
+			    -webkit-transform: scale(1);
+			    -moz-transform: scale(1);
+			    -ms-transform: scale(1);
+			    -o-transform: scale(1);
+			    transform: scale(1);
 			}
 		}
 	}
