@@ -208,6 +208,7 @@
     background: url(../images/arrow_down.png) 0 0 no-repeat;
     width: 26px;
     height: 77px;
+    background-size: 100%;
 }
 #discovery-journey{
 	.journey-steps{
@@ -225,11 +226,27 @@
 			min-height: 308px;
 			height: auto;
 			padding: 70px 70px 50px 54px;
+			list-style: none;
 			cursor: pointer;
 			.title{
 				font-size: 50px;
 				line-height: 1.12;
 				margin-bottom: 30px;
+				span:nth-last-of-type(1){
+					position: relative;
+    				display: block;
+    				&:after{
+					    content: '';
+					    display: block;
+					    position: absolute;
+					    top: 18px;
+					    right: -10px;
+					    width: 30px;
+					    height: 30px;
+					    background-image: url(../images/right_circle_ic.png);
+					    background-size: 100%;
+					}
+				}
 			}
 			p{
 				font-size: 16px;
@@ -244,6 +261,33 @@
 			    font-weight: 900;
 			    line-height: 0.66;
 			    opacity: 0.2;
+			}
+			&:nth-of-type(2){
+				.title{
+					span:nth-last-of-type(1){
+	    				&:after{
+						    background-image: url(../images/right_circle_blue_ic.png);
+						}
+					}
+				}
+			}
+			&:nth-of-type(2).active{
+				.title{
+					span:nth-last-of-type(1){
+	    				&:after{
+						    background-image: url(../images/down_circle_blue_ic.png);
+						}
+					}
+				}
+			}
+			&.active{
+				.title{
+					span:nth-last-of-type(1){
+	    				&:after{
+						    background-image: url(../images/down_circle_ic.png);
+						}
+					}
+				}
 			}
 		}
 		.item:nth-of-type(1){
@@ -595,8 +639,28 @@
 	#discovery-journey {
 		.journey-steps{
 			.item{
+				min-height: 290px;
+			    padding: 70px 20px 50px 20px;
 				.order{
-					font-size: 505px;
+					font-size: 405px;
+				}
+			}
+			.item:nth-of-type(1){
+				img{
+					top: -105px;
+    				right: 10px;
+				}
+			}
+			.item:nth-of-type(2){
+				img{
+					top: -140px;
+					right: 0px;
+				}
+			}
+			.item:nth-of-type(3){
+				img{
+				    top: -100px;
+				    right: 0;
 				}
 			}
 		}
@@ -751,6 +815,9 @@
     				span{
     					display: block;
     				}
+    				span:nth-last-of-type(1):after{
+						top: 2px;
+					}
     			}
     			.order{
     				font-size: 320px;
@@ -982,6 +1049,12 @@
 					margin-bottom: 8px;
 					span{
 						display: block;
+					}
+					span:nth-last-of-type(1):after{
+						top: -80%;
+					    right: 0;
+					    width: 15px;
+					    height: 15px;
 					}
 				}
 				p{
