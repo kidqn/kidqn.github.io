@@ -1,5 +1,5 @@
 #top-nav{
-	height: 120px;
+	height: 68px;
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -7,13 +7,13 @@
 	z-index:9998;
 	background: #fff;
 	.menu-home{
-		font-size: 16px;
-		color:#444;
-		position: absolute;
-		top: 0;
-		right: 240px;
-		height: 120px;
-		line-height: 120px;
+	    font-size: 16px;
+	    color: #444;
+	    position: absolute;
+	    top: 0;
+	    right: 240px;
+	    height: 68px;
+	    line-height: 4.25;
 		.nav-link{
 			padding: 0 25px;
 		}
@@ -37,8 +37,8 @@
 	    position: absolute;
 	    right: 15px;
 	    top: 0;
-	    height: 120px;
-	    line-height: 112px;
+	    height: 68px;
+	    line-height: 4.25;
 	    width: 240px;
 	    text-align: right;
 	    button{
@@ -81,8 +81,8 @@
 	}
 }
 #logo-home{
-	display: inline-block;
-    margin: 31px 125px 0 33px;
+    display: inline-block;
+    margin: 6px 125px 0 33px;
 }
 #menu-mobile-left{
 	position: fixed;
@@ -225,6 +225,7 @@
 			min-height: 308px;
 			height: auto;
 			padding: 70px 70px 50px 54px;
+			cursor: pointer;
 			.title{
 				font-size: 50px;
 				line-height: 1.12;
@@ -265,7 +266,7 @@
 			img{
 			    width: 180px;
 			    height: 246px;
-			    top: -98px;
+			    top: -120px;
 			    right: 17px;
 			}
 		}
@@ -315,34 +316,14 @@
 		    margin: 0 auto;
 		    text-align: left;
 		}
-		button{
-		    margin: 30px 0 0 0;
-		    background: #51bfed;
-		    color: #fff;
-		    height: 50px;
-		    border-radius: 50px;
-		    border: 0;
-		    padding: 6px 32px;
-		    span{
-			    float: right;
-			    background-image: url(../images/right_arrow.png);
-			    display: inline-block;
-			    margin: 0 0 0 8px;
-			    background-size: 7px 12px;
-			    background-position: center center;
-			    width: 7px;
-			    height: 24px;
-			    background-repeat: no-repeat;
-		    }
-		}
 	}
 }
 
 #topkid-yogurt-slogan{
-	padding: 105px 0 90px 0;
+	padding: 80px 0 30px 0;
 	text-align: center;
 	.title{
-		margin: 64px 0 0 0;
+		margin: 35px 0 0 0;
 		font-size: 35px;
 		color: #0d4982;
 		span{
@@ -352,7 +333,7 @@
 }
 
 #topkid-yogurt-product{
-	padding: 240px 0 260px 0;
+	padding: 150px 0 260px 0;
 	background-image:url(../images/moun_bg.png);
 	background-repeat: no-repeat;
 	background-size: 100% auto;
@@ -367,7 +348,7 @@
 			font-size: 18px;
 			font-weight: bold;
 			line-height: 2;
-			margin: 45px 0 0 0;
+			margin: 5px 0 0 0;
 		}
 		.hero, .decor{
 			position: absolute;
@@ -397,11 +378,6 @@
 		}
 		&:hover{
 			.hero, .decor{
-				-webkit-animation: move-the-object 1.5s ease 0s infinite reverse both running;
-			    -moz-animation: move-the-object 1.5s ease 0s infinite reverse both running;
-			    -ms-animation: move-the-object 1.5s ease 0s infinite reverse both running;
-			    -o-animation: move-the-object 1.5s ease 0s infinite reverse both running;
-			    animation: move-the-object 1.5s ease 0s infinite reverse both running;
 			    -webkit-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
 			    -moz-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
 			    -ms-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
@@ -414,10 +390,20 @@
 			    transform: scale(1);
 			}
 			.hero{
+				-webkit-animation: move-the-object 5s ease 0s infinite reverse both running;
+			    -moz-animation: move-the-object 5s ease 0s infinite reverse both running;
+			    -ms-animation: move-the-object 5s ease 0s infinite reverse both running;
+			    -o-animation: move-the-object 5s ease 0s infinite reverse both running;
+			    animation: move-the-object 5s ease 0s infinite reverse both running;
 			    top: -25%;
 			    left: 28%;
 			}
 			.decor{
+				-webkit-animation: move-the-object 5s ease 1s infinite reverse both running;
+			    -moz-animation: move-the-object 5s ease 1s infinite reverse both running;
+			    -ms-animation: move-the-object 5s ease 1s infinite reverse both running;
+			    -o-animation: move-the-object 5s ease 1s infinite reverse both running;
+			    animation: move-the-object 5s ease 1s infinite reverse both running;
 			    top: -45%;
 			    left: 9%;
 			}
@@ -465,15 +451,15 @@
 
 @-webkit-keyframes move-the-object {
     0% {
-       -webkit-transform: translateY(-10px);
+       margin-top: translateY(-10px);
     }
 
     50% {
-        -webkit-transform: translateY(10px);
+        margin-top: translateY(10px);
     }
 
     100% {
-        -webkit-transform: translateY(-10px);
+        margin-top: translateY(-10px);
     }
 }
 
@@ -629,7 +615,7 @@
 		}
 	}
 	#topkid-yogurt-product{
-		padding: 180px 0 160px 0;
+		padding: 80px 0 160px 0;
 		.item:nth-of-type(1){
 			.hero{
 				width: 150px;
@@ -1024,9 +1010,6 @@
 			p{
 				width: 100%;
 			}
-			button{
-				display: none;
-			}
 		}
 	}
 	#topkid-yogurt-slogan{
@@ -1052,40 +1035,35 @@
 			.hero{
 			    width: 147px;
 			    top: -22%;
-			    left: 37%;
+			    left: 34%;
 			}
 			.decor{
-			    width: 105px;
-			    top: -32%;
-			    left: 22%;
+			    width: 140px;
+			    top: -42%;
+			    left: 17%;
 			}
 		}
 		.item:nth-of-type(2){
 			.hero{
-			    width: 150px;
-			    top: -15%;
-			    left: 35%;
+			    width: 183px;
+			    top: -29%;
+			    left: 25%;
 			}
 			.decor{
-			    width: 102px;
-			    top: -40%;
-			    left: 25%
+			    width: 143px;
+			    top: -55%;
+			    left: 12%;
 			}
 		}
 		.item:nth-of-type(3){
 			.hero{
-			    width: 220px;
-			    top: -30%;
-			    left: 24%;
+			    width: 260px;
+			    top: -54%;
+			    left: 10%;
 			}
 		}
 		.item{
 			.hero, .decor{
-				-webkit-animation: move-the-object 1.5s ease 0s infinite reverse both running;
-			    -moz-animation: move-the-object 1.5s ease 0s infinite reverse both running;
-			    -ms-animation: move-the-object 1.5s ease 0s infinite reverse both running;
-			    -o-animation: move-the-object 1.5s ease 0s infinite reverse both running;
-			    animation: move-the-object 1.5s ease 0s infinite reverse both running;
 			    -webkit-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
 			    -moz-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
 			    -ms-transition: all 0.3s cubic-bezier(0.51, 1.75, 0.65, 1.31);
@@ -1096,6 +1074,20 @@
 			    -ms-transform: scale(1);
 			    -o-transform: scale(1);
 			    transform: scale(1);
+			}
+			.hero{
+				-webkit-animation: move-the-object 5s ease 0s infinite reverse both running;
+			    -moz-animation: move-the-object 5s ease 0s infinite reverse both running;
+			    -ms-animation: move-the-object 5s ease 0s infinite reverse both running;
+			    -o-animation: move-the-object 5s ease 0s infinite reverse both running;
+			    animation: move-the-object 5s ease 0s infinite reverse both running;
+			}
+			.decor{
+				-webkit-animation: move-the-object 5s ease 1s infinite reverse both running;
+			    -moz-animation: move-the-object 5s ease 1s infinite reverse both running;
+			    -ms-animation: move-the-object 5s ease 1s infinite reverse both running;
+			    -o-animation: move-the-object 5s ease 1s infinite reverse both running;
+			    animation: move-the-object 5s ease 1s infinite reverse both running;
 			}
 		}
 	}
