@@ -279,6 +279,44 @@ footer{
         }
     }
 }
+.nav-oval{
+    .owl-prev, .owl-next{
+            width: 60px;
+            height: 42px;
+            border-radius: 20px;
+            border: solid 1px #f58221;
+            background-size: 18px 12px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            &:hover{
+                background-color: #f58221;
+            }
+    }
+    .owl-prev{
+        float: left;
+        margin-left: 40%;
+        background-image: url(../images/prev_long_orange.png);
+        &:hover{
+            background-image: url(../images/prev_long_white.png);
+        }
+    }
+    .owl-next{
+        float: right;
+        margin-right: 40%;
+        background-image: url(../images/next_long_orange.png);
+        &:hover{
+            background-image: url(../images/next_long_white.png);
+        }
+    }
+    .owl-controls{
+        .owl-dots{
+            position: static;
+            display: inline-block;
+            margin: auto;
+            padding: 16px 2px;
+        }
+    }
+}
 .video-overlay{
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%);
     position: absolute;
@@ -299,13 +337,10 @@ footer{
     &:after{
         content: '';
         display: block;
-        position: absolute;
-        width: 40px;
-        height: 4px;
-        background-color: #ffffff;
-        left: 50%;
-        margin-left: -20px;
-        bottom: -16px;
+        width: 1.11em;
+        height: 0.11em;
+        background-color: #f58221;
+        margin-top: 27px;
     }
 }
 p.info{
@@ -336,16 +371,11 @@ p.info{
     text-align: center;
     color: #ffffff;
     &:hover, &:active{
-        background-color: #ffffff;
-        font-size: 18px;
-        font-weight: 500;
-        text-align: center;
-        color: #f58221;
-        border: solid 2px #f58221;
+    
     }
     span{
-        float: right;
         display: inline-block;
+        vertical-align: middle;
         background-size: 16px 16px;
         background-position: center center;
         width: 24px;

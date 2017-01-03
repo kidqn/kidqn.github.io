@@ -1,14 +1,9 @@
 $(function(){
-	$("#home-info-carousel").owlCarousel({
-      loop:true,
-      items: 1,
-      nav:false  	
-    })
-
-  $("#best-customer-carousel").owlCarousel({
+  $("#khachhang-carousel").owlCarousel({
     loop:true,
-    margin:20,
-    nav:false,
+    margin:73,
+    nav:true,
+    navText: ["",""],
     responsive:{
         0:{
             items:1
@@ -17,7 +12,7 @@ $(function(){
             items:3
         },
         1200:{
-            items:6
+            items:4
         }
     }
   })
@@ -29,7 +24,8 @@ $(function(){
     paginationSpeed : 500,
     loop:true,
     items: 1,
-    nav: false
+    nav:true,
+    navText: ["",""],
   })
   $("#baochi-carousel").owlCarousel({
     autoplay:true,
@@ -39,7 +35,8 @@ $(function(){
     paginationSpeed : 500,
     loop:true,
     items: 1,
-    nav: false
+    nav:true,
+    navText: ["",""],
   })
   function onScrollAnimationInit( items, trigger ) {
     items.each( function() {
@@ -86,7 +83,7 @@ $(function(){
       
       iScrollPos = iCurScrollPos;
   });
-  $('#customer').waypoint(function(direction) {
+  $('#about').waypoint(function(direction) {
 
     if(direction == 'down'){
       $('#top-nav').addClass('fixed-top');
