@@ -115,7 +115,12 @@ body {
 .clearfix {
     zoom:1;
 }
-button{
+button, .btn{
+    -webkit-transition: background 200ms linear;
+    -moz-transition: background 200ms linear;
+    -ms-transition: background 200ms linear;
+    -o-transition: background 200ms linear;
+    transition: background 200ms linear;
     &:focus{
         outline: 0;
     }
@@ -152,8 +157,11 @@ footer{
         li.logo{
             margin: 7px 100px 0 0;
         }
-        li.headquarter, li.branches{
-            margin: 0 140px 0 0;
+        li.headquarter{
+            margin: 0 70px 0 0;
+        }
+        li.branches{
+            margin: 0 99px 0 0;
         }
         .tel{
             margin-right: 24px;
@@ -288,8 +296,14 @@ footer{
             background-size: 18px 12px;
             background-repeat: no-repeat;
             background-position: center center;
-            &:hover{
+            -webkit-transition: background 200ms ease-in;
+            -moz-transition: background 200ms ease-in;
+            -ms-transition: background 200ms ease-in;
+            -o-transition: background 200ms ease-in;
+            transition: background 200ms ease-in;
+                    &:hover{
                 background-color: #f58221;
+                box-shadow: 0 10px 20px 0 rgba(255, 131, 36, 0.3);
             }
     }
     .owl-prev{
@@ -316,6 +330,40 @@ footer{
             padding: 16px 2px;
         }
     }
+}
+.vertical-logo{
+    position: absolute;
+    left: -50px;
+    top: 33px;
+    width: 114px;
+    height: 14px;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: center;
+    color: rgba(136, 136, 136, 0.3);
+    &:before{
+        content: '';
+        display: block;
+        width: 60px;
+        height: 1px;
+        margin-left: -65px;
+        margin-bottom: -8px;
+        background-color: #f3f3f3;
+    }
+}
+.vertical-line{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 200px;
+    background-color: #f3f3f3;
+    left: 0;
+    top: -100px;
 }
 .video-overlay{
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%);

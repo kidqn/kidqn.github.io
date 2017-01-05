@@ -1,4 +1,10 @@
 $(function(){
+  //set margin top for about section under background video
+  var hBannerVideo = document.querySelectorAll('#banner-video')[0].clientHeight;
+  var sectionAbout = document.querySelectorAll('#about')[0];
+  if(hBannerVideo && hBannerVideo > 0){
+    sectionAbout.style['margin-top'] = hBannerVideo +'px';
+  }
   $("#khachhang-carousel").owlCarousel({
     loop:true,
     margin:73,
