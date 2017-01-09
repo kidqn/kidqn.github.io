@@ -9,11 +9,14 @@ body.news-p{
 		}
 	}
 }
-.news-p #news-banner{
-	height: 680px;
-	width: 100%;
-	background: url('../images/news/news_banner.png') center center no-repeat;
-	background-size: cover;
+.news-p #image-top-news-carousel{
+	.item{
+		height: 680px;
+		width: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 }
 #top-news-carousel{
 	width: 100%;
