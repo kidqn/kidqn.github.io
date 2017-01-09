@@ -162,24 +162,6 @@
 	}
 	.title-heading{
 		margin: 70px 0 40px 0;
-	    font-family: 'Tinos';
-	    font-size: 2.25em;
-	    font-weight: bold;
-	    font-style: normal;
-	    color: #3e405c;
-	    text-align: center;
-		&:after{
-			background-color: #f58221;
-			text-align: center;
-			content: '';
-			display: block;
-			position: absolute;
-			width: 40px;
-			height: 4px;
-			left: 50%;
-			margin-left: -20px;
-			margin-top: 17px;
-		}
 		& + .info{
 		    width: 550px;
 		    margin: auto;
@@ -295,16 +277,6 @@
 	    left: 0;
 	    top: 45px;
 	}
-	.title-heading{
-	    font-family: 'Tinos';
-	    font-size: 2.25em;
-	    font-weight: bold;
-	    font-style: normal;
-	    color: #3e405c;
-	    text-align: left;
-	    margin-top: 113px;
-	    margin-bottom: 34px;
-	}
 	.image{
 		padding-left: 110px;
 	    max-height: 100%;
@@ -340,24 +312,6 @@
 	position: relative;
 	.title-heading{
 		margin: 70px 0 40px 0;
-	    font-family: 'Tinos';
-	    font-size: 2.25em;
-	    font-weight: bold;
-	    font-style: normal;
-	    color: #3e405c;
-	    text-align: center;
-		&:after{
-			background-color: #f58221;
-			text-align: center;
-			content: '';
-			display: block;
-			position: absolute;
-			width: 40px;
-			height: 4px;
-			left: 50%;
-			margin-left: -20px;
-			margin-top: 17px;
-		}
 		& + .info{
 		    width: 721px;
 		    margin: auto;
@@ -488,16 +442,6 @@
 	    left: 0;
 	    top: 45px;
 	}
-	.title-heading{
-	    font-family: 'Tinos';
-	    font-size: 2.25em;
-	    font-weight: bold;
-	    font-style: normal;
-	    color: #3e405c;
-	    text-align: left;
-	    margin-top: 113px;
-	    margin-bottom: 34px;
-	}
 	.image{
 	    max-height: 100%;
 	    overflow: hidden;
@@ -535,18 +479,7 @@
 	}
 	.title-heading{
 		margin: 80px 0 34px 0;
-	    font-family: 'Tinos';
-	    font-size: 2.25em;
-	    font-weight: bold;
-	    font-style: normal;
-	    color: #3e405c;
-	    text-align: left;
 	    width: 580px;
-		&:after{
-			background-color: #f58221;
-			left: 0;
-    		margin-left: 0;
-		}
 		& + .info{
 			width: 580px;
 		    font-size: 1em;
@@ -662,18 +595,11 @@
 }
 
 /* tin tuc */
-#news{
+.home-p #news{
 	border-top: 1px solid #f3f3f3;
 	text-align: center;
 	background: #fff;
 	padding: 50px 0;
-	& > .row{
-		margin-left: -30px;
-		margin-right: -30px;
-		& > div{
-			padding: 0 15px;
-		}
-	}
 	.vertical-logo{
 		top: 30px;
 		&:before{
@@ -682,25 +608,7 @@
 		}	
 	}
 	.title-heading{
-		margin: 70px 0 40px 0;
-	    font-family: 'Tinos';
-	    font-size: 2.25em;
-	    font-weight: bold;
-	    font-style: normal;
-	    color: #3e405c;
-	    text-align: center;
-		&:after{
-			background-color: #f58221;
-			text-align: center;
-			content: '';
-			display: block;
-			position: absolute;
-			width: 40px;
-			height: 4px;
-			left: 50%;
-			margin-left: -20px;
-			margin-top: 17px;
-		}
+		margin: 70px 0 100px 0;
 		& + .info{
 		    width: 721px;
 		    margin: auto;
