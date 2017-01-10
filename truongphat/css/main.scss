@@ -743,7 +743,11 @@ p.info{
   
 }
 ///////////INCLUDE///////////////
+/* component */
+@import "../lib/components/tp_dropdown/tp-select.scss";
+/* page styles */
 @import "../css/font.scss";
 @import "../css/home.scss";
 @import "../css/news.scss";
 @import "../css/news_detail.scss";
+@import "../css/baogia.scss";
