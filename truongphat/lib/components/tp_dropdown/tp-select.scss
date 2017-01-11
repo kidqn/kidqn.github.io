@@ -166,3 +166,21 @@
     background: #f5f3ec;
 }
 /*end dropdown*/
+/* add more  custom css*/
+.tp-dropdown-order{
+    width: 90px;
+    margin-top: -2px;
+    .tp-dropdown-placeholder{
+        padding-left: 1em;
+    }
+    .tp-dropdown-options{
+        margin-top: 5px;
+        .tp-dropdown-select ul span{
+            padding: 0.2em 0.2em 0.2em 1em;
+        }
+    }
+    .tp-dropdown-select .tp-dropdown-selected {
+        color: initial;
+        background: initial;
+    }
+}
