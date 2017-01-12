@@ -4,7 +4,7 @@ body.baogia-p{
 .baogia-p{
 	main{
 		& > .container{
-			top: -70px;
+			margin-top: -70px;
 			min-height: 500px;
 		}
 	}
@@ -127,53 +127,8 @@ body.baogia-p{
 		color: #3e405c;
 	}
 }
-.tp-popup{
-	background-color: #fff;
-	& > .container{
-	    padding: 150px 50px 100px 50px;
-	    height: 100%;
-	}
-	.left-cover{
-		float: left;
-		width: 265px;
-		text-align: center;
-		.image{
-			margin-bottom: 30px;
-		}
-	}
-	.right-content{
-	    padding: 45px 40px;
-	    margin-left: 265px;
-	    overflow-y: auto;
-	    height: 100%;
-	    .section{
-			font-size: 0.75em;
-			line-height: 1.17;
-			font-weight: 500;
-			color: #777777;
-			margin-bottom: 10px;
-	    }
-	    .title{
-			font-size: 2.25em;
-			font-weight: bold;
-			line-height: 1.17;
-			color: #333333;
-			margin-bottom: 22px;
-	    }
-	}
-}
-.close-popup{
-	width: 48px;
-  	height: 48px;
-  	position: absolute;
-  	z-index: 9999;
-  	top: 60px;
-  	right: 60px;
-  	background: url('../images/ic-close_black.svg') center center no-repeat;
-  	background-size: 26px;
-}
 .baogia-btn{
-    width: 265px;
+	width: 265px;
     height: 50px;
     border-radius: 23px;
     background-color: #f58221;
@@ -184,4 +139,5 @@ body.baogia-p{
     text-align: center;
     color: #ffffff;
     padding: 0 10px;
+    border: 1px solid #f58221;
 }

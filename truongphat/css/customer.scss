@@ -13,7 +13,7 @@ body.customer-p{
 	  	left: 50px;
 	  	height: 36px;
 	  	width: 33px;
-	  	background: url(../images/cus/customer_icon.svg) center center no-repeat;
+	  	background: url(../images/ic-tp-top-section.svg) center center no-repeat;
 	  	background-size: 100%;
 	  }
 	.vertical-logo{
@@ -36,7 +36,7 @@ body.customer-p{
 .customer-p{
 	main{
 		& > .container{
-			top: -75px;
+			margin-top: -75px;
 			min-height: 500px;
 		}
 	}

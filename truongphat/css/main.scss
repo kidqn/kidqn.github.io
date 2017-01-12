@@ -137,7 +137,6 @@ img{
     max-width: 100%;
     height: auto;
     vertical-align: middle;
-    margin-bottom: 5px;
 }
 
 footer{
@@ -483,6 +482,19 @@ p{
         margin: 0;
     }
 }
+p.pullQuote{
+    font-family: 'Tinos';
+    font-size: 1.875em;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1.1;
+    color: #ff7500;
+}
+.content-body{
+    & *{
+        font-family: 'Tinos';
+    }
+}
 h4{
     font-size: 1em;
     font-weight: bold;
@@ -808,6 +820,64 @@ h4{
 
     }
 }
+
+/* POP UP */
+.tp-popup{
+    background-color: #fff;
+    & > .container{
+        padding: 150px 50px 100px 50px;
+        height: 100%;
+    }
+    .left-cover{
+        float: left;
+        width: 265px;
+        text-align: center;
+        .image{
+            border-radius: 2px;
+            box-shadow: 10px 10px 25px 0 rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+        }
+    }
+    .right-content{
+        padding: 45px 40px;
+        margin-left: 265px;
+        overflow-y: auto;
+        height: 100%;
+        h4 i{
+            font-family: 'Tinos';
+            font-weight: bold;
+        }
+        .section{
+            font-size: 0.75em;
+            line-height: 1.17;
+            font-weight: 500;
+            color: #777777;
+            margin-bottom: 10px;
+        }
+        .title{
+            font-size: 2.25em;
+            font-weight: bold;
+            line-height: 1.17;
+            color: #333333;
+            margin-bottom: 22px;
+        }
+        .image{
+            margin-bottom: 30px;
+        }
+    }
+}
+.close-popup{
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    z-index: 9999;
+    top: 40px;
+    right: 40px;
+    background: url(../images/ic-close_black.svg) center center no-repeat;
+    background-size: 26px;
+}
+/* end POP UP */
+
 /*handle animation */
 .tp-animation{
   opacity: 0;
@@ -924,3 +994,4 @@ h4{
 @import "../css/baogia.scss";
 @import "../css/customer.scss";
 @import "../css/dieukhoan.scss";
+@import "../css/about.scss";
