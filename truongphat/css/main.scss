@@ -27,7 +27,6 @@ del,
 dfn,
 em,
 font,
-img,
 ins,
 kbd,
 q,
@@ -136,7 +135,6 @@ a:focus, a:hover{
 img{
     max-width: 100%;
     height: auto;
-    vertical-align: middle;
 }
 
 footer{
@@ -995,3 +993,4 @@ h4{
 @import "../css/customer.scss";
 @import "../css/dieukhoan.scss";
 @import "../css/about.scss";
+@import "../css/contact.scss";
