@@ -50,28 +50,20 @@ function initialize() {
         position: center
     });
     marker.setMap(map);
+    google.maps.event.trigger(map, 'resize');
+    map.setCenter(center);
 }
 
 $(function() {
     $('#loc-1').on('click', function () {
-      //document.getElementById('map-canvas').style.display="block";
       //initialize();
       center = new google.maps.LatLng(10.783357, 106.683961);
-        $('#baogia-popup').modal({
-            backdrop: 'static',
-            keyboard: true
-        }).on('shown.bs.modal', function () {
-              var marker = new google.maps.Marker({
-                  map: map,
-                  position: center
-              });
-              marker.setMap(map);
-              google.maps.event.trigger(map, 'resize');
-              map.setCenter(center);
-              
+      $('#map-canvas').addClass('active'); 
+        var marker = new google.maps.Marker({
+          map: map,
+          position: center
         });
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(center);
     });
-    $('.close-popup').click(function(){
-      $(this).parent().modal('toggle');
-    })
 });
