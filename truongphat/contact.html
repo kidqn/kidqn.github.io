@@ -20,7 +20,7 @@
     <script src="./lib/waypoint/jquery.waypoints.min.js"></script>
     <script src="./lib/owl_carousel/owl.carousel.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoscCTGbhfrR9Kh53atE9rrCK1FqYjmkY&callback=initMap" type="text/javascript"></script>
+
 </head>
 
 <body class="contact-p">
@@ -151,15 +151,13 @@
     </div>
 </footer>
 <!-- MODAL MAP DIALOG-->
- <div id="modal" class="modal">
-    <div class="modal-body">
-        <div id="map-canvas"></div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" data-dismiss="modal" class="btn btn-primary" data-value="1">Continue</button>
-        <button type="button" data-dismiss="modal" class="btn" data-value="0">Cancel</button>
+<div id="baogia-popup" class="tp-popup modal">
+    <div class="close-popup"></div>
+    <div class="container clearfix">
+            <div id="map-canvas"></div>
     </div>
 </div>
+
 <!-- custom js -->
 <script src="./js/service.js"></script>
 <script src="./js/contact.js"></script>

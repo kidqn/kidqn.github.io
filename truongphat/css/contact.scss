@@ -101,4 +101,13 @@ ul.social-network{
 }
 #map-canvas {
     height: 400px;
+    width: 500px;
+}
+#baogia-popup.modal.fade.in{    
+    visibility: visible;
+}
+
+#baogia-popup.modal.fade{
+    display: block;
+    visibility: hidden;
 }
