@@ -26,10 +26,5 @@ body.dieukhoan-p{
 .dieukhoan-p #dieukhoan-banner{
     background: url(../images/dieukhoan_banner.png) center center no-repeat;
     background-size: cover;
-    position: relative;
-	&:before{
-		content: '';
-		display: block;
-		padding-top: 21.05%;
-	}
+	height: 400px;    
 }

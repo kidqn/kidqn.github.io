@@ -44,10 +44,9 @@ body.partner-p{
 .partner-p #partner-banner{
 	background: url('../images/pn/partner_banner.png') center center no-repeat;
 	background-size: cover;
-	&:before{
-		content: '';
-		display: block;
-		padding-top: 21.05%;
+	height: 400px;
+	h2{
+		left: -100px;
 	}
 }
 .partner-p #partner-top-section{

@@ -12,15 +12,7 @@ body.contact-p{
 	background: url('../images/contact/contact_banner.png') center center no-repeat;
 	background-size: cover;
 	position: relative;
-	.title-heading-left-line{
-	    top: 40%;
-	    left: 15%;
-	}
-	&:before{
-		content: '';
-		display: block;
-		padding-top: 20.83%;
-	}
+	height: 400px;
 }
 .contact-p .text-section{
 	padding-top: 40px;
@@ -84,7 +76,7 @@ body.contact-p{
 	position: absolute;
 	height: 400px;
     width: 500px;
-    top: -50%;
+    top: -200%;
     left: 50%;
     &.active{
     	top: 55%;

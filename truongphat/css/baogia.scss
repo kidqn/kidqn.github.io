@@ -12,12 +12,7 @@ body.baogia-p{
 .baogia-p #baogia-banner{
 	background: url('../images/baogia/baogia.png') center center no-repeat;
 	background-size: cover;
-	position: relative;
-	&:before{
-		content: '';
-		display: block;
-		padding-top: 20.83%;
-	}
+	height: 400px;
 }
 #baogia-top-section{
 	position: relative;

@@ -44,11 +44,7 @@ body.customer-p{
 .customer-p #customer-banner{
 	background: url('../images/cus/customer_banner.png') center center no-repeat;
 	background-size: cover;
-	&:before{
-		content: '';
-		display: block;
-		padding-top: 21.05%;
-	}
+	height: 400px;
 }
 .customer-p .list-detail{
 	margin-top: 80px;
