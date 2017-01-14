@@ -157,6 +157,11 @@ footer{
                 margin: 0 0 5px 0;
             }
         }
+        &> li:nth-last-of-type(1){
+            &>p{
+                margin: 0 0 22px 0;
+            }
+        }
         li.logo{
             margin: 7px 100px 0 0;
         }
@@ -164,7 +169,7 @@ footer{
             margin: 0 70px 0 0;
         }
         li.branches{
-            margin: 0 99px 0 0;
+            margin: 0 95px 0 0;
         }
         .tel{
             margin-right: 24px;
@@ -183,43 +188,6 @@ footer{
             color: #888888;
             font-weight:normal;
             line-height: 169.23%;
-        }
-    }
-    .social-network{
-        & > .title{
-            margin: 0 0 22px 0;
-        }
-        & > a{
-            width: 18px;
-            height: 18px;
-            display: inline-block;
-            vertical-align: top;
-            img:nth-last-of-type(1){
-                display: none;
-            }
-            &:hover{
-                img:nth-last-of-type(1){
-                    display: block;
-                }
-                img:nth-of-type(1){
-                    display: none;
-                }
-            }
-        }
-        & > a:not(:nth-last-of-type(1)){
-            margin: 0 30px 0 0;
-        }
-        & > a:nth-last-of-type(1){
-            margin:0;
-        }
-        .twitter{
-            padding: 2px 0 0 0;
-        }
-        .youtube{
-            padding: 3px 0 0 0;
-        }
-        .email{
-            padding: 3px 0 0 0;
         }
     }
     .copyright{
@@ -252,6 +220,42 @@ footer{
     height: 60px;
     display: block;
 }
+ul.social-network{
+    li{
+        display: inline-block;
+        height: 22px;
+        vertical-align: top;
+        margin-right: 32px;
+        img{
+            vertical-align: top;
+        }
+        img:nth-of-type(2){
+            display: none;
+        }
+        &:hover{
+            img:nth-of-type(1){
+                display: none;
+            }
+            img:nth-of-type(2){
+                display: block;
+            }
+        }
+        a{
+            display: block;
+        }
+    }
+    li:nth-last-of-type(1){
+        margin-right: 0;
+    }
+    .twitter{
+        padding-top: 2px;
+    }
+    .youtube, .email{
+        padding-top: 3px;
+    }
+}
+
+
 .container{
     position: relative;
     padding: 0;
