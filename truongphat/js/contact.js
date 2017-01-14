@@ -1,27 +1,3 @@
-/*var contactGEO = {};
-function initialize() {
-    contactGEO.uluru = {lat: 10.783098, lng: 106.683978};
-    contactGEO.map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: contactGEO.uluru
-    });
-    var marker = new google.maps.Marker({
-        position: contactGEO.uluru,
-        map: contactGEO.map
-    });
-}
-$(function() {
-
-    $('#loc-1').on('click', function () {
-        $('#modal').modal({
-            backdrop: 'static',
-            keyboard: true
-        }).on('shown.bs.modal', function () {
-            google.maps.event.trigger(contactGEO.map, 'resize');
-            contactGEO.map.setCenter(contactGEO.uluru);
-        });
-    });
-});*/
 // global variables
 var map;
 var center;
@@ -55,10 +31,10 @@ function initialize() {
 }
 
 $(function() {
-    $('#loc-1').on('click', function () {
+    $('#loc-hcm').on('click', function () {
       //initialize();
       center = new google.maps.LatLng(10.783357, 106.683961);
-      $('#map-canvas').addClass('active'); 
+      $('#map-show').addClass('active'); 
         var marker = new google.maps.Marker({
           map: map,
           position: center
@@ -66,4 +42,20 @@ $(function() {
         google.maps.event.trigger(map, 'resize');
         map.setCenter(center);
     });
+
+    $('#loc-hn').on('click', function () {
+      //initialize();
+      center = new google.maps.LatLng(21.006689, 105.850306);
+      $('#map-show').addClass('active'); 
+        var marker = new google.maps.Marker({
+          map: map,
+          position: center
+        });
+        google.maps.event.trigger(map, 'resize');
+        map.setCenter(center);
+    });
+
+    $('#map-show .close-popup').click(function(){
+      $(this).parent().removeClass('active');
+    })
 });

@@ -477,7 +477,7 @@ p{
     line-height: 1.63;
     margin: 0 0 38px 0;
     &.no-break{
-        margin: 0;
+        margin-bottom: 0 !important;
     }
 }
 p.pullQuote{
@@ -756,7 +756,7 @@ h4{
             p{
                 font-family: 'Roboto';
                 text-align: left;
-                padding-left: 10px;
+                padding-left: 20px;
                 margin: 0;
                 height: 50px;
                 background-color: #ffffff;
@@ -769,6 +769,10 @@ h4{
         &:hover{
             figure{
                 box-shadow: 10px 10px 25px 0 rgba(0,0,0,0.15);
+                p {
+                    color: #f58221;
+                    font-weight: bold;
+                }
             }
         }
     }
@@ -781,6 +785,7 @@ h4{
 /* pagination */
 .pagination-bar{
     text-align: center;
+    margin-bottom: 75px;
     ul{
         li{
             display: inline-block;
@@ -872,10 +877,48 @@ h4{
     top: 40px;
     right: 40px;
     background: url(../images/ic-close_black.svg) center center no-repeat;
-    background-size: 26px;
+    background-size: 26px 26px;
+    cursor: pointer;
 }
 /* end POP UP */
-
+/* tabpanel doi tac - partners */
+.partner-panel{
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    padding: 15px 0;
+    position: absolute;
+    z-index: 2;
+    top: 150px;
+    right: 0;
+    border: 0;
+    width: 380px;
+    height: 50px;
+    line-height: 22px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.1);
+    li{ 
+        list-style: none;
+        float: left;
+        width: 50%;
+        height: 100%;
+        a{
+            padding: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #888888;
+        }
+        &:nth-last-of-type(1){
+            border-left: 1px solid #e9e9e9;
+        }
+        &.active{
+                a{
+                    color: #f58221;
+                }
+        }
+    }
+}
 /*handle animation */
 .tp-animation{
   opacity: 0;
@@ -912,53 +955,28 @@ h4{
         background-image: url(../images/ic-arrow-downward.svg);
     }
 }
-.btn-animate_left_to_right{
-    width: 180px;
-    min-width: 180px;
+.btn-oval-bg_orange{
+    width: 160px;
     height: 50px;
-    border-radius: 2px;
-    font-size: 18px;
+    border-radius: 67px;
+    color: #fff;
+    background-color: #f58221;
+    box-shadow: 0 10px 20px 0 rgba(255,131,36,0.3);
+    font-family: 'Roboto';
+    font-size: 1.125em;
+    line-height: 2.11;
     font-weight: 500;
     text-align: center;
-    color:#fff;
-    background: #f58221;
-    border:0;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px transparent;
-    position: relative;
-    -webkit-transition-property: color;
-    transition-property: color;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    border: 0;
     &:hover{
         color: #f58221;
-        border: 1px solid #f58221;
-        &:before{
-            -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-        }
+        background: #fff;
     }
-    &:before{
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background:#fff;
-        border-radius: 2px;
-        -webkit-transform: scaleX(0);
-        transform: scaleX(0);
-        -webkit-transform-origin: 0 50%;
-        transform-origin: 0 50%;
-        -webkit-transition-property: transform;
-        transition-property: transform;
-        -webkit-transition-duration: 0.3s;
-        transition-duration: 0.3s;
-        -webkit-transition-timing-function: ease-out;
-        transition-timing-function: ease-out;
+    &:focus, &:active{
+        color: #fff;
+        background-color: #f58221;
+        border: 0;
+        outline: 0;
     }
 }
 @media (min-width: 1200px){
@@ -994,3 +1012,4 @@ h4{
 @import "../css/dieukhoan.scss";
 @import "../css/about.scss";
 @import "../css/contact.scss";
+@import "../css/partner.scss";

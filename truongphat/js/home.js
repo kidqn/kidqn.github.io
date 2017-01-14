@@ -70,6 +70,8 @@ $(function(){
   }
   onScrollAnimationInit( $('.tp-animation') );
 
+
+  ////////HANDLE scrolling top header ////////////
   var iScrollPos = 0;
   var heightHeader = $('#top-nav');
   $(window).scroll(function () {
@@ -99,4 +101,28 @@ $(function(){
   }, {
     offset:'50%'
   });
+
+  //handle resize event//
+  //chinh size banner video khi kick thuoc man hinh thay doi
+  function resetStyleHomePage(){
+    $('#banner-video').css('height',window.innerHeight + 'px');
+    $('#about').css('margin-top',window.innerHeight + 'px');
+  }
+  window.addEventListener("resize", resizeThrottler, false);
+  var resizeTimeout;
+    function resizeThrottler() {
+      // ignore resize events as long as an actualResizeHandler execution is in the queue
+      if ( !resizeTimeout ) {
+        resizeTimeout = setTimeout(function() {
+          resizeTimeout = null;
+          actualResizeHandler();
+       
+         // The actualResizeHandler will execute at a rate of 15fps
+         }, 66);
+      }
+    }
+
+    function actualResizeHandler() {
+      resetStyleHomePage();
+    }
 })
