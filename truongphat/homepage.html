@@ -30,7 +30,7 @@
                 <img src="images/logo_white.svg" alt="logo truong phat">
                 <img src="images/logo_notext.svg" alt="logo truong phat">
             </a>
-            <div class="menu-home">
+            <div id="menu-home" class="menu-home">
                 <a href="about.html" class="nav-link">GIỚI THIỆU</a>
                 <a href="#" class="nav-link">DỊCH VỤ</a>
                 <a href="doitac.html" class="nav-link">ĐỐI TÁC</a>
@@ -42,18 +42,18 @@
             </div>
         </div>
     </div>
-    <div id="search-view-overlay" class="overlay modal fade-in">
-        <div class="container">
+    <div id="search-view-overlay" class="overlay modal fade">
             <div class="search-field-home-group">
-                <div class="input-group">
-                  <input type="search" name="" id="baogia-search-field" class="form-control top-search-field" value="" required="required" title="" placeholder="Tìm theo tên báo, tạp chí, dịch vụ,… ">
-                  <span class="input-group-btn">
-                    <button id="baogia-search-btn" type="button" class="btn btn-default search-categories-btn">     
-                    </button>
-                  </span>
+                <div class="container">
+                    <div class="input-group">
+                      <input type="search" name="" id="home-search-field" class="form-control " value="" required="required" title="" placeholder="Tìm kiếm">
+                      <span class="input-group-btn">
+                        <button id="home-enter-search-btn" type="button" class="btn">     
+                        </button>
+                      </span>
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
 </header>
 <section id="banner-video">
@@ -576,6 +576,7 @@
     </div>
 </footer>
 <!-- custom js -->
+<script src="./js/service.js"></script>
 <script src="./js/home.js"></script>
 </body>
 

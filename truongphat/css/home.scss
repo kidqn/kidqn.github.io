@@ -79,6 +79,11 @@
 	    box-shadow: 10px 10px 25px 0 rgba(0, 0, 0, 0.15);
 	    .search-home-ic{
 	    	background-image:url(../images/ic-search_black.svg);
+	    	&.active{
+			    background-image: url(../images/ic-search-orange.png);
+			    background-repeat: no-repeat;
+			    background-size: 24px 24px;
+		    }
 	    }
 	    #logo-home{
     	    width: 80px;
@@ -152,7 +157,43 @@
 		opacity: 0.7;
 	}
 }
-
+#search-view-overlay{
+	padding-right: 0 !important;
+}
+.search-field-home-group{
+    margin-top: 80px;
+    padding-top: 75px;
+    height: 210px;
+    background: #fff;
+    .input-group{
+    	padding-bottom: 15px;
+    	border-bottom: 2px solid #000;
+    	input{
+    		border: 0;
+		    border-radius: 0;
+		    background: transparent;
+		    padding: 0;
+		    height: 42px;
+		    box-shadow: none;
+		    font-size: 2.25em;
+		    font-weight: bold;
+		    font-style: normal;
+		    color: #333333;
+    	}
+    }
+}
+#home-enter-search-btn{
+	height: 36px;
+    width: 36px;
+    box-shadow: none;
+    background-color: transparent;
+    background: url(../images/ic-keyboard-return.svg) center center no-repeat;
+    background-size: 100% 100%;
+    &.active{
+    	background:url(../images/ic-keyboard-return-color.svg) center center no-repeat; 
+    	background-size: 100% 100%;
+    }
+}
 /*customer*/
 #customer{
 	text-align: center;

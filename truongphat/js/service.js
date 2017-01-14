@@ -1,3 +1,37 @@
+//define a delay function
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+// set scrolling animation function
+function onScrollAnimationInit( items, trigger ) {
+  items.each( function() {
+    var tpElement = $(this),
+        tpAnimationClass = tpElement.attr('data-tp-animation'),
+        tpAnimationDelay = tpElement.attr('data-tp-animation-delay');
+      
+        tpElement.css({
+          '-webkit-animation-delay':  tpAnimationDelay,
+          '-moz-animation-delay':     tpAnimationDelay,
+          'animation-delay':          tpAnimationDelay
+        });
+
+        var tpTrigger = ( trigger ) ? trigger : tpElement;
+        
+        tpTrigger.waypoint(function() {
+          tpElement.addClass('animated').addClass(tpAnimationClass);
+          tpElement.removeAttr('data-tp-animation data-tp-animation-delay style').removeClass('tp-animation');
+          },{
+              triggerOnce: true,
+              offset: '90%'
+        });
+        //tpElement.removeAttr('data-tp-animation data-tp-animation-delay style').removeClass('tp-animation');
+  });
+}
+
 $(function(){
   var iScrollPos = 0;
   var lastScrollTop = 0;
@@ -29,29 +63,6 @@ $(function(){
 
 })
 $(window).load(function(){
-    function onScrollAnimationInit( items, trigger ) {
-    items.each( function() {
-      var tpElement = $(this),
-          tpAnimationClass = tpElement.attr('data-tp-animation'),
-          tpAnimationDelay = tpElement.attr('data-tp-animation-delay');
-        
-          tpElement.css({
-            '-webkit-animation-delay':  tpAnimationDelay,
-            '-moz-animation-delay':     tpAnimationDelay,
-            'animation-delay':          tpAnimationDelay
-          });
-
-          var tpTrigger = ( trigger ) ? trigger : tpElement;
-          
-          tpTrigger.waypoint(function() {
-            tpElement.addClass('animated').addClass(tpAnimationClass);
-            tpElement.removeAttr('data-tp-animation data-tp-animation-delay style').removeClass('tp-animation');
-            },{
-                triggerOnce: true,
-                offset: '90%'
-          });
-          //tpElement.removeAttr('data-tp-animation data-tp-animation-delay style').removeClass('tp-animation');
-    });
-  }
+  //initialize animation
   onScrollAnimationInit( $('.tp-animation') );
 })

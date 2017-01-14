@@ -136,7 +136,9 @@ img{
     max-width: 100%;
     height: auto;
 }
-
+.modal-open{
+    padding-right: 0 !important;
+}
 footer{
     background-color: #333333;
     font-size: 0.8125em;
@@ -262,7 +264,6 @@ ul.social-network{
 }
 .overlay {
     background-color: rgba(0,0,0,0.8);
-    top: 90px;
     box-shadow: 0 1px 2px 1px #e2e2e2;
     -webkit-box-shadow: 0 1px 2px 1px #e2e2e2;
 }

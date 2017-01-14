@@ -44,33 +44,6 @@ $(function(){
     nav:true,
     navText: ["",""],
   })
-  function onScrollAnimationInit( items, trigger ) {
-    items.each( function() {
-      var tpElement = $(this),
-          tpAnimationClass = tpElement.attr('data-tp-animation'),
-          tpAnimationDelay = tpElement.attr('data-tp-animation-delay');
-        
-          tpElement.css({
-            '-webkit-animation-delay':  tpAnimationDelay,
-            '-moz-animation-delay':     tpAnimationDelay,
-            'animation-delay':          tpAnimationDelay
-          });
-
-          var tpTrigger = ( trigger ) ? trigger : tpElement;
-          
-          tpTrigger.waypoint(function() {
-            tpElement.addClass('animated').addClass(tpAnimationClass);
-            tpElement.removeAttr('data-tp-animation data-tp-animation-delay style').removeClass('tp-animation');
-            },{
-                triggerOnce: true,
-                offset: '85%'
-          });
-          //tpElement.removeAttr('data-tp-animation data-tp-animation-delay style').removeClass('tp-animation');
-    });
-  }
-  onScrollAnimationInit( $('.tp-animation') );
-
-
   ////////HANDLE scrolling top header ////////////
   var iScrollPos = 0;
   var heightHeader = $('#top-nav');
@@ -125,4 +98,35 @@ $(function(){
     function actualResizeHandler() {
       resetStyleHomePage();
     }
+
+  //handle search home button
+  $('#search-home-btn').on('click', function () {
+    if( !$(this).hasClass('active') ){
+      //show search
+      $('#search-view-overlay')[0].appendChild($('#top-nav')[0]);
+      $('#top-nav').addClass('fixed-top open');
+      $('#top-nav #search-home-btn').addClass('active');
+      $('#search-view-overlay').modal('show');
+    }else{
+      //close search
+      $('#top-nav').removeClass('fixed-top open');
+      $('#top-nav #search-home-btn').removeClass('active');
+      $( "header" )[0].appendChild($('#top-nav')[0]);
+      $('#search-view-overlay').modal('toggle');
+    }
+  });
+
+  //when user input key search
+    $('#home-search-field').keyup(function(event) {
+      var textInput = $(this).val();
+      delay(function(){
+          //show result table
+          if(textInput !== '' || textInput){
+            //change color of icon enter keyboard
+            $('#home-enter-search-btn').addClass('active');
+          }else{
+            $('#home-enter-search-btn').removeClass('active');
+          }
+      }, 100 );
+    });
 })
