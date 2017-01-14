@@ -109,7 +109,9 @@ $(function(){
       $('#search-view-overlay').modal('show');
     }else{
       //close search
-      $('#top-nav').removeClass('fixed-top open');
+      var tmp = $(this).scrollTop();
+      console.log(tmp)
+      $('#top-nav').removeClass('open');
       $('#top-nav #search-home-btn').removeClass('active');
       $( "header" )[0].appendChild($('#top-nav')[0]);
       $('#search-view-overlay').modal('toggle');
