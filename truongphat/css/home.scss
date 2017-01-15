@@ -202,12 +202,16 @@
     background-size: 100% 100%;
 }
 #home-enter-search-btn{
-	height: 36px;
+    height: 36px;
     width: 36px;
     box-shadow: none;
     background-color: transparent;
     background: url(../images/ic-keyboard-return.svg) center center no-repeat;
     background-size: 100% 100%;
+    -webkit-transition-property: none;
+    -moz-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none;
     &.active{
     	background:url(../images/ic-keyboard-return-color.svg) center center no-repeat; 
     	background-size: 100% 100%;
