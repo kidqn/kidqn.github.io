@@ -101,6 +101,9 @@ $(function(){
 
   //handle search home button
   $('#search-home-btn').on('click', function () {
+    var objHeader = {};
+    objHeader.className = $('#top-nav')[0].getAttribute('class');
+    objHeader.styleName = $('#top-nav')[0].getAttribute('style');
     if( !$(this).hasClass('active') ){
       //show search
       $('#search-view-overlay')[0].appendChild($('#top-nav')[0]);
@@ -109,9 +112,8 @@ $(function(){
       $('#search-view-overlay').modal('show');
     }else{
       //close search
-      var tmp = $(this).scrollTop();
-      console.log(tmp)
-      $('#top-nav').removeClass('open');
+      $('#top-nav').attr('class',objHeader.className);
+      $('#top-nav').attr('style',objHeader.styleName);
       $('#top-nav #search-home-btn').removeClass('active');
       $( "header" )[0].appendChild($('#top-nav')[0]);
       $('#search-view-overlay').modal('toggle');
