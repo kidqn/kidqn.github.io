@@ -115,6 +115,9 @@
 	    .menu-home{
 	    	.nav-link{
 	    		color: #1c1f4b;
+	    		&:hover{
+	    			color: #ff7500;
+	    		}
 	    	}
 	    }
 	}
