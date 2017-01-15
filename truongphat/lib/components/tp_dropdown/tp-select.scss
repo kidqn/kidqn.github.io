@@ -183,4 +183,21 @@
         color: initial;
         background: initial;
     }
+    &.search{
+        width: 116px;
+        span::after{
+            background: url(../images/ic-arrow-top-color.png) center 1px no-repeat;
+            background-size: 1em 1em;
+            -webkit-transform: translateY(-50%) rotate(0);
+            transform: translateY(-50%) rotate(0);
+        }
+    }
+    &.tp-dropdown-active.search{
+        span::after{
+            background: url(../images/ic-arrow-top-color.png) center 6px no-repeat;
+            background-size: 1em 1em;
+            -webkit-transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
 }

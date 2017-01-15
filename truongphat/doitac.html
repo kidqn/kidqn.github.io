@@ -30,17 +30,30 @@
                 <img src="images/logo_white.svg" alt="logo truong phat">
                 <img src="images/logo_notext.svg" alt="logo truong phat">
             </a>
-            <div class="menu-home">
-                <a href="#" class="nav-link">GIỚI THIỆU</a>
+            <div id="menu-home" class="menu-home">
+                <a href="about.html" class="nav-link">GIỚI THIỆU</a>
                 <a href="#" class="nav-link">DỊCH VỤ</a>
-                <a href="#" class="nav-link">ĐỐI TÁC</a>
-                <a href="#" class="nav-link">KHÁCH HÀNG</a>
-                <a href="#" class="nav-link">BÁO GIÁ QUẢNG CÁO</a>
-                <a href="#" class="nav-link">TIN TỨC</a>
-                <a href="#" class="nav-link">LIÊN HỆ</a>
-                <a href="" class="nav-link search-home-ic"></a>
+                <a href="doitac.html" class="nav-link">ĐỐI TÁC</a>
+                <a href="customer.html" class="nav-link">KHÁCH HÀNG</a>
+                <a href="baogia.html" class="nav-link">BÁO GIÁ QUẢNG CÁO</a>
+                <a href="news.html" class="nav-link">TIN TỨC</a>
+                <a href="contact.html" class="nav-link">LIÊN HỆ</a>
+                <a id="search-home-btn" class="nav-link search-home-ic"></a>
             </div>
         </div>
+    </div>
+    <div id="search-view-overlay" class="overlay modal fade">
+            <div class="search-field-home-group">
+                <div class="container">
+                    <div class="input-group">
+                      <input type="search" name="" id="home-search-field" class="form-control " value="" required="required" title="" placeholder="Tìm kiếm">
+                      <span class="input-group-btn">
+                        <button id="home-enter-search-btn" type="button" class="btn">     
+                        </button>
+                      </span>
+                    </div>
+                </div>
+            </div>
     </div>
 </header>
 <section id="partner-banner">  
@@ -416,6 +429,7 @@
 </footer>
 <!-- custom js -->
 <script src="./js/service.js"></script>
+<script src="./js/search.js"></script>
 </body>
 
 </html>

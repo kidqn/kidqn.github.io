@@ -44,41 +44,6 @@ $(function(){
     nav:true,
     navText: ["",""],
   })
-  ////////HANDLE scrolling top header ////////////
-  var iScrollPos = 0;
-  var heightHeader = $('#top-nav');
-  $(window).scroll(function () {
-      var iCurScrollPos = $(this).scrollTop();
-      if(iCurScrollPos < 300){
-        $('#top-nav').removeClass('fixed-top open');
-        $('#top-nav').attr('style','');
-        return;
-      }
-      if (iCurScrollPos > iScrollPos) {
-        //Scrolling Down
-        $('#top-nav').addClass('fixed-top');
-        $('#top-nav').attr('style','top: -90px');
-      } else {
-        //Scrolling Up
-        if( $('#top-nav').hasClass('fixed-top')){
-          $('#top-nav').addClass('open');
-          $('#top-nav').attr('style','');
-        }
-      }
-      
-      iScrollPos = iCurScrollPos;
-  });
-/*  $('#about').waypoint(function(direction) {
-
-    if(direction == 'down'){
-      $('#top-nav').addClass('fixed-top');
-    }else{
-      $('#top-nav').removeClass('fixed-top open');
-    }
-  }, {
-    offset:'50%'
-  });*/
-
   //handle resize event//
   //chinh size banner video khi kick thuoc man hinh thay doi
   function resetStyleHomePage(){
@@ -102,39 +67,4 @@ $(function(){
     function actualResizeHandler() {
       resetStyleHomePage();
     }
-
-  //handle search home button
-  $('#search-home-btn').on('click', function () {
-    var objHeader = {};
-    objHeader.className = $('#top-nav')[0].getAttribute('class');
-    objHeader.styleName = $('#top-nav')[0].getAttribute('style');
-    if( !$(this).hasClass('active') ){
-      //show search
-      $('#search-view-overlay')[0].appendChild($('#top-nav')[0]);
-      $('#top-nav').addClass('fixed-top open');
-      $('#top-nav #search-home-btn').addClass('active');
-      $('#search-view-overlay').modal('show');
-    }else{
-      //close search
-      $('#top-nav').attr('class',objHeader.className);
-      $('#top-nav').attr('style',objHeader.styleName);
-      $('#top-nav #search-home-btn').removeClass('active');
-      $( "header" )[0].appendChild($('#top-nav')[0]);
-      $('#search-view-overlay').modal('toggle');
-    }
-  });
-
-  //when user input key search
-    $('#home-search-field').keyup(function(event) {
-      var textInput = $(this).val();
-      delay(function(){
-          //show result table
-          if(textInput !== '' || textInput){
-            //change color of icon enter keyboard
-            $('#home-enter-search-btn').addClass('active');
-          }else{
-            $('#home-enter-search-btn').removeClass('active');
-          }
-      }, 100 );
-    });
 })

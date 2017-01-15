@@ -115,11 +115,11 @@ body {
     zoom:1;
 }
 button, .btn{
-    -webkit-transition: background 200ms linear;
-    -moz-transition: background 200ms linear;
-    -ms-transition: background 200ms linear;
-    -o-transition: background 200ms linear;
-    transition: background 200ms linear;
+    -webkit-transition: background 100ms linear;
+    -moz-transition: background 100ms linear;
+    -ms-transition: background 100ms linear;
+    -o-transition: background 100ms linear;
+    transition: background 100ms linear;
     &:focus{
         outline: 0;
     }
@@ -1024,3 +1024,4 @@ h4{
 @import "../css/about.scss";
 @import "../css/contact.scss";
 @import "../css/partner.scss";
+@import "../css/search.scss";

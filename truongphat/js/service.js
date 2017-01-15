@@ -33,6 +33,12 @@ function onScrollAnimationInit( items, trigger ) {
 }
 
 $(function(){
+    //init all dropdown select
+  [].slice.call( document.querySelectorAll( 'select.tp-dropdown-select' ) ).forEach( function(el) { 
+    new SelectFx(el);
+  } );
+
+  //set action header
   var iScrollPos = 0;
   var lastScrollTop = 0;
   var delta = 5;
@@ -41,13 +47,17 @@ $(function(){
       ///
       var iCurScrollPos = $(this).scrollTop();
       // Make sure they scroll more than delta
-      if(Math.abs(iScrollPos - iCurScrollPos) <= delta)
-          {return;}
       if(iCurScrollPos < heightHeaderBar){
+        //Note: different from homepage a bit
+        if($('body').hasClass('home-p')){
+          $('#top-nav').removeClass('fixed-top open');
+        }else{
           $("#header").removeClass('fixed-top');
-          $('#header').attr('style','');
+        }
+        $('#header').attr('style','');
+        return;
       }
-      if (iCurScrollPos >= heightHeaderBar && iCurScrollPos > iScrollPos) {
+      if (iCurScrollPos > iScrollPos) {
         //Scrolling Down
         $('#top-nav').addClass('fixed-top');
         $('#top-nav').attr('style','top: -90px');
@@ -60,7 +70,6 @@ $(function(){
       }
       iScrollPos = iCurScrollPos;
   });
-
 })
 $(window).load(function(){
   //initialize animation
