@@ -49,11 +49,15 @@ $(function(){
   var heightHeader = $('#top-nav');
   $(window).scroll(function () {
       var iCurScrollPos = $(this).scrollTop();
+      if(iCurScrollPos < 300){
+        $('#top-nav').removeClass('fixed-top open');
+        $('#top-nav').attr('style','');
+        return;
+      }
       if (iCurScrollPos > iScrollPos) {
         //Scrolling Down
-        if( $('#top-nav').hasClass('fixed-top')){
-          $('#top-nav').attr('style','top: -90px');
-        }
+        $('#top-nav').addClass('fixed-top');
+        $('#top-nav').attr('style','top: -90px');
       } else {
         //Scrolling Up
         if( $('#top-nav').hasClass('fixed-top')){
@@ -64,7 +68,7 @@ $(function(){
       
       iScrollPos = iCurScrollPos;
   });
-  $('#about').waypoint(function(direction) {
+/*  $('#about').waypoint(function(direction) {
 
     if(direction == 'down'){
       $('#top-nav').addClass('fixed-top');
@@ -73,7 +77,7 @@ $(function(){
     }
   }, {
     offset:'50%'
-  });
+  });*/
 
   //handle resize event//
   //chinh size banner video khi kick thuoc man hinh thay doi
