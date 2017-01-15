@@ -136,9 +136,6 @@ img{
     max-width: 100%;
     height: auto;
 }
-.modal-open{
-    padding-right: 0 !important;
-}
 footer{
     background-color: #333333;
     font-size: 0.8125em;
@@ -345,6 +342,41 @@ ul.social-network{
             display: inline-block;
             margin: auto;
             padding: 16px 2px;
+        }
+    }
+}
+.nav-circle{
+    .owl-prev, .owl-next{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        margin-top: -20px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        &:hover{
+            box-shadow: 10px 10px 25px 0 rgba(0,0,0,0.15);
+        }
+        &:before{
+            font-family: 'FontAwesome';
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 20px;
+            line-height: 40px;
+            color: #888888;
+        }
+    }
+    .owl-prev{
+        left: -15px;
+        &:before{
+            content: "\f104";
+        }
+    }
+    .owl-next{
+        right: -15px;
+        &:before{
+            content: "\f105";
         }
     }
 }
@@ -1025,3 +1057,4 @@ h4{
 @import "../css/contact.scss";
 @import "../css/partner.scss";
 @import "../css/search.scss";
+@import "../css/dichvu.scss";

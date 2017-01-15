@@ -1,0 +1,151 @@
+body.dichvu-p{
+	padding-top: 80px;
+}
+#dichvu-top-section{
+		border-radius: 2px;
+	    background-color: #ffffff;
+	    box-shadow: 10px 10px 25px 0 rgba(0,0,0,0.15);
+	    padding: 20px 60px 70px 60px;
+	    margin-bottom: 40px;
+	  .icon{
+	  	position: absolute;
+	  	top: 50px;
+	  	left: 50px;
+	  	height: 36px;
+	  	width: 33px;
+	  	background: url(../images/ic-tp-top-section.svg) center center no-repeat;
+	  	background-size: 100% 100%;
+	  }
+	.vertical-logo{
+		top: 140px;
+    	left: 17px;
+    	width: 100px;
+    	&:before{
+    		width: 110px;
+    		margin-left: -110px;
+    	}
+	}
+	.title-group{
+	    margin: 0 0 23px 0;
+	    .title-heading{
+	        margin: 45px 0 0 0;
+	    }
+	}
+	p.info{
+	    font-family: 'Tinos';
+	    max-width: 780px;
+	    font-weight: normal;
+	    font-size: 1.125em;
+	    text-align: left;
+	    color: #555555;
+	    margin: 0 auto 38px auto;
+	}
+}
+
+.dichvu-p{
+	main{
+		& > .container{
+			margin-top: -75px;
+			min-height: 500px;
+		}
+		.title-heading{
+			b{
+				color: #f58221;
+			}
+		}
+		.content-body{
+			p.info{
+				color: #555555;
+			}
+			ul{
+				margin-left: 20px;
+			}
+		}
+	}
+}
+.dichvu-p #dichvu-banner{
+	background: url('../images/dichvu/dichvu_banner.png') center center no-repeat;
+	background-size: cover;
+	height: 400px;
+}
+.dichvu-p section#dichvu-booking{
+	padding-bottom: 70px;
+	.title-group{
+		margin-bottom: 30px;
+		.title-heading{
+			margin: 50px 0 0 0;
+		}
+		.title-shadow{
+			text-align: left;
+		}
+	}
+	p{
+		text-align: left;
+		margin: 0 0 38px 0;
+	}
+	.image{
+	    margin-top: -100px;
+	    position: relative;
+	    right: -140px;
+	}
+}
+.dichvu-p section#event{
+    padding-top: 30px;
+    padding-bottom: 70px;
+    border-top: 1px solid #f1f1f1;
+	.title-group{
+		margin-bottom: 15px;
+		.title-heading{
+			margin: 50px 0 0 0;
+		}
+	}
+}
+#event-carousel{
+	margin-top: 50px;
+	figcaption{
+		display: none;
+	}
+}
+.dichvu-p section#crisis-management{
+	border-top: 1px solid #f1f1f1;
+    padding: 30px 60px 100px 60px;
+    margin-bottom: 70px;
+    border-top: 1px solid #f1f1f1;
+	.title-group{
+		margin-bottom: 50px;
+		.title-heading{
+			margin: 50px 0 0 0;
+		}
+	}
+	.crisis-content{
+		-webkit-column-count: 2; /* Chrome, Safari, Opera */
+	    -moz-column-count: 2; /* Firefox */
+	    column-count: 2;
+	    height: 510px;
+		p{
+		    font-family: 'Tinos';
+		    max-width: none;
+		    font-weight: normal;
+		    font-size: 1.125em;
+		    text-align: left;
+		    color: #555555;
+		    margin: 0 0 29px 0;
+		}
+	}
+}
+#zoom-img-dlg{
+	.modal-dialog{
+	  	width: 768px;
+	}
+	.modal-body{
+		padding: 0;
+	}
+	figcaption{
+		padding: 20px 25px 25px 20px;
+		p{
+			letter-spacing: 0.03em;
+			color: #888888;
+			margin: 0;
+		}
+	}
+}
