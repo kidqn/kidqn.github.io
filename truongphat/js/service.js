@@ -6,6 +6,7 @@ var delay = (function(){
     timer = setTimeout(callback, ms);
   };
 })();
+console.log(($('#menu-mobile-btn').css('display') == 'none'))
 // set scrolling animation function
 function onScrollAnimationInit( items, trigger ) {
   items.each( function() {
