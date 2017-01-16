@@ -1026,8 +1026,17 @@ h4{
     .container{
         width: 1180px;
     }
+    .row{
+        margin-right: -10px;
+        margin-left: -10px;
+        & > div{
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+    }
 }
-
+@media (min-width: 1200px) and (max-width: 1899px) {
+}
 @media (min-width: 992px) and (max-width: 1199px) {
 }
 

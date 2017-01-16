@@ -7,7 +7,7 @@ $(function(){
   }
   $("#khachhang-carousel").owlCarousel({
     loop:true,
-    margin:73,
+    margin: 33,
     nav:true,
     navText: ["",""],
     responsive:{

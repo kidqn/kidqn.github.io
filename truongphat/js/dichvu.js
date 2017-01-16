@@ -19,7 +19,7 @@ $(function(){
     $('#event-carousel .owl-item:not(.cloned)').on('click', function (event) {
       event.stopPropagation();
       var itemClone = $(this).find('figure').clone();
-      $('#zoom-img-dlg .modal-body')[0].innerHTML = null;
+      $('#zoom-img-dlg .modal-body')[0].innerHTML = '';
       itemClone.appendTo($('#zoom-img-dlg .modal-body'));
       $('#zoom-img-dlg').modal('show');
     });

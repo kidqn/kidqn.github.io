@@ -235,11 +235,12 @@
 #khachhang-carousel{
 	width: 100%;
 	margin: 55px 0;
+	padding:0 20px;
 	.owl-controls{
 		margin-top: 86px;
 	}
 	.owl-item{
-		padding: 0 20px 0 0;
+		padding: 0 20px;
 	}
 }
 
@@ -544,4 +545,29 @@
 		    margin: 45px 0 0 0;
 		}
 	}
+}
+
+@media (min-width: 1200px) and (max-width: 1899px) {
+	#top-nav{
+		.menu-home{
+			left: 300px;
+		}
+	}
+	#logo-home {
+	    left: 15px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 601px) and (max-width: 767px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+  
 }
