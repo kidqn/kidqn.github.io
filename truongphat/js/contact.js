@@ -41,6 +41,7 @@ $(function() {
         });
         google.maps.event.trigger(map, 'resize');
         map.setCenter(center);
+        $('#overlay').addClass('open'); 
     });
 
     $('#loc-hn').on('click', function () {
@@ -53,9 +54,10 @@ $(function() {
         });
         google.maps.event.trigger(map, 'resize');
         map.setCenter(center);
+        $('#overlay').addClass('open'); 
     });
 
     $('#map-show .close-popup').click(function(){
-      $(this).parent().removeClass('active');
+      $('#overlay').removeClass('open');
     })
 });

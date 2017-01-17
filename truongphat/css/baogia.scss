@@ -133,7 +133,11 @@
     text-align: center;
     color: #ffffff;
     padding: 0 10px;
-    border: 1px solid #f58221;
+    border: 0;
+    &:hover{
+    	background-color: #fff;
+    	color:#f58221;
+    }
 }
 
 @media (min-width: 1200) and (max-width: 1366){

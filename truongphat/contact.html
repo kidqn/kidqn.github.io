@@ -24,9 +24,22 @@
 </head>
 
 <body class="contact-p">
+<nav id="menu-mobile-left">
+    <ul class="clearfix">
+        <li><a href="about.html">GIỚI THIỆU</a></li>
+        <li><a href="dichvu.html">DỊCH VỤ</a></li>
+        <li><a href="doitac.html">ĐỐI TÁC</a></li>
+        <li><a href="doitac.html">KHÁCH HÀNG</a></li>
+        <li><a href="baogia.html">BÁO GIÁ QUẢNG CÁO</a></li>
+        <li><a href="news.html">TIN TỨC</a></li>
+        <li><a href="contact.html">LIÊN HỆ</a></li>
+
+    </ul>
+</nav>
 <header>
     <div id="top-nav" class="fixed-top open">
         <div class="container">
+            <a id="menu-mobile-btn"><span class="hamburger-btn"></span></a>
             <a id="logo-home" href="truongphat.com">
                 <img src="images/logo_white.svg" alt="logo truong phat">
                 <img src="images/logo_notext.svg" alt="logo truong phat">
@@ -57,14 +70,14 @@
             </div>
     </div>
 </header>
-<section id="contact-banner">  
-    <div class="container"><h2 class="title-heading-left-line">Liên hệ</h2>  </div>
-</section>
-<main>
+<main id="main">
+    <section id="contact-banner">  
+        <div class="container"><h2 class="title-heading-left-line">Liên hệ</h2>  </div>
+    </section>
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-6 text-section">
+            <div class="col-xs-12 col-sm-6 text-section">
                 <p>Vui lòng điền vào form bên cạnh để gửi đến chúng tôi những thông điệp từ quý vị. Hoặc liên hệ trực tiếp với chúng tôi tại văn phòng.</p>
                 <ul class="contact-info">
                     <li>
@@ -117,7 +130,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-lg-6 submit-section">
+            <div class="col-xs-12 col-sm-6 submit-section">
                 <form role="form" id="contact-form">
                     <div class="form-group required" >
                       <label for="fullname">Họ tên</label>
@@ -136,7 +149,6 @@
             </div>
         </div>
     </div>
-</main>
 <footer>
     <div class="container">
         <ul class="footer-list clearfix">
@@ -192,8 +204,10 @@
         </div>
     </div>
 </footer>
+</main>
 <!-- MODAL MAP DIALOG-->
-<div id="map-show" class="tp-map-popup">
+<div id="overlay">
+    <div id="map-show" class="tp-map-popup">
     <div class="close-popup"></div>
     <div id="map-canvas">
     </div>
