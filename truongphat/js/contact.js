@@ -41,7 +41,9 @@ $(function() {
         });
         google.maps.event.trigger(map, 'resize');
         map.setCenter(center);
-        $('#overlay').addClass('open'); 
+        $('#overlay').addClass('open');
+        $('html').attr('style','overflow:hidden; height: 100%;');
+        $('body').attr('style','overflow:hidden; height: 100%;'); 
     });
 
     $('#loc-hn').on('click', function () {
@@ -54,13 +56,23 @@ $(function() {
         });
         google.maps.event.trigger(map, 'resize');
         map.setCenter(center);
-        $('#overlay').addClass('open'); 
+        $('#overlay').addClass('open');
+        $('html').attr('style','overflow:hidden; height: 100%;');
+        $('body').attr('style','overflow:hidden; height: 100%;'); 
     });
 
-    $('#map-show .close-popup').click(function(){
+    $('#map-show .close-popup').click(function(e){
+      e.stopPropagation();
       $('#overlay').removeClass('open');
+      $('html').attr('style','');
+      $('body').attr('style','');
     })
-    $('#overlay').on('click', function () {
-      $('#overlay').removeClass('open');
+    $('#overlay').on('click', function (e) {
+      e.stopPropagation();
+      if(e.target.getAttribute('id').trim() == 'overlay'){
+        $('#overlay').removeClass('open');
+        $('html').attr('style','');
+        $('body').attr('style','');
+      }
     })
 });
