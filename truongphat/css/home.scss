@@ -37,32 +37,32 @@
 	    	border: 0;
 	    	&:before{
 	    		top: 7px;
-		        border-top: 4px solid #f58221;
+		        border-top: 2px solid #f58221;
 		        transform: rotate(45deg);
 	    	}
 	    	&:after{
 	    		top: 7px;
-		        border-top: 4px solid #f58221;
+		        border-top: 2px solid #f58221;
 		        transform: rotate(-45deg);
 	    	}
     	}
     }
 }
 .hamburger-btn{
-	position: relative;
+    position: relative;
     display: inline-block;
     font-size: 32px;
-    width: 22px;
-    height: 18px;
-    border-top: 4px solid #104885;
-    border-bottom: 4px solid #104885;
+    width: 18px;
+    height: 12px;
+    border-top: 2px solid #1c1f4b;;
+    border-bottom: 2px solid #1c1f4b;;
     &:before, &:after{
 	    content: "";
 	    position: absolute;
 	    top: 3px;
 	    left: 0px;
 	    width: 100%;
-	    border-top: 4px solid #104885;
+	    border-top: 2px solid #1c1f4b;
 	    -webkit-transition: transform  0.3s ease-out;
 		-moz-transition: transform  0.3s ease-out;
 		-ms-transition: transform  0.3s ease-out;
