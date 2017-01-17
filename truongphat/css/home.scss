@@ -63,11 +63,11 @@
 	    left: 0px;
 	    width: 100%;
 	    border-top: 4px solid #104885;
-	    -webkit-transition: transform  0.8s ease-out;
-		-moz-transition: transform  0.8s ease-out;
-		-ms-transition: transform  0.8s ease-out;
-		-o-transition: transform  0.8s ease-out;
-		transition: transform  0.8s ease-out;
+	    -webkit-transition: transform  0.3s ease-out;
+		-moz-transition: transform  0.3s ease-out;
+		-ms-transition: transform  0.3s ease-out;
+		-o-transition: transform  0.3s ease-out;
+		transition: transform  0.3s ease-out;
     }
 }
 #menu-mobile-left{
@@ -83,11 +83,11 @@
     -webkit-overflow-scrolling: touch;
     padding: 80px 0 0 0;
     background: #fff;
-    	-webkit-transition: transform  0.2s ease-out;
-		-moz-transition: transform  0.2s ease-out;
-		-ms-transition: transform  0.2s ease-out;
-		-o-transition: transform  0.2s ease-out;
-		transition: transform  0.2s ease-out;
+    	-webkit-transition: transform  0.8s ease-out;
+		-moz-transition: transform  0.8s ease-out;
+		-ms-transition: transform  0.8s ease-out;
+		-o-transition: transform  0.8s ease-out;
+		transition: transform  0.8s ease-out;
     &.slideout{
     	display: block;
     }
@@ -123,11 +123,11 @@
     z-index: 2;
     top: 40px;
     left: 0;
-    -webkit-transition: top 200ms ease-out;
-	-moz-transition: top 200ms ease-out;
-	-ms-transition: top 200ms ease-out;
-	-o-transition: top 200ms ease-out;
-	transition: top 200ms ease-out;
+    -webkit-transition: top 350ms ease-in-out;
+	-moz-transition: top 350ms ease-in-out;
+	-ms-transition: top 350ms ease-in-out;
+	-o-transition: top 350ms ease-in-out;
+	transition: top 350ms ease-in-out;
 	& > .container{
 		height: 100%;
 	}
@@ -189,11 +189,11 @@
 	    }
 	    &.open{
 	    	top:0;
-	    	-webkit-transition: top 200ms ease-in;
-			-moz-transition: top 200ms ease-in;
-			-ms-transition: top 200ms ease-in;
-			-o-transition: top 200ms ease-in;
-			transition: top 200ms ease-in;
+	    	-webkit-transition: top 350ms ease-in-out;
+			-moz-transition: top 350ms ease-in-out;
+			-ms-transition: top 350ms ease-in-out;
+			-o-transition: top 350ms ease-in-out;
+			transition: top 350ms ease-in-out;
 	    }
 	    .menu-home{
 	    	.nav-link{
@@ -462,7 +462,7 @@
 		-o-transform: translate3d(0,100%,0);
 		-ms-transform: translate3d(0,100%,0);
 		transform: translate3d(0,100%,0);
-		transition: transform 0.5s ease-in-out;
+		transition: transform 0.8s ease-in-out;
 		padding: 58px 35px 27px 35px;
 		.srv-option-title{
 			color: #ff7500;
