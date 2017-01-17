@@ -417,11 +417,11 @@
 			background-color: #ffffff;
 			box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.15);
 			.mask{
-				-moz-transform: translateY(0);
-				-webkit-transform: translateY(0);
-				-o-transform: translateY(0);
-				-ms-transform: translateY(0);
-				transform: translateY(0);
+				-moz-transform: translate3d(0,0,0);
+				-webkit-transform: translate3d(0,0,0);
+				-o-transform: translate3d(0,0,0);
+				-ms-transform: translate3d(0,0,0);
+				transform: translate3d(0,0,0);
 				-webkit-transition: all 200ms ease-out;
 				-moz-transition: all 200ms ease-out;
 				-ms-transition: all 200ms ease-out;
@@ -462,11 +462,11 @@
 		left: 0;
 		color: #555555;
 		background: #fff;
-		-moz-transform: translateY(100%);
-		-webkit-transform: translateY(100%);
-		-o-transform: translateY(100%);
-		-ms-transform: translateY(100%);
-		transform: translateY(100%);
+		-moz-transform: translate3d(0,100%,0);
+		-webkit-transform: translate3d(0,100%,0);
+		-o-transform: translate3d(0,100%,0);
+		-ms-transform: translate3d(0,100%,0);
+		transform: translate3d(0,100%,0);
 		padding: 58px 35px 27px 35px;
 		.srv-option-title{
 			color: #ff7500;
