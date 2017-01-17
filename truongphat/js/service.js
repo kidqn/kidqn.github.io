@@ -81,12 +81,11 @@ $(function(){
       $('body').attr('style','');
     }else{
       $("#menu-mobile-btn").addClass('close-active');
-      $('#menu-mobile-left').attr('style','transform: translate3d(100%, 0px, 0px);');
+      
       //$('#menu-mobile-left').addClass('slideout');
-      setTimeout(function(){
         $('html').attr('style','overflow:hidden; height: 100%;');
         $('body').attr('style','overflow:hidden; height: 100%;');
-      },100);
+        $('#menu-mobile-left').attr('style','transform: translate3d(0, 0px, 0px);');
     }
   });
 })
