@@ -87,6 +87,7 @@ html,body{
     margin:0;
 }
 body {
+    padding-top: 80px;
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
@@ -143,6 +144,11 @@ img{
         padding-right: 10px;
         padding-left: 10px;
     }
+}
+main#main{
+    position: relative;
+    z-index: 1;
+    transition: -webkit-transform 200ms ease-out;
 }
 footer{
     background-color: #333333;
@@ -799,9 +805,9 @@ h4{
     & > .row{
         margin-left: -36px;
         margin-right: -36px;
-        margin-bottom: 60px;
         & > div{
             padding: 0 36px;
+            margin-bottom: 60px;
         }
     }
     .detail-item{
@@ -810,9 +816,8 @@ h4{
             box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
         }
         img{
-            max-height: 313px;
-            width: 100%;
-            margin: 0;
+            height: 313px;
+            margin: auto;
             overflow-y: hidden;
         }
         figcaption{
@@ -1048,6 +1053,9 @@ h4{
     }
 }
 @media (min-width: 1200px) and (max-width: 1899px) {
+    .list-detail>.row {
+        margin: 0 -10px;
+    }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
     .container{
@@ -1055,6 +1063,9 @@ h4{
     }
     .title-heading:not(.title-heading_center):after {
         margin: 27px auto 0 auto;
+    }
+    .title-heading-left-line{
+        left: 0;
     }
     .vertical-line{
         top: 50px;
@@ -1071,7 +1082,11 @@ h4{
     .vertical-logo{
         left: -10px;
     }
+    .list-detail>.row {
+        margin: 0 -10px;
+    }
     footer{
+        padding-bottom: 15px;
         .footer-list{
             li.branches {
                 margin: 0;
@@ -1087,6 +1102,11 @@ h4{
             }
         }
     }
+    .copyright{
+        .pull-left{
+            margin: 0;
+        }
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -1099,8 +1119,18 @@ h4{
     .title-heading:not(.title-heading_center):after {
         margin: 20px auto 0 auto;
     }
+    .title-heading-left-line{
+        left: 0;
+    }
     .title-shadow{
         font-size: 4em;
+    }
+    .list-detail>.row {
+        margin: 0 -5px 30px -5px;
+    }
+    .list-detail>.row>div {
+        padding: 0 5px;
+        margin-bottom: 20px;
     }
     .vertical-line{
         top: 50px;
@@ -1126,6 +1156,7 @@ h4{
         }
     }
     footer{
+        padding: 0;
         .footer-list{
             li.logo {
                 margin: 7px 20px 0 0;
@@ -1143,14 +1174,21 @@ h4{
                 }
             }
         }
+        .copyright {
+            .pull-left{
+                margin: 0 0 30px 0;
+            }
+        }
     }
 }
 @media only screen and (max-width: 767px) {
     body{
         font-size: 14px;
+        padding-top: 60px;
     }
     p, p.info{
         max-width: 100%;
+        margin-bottom: 22px;
     }
     .container{
         width: 300px;
@@ -1171,40 +1209,72 @@ h4{
     .title-heading_center:after{
         margin-top: 8px;
     }
+    .title-heading-left-line{
+        left: 0;
+        &:before{
+            width: 1em;
+            margin-right: 0.2em;
+        }
+    }
+    .list-detail {
+        margin-top: 18px;
+        & > .row{
+            margin: 0 -10px;
+            & > div{
+                padding: 0 10px;
+                margin-bottom: 20px;
+            }
+        }
+        .detail-item{
+            img{
+                height: 390px;
+                margin: auto;
+            }
+            figcaption p{
+                line-height: 3.57;
+            }
+        }
+    }
+    .pagination-bar{
+        margin-bottom: 20px;
+        ul li a{
+            padding: 0.2em 0.5em;
+        }
+
+    }
     #logo-footer {
         width: 60px;
+        display: inline-block;
         height: auto;
         margin-bottom: 20px;
     }
     footer{
         padding: 0 0 20px 0;
         .footer-list{
-            padding: 30px 0;
-            li.headquarter {
-                margin: 0 0 20px 0;
-                display: block;
+            padding: 30px 0 25px 0;
+            text-align: center;
+            margin-bottom: 20px;
+            li.logo{
+                margin: auto;
                 float: none;
-                clear: both;
             }
-            li.branches {
-                margin: 0;
-                display: block;
-                float: none;
+            li.headquarter, li.branches {
+                display: none;
             }
             & > li:nth-last-of-type(1){
-                position: absolute;
-                right: 12px;
-                top: 35px;
+                position: static;
+                float: none;
                 p{
-                     margin: 0;
+                    display: none;
                 }
             }
         }
         .copyright{
-            .pull-left, .pull-right{
-                float: none !important;
-                margin: 0;
-                text-align: center;
+            .pull-left{
+                margin-bottom: 0;
+            }
+            .pull-right{
+                display: none;
             }
         }
     }

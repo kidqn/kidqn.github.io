@@ -92,22 +92,4 @@ $(function(){
     function actualResizeHandler() {
       resetStyleHomePage();
     }
-  $("#menu-mobile-btn").on("click", function() {
-    var $elm = $("#main");
-    if($("#menu-mobile-btn").hasClass('close-active')){
-      $("#menu-mobile-btn").removeClass('close-active');
-      $('#menu-mobile-left').attr('style','');
-      //$('#menu-mobile-left').removeClass('slideout');
-      $('html').attr('style','');
-      $('body').attr('style','');
-    }else{
-      $("#menu-mobile-btn").addClass('close-active');
-      $('#menu-mobile-left').attr('style','transform: translate3d(100%, 0px, 0px);');
-      //$('#menu-mobile-left').addClass('slideout');
-      setTimeout(function(){
-        $('html').attr('style','overflow:hidden; height: 100%;');
-        $('body').attr('style','overflow:hidden; height: 100%;');
-      },100);
-    }
-  });
 })

@@ -1,6 +1,3 @@
-body.baogia-p{
-	padding-top: 80px;
-}
 .baogia-p{
 	main{
 		& > .container{
@@ -52,7 +49,7 @@ body.baogia-p{
 		}
 	}
 	.join{
-		display: table;
+	    display: table;
 	    width: 80px;
 	    height: 40px;
 	    border-radius: 20px;
@@ -60,14 +57,15 @@ body.baogia-p{
 	    color: #fff;
 	    text-align: center;
 	    position: absolute;
+	    z-index: 2;
 	    left: 50%;
 	    transform: translateX(-50%) translateY(-50%);
 	    top: 50%;
 	    -webkit-transition: top 300ms ease-out;
-		-moz-transition: top 300ms ease-out;
-		-ms-transition: top 300ms ease-out;
-		-o-transition: top 300ms ease-out;
-		transition: top 300ms ease-out;
+	    -moz-transition: top 300ms ease-out;
+	    -ms-transition: top 300ms ease-out;
+	    -o-transition: top 300ms ease-out;
+	    transition: top 300ms ease-out;
 		span{
 			vertical-align: middle;
 		    display: table-cell;
@@ -136,4 +134,82 @@ body.baogia-p{
     color: #ffffff;
     padding: 0 10px;
     border: 1px solid #f58221;
+}
+
+@media (min-width: 1200) and (max-width: 1366){
+
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	#baogia-top-section{
+		height: 90px;
+		.categories{
+			padding: 20px;
+		}
+		.search-field-group {
+		    padding: 0 10px;
+		    .top-search-field{
+		    	margin-left: 20px;
+		    }
+		}
+	}
+}
+@media only screen and (max-width: 767px) {
+	.baogia-p main>.container {
+	    padding: 0;
+	}
+	.baogia-p #baogia-banner {
+	    height: 300px;
+	}
+	#baogia-top-section{
+	    height: auto;
+	    padding: 20px 10px;
+	    text-align: center;
+	    .join{
+		    transform: translateX(-50%) translateY(-10px);
+		    height: 20px;
+		    width: 40px;
+	    }
+	    .categories, .search-field-group{
+    	    position: relative;
+		    width: 100%;
+		    height: 60px;
+			left: 0;
+			top: 0;
+		    z-index: 2;
+		    padding: 10px;
+		    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2);
+	    }
+	    .categories {
+	    	z-index: 101;
+	    	label{
+	    		width: 60px;
+	    	}
+		    & > div{
+		    	width: 190px;
+		    	span.tp-dropdown-placeholder {
+				    margin-left: 5px;
+				    &:after{
+				    	right: 0;
+				    }
+				}
+		    }
+		}
+		.search-field-group{
+			.top-search-field{
+				padding: 0;
+    			margin-left: 0;
+			}
+		}
+	}
+	.baogia-p .view-action-bar{
+		margin-top: 0;
+		.order-name{
+			display: none;
+		}
+		.order{
+			& > div{
+				width: 70px;
+			}
+		}
+	}
 }
