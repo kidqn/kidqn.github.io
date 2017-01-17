@@ -422,11 +422,11 @@
 				-o-transform: translate3d(0,0,0);
 				-ms-transform: translate3d(0,0,0);
 				transform: translate3d(0,0,0);
-				-webkit-transition: all 200ms ease-out;
-				-moz-transition: all 200ms ease-out;
-				-ms-transition: all 200ms ease-out;
-				-o-transition: all 200ms ease-out;
-				transition: all 200ms ease-out;
+				-webkit-transition: transform 200ms ease-out;
+				-moz-transition: transform 200ms ease-out;
+				-ms-transition: transform 200ms ease-out;
+				-o-transition: transform 200ms ease-out;
+				transition: transform 200ms ease-out;
 			}
 		}
 	}
