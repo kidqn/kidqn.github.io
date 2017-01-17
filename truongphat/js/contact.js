@@ -60,4 +60,7 @@ $(function() {
     $('#map-show .close-popup').click(function(){
       $('#overlay').removeClass('open');
     })
+    $('#overlay').on('click', function () {
+      $('#overlay').removeClass('open');
+    })
 });
