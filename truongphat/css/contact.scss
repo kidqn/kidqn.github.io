@@ -80,17 +80,6 @@
     &.active{
     	top: 55%;
     }
-    .close-popup{
-	    width: 30px;
-	    height: 30px;
-	    right: -10px;
-	    top: -10px;
-	    z-index: 2;
-	    border: 1px solid #555555;
-	    border-radius: 50%;
-	    background-color: #fff;
-	    background-size: 16px 16px;
-    }
 }
 .contact-p .submit-section{
 	#contact-form{
@@ -189,20 +178,6 @@
 			margin: 0.23em 1.11em 0 0;
 		}
 	}
-}
-#overlay{
-	position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 1;
-    z-index: 9999;
-    overflow: hidden;
-    &.open{
-    	top: 0;
-    }
 }
 @media (min-width: 768px) and (max-width: 991px) {
 	.contact-p .submit-section {

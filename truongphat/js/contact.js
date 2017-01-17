@@ -60,16 +60,10 @@ $(function() {
         $('html').attr('style','overflow:hidden; height: 100%;');
         $('body').attr('style','overflow:hidden; height: 100%;'); 
     });
-
-    $('#map-show .close-popup').click(function(e){
-      e.stopPropagation();
-      $('#overlay').removeClass('open');
-      $('html').attr('style','');
-      $('body').attr('style','');
-    })
     $('#overlay').on('click', function (e) {
       e.stopPropagation();
-      if(e.target.getAttribute('id').trim() == 'overlay'){
+      var isOverlay = e.target.getAttribute('id');
+      if(isOverlay && isOverlay.trim() == 'overlay'){
         $('#overlay').removeClass('open');
         $('html').attr('style','');
         $('body').attr('style','');
