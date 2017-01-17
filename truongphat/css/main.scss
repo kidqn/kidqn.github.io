@@ -1146,11 +1146,14 @@ h4{
     }
 }
 @media only screen and (max-width: 767px) {
+    body{
+        font-size: 14px;
+    }
     p, p.info{
         max-width: 100%;
     }
     .container{
-        width: 100%;
+        width: 300px;
         padding: 0 10px;
     }
     .row{

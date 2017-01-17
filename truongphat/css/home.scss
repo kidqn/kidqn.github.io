@@ -32,6 +32,21 @@
     top: 50%;
     margin-top: -9px;
     left: 0;
+    &.close-active{
+    	.hamburger-btn{
+	    	border: 0;
+	    	&:before{
+	    		top: 7px;
+		        border-top: 4px solid #f58221;
+		        transform: rotate(45deg);
+	    	}
+	    	&:after{
+	    		top: 7px;
+		        border-top: 4px solid #f58221;
+		        transform: rotate(-45deg);
+	    	}
+    	}
+    }
 }
 .hamburger-btn{
 	position: relative;
@@ -41,41 +56,52 @@
     height: 18px;
     border-top: 4px solid #104885;
     border-bottom: 4px solid #104885;
-    &:before{
+    &:before, &:after{
 	    content: "";
 	    position: absolute;
 	    top: 3px;
 	    left: 0px;
 	    width: 100%;
 	    border-top: 4px solid #104885;
+	    -webkit-transition: transform  0.2s ease-out;
+		-moz-transition: transform  0.2s ease-out;
+		-ms-transition: transform  0.2s ease-out;
+		-o-transition: transform  0.2s ease-out;
+		transition: transform  0.2s ease-out;
     }
 }
 #menu-mobile-left{
-	position: fixed;
-	left: 0;
+    position: fixed;
+    left: -100%;
     top: 0;
     bottom: 0;
     right: 0;
-    z-index: 0;
-    width: 256px;
+    z-index: 5;
+    width: 100%;
     height: 100%;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    display: none;
-    padding: 50px 0 0 0;
-    background: #0d4982;
-    color: #fff;
+    padding: 80px 0 0 0;
+    background: #fff;
+    	-webkit-transition: transform  0.2s ease-out;
+		-moz-transition: transform  0.2s ease-out;
+		-ms-transition: transform  0.2s ease-out;
+		-o-transition: transform  0.2s ease-out;
+		transition: transform  0.2s ease-out;
     &.slideout{
     	display: block;
     }
     li{
+    	padding: 20px;
+	    text-align: center;
+	    font-size: 0.93em;
+	    font-weight: bold;
+	    letter-spacing: 0.03em;
     	&:active{
     		background-color: rgba(151, 187, 216, 0.8);
     	}
-    	padding: 20px;
-    	border-top: 1px solid #2a6196;
     	a{
-    		color: #fff;
+    		color: #1c1f4b;
     	}
     }
 }
@@ -100,7 +126,7 @@
 	position: fixed;
     height: 60px;
     width: 100%;
-    z-index: -1;
+    z-index: 2;
     top: 40px;
     left: 0;
     -webkit-transition: top 200ms ease-out;
@@ -819,8 +845,24 @@
 		top: 0;
 		background:#fff;
 		z-index: 1999;
+		box-shadow: 10px 10px 25px 0 rgba(0, 0, 0, 0.15);
+		& > .container{
+			width: 100%;
+		}
 		.menu-home{
 		    display: none;
+		}
+		.search-home-ic{
+			display: block;
+		    right: 10px;
+		    position: absolute;
+		    top: 50%;
+		    margin-top: -15px;
+		    width: 30px;
+		    height: 30px;
+		    z-index: 1;
+		    background-image: url(../images/ic-search_black.svg);
+		    background-position: center center;
 		}
 		&.fixed-top{
 			height: 60px;
