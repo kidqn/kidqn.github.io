@@ -155,7 +155,7 @@
 	.search-home-ic{
 	    background-image: url(../images/ic-search.svg);
 	    background-repeat: no-repeat;
-	    background-size: 24px 24px;
+	    background-size: 17px 17px;
 	    background-position: center;
 	    vertical-align: middle;
 	}
@@ -172,9 +172,9 @@
 	    .search-home-ic{
 	    	background-image:url(../images/ic-search_black.svg);
 	    	&.active{
-			    background-image: url(../images/ic-search-orange.png);
+			    background-image: url(../images/ic-search-orange.svg);
 			    background-repeat: no-repeat;
-			    background-size: 24px 24px;
+			    background-size: 17px 17px;
 		    }
 	    }
 	    #logo-home{
