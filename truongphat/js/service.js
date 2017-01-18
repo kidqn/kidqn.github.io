@@ -103,10 +103,10 @@ $(function(){
   var delta = 5;
   var heightHeaderBar = $('#top-nav').outerHeight();
   $(window).scroll(function () {
-      ///
       var iCurScrollPos = $(this).scrollTop();
+      console.log(iCurScrollPos)
       // Make sure they scroll more than delta
-      if(iCurScrollPos < heightHeaderBar){
+      if(iCurScrollPos < 300){
         //Note: different from homepage a bit
         if($('body').hasClass('home-p')){
           $('#top-nav').removeClass('fixed-top open');
@@ -115,6 +115,15 @@ $(function(){
         }
         $('#header').attr('style','');
         return;
+      }
+      if(iCurScrollPos < 800 && iCurScrollPos >= 300){
+        if(!isMobile()){
+          //Note: different from homepage a bit
+          if($('body').hasClass('home-p')){
+            $('#top-nav').addClass('fixed-top open');
+          }
+          return;
+        }
       }
       if (iCurScrollPos > iScrollPos) {
         //Scrolling Down
