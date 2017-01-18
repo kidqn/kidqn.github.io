@@ -1,7 +1,3 @@
-body.dieukhoan-p{
-	padding-top: 80px;
-}
-
 .dieukhoan-p{
 	main{
 		& > .container{
@@ -27,4 +23,20 @@ body.dieukhoan-p{
     background: url(../images/dieukhoan_banner.png) center center no-repeat;
     background-size: cover;
 	height: 400px;    
+}
+@media only screen and (max-width: 767px) {
+	.dieukhoan-p main>.container {
+	    padding: 0;
+	}
+	.dieukhoan-p #dieukhoan-banner {
+	    height: 300px;
+	}
+	.dieukhoan-p{
+		main{
+			& > .container{
+				padding: 30px 10px;
+				background: #fff;
+			}
+		}
+	}
 }
