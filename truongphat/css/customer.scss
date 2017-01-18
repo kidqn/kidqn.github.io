@@ -1,6 +1,3 @@
-body.customer-p{
-	padding-top: 80px;
-}
 #customer-top-section{
 	  height: 230px;
 	  border-radius: 2px;
@@ -48,4 +45,34 @@ body.customer-p{
 }
 .customer-p .list-detail{
 	margin-top: 80px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.customer-p .list-detail>.row>div {
+	    padding: 0 5px;
+	    margin-bottom: 50px;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.customer-p main>.container {
+	    padding: 0;
+	}
+	.customer-p #customer-banner {
+	    height: 300px;
+	}
+	#customer-top-section{
+		padding: 20px;
+		height: auto;
+		.vertical-logo,.icon{
+			display: none;
+		}
+		.title-group {
+			.title-heading {
+			    margin: 25px 0 0 0;
+			}
+		}
+	}
+	.customer-p .list-detail>.row>div {
+	    margin-bottom: 60px;
+	}
 }

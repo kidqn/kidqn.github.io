@@ -396,13 +396,13 @@ ul.social-network{
         }
     }
     .owl-prev{
-        left: -15px;
+        left: -10px;
         &:before{
             content: "\f104";
         }
     }
     .owl-next{
-        right: -15px;
+        right: -10px;
         &:before{
             content: "\f105";
         }
@@ -1058,6 +1058,16 @@ h4{
 @media (min-width: 1200px) and (max-width: 1899px) {
     .list-detail>.row {
         margin: 0 -10px;
+    }
+    .detail-youtube-item {
+        .youtube-info{
+            .icon {
+                margin-right: 12px;
+            }
+            .data {
+                padding-left: 16px;
+            }
+        }
     }
 }
 @media (min-width: 992px) and (max-width: 1199px) {

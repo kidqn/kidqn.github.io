@@ -1,6 +1,3 @@
-body.dichvu-p{
-	padding-top: 80px;
-}
 #dichvu-top-section{
 		border-radius: 2px;
 	    background-color: #ffffff;
@@ -25,12 +22,6 @@ body.dichvu-p{
 		    margin-left: -180px;
     	}
 	}
-	.title-group{
-	    margin: 0 0 23px 0;
-	    .title-heading{
-	        margin: 45px 0 0 0;
-	    }
-	}
 	p.info{
 	    font-family: 'Tinos';
 	    max-width: 780px;
@@ -48,10 +39,14 @@ body.dichvu-p{
 			margin-top: -75px;
 			min-height: 500px;
 		}
-		.title-heading{
-			b{
-				color: #f58221;
-			}
+		.title-group{
+		    margin: 0 0 23px 0;
+		    .title-heading{
+		        margin: 45px 0 0 0;
+		        b{
+					color: #f58221;
+				}
+		    }
 		}
 		.content-body{
 			p.info{
@@ -71,10 +66,6 @@ body.dichvu-p{
 .dichvu-p section#dichvu-booking{
 	padding-bottom: 70px;
 	.title-group{
-		margin-bottom: 30px;
-		.title-heading{
-			margin: 50px 0 0 0;
-		}
 		.title-shadow{
 			text-align: left;
 		}
@@ -86,19 +77,13 @@ body.dichvu-p{
 	.image{
 	    margin-top: -100px;
 	    position: relative;
-	    right: -140px;
+	    right: -5px;
 	}
 }
 .dichvu-p section#event{
     padding-top: 30px;
     padding-bottom: 70px;
     border-top: 1px solid #f1f1f1;
-	.title-group{
-		margin-bottom: 15px;
-		.title-heading{
-			margin: 50px 0 0 0;
-		}
-	}
 }
 #event-carousel{
 	margin-top: 50px;
@@ -111,12 +96,6 @@ body.dichvu-p{
     padding: 30px 60px 100px 60px;
     margin-bottom: 70px;
     border-top: 1px solid #f1f1f1;
-	.title-group{
-		margin-bottom: 50px;
-		.title-heading{
-			margin: 50px 0 0 0;
-		}
-	}
 	.crisis-content{
 		-webkit-column-count: 2; /* Chrome, Safari, Opera */
 	    -moz-column-count: 2; /* Firefox */
@@ -147,5 +126,79 @@ body.dichvu-p{
 			color: #888888;
 			margin: 0;
 		}
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	.dichvu-p section#crisis-management {
+		.crisis-content {
+		    height: 610px;
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.dichvu-p section#crisis-management {
+		.crisis-content {
+		    height: auto;
+		}
+	}
+	#dichvu-top-section{
+		padding: 20px 80px;
+	}
+	.dichvu-p main .title-group {
+		.title-heading {
+		    margin: 30px 0 0 0;
+		}
+	}
+	.dichvu-p .content-body{
+		padding: 0 10px;
+	}
+	#zoom-img-dlg .modal-dialog {
+	    width: 600px;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.dichvu-p main>.container {
+	    padding: 0;
+	}
+	.dichvu-p #dichvu-banner {
+	    height: 300px;
+	}
+	#dichvu-top-section{
+		padding: 20px;
+		.vertical-logo, .icon{
+			display: none;
+		}
+	}
+	.dichvu-p section#dichvu-booking {
+	    padding-bottom: 20px;
+	    .image {
+		    right: 0;
+		    margin-top: 20px;
+		}
+	}
+	.dichvu-p section#crisis-management {
+	    padding: 20px;
+	    margin-bottom: 0;
+		.crisis-content {
+			-webkit-column-count: 1;
+		    -moz-column-count: 1;
+		    column-count: 1;
+		    height: auto;
+		}
+	}
+	.dichvu-p main .title-group {
+		.title-heading {
+		    margin: 25px 0 0 0;
+		}
+	}
+	#zoom-img-dlg .modal-dialog {
+	    width: 300px;
+	    max-height: 320px;
+	    margin: auto;
+	    top: 25%;
+	    -webkit-transform: translate(0,-30%);
+	    -ms-transform: translate(0,-30%);
+	    -o-transform: translate(0,-30%);
+	    transform: translate(0,-30%);
 	}
 }
