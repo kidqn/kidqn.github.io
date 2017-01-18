@@ -1,3 +1,27 @@
+//check in mobile view
+function isMobile(){
+  if ($('#menu-mobile-btn').css('display') != 'none'){
+    return true;
+  }else{
+    return false;
+  }
+}
+//chinh size banner video khi kick thuoc man hinh thay doi
+function resetStyleHomePage(){
+  if(isMobile()){
+    if($('body').hasClass('home-p')){
+      $('#about').attr('style','');
+      $('#banner-video').attr('style','');
+    }
+    $('#top-nav')[0].appendChild($('#search-home-btn')[0]);
+  }else{
+    if($('body').hasClass('home-p')){
+      $('#banner-video').css('height',window.innerHeight + 'px');
+      $('#about').css('margin-top',window.innerHeight + 'px');
+    }
+    $('#menu-home')[0].appendChild($('#search-home-btn')[0]);
+  }
+}
 function openSearchView(){
     var objHeader = {};
     objHeader.className = $('#top-nav')[0].getAttribute('class');

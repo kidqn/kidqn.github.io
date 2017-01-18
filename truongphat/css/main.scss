@@ -292,6 +292,58 @@ ul.social-network{
         top: 0;
     }
 }
+/* SEARCH */
+#search-view-overlay{
+    padding-right: 0 !important;
+}
+.search-field-home-group{
+    margin-top: 80px;
+    padding-top: 75px;
+    height: 210px;
+    background: #fff;
+    .input-group{
+        padding-bottom: 15px;
+        border-bottom: 2px solid #000;
+        input{
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            padding: 0;
+            height: 42px;
+            box-shadow: none;
+            font-size: 2.25em;
+            font-weight: bold;
+            font-style: normal;
+            color: #333333;
+        }
+    }
+}
+#clear-search-btn{
+    height: 36px;
+    width: 36px;
+    box-shadow: none;
+    background-color: transparent;
+    background: url(../images/ic-cancel.svg) center center no-repeat;
+    background-size: 100% 100%;
+}
+#home-enter-search-btn{
+    height: 36px;
+    width: 36px;
+    box-shadow: none;
+    background-color: transparent;
+    background: url(../images/ic-keyboard-return.svg) center center no-repeat;
+    background-size: 100% 100%;
+    -webkit-transition-property: none;
+    -moz-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none;
+    &.active{
+        background:url(../images/ic-keyboard-return-color.svg) center center no-repeat; 
+        background-size: 100% 100%;
+    }
+}
+
+/* Carousel */
 .carousel-dots{
     .owl-controls{
         width: 100%;
@@ -1473,6 +1525,23 @@ h4{
         display: inline-block;
         height: auto;
         margin-bottom: 20px;
+    }
+    .search-field-home-group{
+        margin-top: 60px;
+        padding-top: 10px;
+        height: 80px;
+        .input-group{
+            padding: 0;
+             input{
+                font-size: 1em;
+            }
+        }
+    }
+    #home-enter-search-btn{
+        background-size: 20px 20px;
+        &.active{
+            background-size: 20px 20px;
+        }
     }
     footer{
         padding: 0 0 20px 0;

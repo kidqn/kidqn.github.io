@@ -1,38 +1,5 @@
-//check in mobile view
-function isMobile(){
-  if ($('#menu-mobile-btn').css('display') != 'none'){
-    return true;
-  }else{
-    return false;
-  }
-}
-//chinh size banner video khi kick thuoc man hinh thay doi
-function resetStyleHomePage(){
-  if(isMobile()){
-    $('#about').attr('style','');
-    $('#banner-video').attr('style','');
-    $('#top-nav')[0].appendChild($('#search-home-btn')[0]);
-  }else{
-    $('#banner-video').css('height',window.innerHeight + 'px');
-    $('#about').css('margin-top',window.innerHeight + 'px');
-    $('#menu-home')[0].appendChild($('#search-home-btn')[0]);
-  }
-}
-
 //on ready
 $(function(){
-  //initialize UI for homepage
-  if(!isMobile()){
-    //set margin top for about section under background video
-    var hBannerVideo = document.querySelectorAll('#banner-video')[0].clientHeight;
-    var sectionAbout = document.querySelectorAll('#about')[0];
-    if(hBannerVideo && hBannerVideo > 0){
-      sectionAbout.style['margin-top'] = hBannerVideo +'px';
-    }
-  }else{
-    //move search icon to top nav bar//
-    $('#top-nav')[0].appendChild($('#search-home-btn')[0]);
-  }
   //initialize carousel
   $("#khachhang-carousel").owlCarousel({
     loop:true,
@@ -73,23 +40,4 @@ $(function(){
     nav:true,
     navText: ["",""],
   })
-
-  //handle resize event//
-  window.addEventListener("resize", resizeThrottler, false);
-  var resizeTimeout;
-    function resizeThrottler() {
-      // ignore resize events as long as an actualResizeHandler execution is in the queue
-      if ( !resizeTimeout ) {
-        resizeTimeout = setTimeout(function() {
-          resizeTimeout = null;
-          actualResizeHandler();
-       
-         // The actualResizeHandler will execute at a rate of 15fps
-         }, 66);
-      }
-    }
-
-    function actualResizeHandler() {
-      resetStyleHomePage();
-    }
 })
