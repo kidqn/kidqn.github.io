@@ -968,7 +968,7 @@ h4{
     line-height: 22px;
     border-radius: 25px;
     background-color: #ffffff;
-    box-shadow: 10px 10px 15px 0 rgba(0,0,0,0.1);
+    box-shadow: 10px 5px 15px 0 rgba(0, 0, 0, 0.1);
     li{ 
         list-style: none;
         float: left;
@@ -1278,6 +1278,15 @@ h4{
             p,h4{
                 text-align: left;
             }
+        }
+    }
+    .partner-panel{
+        width: 100%;
+        li:nth-of-type(1) {
+            width: 40%;
+        }
+        li:nth-last-of-type(1) {
+            width: 60%;
         }
     }
     .close-popup{
