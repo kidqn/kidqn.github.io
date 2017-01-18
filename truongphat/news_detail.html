@@ -23,9 +23,22 @@
 </head>
 
 <body class="news-detail-p">
+<nav id="menu-mobile-left">
+    <ul class="clearfix">
+        <li><a href="about.html">GIỚI THIỆU</a></li>
+        <li><a href="dichvu.html">DỊCH VỤ</a></li>
+        <li><a href="doitac.html">ĐỐI TÁC</a></li>
+        <li><a href="doitac.html">KHÁCH HÀNG</a></li>
+        <li><a href="baogia.html">BÁO GIÁ QUẢNG CÁO</a></li>
+        <li><a href="news.html">TIN TỨC</a></li>
+        <li><a href="contact.html">LIÊN HỆ</a></li>
+
+    </ul>
+</nav>
 <header>
     <div id="top-nav" class="fixed-top open">
         <div class="container">
+            <a id="menu-mobile-btn"><span class="hamburger-btn"></span></a>
             <a id="logo-home" href="truongphat.com">
                 <img src="images/logo_white.svg" alt="logo truong phat">
                 <img src="images/logo_notext.svg" alt="logo truong phat">
@@ -56,9 +69,9 @@
             </div>
     </div>
 </header>
-<section id="news-banner">  
-</section>
-<main >
+<main id="main">
+    <section id="news-banner">  
+    </section>
     <div class="container">
         <div id="icon-action-bar">
             <a href="facebook.com" class="fb"><img src="images/news/facebook.svg"> <img src="images/news/facebook_color.svg"></a>
@@ -109,47 +122,47 @@
         <section id="related-news">
             <h2 class="title-heading title-heading_center">Bài viết liên quan</h2>
             <div class="news-list" >
-                <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-lg-4 news-wrapper">
-                        <a href="#">
+                <div class="articles-three-col clearfix">
+                    <div class="col-xs-12 col-sm-4 news-wrapper">
+                        <a href="news_detail.html">
                             <div class="news-article">
                                 <div class="image">
-                                    <img src="images/news/article1.png" alt="">
+                                    <img src="images/news/news3.png" alt="">
                                 </div>
                                 <h4 class="section-name">NỘI BỘ</h4>
                                 <div class="content">
-                                    <h3 class="title">Làm thế nào để tăng lượt hiển thị nội dung trên Facebook?</h3>
-                                    <p class="info">Facebook đã xây dựng những thuật toán riêng để tính toán và cho phép một số nội dung được xuất hiện nhiều hơn các nội dung còn...</p>
+                                    <h3 class="title">7 bước để lập một chiến dịch quảng cáo adwords hiệu quả</h3>
+                                    <p class="info">It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum…</p>
                                 </div>
                                 <span class="view">CHI TIẾT</span>
                             </div>
                         </a>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-4 news-wrapper">
-                        <a href="#">
+                    <div class="col-xs-12 col-sm-4 news-wrapper">
+                        <a href="news_detail.html">
                             <div class="news-article">
                                 <div class="image">
-                                <img src="images/news/article2.png" alt="">
+                                <img src="images/news/news4.png" alt="">
                                 </div>
                                 <h4 class="section-name">QUẢNG CÁO</h4>
                                 <div class="content">
-                                    <h3 class="title">Tuyệt chiêu kinh doanh ‘đi trước thời đại’ của Facebook</h3>
-                                    <p class="info">Chiến lược kinh doanh: quảng cáo trên điện thoại di động đã đưa Facebook trở thành công ty lớn thứ 22 thế giới, với mức cổ phiếu vượt…</p>
+                                    <h3 class="title">Quảng cáo Google trên thiết bị di động</h3>
+                                    <p class="info">It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum…</p>
                                 </div>
                                 <span class="view">CHI TIẾT</span>
                             </div>
                         </a>
                     </div>
-                    <div class="col-xs-12 col-sm-4 col-lg-4 news-wrapper">
-                        <a href="#">
+                    <div class="col-xs-12 col-sm-4 news-wrapper">
+                        <a href="news_detail.html">
                             <div class="news-article">
                                 <div class="image">
-                                    <img src="images/news/article3.png" alt="">
+                                    <img src="images/news/news5.png" alt="">
                                 </div>
                                 <h4 class="section-name">KIẾN THỨC</h4>
                                 <div class="content">
-                                    <h3 class="title">4 tính năng mới của Google làm tăng tính hiệu quả của chiến dịch Adword</h3>
-                                    <p class="info">Nhằm cải thiện tối đa tính hiệu quả của chiến dịch Google Adword, Google đã đưa ra 1 số…</p>
+                                    <h3 class="title">Doanh thu Toàn ngành báo in Mỹ ‘hít khói’ Quảng cáo Google</h3>
+                                    <p class="info">It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum…</p>
                                 </div>
                                 <span class="view">CHI TIẾT</span>
                             </div>
@@ -159,7 +172,7 @@
             </div>
         </section>
     </div>
-</main>
+
 <footer>
     <div class="container">
         <ul class="footer-list clearfix">
@@ -215,6 +228,7 @@
         </div>
     </div>
 </footer>
+</main>
 <!-- custom js -->
 <script src="./js/service.js"></script>
 <script src="./js/search.js"></script>

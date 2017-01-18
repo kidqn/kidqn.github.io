@@ -1,6 +1,3 @@
-body.news-p{
-	padding-top: 80px;
-}
 .news-p{
 	main{
 		& > .container{
@@ -62,4 +59,43 @@ body.news-p{
 	color: #888888;
 	text-align: left;
 	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+	.news-p .article-top-news {
+        height: 100%;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.news-p .article-top-news {
+        height: 100%;
+    }
+}
+@media only screen and (max-width: 767px) {
+	.news-p main>.container {
+	    padding: 0;
+	}
+	.news-p #news-banner{
+	    height: 300px;
+	}
+	.news-p #image-top-news-carousel{
+		.item{
+			height: 300px;
+			width: 100%;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	}
+	.news-p .article-top-news {
+        height: 100%;
+        padding: 20px;
+    }
+    #top-news-carousel {
+	    height: 400px;
+	    background-color: #ffffff;
+	}
+	.news-p .article-top-news {
+        height: 100%;
+    }
 }
