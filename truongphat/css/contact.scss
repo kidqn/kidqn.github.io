@@ -189,6 +189,12 @@
 	    top: 50%;
 	    transform: translate3d(-50%, -50%, 0);
 	}
+	.contact-p .text-section {
+	    padding-right: 30px;
+	    .contact-info>li {
+		    padding: 23px 20px;
+		}
+	}
 }
 @media only screen and (max-width: 767px) {
 	.contact-p main>.container {
