@@ -76,7 +76,7 @@
 		    padding: 0 20px;
 		    img{
 			    display: block;
-			    margin: 85px auto;
+			    margin: 120px auto 0 auto;
 		    }
 		}
 	}
@@ -107,4 +107,17 @@
 			}
 		}
 	}
+	.partner-p .list-detail .detail-item{
+		.image{
+		    height: 180px;
+		    width: 100%;
+		    padding: 0;
+		    img{
+		        margin: 70px auto 0 auto;
+		    }
+		}
+		figcaption{
+		    padding: 0 0 0 10px;
+		}
+     }
 }
