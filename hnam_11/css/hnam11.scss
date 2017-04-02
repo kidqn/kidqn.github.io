@@ -262,7 +262,6 @@ section.item-awards{
 	margin-left: -14px;
 	margin-right: -14px;
 	.title{
-		padding-top: 2px;
 		height: 80px;
   		background-color: #ffffff;
 		font-family: 'Roboto';
@@ -487,6 +486,9 @@ section.promotion{
 	    background: url(../images/11years/bg_green_circle.png) center center no-repeat;
 	    background-size: cover;
 	}
+	#fb-comment-hnam{
+		padding: 0 100px;
+	}
 	.steps{
 		padding: 50px 100px;
 		.step{
@@ -565,6 +567,9 @@ section.promotion{
 	#comment{
 		.steps {
 		    padding: 50px;
+		}
+		#fb-comment-hnam{
+			padding: 0 50px;
 		}
 	}
 	ul.sponsors{
@@ -725,6 +730,9 @@ section.promotion{
 		}
 	}
 	#comment {
+		#fb-comment-hnam{
+			padding: 0 30px;
+		}
 		.steps {
 		    padding: 30px;
 		    .step .share ul{
