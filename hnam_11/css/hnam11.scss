@@ -491,6 +491,20 @@ section.promotion{
 				 	 color: #f23913;
 				 }
 			}
+			.share{
+				height: 83px;
+				line-height: 83px;
+				ul{
+					list-style: none;
+					li{
+						display: inline-block;
+						width: 140px;
+					}
+					h3{
+						text-transform: none;
+					}
+				}
+			}
 		}
 	}
 }
