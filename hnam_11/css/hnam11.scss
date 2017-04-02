@@ -471,6 +471,7 @@ section.promotion{
 	    background-size: cover;
 	}
 	.steps{
+		padding-top: 55px;
 		.step{
 			margin-bottom: 40px;
 			h3{
@@ -493,15 +494,25 @@ section.promotion{
 			}
 			.share{
 				height: 83px;
-				line-height: 83px;
 				ul{
-					list-style: none;
+				    list-style: none;
+				    width: 380px;
+				    height: 83px;
+				    border-radius: 2px;
+				    padding: 0 30px;
+				    border: dotted 1px #f75115;
+				    display: table;
 					li{
-						display: inline-block;
-						width: 140px;
+						display: table-cell;
+					    vertical-align: middle;
+					    width: 140px;
 					}
 					h3{
 						text-transform: none;
+						margin-bottom: 0;
+					}
+					li.facebook{
+						padding-left: 40px;
 					}
 				}
 			}
