@@ -1,6 +1,15 @@
 body{
 	background-color: #f7f7f7;
 }
+footer{
+	text-align: center;
+	  font-family: Roboto;
+	  font-size: 14px;
+	  font-weight: normal;
+	  font-style: normal;
+	  color: #d8d8d8;
+	  margin-bottom: 100px;
+}
 .Hnam11-p{
 	.container{
 		width: 1200px;
@@ -332,12 +341,15 @@ section.item-awards{
 	}
 }
 section.online-buy{
- margin-top: 40px;
- padding: 60px 40px;
- height: 400px;
- background: url('../images/11years/bg_orange_circle.png') 0 bottom no-repeat;
- background-size: 60.5% 50%;
- box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+	background: white;
+ .wrapper{
+ 	 margin-top: 40px;
+	 padding: 60px 40px;
+	 height: 400px;
+	 background: url('../images/11years/bg_orange_circle.png') 0 bottom no-repeat;
+	 background-size: 60.5% 50%;
+	 box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+ }
  .info{
  	font-family: 'Roboto';
  	width: 700px;
@@ -458,6 +470,8 @@ section.promotion{
 	}
 }
 #comment{
+	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+	margin-bottom: 60px;
 	.banner{
 	    height: 100px;
 	    font-size: 48px;
