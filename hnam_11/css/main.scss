@@ -311,7 +311,7 @@ img{
 @media (min-width: 1200px){
     .container {
         width: 1200px;
-        padding: 0;
+        padding: 0 10px;
     }
 }
 
@@ -326,17 +326,11 @@ img{
     }
 }
 
-@media (min-width: 601px) and (max-width: 767px) {
-    /* For tablets: */
+@media only screen and (max-width: 767px) {
     .container {
-        width: 100%;
+        width: 320px;
     }
-  
 }
-@media only screen and (max-width: 600px){
-
-}
-
 
 @import "../css/font.scss";
 @import "../css/popup.scss";
