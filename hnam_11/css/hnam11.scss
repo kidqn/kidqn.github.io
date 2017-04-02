@@ -1,0 +1,496 @@
+body{
+	background-color: #f7f7f7;
+}
+.Hnam11-p{
+	.container{
+		width: 1200px;
+    	padding: 0 10px;
+	}
+	#header{
+		height: 80px;
+		line-height: 80px;
+		background:#fff;
+		#logo{
+			width: 131px;
+			height: 24px;
+		}
+		ul.r-nav{
+			list-style: none;
+			display: inline-block;
+			float: right;
+			li{
+			  display: inline-block;
+			  height: 16px;
+			  font-family: 'Roboto';
+			  font-size: 14px;
+			  font-weight: 500;
+			  font-style: normal;
+			  line-height: 1.14;
+			  color: #4a4a4a;
+			  &:after{
+			  	content: '';
+			  	display: block;
+			  	width: 19px;
+			  	height: 19px;
+			  	background: url('../images/11years/flash_line.svg') 0 0 no-repeat;
+			  	background-size: 100% 100%;
+			  	float: right;
+    			margin: -2px 9px 0 12px;
+			  }
+			  &:nth-last-of-type(1){
+			  	&:after{
+			  		display: none;
+			  	}
+			  }
+			}	
+		}
+	}
+	#banner{
+		background: url('../images/11years/banner.png') center center no-repeat;
+		background-size: cover;
+		height: 717px;
+		position: relative;
+		.container{
+			height: 100%;
+		}
+		.left-image{
+			float: left;
+		    margin-top: 150px;
+		    margin-right: 76px;
+		    width: 300px;
+		    height: 475px;
+		}
+		.right-info{
+			float: right;
+			position: relative;
+			margin-top: 160px;
+			width: calc(100% - 376px);
+			.icon{
+				width: 154px;
+			    height: 253px;
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+			}
+			h2{
+				  font-family: 'UTMHelve';
+				  font-size: 48px;
+				  font-weight: bold;
+				  font-style: normal;
+				  line-height: 1.96;
+				  color: #f8e71c;
+				  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+				  span:nth-last-of-type(1):before{
+				  		content:'';
+				  		display: inline-block;
+				  		vertical-align: middle;	
+				  		width: 8px;
+				  		height: 8px;
+				  		border-radius: 50%;
+				  		background: #fff;
+				  		margin: 0 10px;
+				  	}
+			}
+			h1{
+			    font-family: 'UTMHelve';
+			    font-size: 110px;
+			    font-weight: bold;
+			    display: inline-block;
+			    position: relative;
+			    max-width: 660px;
+			    font-style: normal;
+			    line-height: 1;
+			    padding-bottom: 1px;
+			    color: #ffffff;
+				  &:after{
+				    content: '';
+				    position: absolute;
+				    display: block;
+				    right: 10px;
+				    bottom: -15px;
+				    width: 146px;
+				    height: 104px;
+				    background: url(../images/11years/red_braces.png) 0 0 no-repeat;
+				    background-size: 100% 100%;
+				  }
+			}
+			h3{
+				    font-family: 'Roboto';
+				    font-size: 36px;
+				    font-weight: bold;
+				    font-style: normal;
+				    line-height: normal;
+				    color: #ffffff;
+				    margin-top: 20px;
+				  &:before{
+				  	    content: '';
+					    display: inline-block;
+					    vertical-align: baseline;
+					    width: 630px;
+					    height: 8px;
+					    background: #fff;
+					    margin-right: 25px;
+				  }
+			}
+			p{
+				  height: 28px;
+				  font-family: 'Roboto';
+				  font-size: 24px;
+				  font-weight: bold;
+				  font-style: normal;
+				  color: #f8e71c;
+				  margin-top: 20px;
+			}
+		}
+		.scroll{
+		    display: block;
+		    width: 70px;
+		    height: 70px;
+		    border-radius: 50%;
+		    background-color: #ffffff;
+		    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1);
+		    position: absolute;
+		    bottom: -35px;
+		    left: 50%;
+		    margin-left: -35px;
+		    line-height: 70px;
+		    text-align: center;
+		    img{
+		    	width: 24px;
+		    	height: 34px;
+		    }
+		}
+	}
+}
+ul.sponsors{
+	list-style: none;
+    padding-top: 100px;
+    ul{
+    	list-style: none;
+    }
+	.title{
+		font-family: 'Roboto';
+	    font-size: 14px;
+	    font-weight: 500;
+	    font-style: normal;
+	    text-align: center;
+	    color: #f5a623;
+	    padding-bottom: 20px;
+	    margin-bottom: 32px;
+	    border-bottom: 4px solid #f6a623;
+	}
+	& > li{
+		margin-right: 114px;
+		padding: 0;
+	}
+	li.gold{
+		width: 160px;
+	}
+	li.silver{
+		width: 506px;
+		.title{
+			color: #5fb74c;
+			border-bottom: 4px solid #5fb74c;
+		}
+		ul{
+			li{
+				display: inline-block;
+				vertical-align: middle;
+				padding:0;
+				margin-right: 50px;
+			}
+			li:nth-last-of-type(1){
+				margin-right: 0;
+			}
+			li.thaotay img{
+				width: 55px;
+  				height: 40px;
+			}
+			li.energizer img{
+				width: 110px;
+				height: 28px;
+			}
+			li.techcity img{
+				width: 118px;
+  				height: 32px;
+			}
+			li.pk img{
+				width: 57px;
+  				height: 38px;
+			}
+		}
+	}
+	li.copper{
+		width: 285px;
+		margin-right: 0;
+		.title{
+			color: #ca601b;
+			border-bottom: 4px solid #ca601b;
+		}
+		ul{
+			li{
+				display: inline-block;
+				vertical-align: middle;
+				padding:0;
+				margin-right: 40px;
+			}
+			li:nth-last-of-type(1){
+				margin-right: 0;
+			}
+			li.f2 img{
+				width: 36px;
+  				height: 36px;
+			}
+			li.pisen img{
+				width: 111px;
+  				height: 30px
+			}
+			li.sg img{
+				width: 46px;
+  				height: 46px;
+			}
+		}
+	}
+}
+section.item-awards{
+	padding-top: 100px;
+	margin-left: -14px;
+	margin-right: -14px;
+	.title{
+		padding-top: 2px;
+		height: 80px;
+  		background-color: #ffffff;
+		font-family: 'Roboto';
+		font-size: 24px;
+		font-weight: 500;
+		font-style: normal;
+		line-height: 3.25;
+		text-align: center;
+		color: #4a4a4a;
+	}
+	.item-wrapper{
+		border-radius: 2px;
+  		box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+  		.detail{
+			height: 640px;
+			text-align: center;
+			padding: 27px;
+			h2{
+				  font-family: 'Roboto';
+				  font-size: 36px;
+				  font-weight: bold;
+				  font-style: normal;
+				  line-height: 1.33;
+				  color: #ffffff;
+			}
+			a.btn{
+				display: block;
+			    margin: 20px auto;
+			    width: 180px;
+			    height: 42px;
+			    font-size: 16px;
+			    font-weight: bold;
+			    font-style: normal;
+			    line-height: 1.875;
+			    text-transform: uppercase;
+			    border-radius: 61px;
+			    color: #f75115;
+			    background-color: #ffffff;
+			    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+			    transition: background 0.3s ease;
+				  &:hover{
+				  	color: #d0021b;
+				  	background-color: #f8e81c;
+				  }
+			}
+			a:not(.btn){
+				font-size: 16px;
+			    font-weight: normal;
+			    font-style: normal;
+			    color: #ffffff;
+			    text-decoration: underline;
+			}
+		}
+	}
+	.left {
+		.title{
+			border-top: 2px solid #5fb549;
+		}
+		.detail{
+			background: url('../images/11years/mask_green.png') 0 0 no-repeat;
+			background-size: cover;
+		}
+	}
+	.right{
+		.title{
+			border-top: 2px solid #d0011b;
+		}
+		.detail{
+			background: url('../images/11years/mask_red.png') 0 0 no-repeat;
+			background-size: cover;
+		}
+	}
+}
+section.online-buy{
+ margin-top: 40px;
+ padding: 60px 40px;
+ height: 400px;
+ background: url('../images/11years/bg_orange_circle.png') 0 bottom no-repeat;
+ background-size: 60.5% 50%;
+ box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+ .info{
+ 	font-family: 'Roboto';
+ 	width: 700px;
+ 	float: left;
+ 	h3{
+		  font-size: 24px;
+		  font-weight: bold;
+		  font-style: normal;
+		  color: #000000;
+		  b{
+		  	color: #50aa39;
+		  }
+ 	}
+ 	h2{
+		  font-size: 36px;
+		  font-weight: 300;
+		  font-style: normal;
+		  color: #f75115;
+		  margin: 16px 0;
+ 	}
+ 	p{
+		  font-size: 16px;
+		  font-weight: normal;
+		  font-style: normal;
+		  line-height: 1.5;
+		  color: #4a4a4a;
+ 	}
+ }
+ .image{
+ 	width: calc(100% - 700px);
+    float: right;
+    position: relative;
+    bottom: 15px;
+    right: -20px;
+ 	.icon{
+ 		position: absolute;
+	    width: 188px;
+	    height: 130px;
+	    top: -10px;
+	    left: -90px;
+ 	}
+ }
+}
+section.promotion{
+	margin-top: 56px;
+	background:transparent;
+	.section{
+		  font-family: 'Roboto';
+		  font-size: 24px;
+		  font-weight: 500;
+		  font-style: normal;
+		  color: #4a4a4a;
+		  margin-bottom: 20px;
+	}
+	.product-list{
+		margin-left: -10px;
+		margin-right: -10px;
+		&>div{
+			padding: 0 10px;
+		}
+	}
+	.wrapper{
+		height: 378px;
+		overflow-y: hidden;
+		margin-bottom: 2px;
+	}
+	.item{
+		  height: 330px;
+		  padding: 30px 15px 15px 15px;
+		  border-radius: 2px;
+		  background-color: #ffffff;
+		  border: solid 1px #e6e6e6;
+		  transition: height 0.3s ease;
+		  -webkit-transition: height 0.3s ease;
+		  &:hover{
+		  	height: 360px;
+		  	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+		  	.buy{
+		  		visibility: visible;
+		  		opacity: 1;
+		  	}
+		  }
+		  .image{
+		  	text-align: center;
+		  	margin-bottom: 30px;
+		  }
+		  .name{			  
+		  	font-weight: 500;
+			font-style: normal;
+			 color: #4a4a4a;
+		  }
+		  .price{
+		  	font-weight: 500;
+			font-style: normal;
+		  	color: #f75115;
+		  }
+		  .buy{
+		  	visibility: hidden;
+  			opacity: 0;
+		  	margin-top: 15px;
+		  	transition: all 0.35s ease;
+		  	-webkit-transition: all 0.35s ease;
+		  	a {
+		  		display: inline-block;
+		  		border-radius: 2px;
+		  		  font-size: 14px;
+				  font-weight: 500;
+				  text-align: center;
+				  color: #ffffff;
+		  	}
+		  	.muangay{
+  				background-color: #f75115
+		  	}
+		  	.tragop{
+		  		background-color: #000000;
+		  	}
+		  }
+	}
+}
+#comment{
+	.banner{
+	    height: 100px;
+	    font-size: 48px;
+	    font-weight: bold;
+	    font-style: normal;
+	    text-align: center;
+	    line-height: normal;
+	    color: #ffffff;
+	    line-height: 100px;
+	    background: url(../images/11years/bg_orange_green.png) center center no-repeat;
+	    background-size: cover;
+	}
+	.steps{
+		.step{
+			margin-bottom: 40px;
+			h3{
+				  font-size: 16px;
+				  font-weight: bold;
+				  font-style: normal;
+				  text-transform: uppercase;
+				  color: #f75115;
+				  margin-bottom: 16px;
+			}
+			p{
+				  font-size: 16px;
+				  font-weight: normal;
+				  font-style: normal;
+				  line-height: 1.5;
+				  color: #4a4a4a;
+				 a{
+				 	 color: #f23913;
+				 }
+			}
+		}
+	}
+}

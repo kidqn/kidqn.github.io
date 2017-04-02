@@ -1,0 +1,228 @@
+.Hnam11-popup{
+    background: #fff;
+    min-height: 100%;
+    padding: 65px 0 !important;
+	.container > .section{
+		font-family: 'Roboto';
+		font-size: 24px;
+		font-weight: bold;
+		font-style: normal;
+		line-height: normal;
+		text-align: center;
+		color: #000000;
+		margin-bottom: 24px;
+	}
+	.container > .title{
+		font-family: 'Roboto';
+		font-size: 36px;
+		font-weight: 300;
+		font-style: normal;
+		line-height: normal;
+		text-align: center;
+		color: #f75115;
+		margin-bottom: 55px;
+	}
+	#close{
+	    position: absolute;
+	    z-index: 9999;
+	    top: 60px;
+	    right: 60px;
+	    width: 117px;
+	    padding: 8px 9px;
+	    border-radius: 61px;
+	    background-color: #ffffff;
+	    border: solid 1px #cccccc;
+	    font-family: 'Roboto';
+	    font-size: 16px;
+	    font-weight: 500;
+	    font-style: normal;
+	    text-align: center;
+	    color: #4a4a4a;
+	    transition: background 0.3s ease;
+	  &:hover{
+	  	background: #f9d9c7;
+	  }  
+	  &:before{
+	  	content: '';
+	  	display: block;
+	  	float: left;
+	  	width: 24px;
+  		height: 24px;
+  		background-image: url('../images/ic-cancel.svg');
+  		background-size: 100% 100%;
+  		background-repeat: no-repeat;
+	  }
+	}
+	.banner{
+	    background: url(../images/mask.png) center center no-repeat;
+	    background-size: cover;
+	    height: 420px;
+	    position: relative;
+	    margin-bottom: 48px;
+    	.head-info{
+		    font-family: 'Roboto';
+		    text-align: center;
+		    position: absolute;
+		    transform: translateY(-50%);
+		    top: 50%;
+    		.text-01{
+			  font-size: 24px;
+			  font-weight: 500;
+			  font-style: normal;
+			  line-height: 1.17;
+			  color: #f8e71c;
+    		}
+    		.old-price{
+    	     height: 42px;
+			  font-size: 36px;
+			  font-weight: 300;
+			  font-style: normal;
+			  line-height: 1.17;
+			  color: #ffffff;
+    		}
+    		.text-02{
+			  font-weight: bold;
+			  font-style: normal;
+			  line-height: 1.17;
+			  color: #ffffff;
+    		}
+    		.new-price{
+				  font-size: 72px;
+				  font-weight: bold;
+				  font-style: normal;
+				  line-height: 1.18;
+				  color: #f8e71c;
+    		}
+    	}
+	}
+}
+.Hnam11-popup .item{
+	text-align: center;
+	.image{
+		margin-bottom: 44px;
+	}
+	.info{
+		.number{
+			display: inline-block;
+		    vertical-align: middle;
+			width: 80px;
+		    height: 80px;
+		    border-radius: 50%;
+		    line-height: 80px;
+		    background-image: linear-gradient(207deg, #e81427, #a71f2b);
+		    display: inline-block;
+		    font-family: 'Roboto';
+		    font-size: 36px;
+		    font-weight: 500;
+		    font-style: normal;
+		    text-align: center;
+		    color: #ffffff;
+		    margin-right: 20px;
+		}
+		.right-info{
+			font-family: 'Roboto';
+			display: inline-block;
+		    vertical-align: middle;
+		    text-align: left;
+		    width: 268px;
+		    height: 68px;
+		    span{
+		    	font-weight: 500;
+    			color: #f23913;
+		    }
+		    .prize{
+			  font-size: 16px;
+			  font-weight: 500;
+			  font-style: normal;
+			  color: #f75115;
+		    }
+		    p{
+			    font-size: 24px;
+			    font-weight: 300;
+			    font-style: normal;
+			    line-height: 1.42;
+			    color: #39393a;
+		    }
+		}
+	}
+	&.medium{
+		.info{
+			.number{
+				width: 80px;
+				height: 80px;
+				background-image: linear-gradient(207deg, #f78815, #f75115);
+			}
+			.right-info{
+				width: 205px;
+				p{
+					font-size: 18px;
+					line-height: 1.33;
+				}
+			}
+		}
+	}
+	&.small{
+		.info{
+			.number{
+				font-size: 24px;
+				width: 60px;
+		  		height: 60px;
+		  		line-height: 60px;
+		  		background-image: linear-gradient(135deg, #b4ed50, #429321);
+			}
+			.right-info{
+				width: 203px;
+				p{
+					font-size: 14px;
+					line-height: 1.71;
+				}
+			}
+		}
+	}
+}
+.Hnam11-popup .product{
+	margin-bottom: 80px;
+}
+.Hnam11-content{
+	padding: 0 100px;
+	font-family: 'Roboto';
+	h3{
+		height: 19px;
+		font-size: 16px;
+		font-weight: 500;
+		font-style: normal;
+		line-height: 118.75%;
+		color: #000000;
+		margin:  0 0 30px 0;
+	}
+	p{
+	    font-size: 16px;
+	    font-weight: normal;
+	    font-style: normal;
+	    line-height: 1.5;
+	    color: #4a4a4a;
+	    margin: 0 0 30px 0;
+	    padding-left: 15px;
+	    position: relative;
+	  &:before{
+	    content: '';
+	    display: block;
+	    width: 8px;
+	    height: 8px;
+	    position: absolute;
+	    left: 0;
+	    top: 8px;
+	    background-color: #f75115;
+	    border-radius: 50%;
+	    margin-right: 8px;  
+	  }
+	  &.no-dot{
+	  	&:before{
+	  		display: none;
+	  	}
+	  }
+	  & + p.no-dot{
+	  	margin-top: -30px;
+	  }
+	}
+}
