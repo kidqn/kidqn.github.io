@@ -485,7 +485,7 @@ section.promotion{
 	    background-size: cover;
 	}
 	.steps{
-		padding-top: 55px;
+		padding: 50px 100px;
 		.step{
 			margin-bottom: 40px;
 			h3{
@@ -529,6 +529,19 @@ section.promotion{
 						padding-left: 40px;
 					}
 				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px){
+	.Hnam11-p{
+		#header{
+			height: 60px;
+		    line-height: 60px;
+		    text-align: center;
+		    ul.r-nav {
+			    display: none;
 			}
 		}
 	}
