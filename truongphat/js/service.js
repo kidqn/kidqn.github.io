@@ -76,6 +76,7 @@ function onScrollAnimationInit( items, trigger ) {
 }
 
 $(function(){
+
   //initialize UI for homepage
   if(!isMobile()){
     if($('body').hasClass('home-p')){
@@ -156,6 +157,9 @@ $(function(){
     }
   });
 })
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
 $(window).load(function(){
   //initialize animation
   onScrollAnimationInit( $('.tp-animation') );
