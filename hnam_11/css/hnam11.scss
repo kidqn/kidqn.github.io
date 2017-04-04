@@ -1002,8 +1002,26 @@ section.promotion{
    			text-align: center;
 		}
 	}
-	#fb-comment-hnam{
-		padding: 0 10px;
+	#comment{
+		.banner{
+			font-size: 24px;
+		}
+		.steps{
+			padding: 10px;
+			.step {
+			    margin-bottom: 30px;
+			    .share ul{
+				    padding: 0;
+				    width: 100%;
+				    li{
+				    	width: 50%;
+				    }
+				}
+			}
+		}
+		#fb-comment-hnam{
+			padding: 0 10px;
+		}
 	}
 	footer{
 		margin-bottom: 50px;
