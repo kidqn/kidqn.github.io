@@ -1,10 +1,10 @@
 $(function(){
-	$('#close').click(function(){
+	$('#thele-01 #close').click(function(e){
+		e.stopPropagation() 
+		$(this).parent().modal('toggle');
+	})
+	$('#thele-02 #close').click(function(e){
+		e.stopPropagation() 
 		$(this).parent().modal('toggle');
 	})
 });
-$(window).load(function(){
-    setTimeout(function(){ 
-    	$('#popup-detail-01').modal('show');
-    }, 1000);
-})
