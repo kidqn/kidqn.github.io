@@ -1010,13 +1010,17 @@ section.promotion{
 			padding: 10px;
 			.step {
 			    margin-bottom: 30px;
-			    .share ul{
-				    padding: 0;
-				    width: 100%;
-				    li{
-				    	width: 50%;
-				    }
-				}
+			    .share {
+			    	margin-top: 10px;
+			    	ul{
+					    padding: 0;
+					    width: 100%;
+					    li{
+					    	width: 50%;
+					    	padding: 0 10px;
+					    }
+					}
+			    }
 			}
 		}
 		#fb-comment-hnam{
