@@ -1,0 +1,126 @@
+/* main scss. Reformat css file to find duplicated CSS classes */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+
+* { -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; /* Introduced in IE 10. See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/ */ -ms-user-select: none; user-select: none; font-weight: normal; }
+
+html, body { width: 100%; height: 100%; margin: 0; }
+
+body { font-size: 16px; font-family: 'HelveticaNeue', sans-serif; font-weight: normal; text-rendering: optimizeLegibility !important; -webkit-font-smoothing: antialiased !important; }
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.row-flex { display: flex; flex-wrap: wrap; }
+
+main#main { height: 100%; }
+
+.uplift-container { padding: 0 70px; }
+
+.btn_round-green { font-family: HelveticaNeue; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; text-align: center; color: #ffffff; padding: 15px 24px; text-transform: uppercase; border-radius: 3px; box-shadow: 0 4px 9px 0 rgba(26, 47, 59, 0.11); background-color: #b8d432; }
+
+.btn_round-strong-green { background-color: #35612e; }
+
+.headline-line-through { font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 900; font-style: normal; font-stretch: normal; text-transform: uppercase; line-height: 1.2; letter-spacing: normal; text-align: center; color: #ffffff; }
+
+.headline-line-through span { display: inline-block; position: relative; }
+
+.headline-line-through span:before, .headline-line-through span:after { content: ''; position: absolute; top: 50%; height: 1px; display: block; background: #fff; width: 100%; }
+
+.headline-line-through span:before { right: 100%; margin-right: 15px; }
+
+.headline-line-through span:after { left: 100%; margin-left: 15px; }
+
+.headline-line-through-black { color: #454545; }
+
+.headline-line-through-black span:before, .headline-line-through-black span:after { background-color: #e4f4e2; }
+
+@font-face { font-family: 'HelveticaNeue'; src: url("./fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("./fonts/HelveticaNeue.woff") format("woff"), url("./fonts/HelveticaNeue.ttf") format("truetype"), url("./fonts/HelveticaNeue.svg#HelveticaNeue") format("svg"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'HelveticaNeue'; src: url("./fonts/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("./fonts/HelveticaNeue-Bold.woff") format("woff"), url("./fonts/HelveticaNeue-Bold.ttf") format("truetype"), url("./fonts/HelveticaNeue-Bold.svg#HelveticaNeue-Bold") format("svg"); font-weight: bold; font-style: normal; }
+
+@font-face { font-family: 'SFUIDisplay'; src: url("./fonts/sf-ui-display-regular-webfont.eot"); src: url("./fonts/sf-ui-display-regular-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/sf-ui-display-regular-webfont.woff2") format("woff2"), url("./fonts/sf-ui-display-regular-webfont.woff") format("woff"), url("./fonts/sf-ui-display-regular-webfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'SFUIDisplay'; src: url("./fonts/sf-ui-display-light-webfont.eot"); src: url("./fonts/sf-ui-display-light-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/sf-ui-display-light-webfont.woff2") format("woff2"), url("./fonts/sf-ui-display-light-webfont.woff") format("woff"), url("./fonts/sf-ui-display-light-webfont.ttf") format("truetype"); font-weight: 300; font-style: normal; }
+
+@font-face { font-family: 'SFUIDisplay'; src: url("./fonts/sf-ui-display-black-webfont.eot"); src: url("./fonts/sf-ui-display-black-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/sf-ui-display-black-webfont.woff2") format("woff2"), url("./fonts/sf-ui-display-black-webfont.woff") format("woff"), url("./fonts/sf-ui-display-black-webfont.ttf") format("truetype"); font-weight: 900; font-style: normal; }
+
+#top-nav { position: absolute; top: 40px; left: 0; width: 100%; height: 40px; background: 0; padding: 16px 40px; }
+
+#uplift-video { position: absolute; bottom: 0px; right: 0px; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1000; overflow: hidden; }
+
+.menu-home .nav-link { padding: 17px; font-family: 'HelveticaNeue'; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; text-align: center; text-transform: uppercase; color: #fff; }
+
+.menu-home .nav-link:hover { color: #b8d432; }
+
+.right-menu .nav-link { font-family: HelveticaNeue; font-size: 13px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: normal; text-align: center; color: #ffffff; padding: 17px 9px; }
+
+.right-menu #start-invest { margin-left: 10px; }
+
+section#banner-video { height: 100%; width: 100%; overflow: hidden; position: relative; }
+
+section#banner-video .head-info { position: absolute; bottom: 0; padding-bottom: 175px; width: 100%; }
+
+section#banner-video .head-info:after { background: #b8d432; position: absolute; width: 100%; height: 10px; content: ''; display: block; bottom: 0; left: 0; }
+
+section#banner-video .head-info h1.title { max-width: 750px; font-family: 'SFUIDisplay'; font-size: 60px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.1; letter-spacing: normal; color: #ffffff; margin: 0; }
+
+section#banner-video .head-info p.intro { max-width: 750px; font-family: 'SFUIDisplay'; font-size: 24px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; color: #ffffff; margin: 0 0 8px 0; }
+
+section#banner-video .head-info a.btn { padding: 15p 32px; }
+
+section#about { position: relative; height: 662px; padding: 140px 0; background: url("./images/green-decorator.png") top right no-repeat; background-size: cover; }
+
+section#about .head-info { position: relative; width: 513px; height: 165px; }
+
+section#about .head-info:after { content: ''; display: block; position: absolute; bottom: -3px; width: 155px; height: 8px; background-color: #b8d432; }
+
+section#about .head-info h2.title { font-family: 'SFUIDisplay'; font-size: 40px; font-weight: 900; font-style: normal; font-stretch: normal; text-transform: uppercase; line-height: 1.2; letter-spacing: 0.5px; color: #454545; }
+
+section#about .head-info p.intro { position: absolute; left: 170px; top: 100px; width: 500px; height: 80px; font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.4px; color: #454545; }
+
+section#about .head-info p.intro b { font-weight: 900; color: #b8d432; }
+
+section#embrace-your-power { min-height: 655px; position: relative; background-color: rgba(63, 52, 42, 0.59); padding: 40px 0; }
+
+section#embrace-your-power .sidebar { position: absolute; left: 50%; transform: translate3d(-50%, 0, 0); top: -200px; padding: 45px 55px 40px 55px; width: 598px; height: 355px; box-shadow: 0 10px 17px 0 rgba(0, 0, 0, 0.21); background-color: #b8d432; }
+
+section#embrace-your-power .sidebar img { margin: 0 0 15px 0; }
+
+section#embrace-your-power .sidebar h3 { font-family: 'SFUIDisplay'; font-size: 22px; font-weight: 900; font-style: normal; font-stretch: normal; text-transform: uppercase; line-height: 1.27; letter-spacing: 0.5px; color: #ffffff; margin: 0 0 15px 0; }
+
+section#embrace-your-power .sidebar p { font-family: HelveticaNeue; font-size: 15px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.4; letter-spacing: 0.3px; color: #ffffff; }
+
+section#embrace-your-power .head-info { margin-top: 200px; margin-bottom: 50px; }
+
+section#embrace-your-power .head-info h4.title { font-family: 'SFUIDisplay'; font-size: 30px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; text-align: center; color: #ffffff; }
+
+section#embrace-your-power .head-info p.intro { font-family: 'HelveticaNeue'; font-size: 20px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.55; text-align: center; color: #ffffff; }
+
+section#embrace-your-power .how-it-works > h3 { margin-bottom: 50px; }
+
+section#embrace-your-power .how-it-works .item { text-align: center; margin-bottom: 20px; }
+
+section#embrace-your-power .how-it-works .item .icon { margin-bottom: 20px; height: 70px; }
+
+section#embrace-your-power .how-it-works .item p { height: 19px; font-family: 'HelveticaNeue'; font-size: 16px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.19; letter-spacing: 0.4px; padding: 0 35px; text-align: center; color: #ffffff; }
+
+section#embrace-your-power .how-it-works .nav-bottom { margin-top: 40px; text-align: center; }
+
+section#embrace-your-power .how-it-works .nav-bottom a { font-family: 'HelveticaNeue'; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 0.5px; color: #b8d432; }
+
+section#become-investor { padding: 30px; background: url("./images/bg_become_investor.jpg") center center repeat; background-size: cover; }
+
+section#become-investor .head-info { height: 226px; box-shadow: 0 8px 10px 0 rgba(25, 33, 61, 0.04); background-color: #ffffff; width: 100%; font-family: 'HelveticaNeue'; padding: 44px 30px 30px 30px; text-align: center; }
+
+section#become-investor .head-info h3.title { font-size: 26px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; text-align: center; color: #454545; }
+
+section#become-investor .head-info p.intro { max-width: 504px; font-size: 16px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.25; letter-spacing: 0.7px; text-align: center; color: #454545; margin: 0 auto 23px auto; }
+
+section#become-investor .head-info a.btn { width: 225px; }
+
+section#subscribe .headline-line-through { font-family: 'HelveticaNeue'; font-size: 26px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: 1.73; letter-spacing: normal; text-align: center; color: #454545; text-transform: capitalize; }
+
+section#subscribe .subscribe-field { justify-content: center; }
+
+section#subscribe .subscribe-field input { width: 450px; height: 48px; border-radius: 2px; margin-right: 15px; box-shadow: 0 4px 9px 0 rgba(26, 47, 59, 0.11); background-color: #ffffff; }
+
+section#subscribe .subscribe-field button { width: 153px; height: 48px; }
