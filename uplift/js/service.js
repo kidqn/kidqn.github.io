@@ -1,4 +1,26 @@
+//chinh size banner video khi kick thuoc man hinh thay doi
+function resetStyleHomePage(){
+    if($('body').hasClass('home-p')){
+      $('#banner-video').css('height',window.innerHeight + 'px');
+    }
+}
+//handle resize event//
+window.addEventListener("resize", resizeThrottler, false);
+var resizeTimeout;
+function resizeThrottler() {
+    // ignore resize events as long as an actualResizeHandler execution is in the queue
+    if ( !resizeTimeout ) {
+      resizeTimeout = setTimeout(function() {
+        resizeTimeout = null;
+        resetStyleHomePage();
+     
+       // The actualResizeHandler will execute at a rate of 15fps
+       }, 66);
+    }
+}
+
 $(function(){
+  resetStyleHomePage();
   //set action header
   var iScrollPos = 0;
   var lastScrollTop = 0;
@@ -6,31 +28,14 @@ $(function(){
   var heightHeaderBar = $('#top-nav').outerHeight();
   $(window).scroll(function () {
       var iCurScrollPos = $(this).scrollTop();
-      console.log(iCurScrollPos)
       // Make sure they scroll more than delta
-      if(iCurScrollPos < 300){
+      console.log(heightHeaderBar + 50)
+      if(iCurScrollPos < heightHeaderBar + 50){
         //Note: different from homepage a bit
-        $("#top-nav").removeClass('fixed-top open');
-        $('#top-nav').attr('style','');
+        $("#top-nav").removeClass('smart');
         return;
-      }
-      if(iCurScrollPos < 800 && iCurScrollPos >= 300){
-          //Note: different from homepage a bit
-          if($('body').hasClass('home-p')){
-            $('#top-nav').addClass('fixed-top open');
-          }
-          return;
-      }
-      if (iCurScrollPos > iScrollPos) {
-        //Scrolling Down
-        $('#top-nav').addClass('fixed-top');
-        $('#top-nav').attr('style','top: -90px');
-      } else {
-        //Scrolling Up
-        if( $('#top-nav').hasClass('fixed-top')){
-          $('#top-nav').addClass('open');
-          $('#top-nav').attr('style','');
-        }
+      }else {
+        $("#top-nav").addClass('smart');
       }
       iScrollPos = iCurScrollPos;
   });
