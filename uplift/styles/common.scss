@@ -71,10 +71,20 @@ main#main{
     transition: -webkit-transform 200ms ease-out;
 }
 
+/* layout */
 .uplift-container{
     padding: 0 70px;
 }
-
+.uplift-row {
+    margin-left: -17px;
+    margin-right: -17px;
+    & >[class^=col-] {
+        padding-left: 17px;
+        padding-right: 17px;
+        margin-bottom: 32px;
+    }
+}
+/* --- layout --- */
 .btn_round-green {
     font-family: HelveticaNeue;
     font-size: 11px;

@@ -300,6 +300,161 @@ section#embrace-your-power{
     }
 }
 
+section#portfolios{
+    .uplift-container {
+        .wrapper {
+            padding: 55px 0 0 0;
+            border-top: 10px solid #ecf8b0;
+        }
+    }
+    h2.title {
+        font-family: 'SFUIDisplay';
+        font-size: 40px;
+        font-weight: 900;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        text-align: center;
+        color: #454545;
+    }
+    p.intro {
+        font-family: 'HelveticaNeue';
+        font-size: 24px;
+        font-weight: 300;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.88;
+        letter-spacing: normal;
+        text-align: center;
+        color: #454545;
+    }
+    .list-models{
+        margin-top: 48px;
+        .item {
+            .card {
+                border: 0;
+                .icon {
+                    height: 80px;
+                    display: flex;
+                    align-items: flex-end;
+                    margin-bottom: 10px;
+                }
+                .card-body{
+                    padding: 0;
+                    .card-title {
+                        font-family: 'SFUIDisplay';
+                        font-size: 20px;
+                        font-weight: 900;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.2;
+                        letter-spacing: normal;
+                        text-transform: uppercase;
+                        color: #3f342a;
+                        margin-bottom: 0.58rem;
+                    }
+                    .card-text {
+                        font-family: 'HelveticaNeue';
+                        font-size: 14px;
+                        font-weight: normal;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.43;
+                        letter-spacing: 0.4px;
+                        color: #454545;
+                        margin-bottom: 1.25rem;
+                    }
+                    .card-heading{
+                        font-family: 'HelveticaNeue';
+                        font-size: 14px;
+                        font-weight: bold;
+                        font-style: normal;
+                        font-stretch: normal;
+                        line-height: 1.2;
+                        letter-spacing: 0.4px;
+                        color: #454545;
+                        margin-bottom: 0.4rem;
+                    }
+                }
+                .card-label{
+                    margin-top: 5px;
+                    height: 45px;
+                    background: url('./images/bg_cross-lightgreen.png') 0 0 repeat;
+                }
+            }
+        }
+        .item:nth-of-type(5n+2){
+            .card {
+                .card-title {
+                    color: #2c1716;
+                }
+                .card-label {
+                    background: url('./images/bg_cross-lightgrey.png') 0 0 repeat;
+                }
+            }
+        }
+        .item:nth-of-type(5n+3){
+            .card {
+                .card-title {
+                    color: #19213d;
+                }
+                .card-label {
+                    background: url('./images/bg_cross-blue.png') 0 0 repeat;
+                }
+            }
+        }
+        .item:nth-of-type(5n+4){
+            .card {
+                .card-title {
+                    color: #001e49;
+                }
+                .card-label {
+                    background: url('./images/bg_cross-lightblue.png') 0 0 repeat;
+                }
+            }
+        }
+        .item:nth-of-type(5n+5){
+            .card {
+                .card-title {
+                    color: #35612e;
+                }
+                .card-label {
+                    background: url('./images/bg_cross-darkgreen.png') 0 0 repeat;
+                }
+            }
+        }
+        .item:nth-of-type(5n+6){
+            padding-top: 30px;
+        }
+        .sidebar.card{
+            padding: 15px 32px 25px 30px;
+            border-radius: 0;
+            background-color: #b8d432;
+            .card-body {
+                .card-title, .card-text, .card-footer {
+                    color: #fff;
+                }
+            }
+            .card-footer{
+                background: no-repeat;
+                padding: 10px 0 0 0;
+                a{
+                    font-size: 11px;
+                    font-weight: bold;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.18;
+                    letter-spacing: 0.5px;
+                    text-align: center;
+                    color: #ffffff;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
 section#become-investor{
     padding: 30px;
     background: url('./images/bg_cross-lightgreen.png') 0 0 repeat;

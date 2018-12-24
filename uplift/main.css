@@ -13,8 +13,14 @@ body { font-size: 16px; font-family: 'HelveticaNeue', sans-serif; font-weight: n
 
 main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms ease-out; }
 
+/* layout */
 .uplift-container { padding: 0 70px; }
 
+.uplift-row { margin-left: -17px; margin-right: -17px; }
+
+.uplift-row > [class^=col-] { padding-left: 17px; padding-right: 17px; margin-bottom: 32px; }
+
+/* --- layout --- */
 .btn_round-green { font-family: HelveticaNeue; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; text-align: center; color: #ffffff; padding: 15px 24px; text-transform: uppercase; border-radius: 3px; box-shadow: 0 4px 9px 0 rgba(26, 47, 59, 0.11); background-color: #b8d432; }
 
 .btn_round-strong-green { background-color: #35612e; }
@@ -140,6 +146,54 @@ section#embrace-your-power .how-it-works .item p { height: 19px; font-family: 'H
 section#embrace-your-power .how-it-works .nav-bottom { margin-top: 40px; text-align: center; }
 
 section#embrace-your-power .how-it-works .nav-bottom a { font-family: 'HelveticaNeue'; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 0.5px; color: #b8d432; }
+
+section#portfolios .uplift-container .wrapper { padding: 55px 0 0 0; border-top: 10px solid #ecf8b0; }
+
+section#portfolios h2.title { font-family: 'SFUIDisplay'; font-size: 40px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; text-align: center; color: #454545; }
+
+section#portfolios p.intro { font-family: 'HelveticaNeue'; font-size: 24px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: 1.88; letter-spacing: normal; text-align: center; color: #454545; }
+
+section#portfolios .list-models { margin-top: 48px; }
+
+section#portfolios .list-models .item .card { border: 0; }
+
+section#portfolios .list-models .item .card .icon { height: 80px; display: flex; align-items: flex-end; margin-bottom: 10px; }
+
+section#portfolios .list-models .item .card .card-body { padding: 0; }
+
+section#portfolios .list-models .item .card .card-body .card-title { font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; text-transform: uppercase; color: #3f342a; margin-bottom: 0.58rem; }
+
+section#portfolios .list-models .item .card .card-body .card-text { font-family: 'HelveticaNeue'; font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.43; letter-spacing: 0.4px; color: #454545; margin-bottom: 1.25rem; }
+
+section#portfolios .list-models .item .card .card-body .card-heading { font-family: 'HelveticaNeue'; font-size: 14px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: 0.4px; color: #454545; margin-bottom: 0.4rem; }
+
+section#portfolios .list-models .item .card .card-label { margin-top: 5px; height: 45px; background: url("./images/bg_cross-lightgreen.png") 0 0 repeat; }
+
+section#portfolios .list-models .item:nth-of-type(5n+2) .card .card-title { color: #2c1716; }
+
+section#portfolios .list-models .item:nth-of-type(5n+2) .card .card-label { background: url("./images/bg_cross-lightgrey.png") 0 0 repeat; }
+
+section#portfolios .list-models .item:nth-of-type(5n+3) .card .card-title { color: #19213d; }
+
+section#portfolios .list-models .item:nth-of-type(5n+3) .card .card-label { background: url("./images/bg_cross-blue.png") 0 0 repeat; }
+
+section#portfolios .list-models .item:nth-of-type(5n+4) .card .card-title { color: #001e49; }
+
+section#portfolios .list-models .item:nth-of-type(5n+4) .card .card-label { background: url("./images/bg_cross-lightblue.png") 0 0 repeat; }
+
+section#portfolios .list-models .item:nth-of-type(5n+5) .card .card-title { color: #35612e; }
+
+section#portfolios .list-models .item:nth-of-type(5n+5) .card .card-label { background: url("./images/bg_cross-darkgreen.png") 0 0 repeat; }
+
+section#portfolios .list-models .item:nth-of-type(5n+6) { padding-top: 30px; }
+
+section#portfolios .list-models .sidebar.card { padding: 15px 32px 25px 30px; border-radius: 0; background-color: #b8d432; }
+
+section#portfolios .list-models .sidebar.card .card-body .card-title, section#portfolios .list-models .sidebar.card .card-body .card-text, section#portfolios .list-models .sidebar.card .card-body .card-footer { color: #fff; }
+
+section#portfolios .list-models .sidebar.card .card-footer { background: no-repeat; padding: 10px 0 0 0; }
+
+section#portfolios .list-models .sidebar.card .card-footer a { font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 0.5px; text-align: center; color: #ffffff; text-transform: uppercase; }
 
 section#become-investor { padding: 30px; background: url("./images/bg_cross-lightgreen.png") 0 0 repeat; }
 
