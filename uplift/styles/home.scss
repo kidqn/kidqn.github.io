@@ -63,8 +63,117 @@
             color: #b8d432;
         }
     }
+    .sub-menu{
+        font-family: 'HelveticaNeue';
+        position: absolute;
+        width: 741px;
+        height: 223px;
+        border-radius: 3px;
+        background-color: #ffffff;
+        padding: 27px 42px 23px 33px;
+        .title{
+            font-size: 11px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.18;
+            letter-spacing: 0.5px;
+            text-align: left;
+            color: #454545;
+            text-transform: uppercase;
+            margin: 0 0 18px 0;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            .nav-link{
+                font-size: 11px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 2.73;
+                letter-spacing: 0.5px;
+                color: #b8d432;
+                padding: 0;
+                text-align: left;
+            }
+        }
+        .left-side {
+            padding: 22px 38px 0 15px;
+            border-right: 1px solid #ddf36f;
+            p{
+                font-size: 12px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.5;
+                letter-spacing: 0.3px;
+                color: #454545;
+                margin: 0 0 15px 0;
+            }
+            a{
+                font-size: 11px;
+                font-weight: bold;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.18;
+                letter-spacing: 0.5px;
+                color: #b8d432;
+            }
+        }
+        .right-side{
+            padding: 22px 0 0 37px;
+        }
+    }
+    .dropdown.show{
+        &:after,
+        &:before {
+            border-top: 10px solid white;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            position: absolute;
+            bottom: -5px;
+            content: '';
+            left: 50%;
+            -webkit-transform: rotate(180deg);
+            transform: rotateX(180deg);
+            z-index: 1000;
+        }
+        &:before {
+            border-right: 10px solid transparent;
+            border-top: 10px solid;
+            border-left: 10px solid transparent;
+            border-top-color: #B1B1B1;
+            bottom: -4px;
+        }
+        & > .dropdown-menu, &:before, &:after {
+            animation-name: slidenavAnimation;
+            animation-duration: 0.3s;
+          
+            -webkit-animation-name: slidenavAnimation;
+            -webkit-animation-duration:.3s;
+          
+            -moz-animation-name: slidenavAnimation;
+            -moz-animation-duration:.3s;
+          }
+    }
 }
-
+@keyframes slidenavAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+@-webkit-keyframes slidenavAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 .right-menu {
     .nav-link{
         font-family: 'HelveticaNeue';
