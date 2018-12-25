@@ -164,6 +164,9 @@ main#main{
         letter-spacing: 0.5px;
         color: #35612e;
         padding: 0;
+        &:hover{
+            color:  #b8d432;
+        }
     }
     .left-side{
         width: 150px;

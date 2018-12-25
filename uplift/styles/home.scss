@@ -96,6 +96,9 @@
                 color: #b8d432;
                 padding: 0;
                 text-align: left;
+                &:hover {
+                    color: #35612e;
+                }
             }
         }
         .left-side {
@@ -125,7 +128,7 @@
             padding: 22px 0 0 37px;
         }
     }
-    .dropdown.show{
+    .dropdown:hover{
         &:after,
         &:before {
             border-top: 10px solid white;
@@ -156,6 +159,9 @@
             -moz-animation-name: slidenavAnimation;
             -moz-animation-duration:.3s;
           }
+        .sub-menu {
+            display: block;
+        }
     }
 }
 @keyframes slidenavAnimation {
@@ -197,11 +203,12 @@ section#banner-video{
     width: 100%;
     overflow: hidden;
     position: relative;
+    & > .container{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
     .head-info{
-        position: absolute;
-        bottom: 0;
-        padding-bottom: 175px;
-        width: 100%;
         &:after {
             background: #b8d432;
             position: absolute;
@@ -210,7 +217,7 @@ section#banner-video{
             content: '';
             display: block;
             bottom: 0;
-            left: 0;
+            left: auto;
         }
         h1.title {
             max-width: 750px;
@@ -244,26 +251,31 @@ section#banner-video{
 
 section#about {
     position: relative;
-    height: 662px;
-    padding: 140px 0;
-    background: url('./images/green-decorator.png') top right no-repeat;
-    background-size: cover;
+    min-height: 662px;
+    padding: 141px 0;
+    background: url(./images/green-decorator.png) top right no-repeat;
+    background-size: contain;
+    &::after{
+        display: block;
+        content: '';
+        padding-bottom: 18%;
+    }
     .head-info{
         position: relative;
-        width: 513px;
+        width: 610px;
         height: 165px;
         &:after {
             content: '';
             display: block;
             position: absolute;
-            bottom: -3px;
-            width: 155px;
+            bottom: -33px;
+            width: 174px;
             height: 8px;
             background-color: #b8d432;
         }
         h2.title {
             font-family: 'SFUIDisplay';
-            font-size: 40px;
+            font-size: 48px;
             font-weight: 900;
             font-style: normal;
             font-stretch: normal;
@@ -274,12 +286,12 @@ section#about {
         }
         p.intro{
             position: absolute;
-            left: 170px;
-            top: 100px;
-            width: 500px;
+            left: 200px;
+            top: 118px;
+            width: 560px;
             height: 80px;
             font-family: 'SFUIDisplay';
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 300;
             font-style: normal;
             font-stretch: normal;
