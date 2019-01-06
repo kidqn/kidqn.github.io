@@ -65,6 +65,13 @@ body {
     flex-wrap: wrap;
 }
 
+/* common element */
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 main#main{
     position: relative;
     z-index: 1;
@@ -84,7 +91,17 @@ main#main{
         margin-bottom: 32px;
     }
 }
-/* --- layout --- */
+
+/* border */
+.no-border {
+    border: 0 !important;
+}
+
+.no-border-top{
+    border-top: 0 !important;
+}
+
+/* --- button --- */
 .btn_round-green {
     font-family: HelveticaNeue;
     font-size: 11px;
@@ -105,6 +122,40 @@ main#main{
 .btn_round-strong-green {
     background-color: #35612e;
 }
+
+.btn_right-arrow {
+    height: 50px;
+    border-radius: 3px;
+    padding: 15px 25px 15px 30px;
+    box-shadow: 0 8px 10px 0 rgba(25, 33, 61, 0.04);
+    color: #f0d61f;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 0.4px;
+    text-align: left;
+    span {
+        float: right;
+        font-size: 0.8em;
+        margin-top: 3px;
+    }
+}
+
+.btn_right-arrow-green {
+    color: #b8d432
+}
+
+.btn_right-arrow-blue {
+    color: #495786
+}
+
+.btn_right-arrow-lightblue {
+    color: #32b8d4
+}
+
+
 .headline-line-through {
     font-family: 'SFUIDisplay';
     font-size: 20px;
