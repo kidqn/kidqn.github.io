@@ -1,7 +1,7 @@
 //chinh size banner video khi kick thuoc man hinh thay doi
 function resetStyleHomePage(){
-    if($('body').hasClass('home-p')){
-      $('#banner-video').css('height',window.innerHeight + 'px');
+    if($('section#banner-video')){
+      $('section#banner-video').css('height',window.innerHeight + 'px');
     }
 }
 //handle resize event//

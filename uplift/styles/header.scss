@@ -19,6 +19,7 @@
         color: #000;
         height: 70px;
         padding: 16px 40px;
+        box-shadow: 0px 2px 10px 0 rgba(0,0,0,0.15);
         .logo {
             display: none;
         }
@@ -28,6 +29,12 @@
         .menu-home, .right-menu {
             .nav-link{
                 color: #454545;
+            }
+        }
+        .right-menu {
+            #start-invest {
+                background-color: #b8d432;
+                color: #fff;
             }
         }
     }
@@ -185,6 +192,23 @@
     .right-menu {
         #start-invest {
             background-color: #35612e;
+        }
+    }
+}
+
+.header-black {
+    .menu-home, .right-menu {
+        .nav-link{
+            color: #454545;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    .right-menu {
+        #start-invest {
+            background-color: #fff;
+            color: #454545;
         }
     }
 }
