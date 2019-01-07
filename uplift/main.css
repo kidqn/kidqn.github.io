@@ -11,6 +11,9 @@ body { font-size: 16px; font-family: 'HelveticaNeue', sans-serif; font-weight: n
 
 .row-flex { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
+/* common element */
+a:hover { text-decoration: none; }
+
 main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms ease-out; }
 
 /* layout */
@@ -20,10 +23,33 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 .uplift-row > [class^=col-] { padding-left: 17px; padding-right: 17px; margin-bottom: 32px; }
 
-/* --- layout --- */
-.btn_round-green { font-family: HelveticaNeue; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; text-align: center; color: #ffffff; padding: 15px 24px; text-transform: uppercase; border-radius: 3px; -webkit-box-shadow: 0 4px 9px 0 rgba(26, 47, 59, 0.11); box-shadow: 0 4px 9px 0 rgba(26, 47, 59, 0.11); background-color: #b8d432; }
+.uplift-row-article { margin-left: -10px; margin-right: -10px; }
+
+.uplift-row-article > [class^=col-] { padding-left: 10px; padding-right: 10px; margin-bottom: 35px; }
+
+/* border */
+.no-border { border: 0 !important; }
+
+.no-border-top { border-top: 0 !important; }
+
+/* --- button --- */
+.btn_round { font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; text-align: center; color: #ffffff; padding: 15px 24px; text-transform: uppercase; border-radius: 3px; -webkit-box-shadow: 0 4px 9px 0 rgba(26, 47, 59, 0.11); box-shadow: 0 4px 9px 0 rgba(26, 47, 59, 0.11); background-color: #b8d432; }
+
+.btn_round-green { background-color: #b8d432; }
 
 .btn_round-strong-green { background-color: #35612e; }
+
+.btn_round-black { background-color: #454545; }
+
+.btn_right-arrow { height: 50px; border-radius: 3px; padding: 15px 25px 15px 30px; -webkit-box-shadow: 0 8px 10px 0 rgba(25, 33, 61, 0.04); box-shadow: 0 8px 10px 0 rgba(25, 33, 61, 0.04); color: #f0d61f; background-color: #ffffff; font-size: 14px; font-weight: 500; font-style: normal; font-stretch: normal; letter-spacing: 0.4px; text-align: left; }
+
+.btn_right-arrow span { float: right; font-size: 0.8em; margin-top: 3px; }
+
+.btn_right-arrow-green { color: #b8d432; }
+
+.btn_right-arrow-blue { color: #495786; }
+
+.btn_right-arrow-lightblue { color: #32b8d4; }
 
 .headline-line-through { font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 900; font-style: normal; font-stretch: normal; text-transform: uppercase; line-height: 1.2; letter-spacing: normal; text-align: center; color: #ffffff; }
 
@@ -63,17 +89,26 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 #footer .right-side ul.social-follow > li a { display: -webkit-box; display: -ms-flexbox; display: flex; }
 
+/*animation */
+@keyframes slidenavAnimation { from { opacity: 0; }
+  to { opacity: 1; } }
+
+@-webkit-keyframes slidenavAnimation { from { opacity: 0; }
+  to { opacity: 1; } }
+
 #top-nav { position: fixed; z-index: 500; left: 0; width: 100%; height: 90px; background: 0; padding: 40px 40px 0 40px; background: 0 0; -webkit-transition: all .3s ease-in; transition: all .3s ease-in; }
 
 #top-nav .logo-color { display: none; }
 
-#top-nav.smart { background: #fff; color: #000; height: 70px; padding: 16px 40px; }
+#top-nav.smart { background: #fff; color: #000; height: 70px; padding: 16px 40px; -webkit-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15); box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15); }
 
 #top-nav.smart .logo { display: none; }
 
 #top-nav.smart .logo-color { display: initial; }
 
 #top-nav.smart .menu-home .nav-link, #top-nav.smart .right-menu .nav-link { color: #454545; }
+
+#top-nav.smart .right-menu #start-invest { background-color: #b8d432; color: #fff; }
 
 .menu-home .nav-link { padding: 17px; font-family: 'HelveticaNeue'; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; text-align: center; text-transform: uppercase; color: #fff; }
 
@@ -116,6 +151,12 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 .header-green .right-menu #start-invest { background-color: #35612e; }
 
+.header-black .menu-home .nav-link, .header-black .right-menu .nav-link { color: #454545; }
+
+.header-black .menu-home .nav-link:hover, .header-black .right-menu .nav-link:hover { color: #fff; }
+
+.header-black .right-menu #start-invest { background-color: #fff; color: #454545; }
+
 @font-face { font-family: 'HelveticaNeue'; src: url("./fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("./fonts/HelveticaNeue.woff") format("woff"), url("./fonts/HelveticaNeue.ttf") format("truetype"), url("./fonts/HelveticaNeue.svg#HelveticaNeue") format("svg"); font-weight: normal; font-style: normal; }
 
 @font-face { font-family: 'HelveticaNeue'; src: url("./fonts/helveticaneue_light-webfont.woff2") format("woff2"), url("./fonts/helveticaneue_light-webfont.woff") format("woff"); font-weight: 300; font-style: normal; }
@@ -129,70 +170,6 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 @font-face { font-family: 'SFUIDisplay'; src: url("./fonts/sf-ui-display-light-webfont.eot"); src: url("./fonts/sf-ui-display-light-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/sf-ui-display-light-webfont.woff2") format("woff2"), url("./fonts/sf-ui-display-light-webfont.woff") format("woff"), url("./fonts/sf-ui-display-light-webfont.ttf") format("truetype"); font-weight: 300; font-style: normal; }
 
 @font-face { font-family: 'SFUIDisplay'; src: url("./fonts/sf-ui-display-black-webfont.eot"); src: url("./fonts/sf-ui-display-black-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/sf-ui-display-black-webfont.woff2") format("woff2"), url("./fonts/sf-ui-display-black-webfont.woff") format("woff"), url("./fonts/sf-ui-display-black-webfont.ttf") format("truetype"); font-weight: 900; font-style: normal; }
-
-#uplift-video { position: absolute; bottom: 0px; right: 0px; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1000; overflow: hidden; }
-
-@keyframes slidenavAnimation { from { opacity: 0; }
-  to { opacity: 1; } }
-
-@-webkit-keyframes slidenavAnimation { from { opacity: 0; }
-  to { opacity: 1; } }
-
-section#banner-video { height: 100%; width: 100%; overflow: hidden; position: relative; }
-
-section#banner-video > .container { height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
-
-section#banner-video .head-info:after { background: #b8d432; position: absolute; width: 100%; height: 10px; content: ''; display: block; bottom: 0; left: auto; }
-
-section#banner-video .head-info h1.title { max-width: 750px; font-family: 'SFUIDisplay'; font-size: 60px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.1; letter-spacing: normal; color: #ffffff; margin: 0; }
-
-section#banner-video .head-info p.intro { max-width: 750px; font-family: 'SFUIDisplay'; font-size: 24px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; color: #ffffff; margin: 0 0 8px 0; }
-
-section#banner-video .head-info a.btn { padding: 15p 32px; }
-
-section#about { position: relative; min-height: 662px; padding: 141px 0; background: url(./images/green-decorator.png) top right no-repeat; background-size: contain; }
-
-section#about::after { display: block; content: ''; padding-bottom: 18%; }
-
-section#about .head-info { position: relative; width: 610px; height: 165px; }
-
-section#about .head-info:after { content: ''; display: block; position: absolute; bottom: -33px; width: 174px; height: 8px; background-color: #b8d432; }
-
-section#about .head-info h2.title { font-family: 'SFUIDisplay'; font-size: 48px; font-weight: 900; font-style: normal; font-stretch: normal; text-transform: uppercase; line-height: 1.2; letter-spacing: 0.5px; color: #454545; }
-
-section#about .head-info p.intro { position: absolute; left: 200px; top: 118px; width: 560px; height: 80px; font-family: 'SFUIDisplay'; font-size: 22px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.4px; color: #454545; }
-
-section#about .head-info p.intro b { font-weight: 900; color: #b8d432; }
-
-section#embrace-your-power { min-height: 655px; position: relative; background: url("./images/bg_mountain.jpg") center center no-repeat; background-size: cover; padding: 40px 0; }
-
-section#embrace-your-power .sidebar { position: absolute; left: 50%; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); top: -200px; padding: 45px 55px 40px 55px; width: 598px; height: 355px; -webkit-box-shadow: 0 10px 17px 0 rgba(0, 0, 0, 0.21); box-shadow: 0 10px 17px 0 rgba(0, 0, 0, 0.21); background-color: #b8d432; }
-
-section#embrace-your-power .sidebar img { margin: 0 0 15px 0; }
-
-section#embrace-your-power .sidebar h3 { font-family: 'SFUIDisplay'; font-size: 22px; font-weight: 900; font-style: normal; font-stretch: normal; text-transform: uppercase; line-height: 1.27; letter-spacing: 0.5px; color: #ffffff; margin: 0 0 15px 0; }
-
-section#embrace-your-power .sidebar p { font-family: HelveticaNeue; font-size: 15px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.4; letter-spacing: 0.3px; color: #ffffff; }
-
-section#embrace-your-power .head-info { margin-top: 200px; margin-bottom: 50px; }
-
-section#embrace-your-power .head-info h4.title { font-family: 'SFUIDisplay'; font-size: 30px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; text-align: center; color: #ffffff; }
-
-section#embrace-your-power .head-info p.intro { font-family: 'HelveticaNeue'; font-size: 20px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.55; text-align: center; color: #ffffff; }
-
-section#embrace-your-power .how-it-works > h3.headline-line-through { margin-bottom: 50px; }
-
-section#embrace-your-power .how-it-works > h3.headline-line-through span:before, section#embrace-your-power .how-it-works > h3.headline-line-through span:after { width: 388px; }
-
-section#embrace-your-power .how-it-works .item { text-align: center; margin-bottom: 20px; }
-
-section#embrace-your-power .how-it-works .item .icon { margin-bottom: 20px; height: 70px; }
-
-section#embrace-your-power .how-it-works .item p { height: 19px; font-family: 'HelveticaNeue'; font-size: 16px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.19; letter-spacing: 0.4px; padding: 0 35px; text-align: center; color: #ffffff; }
-
-section#embrace-your-power .how-it-works .nav-bottom { margin-top: 40px; text-align: center; }
-
-section#embrace-your-power .how-it-works .nav-bottom a { font-family: 'HelveticaNeue'; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 0.5px; color: #b8d432; }
 
 section#portfolios .uplift-container .wrapper { padding: 55px 0 0 0; border-top: 10px solid #ecf8b0; }
 
@@ -246,11 +223,15 @@ section#become-investor { padding: 30px; background: url("./images/bg_cross-ligh
 
 section#become-investor .head-info { height: 226px; -webkit-box-shadow: 0 8px 10px 0 rgba(25, 33, 61, 0.04); box-shadow: 0 8px 10px 0 rgba(25, 33, 61, 0.04); background-color: #ffffff; width: 100%; font-family: 'HelveticaNeue'; padding: 44px 30px 30px 30px; text-align: center; }
 
-section#become-investor .head-info h3.title { font-size: 26px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; text-align: center; color: #454545; }
+section#become-investor .head-info h3.title { font-size: 26px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; text-align: center; color: #454545; margin-bottom: 3px; }
 
 section#become-investor .head-info p.intro { max-width: 504px; font-size: 16px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.25; letter-spacing: 0.7px; text-align: center; color: #454545; margin: 0 auto 23px auto; }
 
 section#become-investor .head-info a.btn { width: 225px; }
+
+section#become-investor .head-info .note { font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 0.5px; text-align: center; text-transform: uppercase; color: #454545; margin-top: 16px; }
+
+section#become-investor.become-investor-orange { background: url("./images/bg_cross-orange.png") 0 0 repeat; }
 
 section#subscribe { padding: 55px 0 35px 0; }
 
@@ -266,7 +247,109 @@ section#subscribe .subscribe-field input { font-family: 'HelveticaNeue'; width: 
 
 section#subscribe .subscribe-field button { width: 153px; height: 48px; }
 
+.home-p #uplift-video { position: absolute; bottom: 0px; right: 0px; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1000; overflow: hidden; }
+
+.home-p section#banner-video { height: 100%; width: 100%; overflow: hidden; position: relative; }
+
+.home-p section#banner-video > .container { height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.home-p section#banner-video .head-info:after { background: #b8d432; position: absolute; width: 100%; height: 10px; content: ''; display: block; bottom: 0; left: auto; }
+
+.home-p section#banner-video .head-info h1.title { max-width: 750px; font-family: 'SFUIDisplay'; font-size: 60px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.1; letter-spacing: normal; color: #ffffff; margin: 0; }
+
+.home-p section#banner-video .head-info p.intro { max-width: 750px; font-family: 'SFUIDisplay'; font-size: 24px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; color: #ffffff; margin: 0 0 8px 0; }
+
+.home-p section#banner-video .head-info a.btn { padding: 15px 32px; }
+
+.home-p section#about { position: relative; min-height: 662px; padding: 141px 0; background: url(./images/green-decorator.png) top right no-repeat; background-size: contain; }
+
+.home-p section#about::after { display: block; content: ''; padding-bottom: 18%; }
+
+.home-p section#about .head-info { position: relative; width: 610px; height: 165px; }
+
+.home-p section#about .head-info:after { content: ''; display: block; position: absolute; bottom: -33px; width: 174px; height: 8px; background-color: #b8d432; }
+
+.home-p section#about .head-info h2.title { font-family: 'SFUIDisplay'; font-size: 48px; font-weight: 900; font-style: normal; font-stretch: normal; text-transform: uppercase; line-height: 1.2; letter-spacing: 0.5px; color: #454545; }
+
+.home-p section#about .head-info p.intro { position: absolute; left: 200px; top: 118px; width: 560px; height: 80px; font-family: 'SFUIDisplay'; font-size: 22px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.4px; color: #454545; }
+
+.home-p section#about .head-info p.intro b { font-weight: 900; color: #b8d432; }
+
+.home-p section#embrace-your-power { min-height: 655px; position: relative; background: url("./images/bg_mountain.jpg") center center no-repeat; background-size: cover; padding: 40px 0; }
+
+.home-p section#embrace-your-power .sidebar { position: absolute; left: 50%; -webkit-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); top: -200px; padding: 45px 55px 40px 55px; width: 598px; height: 355px; -webkit-box-shadow: 0 10px 17px 0 rgba(0, 0, 0, 0.21); box-shadow: 0 10px 17px 0 rgba(0, 0, 0, 0.21); background-color: #b8d432; }
+
+.home-p section#embrace-your-power .sidebar img { margin: 0 0 15px 0; }
+
+.home-p section#embrace-your-power .sidebar h3 { font-family: 'SFUIDisplay'; font-size: 22px; font-weight: 900; font-style: normal; font-stretch: normal; text-transform: uppercase; line-height: 1.27; letter-spacing: 0.5px; color: #ffffff; margin: 0 0 15px 0; }
+
+.home-p section#embrace-your-power .sidebar p { font-family: HelveticaNeue; font-size: 15px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.4; letter-spacing: 0.3px; color: #ffffff; }
+
+.home-p section#embrace-your-power .head-info { margin-top: 200px; margin-bottom: 50px; }
+
+.home-p section#embrace-your-power .head-info h4.title { font-family: 'SFUIDisplay'; font-size: 30px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; text-align: center; color: #ffffff; }
+
+.home-p section#embrace-your-power .head-info p.intro { font-family: 'HelveticaNeue'; font-size: 20px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.55; text-align: center; color: #ffffff; }
+
+.home-p section#embrace-your-power .how-it-works > h3.headline-line-through { margin-bottom: 50px; }
+
+.home-p section#embrace-your-power .how-it-works > h3.headline-line-through span:before, .home-p section#embrace-your-power .how-it-works > h3.headline-line-through span:after { width: 388px; }
+
+.home-p section#embrace-your-power .how-it-works .item { text-align: center; margin-bottom: 20px; }
+
+.home-p section#embrace-your-power .how-it-works .item .icon { margin-bottom: 20px; height: 70px; }
+
+.home-p section#embrace-your-power .how-it-works .item p { height: 19px; font-family: 'HelveticaNeue'; font-size: 16px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.19; letter-spacing: 0.4px; padding: 0 35px; text-align: center; color: #ffffff; }
+
+.home-p section#embrace-your-power .how-it-works .nav-bottom { margin-top: 40px; text-align: center; }
+
+.home-p section#embrace-your-power .how-it-works .nav-bottom a { font-family: 'HelveticaNeue'; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 0.5px; color: #b8d432; }
+
 .invest-p #main { padding-top: 160px; }
+
+.invest-p .article { position: relative; }
+
+.invest-p .article:before { content: ''; display: block; width: 50%; height: 100%; position: absolute; right: 0; top: 0; background: #f8f5e2; z-index: -1; }
+
+.invest-p .article .article-body { position: relative; min-height: 528px; padding: 45px 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.invest-p .article .article-body .lead-image { width: 500px; height: 440px; position: absolute; left: 0; top: auto; overflow: hidden; z-index: 2; }
+
+.invest-p .article .article-body .lead-image .inner { position: relative; }
+
+.invest-p .article .article-body .lead-image .inner .info { position: absolute; width: 100%; height: 100%; bottom: 0; left: 0; padding: 10px 90px 25px 45px; color: #ffffff; background: rgba(0, 0, 0, 0.2); display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
+
+.invest-p .article .article-body .lead-image .inner .info h3 { font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.25; letter-spacing: normal; margin-bottom: 8px; }
+
+.invest-p .article .article-body .lead-image .inner .info p { font-size: 14px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.43; letter-spacing: 0.4px; }
+
+.invest-p .article .article-body .main-content { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; position: absolute; z-index: 1; width: 73.6%; height: 100%; right: 0; top: 0; background: #f8f5e2; }
+
+.invest-p .article .article-body .main-content .wrapper { padding: 34px 50px 30px 280px; -webkit-box-flex: 1; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+
+.invest-p .article .article-body .main-content .wrapper .strap { font-size: 24px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: normal; color: #454545; }
+
+.invest-p .article .article-body .main-content .wrapper .title { font-family: 'SFUIDisplay'; font-size: 30px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; color: #efd310; text-transform: uppercase; margin-bottom: 7px; }
+
+.invest-p .article .article-body .main-content .wrapper p { font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.43; letter-spacing: 0.4px; color: #454545; }
+
+.invest-p .article .article-body .main-content .bottom-action { padding: 15px 100px 20px 280px; -webkit-box-flex: 1; -ms-flex: 1 1 auto; flex: 1 1 auto; background: url(./images/bg_cross-orange.png) 0 0 repeat; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; min-height: 60px; }
+
+.invest-p .article .article-body .main-content .bottom-action button { width: 319px; }
+
+.invest-p .article .article-body .main-content .bottom-action ul.menu { list-style: none; padding: 0; min-height: 150px; margin-bottom: 8px; }
+
+.invest-p .article .article-body .main-content .bottom-action ul.menu li a { font-size: 14px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 2.36; letter-spacing: 0.4px; color: #454545; }
+
+.invest-p .article-right-image:before { left: 0; right: auto; }
+
+.invest-p .article-right-image .article-body .lead-image { right: 0; left: auto; }
+
+.invest-p .article-right-image .article-body .main-content { left: 0; right: auto; }
+
+.invest-p .article-right-image .article-body .main-content .wrapper { padding: 40px 320px 40px 0; }
+
+.invest-p .article-right-image .article-body .main-content .bottom-action { padding: 20px 320px 40px 46px; }
 
 .invest-p section#invest-philosophy .head-info { text-align: center; }
 
@@ -276,16 +359,98 @@ section#subscribe .subscribe-field button { width: 153px; height: 48px; }
 
 .invest-p section#invest-philosophy .head-info p { font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.43; letter-spacing: 0.4px; color: #454545; }
 
-.invest-p .article { position: relative; }
+.invest-p section#invest-philosophy .article { margin-top: 60px; }
 
-.invest-p .article:before { content: ''; display: block; width: 50%; height: 100%; position: absolute; right: 0; top: 0; background: #f8f5e2; z-index: -1; }
+.invest-p section#invest-philosophy .article .main-content .wrapper { padding-bottom: 60px; padding-top: 110px; }
 
-.invest-p .article .main-content { position: relative; min-height: 528px; padding: 47px 0; }
+.invest-p section#invest-philosophy .article .main-content .bottom-action { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
-.invest-p .article .main-content .lead-image { width: 500px; height: 440px; position: absolute; overflow: hidden; z-index: 2; }
+.invest-p section#invest-environment .article { margin-top: 60px; }
 
-.invest-p .article .main-content .right-content { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; position: absolute; z-index: 1; width: 73.6%; height: 100%; right: 0; top: 0; background: #f8f5e2; }
+.invest-p section#invest-environment .article:before { background-color: #fafdec; }
 
-.invest-p .article .main-content .right-content .wrapper { padding: 48px 100px 48px 280px; -webkit-box-flex: 1; -ms-flex: 1 1 auto; flex: 1 1 auto; }
+.invest-p section#invest-environment .article .article-body .main-content { background-color: #fafdec; }
 
-.invest-p .article .main-content .right-content .bottom-menu { padding: 48px 100px 48px 280px; -webkit-box-flex: 1; -ms-flex: 1 1 auto; flex: 1 1 auto; }
+.invest-p section#invest-environment .article .article-body .main-content .wrapper .title { color: #b8d432; }
+
+.invest-p section#invest-environment .article .article-body .main-content .bottom-action { background: url(./images/bg_cross-lightgreen.png) 0 0 repeat; }
+
+.invest-p section#invest-environment .article .article-body .main-content .bottom-action ul.menu li a:hover { color: #b8d432; }
+
+.invest-p section#invest-social .article { margin-top: 60px; }
+
+.invest-p section#invest-social .article:before { background-color: #f5fbff; }
+
+.invest-p section#invest-social .article .article-body .main-content { background-color: #f5fbff; }
+
+.invest-p section#invest-social .article .article-body .main-content .wrapper .title { color: #495786; }
+
+.invest-p section#invest-social .article .article-body .main-content .bottom-action { background: url(./images/bg_cross-blue.png) 0 0 repeat; }
+
+.invest-p section#invest-social .article .article-body .main-content .bottom-action ul.menu li a:hover { color: #495786; }
+
+.invest-p section#invest-social .article .article-body .main-content .bottom-action button { width: 352px; }
+
+.invest-p section#invest-corporation .article { margin-top: 60px; }
+
+.invest-p section#invest-corporation .article:before { background-color: #f4fdff; }
+
+.invest-p section#invest-corporation .article .article-body .main-content { background-color: #f4fdff; }
+
+.invest-p section#invest-corporation .article .article-body .main-content .wrapper { padding: 60px 270px 30px 0; }
+
+.invest-p section#invest-corporation .article .article-body .main-content .wrapper .title { color: #32b8d4; }
+
+.invest-p section#invest-corporation .article .article-body .main-content .bottom-action { background: url(./images/bg_cross-lightblue.png) 0 0 repeat; }
+
+.invest-p section#invest-corporation .article .article-body .main-content .bottom-action ul.menu { padding: 10px 0 0 0; min-height: 124px; }
+
+.invest-p section#invest-corporation .article .article-body .main-content .bottom-action ul.menu li a:hover { color: #32b8d4; }
+
+.invest-bond-p section#banner-video { background-color: #f3ecb9; height: 100vh; width: 100%; overflow: hidden; position: relative; }
+
+.invest-bond-p section#banner-video > .container { height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.invest-bond-p section#banner-video > .container:after { content: ''; display: block; position: absolute; width: 100%; height: 10px; background-color: #fff; bottom: 0; left: auto; }
+
+.invest-bond-p section#banner-video .head-info { position: relative; -webkit-box-flex: 1; -ms-flex: 1; flex: 1; }
+
+.invest-bond-p section#banner-video .head-info .strap { font-size: 50px; font-weight: 100; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 2.3px; color: #454545; }
+
+.invest-bond-p section#banner-video .head-info .title { font-family: 'SFUIDisplay'; font-size: 85px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; text-transform: uppercase; color: #454545; margin-bottom: 4px; }
+
+.invest-bond-p section#banner-video .head-info .intro { width: 628px; font-size: 18px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.22; letter-spacing: 0.8px; color: #454545; margin-bottom: 28px; }
+
+.invest-bond-p section#banner-video .head-info a.btn { font-size: 13px; width: 160px; }
+
+.invest-bond-p section#banner-video .head-info .image { display: inline-block; position: absolute; right: 0; bottom: -95px; }
+
+.invest-bond-p section#impact-themes { background-color: #fdfae7; }
+
+.invest-bond-p section#impact-themes .head-info { padding: 37px 0 0 0; }
+
+.invest-bond-p section#impact-themes .head-info .title { font-size: 40px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; text-align: center; color: #454545; margin-bottom: 8px; }
+
+.invest-bond-p section#impact-themes .head-info .intro { font-size: 18px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.22; letter-spacing: 0.5px; text-align: center; color: #454545; }
+
+.invest-bond-p section#impact-themes .list-article { margin-top: 67px; padding-bottom: 50px; }
+
+.invest-bond-p section#impact-themes .list-article .wrapper { position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; min-width: 0; word-wrap: break-word; background-clip: border-box; }
+
+.invest-bond-p section#impact-themes .list-article .article { padding: 10px 10px 20px 10px; border-radius: 1px; -webkit-box-shadow: 0 8px 10px 0 rgba(25, 33, 61, 0.04); box-shadow: 0 8px 10px 0 rgba(25, 33, 61, 0.04); background-color: #ffffff; }
+
+.invest-bond-p section#impact-themes .list-article .article-img-top { width: 100%; height: 195px; -o-object-fit: cover; object-fit: cover; margin-bottom: 20px; border-radius: 2px; }
+
+.invest-bond-p section#impact-themes .list-article .article-body { margin-bottom: 10px; }
+
+.invest-bond-p section#impact-themes .list-article .article-body .title { font-size: 13px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.23; letter-spacing: 0.6px; text-transform: uppercase; color: #454545; margin-bottom: 10px; }
+
+.invest-bond-p section#impact-themes .list-article .article-body p { font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.29; letter-spacing: 0.5px; color: #454545; }
+
+.invest-bond-p section#impact-themes .list-article .article-footer a { height: 13px; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 0.5px; text-transform: uppercase; color: #b8d432; }
+
+.invest-bond-p section#become-investor .head-info { padding: 20px 30px 30px 30px; }
+
+.invest-bond-p section#become-investor .head-info a.btn { font-size: 13px; }
+
+.invest-bond-p #subscribe-bottom-btn { font-size: 13px; }
