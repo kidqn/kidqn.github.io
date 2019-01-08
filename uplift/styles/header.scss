@@ -212,3 +212,20 @@
         }
     }
 }
+
+.header-brown {
+    .menu-home, .right-menu {
+        .nav-link{
+            color: #3f342a;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    .right-menu {
+        #start-invest {
+            background-color: #fff;
+            color: #3f342a;
+        }
+    }
+}

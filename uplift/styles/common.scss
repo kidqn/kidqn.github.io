@@ -140,6 +140,10 @@ main#main{
     background-color: #454545;
 }
 
+.btn_round-brown {
+    background-color: #3f342a;
+}
+
 .btn_right-arrow {
     height: 50px;
     border-radius: 3px;
@@ -216,6 +220,15 @@ main#main{
     }
 }
 
+.headline-line-through-brown{
+    color: #3f342a;
+    span {
+        &:before, &:after{
+            background-color: #ddf36f;
+        }
+    }
+}
+
 #footer {
     .wrapper{
         border-top: 1px solid #e4f4e2;
@@ -274,6 +287,24 @@ main#main{
                     display: flex;
                 }
             }
+        }
+    }
+}
+
+#footer.footer-black {
+    .nav-link {
+        color: #454545;
+        &:hover {
+            color: #f3ecb9;
+        }
+    }
+}
+
+#footer.footer-brown {
+    .nav-link {
+        color: #3f342a;
+        &:hover {
+            color: #b8d432;
         }
     }
 }

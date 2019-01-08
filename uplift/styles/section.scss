@@ -208,6 +208,11 @@ section#become-investor{
 section#become-investor.become-investor-orange {
     background: url('./images/bg_cross-orange.png') 0 0 repeat;
 }
+
+section#become-investor.become-investor-lightgreen {
+    background: url('./images/bg_cross-lightgreen.png') 0 0 repeat;
+}
+
 section#subscribe {
     padding: 55px 0 35px 0;
     .icon {
@@ -228,7 +233,6 @@ section#subscribe {
         line-height: 1.73;
         letter-spacing: normal;
         text-align: center;
-        color: #454545;
         text-transform: capitalize;
         margin: 0 0 30px 0;
     }
@@ -258,6 +262,175 @@ section#subscribe {
         button {
             width: 153px;
             height: 48px;
+        }
+    }
+}
+
+section#contact-us {
+    min-height: 530px;
+    padding: 97px 0 82px 0;
+    background: url('./images/bg_contact-us-lightgreen.svg') center center no-repeat;
+    background-size: cover;
+    .contact-box {
+        padding: 28px 64px 40px 64px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.75);
+        border: 4px solid #ddf371;
+        .icon{
+            width: 47px;
+            height: 47px;
+            object-fit: contain;
+            margin: 4px auto;
+        }
+        .subtitle {
+            font-family: 'SFUIDisplay';
+            font-size: 30px;
+            font-weight: 900;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: normal;
+            text-align: center;
+            text-transform: uppercase;
+            color: #3f342a;
+        }
+        .title {
+            font-family: 'SFUIDisplay';
+            font-size: 50px;
+            font-weight: 900;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: normal;
+            text-align: center;
+            text-transform: uppercase;
+            color: #b8d432;
+        }
+        p{
+            font-size: 18px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.39;
+            letter-spacing: normal;
+            text-align: center;
+            color: #454545;
+        }
+        a.btn {
+            margin-top: 20px;
+            font-size: 13px;
+            width: 209px;
+        }
+    }
+}
+
+section#featured-holdings {
+    padding: 55px 0;
+    background-color: #ddf36f;
+    h2.title {
+        font-family: 'SFUIDisplay';
+        font-size: 40px;
+        font-weight: 900;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.2;
+        letter-spacing: normal;
+        color: #3f342a;
+        margin-bottom: 26px;
+    }
+    .instruction {
+        a {
+            font-size: 13px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.23;
+            letter-spacing: 0.6px;
+            text-align: center;
+            color: #3f342a;
+            text-transform: uppercase;
+            margin-right: 50px;
+            img {
+                width: 21px;
+                height: 14px;
+                object-fit: contain;
+                margin-right: 15px;
+            }
+        }
+    }
+}
+.list-featured-holdings {
+    .wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-clip: border-box;
+    }
+    .article {
+        padding: 24px 20px;
+        border-radius: 1px;
+        box-shadow: 0 8px 10px 0 rgba(56, 61, 25, 0.09);
+        background-color: #ffffff;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .article-img-top{
+        width: 100%;
+        height: 46px;
+        line-height: 46px;
+        margin-bottom: 30px;
+        img {
+            max-height: 100%;
+            width: auto;
+            object-fit: cover;
+        }
+    }
+    .article-body {
+        flex: 1 1 auto;
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #3f342a;
+            margin-bottom: 10px;
+        }
+        h4 {
+            font-size: 14px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 0.5px;
+            color: #3f342a;
+            margin-bottom: 8px;
+        }
+        p {
+            font-size: 13px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.38;
+            letter-spacing: 0.5px;
+            color: #3f342a;
+        }
+    }
+    .article-footer {
+        a {
+            height: 13px;
+            font-size: 11px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.18;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #b8d432;
         }
     }
 }
