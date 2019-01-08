@@ -139,6 +139,9 @@ main#main{
 .btn_round-black {
     background-color: #454545;
 }
+.btn_round-blue {
+    background-color: #19213d;
+}
 
 .btn_round-brown {
     background-color: #3f342a;
@@ -220,6 +223,15 @@ main#main{
     }
 }
 
+.headline-line-through-blue{
+    color: #19213d;
+    span {
+        &:before, &:after{
+            background-color: #bedff2;
+        }
+    }
+}
+
 .headline-line-through-brown{
     color: #3f342a;
     span {
@@ -296,6 +308,15 @@ main#main{
         color: #454545;
         &:hover {
             color: #f3ecb9;
+        }
+    }
+}
+
+#footer.footer-blue {
+    .nav-link {
+        color: #495786;
+        &:hover {
+            color: #19213d;
         }
     }
 }

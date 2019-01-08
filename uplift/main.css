@@ -41,6 +41,8 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 .btn_round-black { background-color: #454545; }
 
+.btn_round-blue { background-color: #19213d; }
+
 .btn_round-brown { background-color: #3f342a; }
 
 .btn_right-arrow { height: 50px; border-radius: 3px; padding: 15px 25px 15px 30px; box-shadow: 0 8px 10px 0 rgba(25, 33, 61, 0.04); color: #f0d61f; background-color: #ffffff; font-size: 14px; font-weight: 500; font-style: normal; font-stretch: normal; letter-spacing: 0.4px; text-align: left; }
@@ -66,6 +68,10 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 .headline-line-through-black { color: #454545; }
 
 .headline-line-through-black span:before, .headline-line-through-black span:after { background-color: #e4f4e2; }
+
+.headline-line-through-blue { color: #19213d; }
+
+.headline-line-through-blue span:before, .headline-line-through-blue span:after { background-color: #bedff2; }
 
 .headline-line-through-brown { color: #3f342a; }
 
@@ -98,6 +104,10 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 #footer.footer-black .nav-link { color: #454545; }
 
 #footer.footer-black .nav-link:hover { color: #f3ecb9; }
+
+#footer.footer-blue .nav-link { color: #495786; }
+
+#footer.footer-blue .nav-link:hover { color: #19213d; }
 
 #footer.footer-brown .nav-link { color: #3f342a; }
 
@@ -177,6 +187,12 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 .header-brown .right-menu #start-invest { background-color: #fff; color: #3f342a; }
 
+.header-blue .menu-home .nav-link, .header-blue .right-menu .nav-link { color: #19213d; }
+
+.header-blue .menu-home .nav-link:hover, .header-blue .right-menu .nav-link:hover { color: #fff; }
+
+.header-blue .right-menu #start-invest { background-color: #fff; color: #19213d; }
+
 @font-face { font-family: 'HelveticaNeue'; src: url("./fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("./fonts/HelveticaNeue.woff") format("woff"), url("./fonts/HelveticaNeue.ttf") format("truetype"), url("./fonts/HelveticaNeue.svg#HelveticaNeue") format("svg"); font-weight: normal; font-style: normal; }
 
 @font-face { font-family: 'HelveticaNeue'; src: url("./fonts/helveticaneue_light-webfont.woff2") format("woff2"), url("./fonts/helveticaneue_light-webfont.woff") format("woff"); font-weight: 300; font-style: normal; }
@@ -255,6 +271,10 @@ section#become-investor.become-investor-orange { background: url("./images/bg_cr
 
 section#become-investor.become-investor-lightgreen { background: url("./images/bg_cross-lightgreen.png") 0 0 repeat; }
 
+section#become-investor.become-investor-blue { background: url("./images/bg_cross-blue.png") 0 0 repeat; }
+
+section#become-investor.become-investor-blue .head-info h3.title, section#become-investor.become-investor-blue .head-info p, section#become-investor.become-investor-blue .head-info .note { color: #19213d; }
+
 section#subscribe { padding: 55px 0 35px 0; }
 
 section#subscribe .icon { margin: 0 0 11px 0; text-align: center; }
@@ -283,6 +303,14 @@ section#contact-us .contact-box p { font-size: 18px; font-weight: normal; font-s
 
 section#contact-us .contact-box a.btn { margin-top: 20px; font-size: 13px; width: 209px; }
 
+section#contact-us.contact-us-blue { background: url("./images/bg_contact-us-blue.svg") center center no-repeat; background-size: cover; }
+
+section#contact-us.contact-us-blue .contact-box { border: 4px solid #bfdff2; }
+
+section#contact-us.contact-us-blue .contact-box .subtitle { color: #bfdff2; }
+
+section#contact-us.contact-us-blue .contact-box .title { color: #19213d; }
+
 section#featured-holdings { padding: 55px 0; background-color: #ddf36f; }
 
 section#featured-holdings h2.title { font-family: 'SFUIDisplay'; font-size: 40px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; color: #3f342a; margin-bottom: 26px; }
@@ -308,6 +336,12 @@ section#featured-holdings .instruction a img { width: 21px; height: 14px; object
 .list-featured-holdings .article-body p { font-size: 13px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.38; letter-spacing: 0.5px; color: #3f342a; }
 
 .list-featured-holdings .article-footer a { height: 13px; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 0.5px; text-transform: uppercase; color: #b8d432; }
+
+section#featured-holdings.featured-holdings-blue { background-color: #bedff2; }
+
+section#featured-holdings.featured-holdings-blue h2.title { color: #19213d; }
+
+section#featured-holdings.featured-holdings-blue .instruction a { color: #19213d; }
 
 .home-p #uplift-video { position: absolute; bottom: 0px; right: 0px; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1000; overflow: hidden; }
 
@@ -546,3 +580,31 @@ section#featured-holdings .instruction a img { width: 21px; height: 14px; object
 .invest-suistain-p #subscribe-bottom-btn { font-size: 13px; }
 
 .invest-suistain-p section#subscribe { padding: 94px 0 35px 0; }
+
+.invest-healthcare-p section#banner-video { background-color: #bedff2; height: 100vh; width: 100%; overflow: hidden; position: relative; }
+
+.invest-healthcare-p section#banner-video > .container { height: 100%; display: flex; align-items: center; }
+
+.invest-healthcare-p section#banner-video > .container:after { content: ''; display: block; position: absolute; width: 200%; height: 10px; background-color: #fff; bottom: 0; left: auto; }
+
+.invest-healthcare-p section#banner-video .head-info { flex: 1; }
+
+.invest-healthcare-p section#banner-video .head-info .strap { font-size: 50px; font-weight: 100; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 2.3px; color: #ffffff; }
+
+.invest-healthcare-p section#banner-video .head-info .title { font-family: 'SFUIDisplay'; font-size: 100px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: normal; text-transform: uppercase; color: #19213d; }
+
+.invest-healthcare-p section#banner-video .head-info .intro { width: 628px; font-size: 18px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.22; letter-spacing: 0.8px; color: #19213d; margin-bottom: 38px; }
+
+.invest-healthcare-p section#banner-video .head-info a.btn { font-size: 13px; width: 160px; }
+
+.invest-healthcare-p section#banner-video .head-info .image { bottom: 40px; left: 0; position: absolute; }
+
+.invest-healthcare-p section#carousel-fullscreen { background: url("./images/investhealthcarep/whale.jpg") center center no-repeat; background-size: cover; }
+
+.invest-healthcare-p section#become-investor .head-info { padding: 20px 30px 30px 30px; }
+
+.invest-healthcare-p section#become-investor .head-info a.btn { font-size: 13px; }
+
+.invest-healthcare-p #subscribe-bottom-btn { font-size: 13px; }
+
+.invest-healthcare-p section#subscribe { padding: 94px 0 35px 0; }

@@ -213,6 +213,16 @@ section#become-investor.become-investor-lightgreen {
     background: url('./images/bg_cross-lightgreen.png') 0 0 repeat;
 }
 
+section#become-investor.become-investor-blue {
+    background: url('./images/bg_cross-blue.png') 0 0 repeat;
+    .head-info{
+        h3.title, p, .note {
+            color: #19213d;
+        }
+
+    }
+}
+
 section#subscribe {
     padding: 55px 0 35px 0;
     .icon {
@@ -324,6 +334,20 @@ section#contact-us {
     }
 }
 
+section#contact-us.contact-us-blue {
+    background: url('./images/bg_contact-us-blue.svg') center center no-repeat;
+    background-size: cover;
+    .contact-box {
+        border: 4px solid #bfdff2;
+        .subtitle {
+            color: #bfdff2;
+        }
+        .title {
+            color: #19213d;
+        }
+    }
+}
+
 section#featured-holdings {
     padding: 55px 0;
     background-color: #ddf36f;
@@ -431,6 +455,18 @@ section#featured-holdings {
             letter-spacing: 0.5px;
             text-transform: uppercase;
             color: #b8d432;
+        }
+    }
+}
+
+section#featured-holdings.featured-holdings-blue {
+    background-color: #bedff2;
+    h2.title{
+        color: #19213d;
+    }
+    .instruction {
+        a {
+            color: #19213d;
         }
     }
 }

@@ -3,6 +3,9 @@ function resetStyleHomePage(){
     if($('section#banner-video')){
       $('section#banner-video').css('height',window.innerHeight + 'px');
     }
+    if($('section#carousel-fullscreen')){
+      $('section#carousel-fullscreen').css('height',window.innerHeight + 'px');
+    }
 }
 //handle resize event//
 window.addEventListener("resize", resizeThrottler, false);
