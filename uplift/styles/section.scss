@@ -618,5 +618,13 @@ section#carousel-fullscreen {
                 }
             }
         }
+        .menu-box-brown {
+            background-color: #3f342a;
+            .menu {
+                .menu-link.active {
+                    color: #b8d432;
+                }
+            }
+        }
     }
 }
