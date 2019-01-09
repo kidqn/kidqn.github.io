@@ -56,13 +56,41 @@ $(function(){
       }
 
       // if scroll down
-      if(iCurScrollPos > iScrollPos && $("#carousel-fullscreen").length){
-        console.log('scroll down');
-        if(iCurScrollPos > 0 && oneTime === 0) {
-          $('html, body').animate({
-            scrollTop: $("#carousel-fullscreen").offset().top
-            }, 1000);
-          oneTime = 1;
+      if(iCurScrollPos > iScrollPos) {
+        if($("#carousel-fullscreen").length && iCurScrollPos > ($('.owl-carousel').offset().top - 300)){
+            if(oneTime === 0) {
+              $('html, body').animate({
+                scrollTop: $("#carousel-fullscreen").offset().top
+                }, 1000);
+              oneTime = 1;
+            }
+        }
+      }else {
+        // scroll up
+        if(currentSlideIndex === 0) {
+          $('.owl-carousel').off('mousewheel');
+        }
+        if (iCurScrollPos < ($('.owl-carousel').offset().top + 400)  && $(".owl-carousel").length){
+          if(oneTime === 1) {
+            $('html, body').animate({
+              scrollTop: $("#carousel-fullscreen").offset().top
+              }, 1000);
+            oneTime = 0;
+            owl.on('mousewheel', '.owl-stage', function (e) {
+              e.preventDefault();
+              console.log('scrollY', e.deltaY)
+              if (e.deltaY < 0) {
+                if(!isPending) { owl.trigger('next.owl')};
+              } else {
+                if(currentSlideIndex === 0){
+                  owl.off('mousewheel');
+                  isPending = false;
+                  return;
+                }
+              }
+              isPending = true;
+            })
+          }
         }
       }
 
