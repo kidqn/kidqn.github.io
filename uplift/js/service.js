@@ -67,31 +67,6 @@ $(function(){
         }
       }else {
         // scroll up
-        if(currentSlideIndex === 0) {
-          $('.owl-carousel').off('mousewheel');
-        }
-        if (iCurScrollPos < ($('.owl-carousel').offset().top + 400)  && $(".owl-carousel").length){
-          if(oneTime === 1) {
-            $('html, body').animate({
-              scrollTop: $("#carousel-fullscreen").offset().top
-              }, 1000);
-            oneTime = 0;
-            owl.on('mousewheel', '.owl-stage', function (e) {
-              e.preventDefault();
-              console.log('scrollY', e.deltaY)
-              if (e.deltaY < 0) {
-                if(!isPending) { owl.trigger('next.owl')};
-              } else {
-                if(currentSlideIndex === 0){
-                  owl.off('mousewheel');
-                  isPending = false;
-                  return;
-                }
-              }
-              isPending = true;
-            })
-          }
-        }
       }
 
       iScrollPos = iCurScrollPos;

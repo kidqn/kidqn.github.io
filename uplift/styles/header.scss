@@ -27,6 +27,7 @@
         }
         .logo-color {
             display: initial;
+            width: 142px;
         }
         .menu-home, .right-menu {
             .nav-link{
@@ -248,6 +249,23 @@
         #start-invest {
             background-color: #fff;
             color: #19213d;
+        }
+    }
+}
+
+.header-grey {
+    .menu-home, .right-menu {
+        .nav-link{
+            color: #2c1716;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    .right-menu {
+        #start-invest {
+            background-color: #fff;
+            color: #2c1716;
         }
     }
 }

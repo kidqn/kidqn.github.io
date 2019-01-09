@@ -45,6 +45,10 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 .btn_round-brown { background-color: #3f342a; }
 
+.btn_round-grey { background-color: #2c1716; }
+
+.btn_round-lightgrey { background-color: #dfdfdf; color: #2c1716; }
+
 .btn_right-arrow { height: 50px; border-radius: 3px; padding: 15px 25px 15px 30px; box-shadow: 0 8px 10px 0 rgba(25, 33, 61, 0.04); color: #f0d61f; background-color: #ffffff; font-size: 14px; font-weight: 500; font-style: normal; font-stretch: normal; letter-spacing: 0.4px; text-align: left; }
 
 .btn_right-arrow span { float: right; font-size: 0.8em; margin-top: 3px; }
@@ -72,6 +76,10 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 .headline-line-through-blue { color: #19213d; }
 
 .headline-line-through-blue span:before, .headline-line-through-blue span:after { background-color: #bedff2; }
+
+.headline-line-through-grey { color: #2c1716; }
+
+.headline-line-through-grey span:before, .headline-line-through-grey span:after { background-color: rgba(63, 52, 42, 0.26); }
 
 .headline-line-through-brown { color: #3f342a; }
 
@@ -113,6 +121,10 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 #footer.footer-brown .nav-link:hover { color: #b8d432; }
 
+#footer.footer-grey .nav-link { color: #2c1716; }
+
+#footer.footer-grey .nav-link:hover { color: #dfdfdf; }
+
 /*animation */
 @keyframes slidenavAnimation { from { opacity: 0; }
   to { opacity: 1; } }
@@ -128,7 +140,7 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 #top-nav.smart .logo { display: none; }
 
-#top-nav.smart .logo-color { display: initial; }
+#top-nav.smart .logo-color { display: initial; width: 142px; }
 
 #top-nav.smart .menu-home .nav-link, #top-nav.smart .right-menu .nav-link { color: #454545; }
 
@@ -194,6 +206,12 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 .header-blue .menu-home .nav-link:hover, .header-blue .right-menu .nav-link:hover { color: #fff; }
 
 .header-blue .right-menu #start-invest { background-color: #fff; color: #19213d; }
+
+.header-grey .menu-home .nav-link, .header-grey .right-menu .nav-link { color: #2c1716; }
+
+.header-grey .menu-home .nav-link:hover, .header-grey .right-menu .nav-link:hover { color: #fff; }
+
+.header-grey .right-menu #start-invest { background-color: #fff; color: #2c1716; }
 
 @font-face { font-family: 'HelveticaNeue'; src: url("./fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("./fonts/HelveticaNeue.woff") format("woff"), url("./fonts/HelveticaNeue.ttf") format("truetype"), url("./fonts/HelveticaNeue.svg#HelveticaNeue") format("svg"); font-weight: normal; font-style: normal; }
 
@@ -277,6 +295,10 @@ section#become-investor.become-investor-blue { background: url("./images/bg_cros
 
 section#become-investor.become-investor-blue .head-info h3.title, section#become-investor.become-investor-blue .head-info p, section#become-investor.become-investor-blue .head-info .note { color: #19213d; }
 
+section#become-investor.become-investor-grey { background: url("./images/bg_cross-lightgrey.png") 0 0 repeat; }
+
+section#become-investor.become-investor-grey .head-info h3.title, section#become-investor.become-investor-grey .head-info p, section#become-investor.become-investor-grey .head-info .note { color: #2c1716; }
+
 section#subscribe { padding: 55px 0 35px 0; }
 
 section#subscribe .icon { margin: 0 0 11px 0; text-align: center; }
@@ -313,6 +335,14 @@ section#contact-us.contact-us-blue .contact-box .subtitle { color: #bfdff2; }
 
 section#contact-us.contact-us-blue .contact-box .title { color: #19213d; }
 
+section#contact-us.contact-us-grey { background: url("./images/bg_contact-us-grey.svg") center center no-repeat; background-size: cover; }
+
+section#contact-us.contact-us-grey .contact-box { border: 4px solid #dedede; }
+
+section#contact-us.contact-us-grey .contact-box .subtitle { color: #9e724a; }
+
+section#contact-us.contact-us-grey .contact-box .title { color: #2c1716; }
+
 section#featured-holdings { padding: 55px 0; background-color: #ddf36f; }
 
 section#featured-holdings h2.title { font-family: 'SFUIDisplay'; font-size: 40px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; color: #3f342a; margin-bottom: 26px; }
@@ -323,7 +353,11 @@ section#featured-holdings .instruction a img { width: 21px; height: 14px; object
 
 .list-featured-holdings .wrapper { position: relative; display: flex; flex-direction: column; min-width: 0; word-wrap: break-word; background-clip: border-box; }
 
-.list-featured-holdings .article { padding: 24px 20px; border-radius: 1px; box-shadow: 0 8px 10px 0 rgba(56, 61, 25, 0.09); background-color: #ffffff; height: 100%; display: flex; flex-direction: column; }
+.list-featured-holdings .article { padding: 24px 20px; border-radius: 1px; box-shadow: 0 8px 10px 0 rgba(56, 61, 25, 0.09); background-color: #ffffff; height: 100%; display: flex; flex-direction: column; position: relative; }
+
+.list-featured-holdings .like-heart { width: 20px; height: 19px; background: url("./images/like-heart.svg") 0 0 no-repeat; background-size: 20px auto; position: absolute; top: 16px; right: 18px; z-index: 10; }
+
+.list-featured-holdings .like-heart.active { background: url("./images/like-heart-pink.svg") 0 0 no-repeat; }
 
 .list-featured-holdings .article-img-top { width: 100%; height: 46px; line-height: 46px; margin-bottom: 30px; }
 
@@ -344,6 +378,12 @@ section#featured-holdings.featured-holdings-blue { background-color: #bedff2; }
 section#featured-holdings.featured-holdings-blue h2.title { color: #19213d; }
 
 section#featured-holdings.featured-holdings-blue .instruction a { color: #19213d; }
+
+section#featured-holdings.featured-holdings-grey { background-color: #dfdfdf; }
+
+section#featured-holdings.featured-holdings-grey h2.title { color: #2c1716; }
+
+section#featured-holdings.featured-holdings-grey .instruction a { color: #2c1716; }
 
 section#carousel-fullscreen { position: relative; height: 100vh; }
 
@@ -394,6 +434,10 @@ section#carousel-fullscreen .menu-section .menu-box .menu .menu-link.active { fo
 section#carousel-fullscreen .menu-section .menu-box-brown { background-color: #3f342a; }
 
 section#carousel-fullscreen .menu-section .menu-box-brown .menu .menu-link.active { color: #b8d432; }
+
+section#carousel-fullscreen .menu-section .menu-box-grey { background-color: #2c1716; }
+
+section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active { color: #dadada; }
 
 .home-p #uplift-video { position: absolute; bottom: 0px; right: 0px; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1000; overflow: hidden; }
 
