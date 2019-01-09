@@ -79,9 +79,7 @@ var currentSlideIndex = 0;
 var total = 4;
 owl.owlCarousel({
     dot:true,
-    items: 1,
-    slideSpeed : 400,
-    paginationSpeed : 400,
+    items: 1
 });
 owl.on('mousewheel', '.owl-stage', function (e) {
   e.preventDefault();
