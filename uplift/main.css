@@ -43,6 +43,8 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 .btn_round-blue { background-color: #19213d; }
 
+.btn_round-darkblue { background-color: #001e49; }
+
 .btn_round-brown { background-color: #3f342a; }
 
 .btn_round-grey { background-color: #2c1716; }
@@ -207,6 +209,12 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 .header-blue .right-menu #start-invest { background-color: #fff; color: #19213d; }
 
+.header-darkblue .menu-home .nav-link, .header-darkblue .right-menu .nav-link { color: #001e49; }
+
+.header-darkblue .menu-home .nav-link:hover, .header-darkblue .right-menu .nav-link:hover { color: #fff; }
+
+.header-darkblue .right-menu #start-invest { background-color: #fff; color: #001e49; }
+
 .header-grey .menu-home .nav-link, .header-grey .right-menu .nav-link { color: #2c1716; }
 
 .header-grey .menu-home .nav-link:hover, .header-grey .right-menu .nav-link:hover { color: #fff; }
@@ -335,6 +343,14 @@ section#contact-us.contact-us-blue .contact-box .subtitle { color: #bfdff2; }
 
 section#contact-us.contact-us-blue .contact-box .title { color: #19213d; }
 
+section#contact-us.contact-us-ligthblue { background: url("./images/bg_contact-us-ligthblue.svg") center center no-repeat; background-size: cover; }
+
+section#contact-us.contact-us-ligthblue .contact-box { border: 4px solid #dedede; }
+
+section#contact-us.contact-us-ligthblue .contact-box .subtitle { color: #9e724a; }
+
+section#contact-us.contact-us-ligthblue .contact-box .title { color: #2c1716; }
+
 section#contact-us.contact-us-grey { background: url("./images/bg_contact-us-grey.svg") center center no-repeat; background-size: cover; }
 
 section#contact-us.contact-us-grey .contact-box { border: 4px solid #dedede; }
@@ -434,6 +450,10 @@ section#carousel-fullscreen .menu-section .menu-box .menu .menu-link.active { fo
 section#carousel-fullscreen .menu-section .menu-box-brown { background-color: #3f342a; }
 
 section#carousel-fullscreen .menu-section .menu-box-brown .menu .menu-link.active { color: #b8d432; }
+
+section#carousel-fullscreen .menu-section .menu-box-darkblue { background-color: #001e49; }
+
+section#carousel-fullscreen .menu-section .menu-box-darkblue .menu .menu-link.active { color: #baeae5; }
 
 section#carousel-fullscreen .menu-section .menu-box-grey { background-color: #2c1716; }
 
@@ -731,25 +751,25 @@ section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active
 
 .invest-tech-p section#subscribe { padding: 94px 0 35px 0; }
 
-.invest-diversity-p section#banner-video { background-color: #dfdfdf; height: 100vh; width: 100%; overflow: hidden; position: relative; }
+.invest-diversity-p section#banner-video { background-color: #baebe6; height: 100vh; width: 100%; overflow: hidden; position: relative; }
 
-.invest-diversity-p section#banner-video > .container { height: 100%; display: flex; align-items: center; }
+.invest-diversity-p section#banner-video > .container { height: 100%; display: flex; align-items: center; position: relative; }
 
 .invest-diversity-p section#banner-video > .container:after { content: ''; display: block; position: absolute; width: 200%; height: 10px; background-color: #fff; bottom: 0; left: auto; }
 
-.invest-diversity-p section#banner-video .head-info { flex: 1; position: relative; }
+.invest-diversity-p section#banner-video .head-info { flex: 1; }
 
 .invest-diversity-p section#banner-video .head-info .strap { font-size: 50px; font-weight: 100; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 2.3px; color: #ffffff; }
 
-.invest-diversity-p section#banner-video .head-info .title { font-family: 'SFUIDisplay'; font-size: 100px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: normal; text-transform: uppercase; color: #2c1716; }
+.invest-diversity-p section#banner-video .head-info .title { font-family: 'SFUIDisplay'; font-size: 80px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.1875; letter-spacing: normal; color: #001e49; }
 
-.invest-diversity-p section#banner-video .head-info .intro { width: 628px; font-size: 18px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.22; letter-spacing: 0.8px; color: #2c1716; margin-bottom: 38px; }
+.invest-diversity-p section#banner-video .head-info .intro { width: 628px; font-size: 18px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.22; letter-spacing: 0.8px; color: #001e49; margin-bottom: 38px; }
 
 .invest-diversity-p section#banner-video .head-info a.btn { font-size: 13px; width: 160px; }
 
-.invest-diversity-p section#banner-video .head-info .image { position: absolute; right: 0; bottom: -120px; }
+.invest-diversity-p section#banner-video .head-info .image { position: absolute; right: 70px; bottom: 0; }
 
-.invest-diversity-p section#carousel-fullscreen { background: url("./images/investtechp/tower.jpg") center center no-repeat; background-size: cover; }
+.invest-diversity-p section#carousel-fullscreen { background-size: cover; }
 
 .invest-diversity-p section#become-investor .head-info { padding: 20px 30px 30px 30px; }
 
