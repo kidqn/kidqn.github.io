@@ -343,13 +343,13 @@ section#contact-us.contact-us-blue .contact-box .subtitle { color: #bfdff2; }
 
 section#contact-us.contact-us-blue .contact-box .title { color: #19213d; }
 
-section#contact-us.contact-us-ligthblue { background: url("./images/bg_contact-us-ligthblue.svg") center center no-repeat; background-size: cover; }
+section#contact-us.contact-us-lightblue { background: url("./images/bg_contact-us-lightblue.svg") center center no-repeat; background-size: cover; }
 
-section#contact-us.contact-us-ligthblue .contact-box { border: 4px solid #dedede; }
+section#contact-us.contact-us-lightblue .contact-box { border: 4px solid #dedede; }
 
-section#contact-us.contact-us-ligthblue .contact-box .subtitle { color: #9e724a; }
+section#contact-us.contact-us-lightblue .contact-box .subtitle { color: #9e724a; }
 
-section#contact-us.contact-us-ligthblue .contact-box .title { color: #2c1716; }
+section#contact-us.contact-us-lightblue .contact-box .title { color: #2c1716; }
 
 section#contact-us.contact-us-grey { background: url("./images/bg_contact-us-grey.svg") center center no-repeat; background-size: cover; }
 
@@ -563,6 +563,14 @@ section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active
 
 .invest-p .article-right-image .article-body .main-content .bottom-action { padding: 20px 320px 40px 46px; }
 
+.invest-p .carousel-lead-image .owl-carousel { height: 100%; }
+
+.invest-p .carousel-lead-image .owl-carousel .owl-stage-outer, .invest-p .carousel-lead-image .owl-carousel .owl-stage, .invest-p .carousel-lead-image .owl-carousel .owl-item, .invest-p .carousel-lead-image .owl-carousel .item, .invest-p .carousel-lead-image .owl-carousel .inner { height: 100%; }
+
+.invest-p .carousel-lead-image .owl-carousel .owl-item { overflow: hidden; }
+
+.invest-p .carousel-lead-image .owl-carousel .item { background-position: center center; background-size: cover; background-repeat: no-repeat; }
+
 .invest-p section#invest-philosophy .head-info { text-align: center; }
 
 .invest-p section#invest-philosophy .head-info .sub-title { font-size: 24px; font-weight: 300; font-style: normal; font-stretch: normal; line-height: 1.88; letter-spacing: normal; color: #35612e; }
@@ -587,7 +595,7 @@ section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active
 
 .invest-p section#invest-environment .article .article-body .main-content .bottom-action { background: url(./images/bg_cross-lightgreen.png) 0 0 repeat; }
 
-.invest-p section#invest-environment .article .article-body .main-content .bottom-action ul.menu li a:hover { color: #b8d432; }
+.invest-p section#invest-environment .article .article-body .main-content .bottom-action ul.menu li a.active, .invest-p section#invest-environment .article .article-body .main-content .bottom-action ul.menu li a:hover { color: #b8d432; }
 
 .invest-p section#invest-social .article { margin-top: 60px; }
 
@@ -599,7 +607,7 @@ section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active
 
 .invest-p section#invest-social .article .article-body .main-content .bottom-action { background: url(./images/bg_cross-blue.png) 0 0 repeat; }
 
-.invest-p section#invest-social .article .article-body .main-content .bottom-action ul.menu li a:hover { color: #495786; }
+.invest-p section#invest-social .article .article-body .main-content .bottom-action ul.menu li a.active, .invest-p section#invest-social .article .article-body .main-content .bottom-action ul.menu li a:hover { color: #495786; }
 
 .invest-p section#invest-social .article .article-body .main-content .bottom-action button { width: 352px; }
 
@@ -617,7 +625,7 @@ section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active
 
 .invest-p section#invest-corporation .article .article-body .main-content .bottom-action ul.menu { padding: 10px 0 0 0; min-height: 124px; }
 
-.invest-p section#invest-corporation .article .article-body .main-content .bottom-action ul.menu li a:hover { color: #32b8d4; }
+.invest-p section#invest-corporation .article .article-body .main-content .bottom-action ul.menu li a.active, .invest-p section#invest-corporation .article .article-body .main-content .bottom-action ul.menu li a:hover { color: #32b8d4; }
 
 .invest-bond-p section#banner-video { background-color: #f3ecb9; height: 100vh; width: 100%; overflow: hidden; position: relative; }
 

@@ -168,6 +168,27 @@
     }
 }
 
+.invest-p .carousel-lead-image {
+    .owl-carousel {
+        height: 100%;
+        .owl-stage-outer,
+        .owl-stage,
+        .owl-item, 
+        .item, .inner {
+            height: 100%;
+        }
+        .owl-item {
+            overflow: hidden;
+        }
+        
+        .item {
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
 .invest-p section#invest-philosophy {
     .head-info{
         text-align: center;
@@ -233,7 +254,7 @@
                 .bottom-action {
                     background: url(./images/bg_cross-lightgreen.png) 0 0 repeat;
                     ul.menu li a {
-                        &:hover{
+                        &.active, &:hover{
                             color: #b8d432;
                         }
                     }
@@ -260,7 +281,7 @@
                 .bottom-action {
                     background: url(./images/bg_cross-blue.png) 0 0 repeat;
                     ul.menu li a {
-                        &:hover{
+                        &.active, &:hover{
                             color: #495786;
                         }
                     }
@@ -294,7 +315,7 @@
                         padding: 10px 0 0 0;
                         min-height: 124px;
                         li a {
-                            &:hover{
+                            &.active, &:hover{
                                 color: #32b8d4;
                             }
                         }

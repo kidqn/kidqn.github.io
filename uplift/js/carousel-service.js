@@ -6,6 +6,8 @@ owl.owlCarousel({
     dot:true,
     items: 1,
     smartSpeed: 1000,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
 });
 owl.on('mousewheel', '.owl-stage', function (e) {
   e.preventDefault();
