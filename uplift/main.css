@@ -551,7 +551,7 @@ section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active
 
 .invest-p .article .article-body .main-content .bottom-action ul.menu { list-style: none; padding: 0; min-height: 150px; margin-bottom: 8px; }
 
-.invest-p .article .article-body .main-content .bottom-action ul.menu li a { font-size: 14px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 2.36; letter-spacing: 0.4px; color: #454545; }
+.invest-p .article .article-body .main-content .bottom-action ul.menu li a.menu-link { font-size: 14px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 2.36; letter-spacing: 0.4px; color: #454545; cursor: pointer; }
 
 .invest-p .article-right-image:before { left: 0; right: auto; }
 

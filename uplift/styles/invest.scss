@@ -129,7 +129,7 @@
                     min-height: 150px;
                     margin-bottom: 8px;
                     li {
-                        a {
+                        a.menu-link {
                             font-size: 14px;
                             font-weight: 500;
                             font-style: normal;
@@ -137,6 +137,7 @@
                             line-height: 2.36;
                             letter-spacing: 0.4px;
                             color: #454545;
+                            cursor: pointer;
                         }
                     }
                 }
