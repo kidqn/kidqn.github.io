@@ -139,12 +139,26 @@ main#main{
 .btn_round-black {
     background-color: #454545;
 }
+
 .btn_round-blue {
     background-color: #19213d;
 }
 
+.btn_round-darkblue {
+    background-color: #001e49;
+}
+
 .btn_round-brown {
     background-color: #3f342a;
+}
+
+.btn_round-grey {
+    background-color: #2c1716;
+}
+
+.btn_round-lightgrey {
+    background-color: #dfdfdf;    
+    color: #2c1716;
 }
 
 .btn_right-arrow {
@@ -228,6 +242,15 @@ main#main{
     span {
         &:before, &:after{
             background-color: #bedff2;
+        }
+    }
+}
+
+.headline-line-through-grey{
+    color: #2c1716;
+    span {
+        &:before, &:after{
+            background-color: rgba(63, 52, 42, 0.26);
         }
     }
 }
@@ -326,6 +349,15 @@ main#main{
         color: #3f342a;
         &:hover {
             color: #b8d432;
+        }
+    }
+}
+
+#footer.footer-grey {
+    .nav-link {
+        color: #2c1716;
+        &:hover {
+            color: #dfdfdf;
         }
     }
 }
