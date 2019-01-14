@@ -186,11 +186,11 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 #top-nav.open { top: -70px; }
 
-.menu-home .nav-link { padding: 17px; font-family: 'HelveticaNeue'; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; text-align: center; text-transform: uppercase; color: #fff; }
+.menu-home .nav-link { padding: 17px; font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; text-align: center; text-transform: uppercase; color: #fff; }
 
 .menu-home .nav-link:hover { color: #b8d432; }
 
-.menu-home .sub-menu { font-family: 'HelveticaNeue'; position: absolute; width: 741px; height: 223px; border-radius: 3px; background-color: #ffffff; padding: 27px 42px 23px 33px; box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5); border: 0; }
+.menu-home .sub-menu { position: absolute; width: 741px; height: 223px; border-radius: 3px; background-color: #ffffff; padding: 27px 42px 23px 33px; box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5); border: 0; }
 
 .menu-home .sub-menu .title { font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 0.5px; text-align: left; color: #454545; text-transform: uppercase; margin: 0 0 18px 0; }
 
@@ -205,6 +205,8 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 .menu-home .sub-menu .left-side p { font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.5; letter-spacing: 0.3px; color: #454545; margin: 0 0 15px 0; }
 
 .menu-home .sub-menu .left-side a { font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: 0.5px; color: #b8d432; }
+
+.menu-home .sub-menu .left-side a:hover { color: #35612e; }
 
 .menu-home .sub-menu .right-side { padding: 22px 0 0 37px; }
 
@@ -221,15 +223,23 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 .right-menu #start-invest { margin-left: 10px; }
 
 /*header custom theme */
-.header-green .menu-home .nav-link, .header-green .right-menu .nav-link { color: #35612e; }
+#top-nav.header-green .menu-home .nav-link, #top-nav.header-green .right-menu .nav-link { color: #35612e; }
 
-.header-green .menu-home .nav-link:hover, .header-green .right-menu .nav-link:hover { color: #b8d432; }
+#top-nav.header-green .menu-home .nav-link:hover, #top-nav.header-green .right-menu .nav-link:hover { color: #b8d432; }
 
-.header-green .right-menu #start-invest { background-color: #35612e; }
+#top-nav.header-green .sub-menu .left-side a, #top-nav.header-green .sub-menu ul .nav-link { color: #35612e; }
+
+#top-nav.header-green .sub-menu .left-side a:hover, #top-nav.header-green .sub-menu ul .nav-link:hover { color: #b8d432; }
+
+#top-nav.header-green .right-menu #start-invest { background-color: #35612e; }
 
 #top-nav.header-black .menu-home .nav-link, #top-nav.header-black .right-menu .nav-link { color: #454545; }
 
 #top-nav.header-black .menu-home .nav-link:hover, #top-nav.header-black .right-menu .nav-link:hover { color: #fff; }
+
+#top-nav.header-black .sub-menu .left-side a, #top-nav.header-black .sub-menu ul .nav-link { color: #454545; }
+
+#top-nav.header-black .sub-menu .left-side a:hover, #top-nav.header-black .sub-menu ul .nav-link:hover { color: #f3ecb9; }
 
 #top-nav.header-black .right-menu #start-invest { background-color: #fff; color: #454545; }
 
@@ -237,45 +247,75 @@ main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms 
 
 #top-nav.header-black.smart .menu-home .nav-link:hover, #top-nav.header-black.smart .right-menu .nav-link:hover { color: #f3ecb9; }
 
-.header-brown .menu-home .nav-link, .header-brown .right-menu .nav-link { color: #3f342a; }
+#top-nav.header-brown .menu-home .nav-link, #top-nav.header-brown .right-menu .nav-link { color: #3f342a; }
 
-.header-brown .menu-home .nav-link:hover, .header-brown .right-menu .nav-link:hover { color: #fff; }
+#top-nav.header-brown .menu-home .nav-link:hover, #top-nav.header-brown .right-menu .nav-link:hover { color: #fff; }
 
-.header-brown .right-menu #start-invest { background-color: #fff; color: #3f342a; }
+#top-nav.header-brown .sub-menu .left-side a, #top-nav.header-brown .sub-menu ul .nav-link { color: #3f342a; }
 
-.header-brown .right-menu #start-invest:hover { background-color: #ececec; color: #1b1a1a; }
+#top-nav.header-brown .sub-menu .left-side a:hover, #top-nav.header-brown .sub-menu ul .nav-link:hover { color: #dfdfdf; }
 
-.header-blue .menu-home .nav-link, .header-blue .right-menu .nav-link { color: #19213d; }
+#top-nav.header-brown .right-menu #start-invest { background-color: #fff; color: #3f342a; }
 
-.header-blue .menu-home .nav-link:hover, .header-blue .right-menu .nav-link:hover { color: #fff; }
+#top-nav.header-brown .right-menu #start-invest:hover { background-color: #ececec; color: #1b1a1a; }
 
-.header-blue .right-menu #start-invest { background-color: #fff; color: #19213d; }
+#top-nav.header-brown.smart .menu-home .nav-link:hover, #top-nav.header-brown.smart .right-menu .nav-link:hover { color: #dfdfdf; }
 
-.header-blue .right-menu #start-invest:hover { background-color: #ececec; color: #1b1a1a; }
+#top-nav.header-blue .menu-home .nav-link, #top-nav.header-blue .right-menu .nav-link { color: #19213d; }
 
-.header-darkblue .menu-home .nav-link, .header-darkblue .right-menu .nav-link { color: #001e49; }
+#top-nav.header-blue .menu-home .nav-link:hover, #top-nav.header-blue .right-menu .nav-link:hover { color: #fff; }
 
-.header-darkblue .menu-home .nav-link:hover, .header-darkblue .right-menu .nav-link:hover { color: #fff; }
+#top-nav.header-blue .sub-menu .left-side a, #top-nav.header-blue .sub-menu ul .nav-link { color: #19213d; }
 
-.header-darkblue .right-menu #start-invest { background-color: #fff; color: #001e49; }
+#top-nav.header-blue .sub-menu .left-side a:hover, #top-nav.header-blue .sub-menu ul .nav-link:hover { color: #1b1a1a; }
 
-.header-darkblue .right-menu #start-invest:hover { background-color: #ececec; color: #1b1a1a; }
+#top-nav.header-blue .right-menu #start-invest { background-color: #fff; color: #19213d; }
+
+#top-nav.header-blue .right-menu #start-invest:hover { background-color: #ececec; color: #1b1a1a; }
+
+#top-nav.header-blue.smart .menu-home .nav-link:hover, #top-nav.header-blue.smart .right-menu .nav-link:hover { color: #1b1a1a; }
+
+#top-nav.header-darkblue .menu-home .nav-link, #top-nav.header-darkblue .right-menu .nav-link { color: #001e49; }
+
+#top-nav.header-darkblue .menu-home .nav-link:hover, #top-nav.header-darkblue .right-menu .nav-link:hover { color: #fff; }
+
+#top-nav.header-darkblue .sub-menu .left-side a, #top-nav.header-darkblue .sub-menu ul .nav-link { color: #001e49; }
+
+#top-nav.header-darkblue .sub-menu .left-side a:hover, #top-nav.header-darkblue .sub-menu ul .nav-link:hover { color: #1b1a1a; }
+
+#top-nav.header-darkblue .right-menu #start-invest { background-color: #fff; color: #001e49; }
+
+#top-nav.header-darkblue .right-menu #start-invest:hover { background-color: #ececec; color: #1b1a1a; }
+
+#top-nav.header-darkblue.smart .menu-home .nav-link:hover, #top-nav.header-darkblue.smart .right-menu .nav-link:hover { color: #1b1a1a; }
 
 .header-darkgreen .menu-home .nav-link, .header-darkgreen .right-menu .nav-link { color: #35612e; }
 
 .header-darkgreen .menu-home .nav-link:hover, .header-darkgreen .right-menu .nav-link:hover { color: #fff; }
 
+.header-darkgreen .sub-menu .left-side a, .header-darkgreen .sub-menu ul .nav-link { color: #35612e; }
+
+.header-darkgreen .sub-menu .left-side a:hover, .header-darkgreen .sub-menu ul .nav-link:hover { color: #1b1a1a; }
+
 .header-darkgreen .right-menu #start-invest { background-color: #fff; color: #35612e; }
 
 .header-darkgreen .right-menu #start-invest:hover { background-color: #ececec; color: #1b1a1a; }
 
-.header-grey .menu-home .nav-link, .header-grey .right-menu .nav-link { color: #2c1716; }
+.header-darkgreen.smart .menu-home .nav-link:hover, .header-darkgreen.smart .right-menu .nav-link:hover { color: #1b1a1a; }
 
-.header-grey .menu-home .nav-link:hover, .header-grey .right-menu .nav-link:hover { color: #fff; }
+#top-nav.header-grey .menu-home .nav-link, #top-nav.header-grey .right-menu .nav-link { color: #2c1716; }
 
-.header-grey .right-menu #start-invest { background-color: #fff; color: #2c1716; }
+#top-nav.header-grey .menu-home .nav-link:hover, #top-nav.header-grey .right-menu .nav-link:hover { color: #fff; }
 
-.header-grey .right-menu #start-invest:hover { background-color: #ececec; color: #1b1a1a; }
+#top-nav.header-grey .sub-menu .left-side a, #top-nav.header-grey .sub-menu ul .nav-link { color: #2c1716; }
+
+#top-nav.header-grey .sub-menu .left-side a:hover, #top-nav.header-grey .sub-menu ul .nav-link:hover { color: #1b1a1a; }
+
+#top-nav.header-grey .right-menu #start-invest { background-color: #fff; color: #2c1716; }
+
+#top-nav.header-grey .right-menu #start-invest:hover { background-color: #ececec; color: #1b1a1a; }
+
+#top-nav.header-grey.smart .menu-home .nav-link:hover, #top-nav.header-grey.smart .right-menu .nav-link:hover { color: #1b1a1a; }
 
 @font-face { font-family: 'HelveticaNeue'; src: url("./fonts/HelveticaNeue.eot?#iefix") format("embedded-opentype"), url("./fonts/HelveticaNeue.woff") format("woff"), url("./fonts/HelveticaNeue.ttf") format("truetype"), url("./fonts/HelveticaNeue.svg#HelveticaNeue") format("svg"); font-weight: normal; font-style: normal; }
 

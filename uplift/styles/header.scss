@@ -51,7 +51,6 @@
     .nav-link
     {
         padding: 17px;
-        font-family: 'HelveticaNeue';
         font-size: 11px;
         font-weight: bold;
         font-style: normal;
@@ -66,7 +65,6 @@
         }
     }
     .sub-menu{
-        font-family: 'HelveticaNeue';
         position: absolute;
         width: 741px;
         height: 223px;
@@ -126,6 +124,9 @@
                 line-height: 1.18;
                 letter-spacing: 0.5px;
                 color: #b8d432;
+                &:hover {
+                    color: #35612e;
+                }
             }
         }
         .right-side{
@@ -188,7 +189,7 @@
 }
 
 /*header custom theme */
-.header-green {
+#top-nav.header-green {
     .menu-home, .right-menu {
         .nav-link{
             color: #35612e;
@@ -197,6 +198,14 @@
             }
         }
     }
+    .sub-menu .left-side a,
+    .sub-menu ul .nav-link {
+        color: #35612e;
+        &:hover {
+            color: #b8d432;
+        }
+    }
+
     .right-menu {
         #start-invest {
             background-color: #35612e;
@@ -213,6 +222,14 @@
             }
         }
     }
+    .sub-menu .left-side a,
+    .sub-menu ul .nav-link {
+        color: #454545;
+        &:hover {
+            color: #f3ecb9;
+        }
+    }
+    
     .right-menu {
         #start-invest {
             background-color: #fff;
@@ -234,7 +251,7 @@
     }
 }
 
-.header-brown {
+#top-nav.header-brown {
     .menu-home, .right-menu {
         .nav-link{
             color: #3f342a;
@@ -243,6 +260,15 @@
             }
         }
     }
+
+    .sub-menu .left-side a,
+    .sub-menu ul .nav-link {
+        color: #3f342a;
+        &:hover {
+            color: #dfdfdf;
+        }
+    }
+
     .right-menu {
         #start-invest {
             background-color: #fff;
@@ -253,9 +279,18 @@
             }
         }
     }
+    &.smart {
+        .menu-home, .right-menu {
+            .nav-link{
+                &:hover {
+                    color: #dfdfdf;
+                }
+            }
+        }
+    }
 }
 
-.header-blue {
+#top-nav.header-blue {
     .menu-home, .right-menu {
         .nav-link{
             color: #19213d;
@@ -264,6 +299,15 @@
             }
         }
     }
+
+    .sub-menu .left-side a,
+    .sub-menu ul .nav-link {
+        color: #19213d;
+        &:hover {
+            color: #1b1a1a;
+        }
+    }
+
     .right-menu {
         #start-invest {
             background-color: #fff;
@@ -274,9 +318,18 @@
             }
         }
     }
+    &.smart {
+        .menu-home, .right-menu {
+            .nav-link{
+                &:hover {
+                    color: #1b1a1a;
+                }
+            }
+        }
+    }
 }
 
-.header-darkblue {
+#top-nav.header-darkblue {
     .menu-home, .right-menu {
         .nav-link{
             color: #001e49;
@@ -285,6 +338,14 @@
             }
         }
     }
+    .sub-menu .left-side a,
+    .sub-menu ul .nav-link {
+        color: #001e49;
+        &:hover {
+            color: #1b1a1a;
+        }
+    }
+
     .right-menu {
         #start-invest {
             background-color: #fff;
@@ -292,6 +353,15 @@
             &:hover {
                 background-color: #ececec;
                 color: #1b1a1a;
+            }
+        }
+    }
+    &.smart {
+        .menu-home, .right-menu {
+            .nav-link{
+                &:hover {
+                    color: #1b1a1a;
+                }
             }
         }
     }
@@ -306,6 +376,15 @@
             }
         }
     }
+
+    .sub-menu .left-side a,
+    .sub-menu ul .nav-link {
+        color: #35612e;
+        &:hover {
+            color: #1b1a1a;
+        }
+    }
+
     .right-menu {
         #start-invest {
             background-color: #fff;
@@ -316,9 +395,18 @@
             }
         }
     }
+    &.smart {
+        .menu-home, .right-menu {
+            .nav-link{
+                &:hover {
+                    color: #1b1a1a;
+                }
+            }
+        }
+    }
 }
 
-.header-grey {
+#top-nav.header-grey {
     .menu-home, .right-menu {
         .nav-link{
             color: #2c1716;
@@ -327,6 +415,15 @@
             }
         }
     }
+
+    .sub-menu .left-side a,
+    .sub-menu ul .nav-link {
+        color: #2c1716;
+        &:hover {
+            color: #1b1a1a;
+        }
+    }
+
     .right-menu {
         #start-invest {
             background-color: #fff;
@@ -334,6 +431,15 @@
             &:hover {
                 background-color: #ececec;
                 color: #1b1a1a;
+            }
+        }
+    }
+    &.smart {
+        .menu-home, .right-menu {
+            .nav-link{
+                &:hover {
+                    color: #1b1a1a;
+                }
             }
         }
     }
