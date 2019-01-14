@@ -73,6 +73,8 @@
         border-radius: 3px;
         background-color: #ffffff;
         padding: 27px 42px 23px 33px;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.5);
+        border: 0;
         .title{
             font-size: 11px;
             font-weight: bold;
@@ -202,7 +204,7 @@
     }
 }
 
-.header-black {
+#top-nav.header-black {
     .menu-home, .right-menu {
         .nav-link{
             color: #454545;
@@ -215,6 +217,19 @@
         #start-invest {
             background-color: #fff;
             color: #454545;
+            &:hover {
+                background-color: #ececec;
+                color: #1b1a1a;
+            }
+        }
+    }
+    &.smart {
+        .menu-home, .right-menu {
+            .nav-link{
+                &:hover {
+                    color: #f3ecb9;
+                }
+            }
         }
     }
 }
@@ -232,6 +247,10 @@
         #start-invest {
             background-color: #fff;
             color: #3f342a;
+            &:hover {
+                background-color: #ececec;
+                color: #1b1a1a;
+            }
         }
     }
 }
@@ -249,6 +268,10 @@
         #start-invest {
             background-color: #fff;
             color: #19213d;
+            &:hover {
+                background-color: #ececec;
+                color: #1b1a1a;
+            }
         }
     }
 }
@@ -266,6 +289,31 @@
         #start-invest {
             background-color: #fff;
             color: #001e49;
+            &:hover {
+                background-color: #ececec;
+                color: #1b1a1a;
+            }
+        }
+    }
+}
+
+.header-darkgreen {
+    .menu-home, .right-menu {
+        .nav-link{
+            color: #35612e;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    .right-menu {
+        #start-invest {
+            background-color: #fff;
+            color: #35612e;
+            &:hover {
+                background-color: #ececec;
+                color: #1b1a1a;
+            }
         }
     }
 }
@@ -283,6 +331,10 @@
         #start-invest {
             background-color: #fff;
             color: #2c1716;
+            &:hover {
+                background-color: #ececec;
+                color: #1b1a1a;
+            }
         }
     }
 }

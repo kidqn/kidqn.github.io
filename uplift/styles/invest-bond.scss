@@ -1,3 +1,10 @@
+.invest-bond-p #top-nav.smart {
+    #start-invest {
+        color: #fff;
+        background-color: #454545;
+    }
+}
+
 .invest-bond-p section#banner-video {
     background-color: #f3ecb9;
     height: 100vh;
@@ -133,6 +140,9 @@
                 text-transform: uppercase;
                 color: #454545;
                 margin-bottom: 10px;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
             p {
                 font-size: 14px;
@@ -155,6 +165,9 @@
                 letter-spacing: 0.5px;
                 text-transform: uppercase;
                 color: #b8d432;
+                &:hover {
+                    color: #8ea22c;
+                }
             }
         }
     }

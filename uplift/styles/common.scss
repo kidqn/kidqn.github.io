@@ -69,6 +69,7 @@ body {
 a {
     &:hover {
         text-decoration: none;
+        transition: all 0.3s ease;
     }
 }
 
@@ -126,13 +127,29 @@ main#main{
     border-radius: 3px;
     box-shadow: 0 4px 9px 0 rgba(26, 47, 59, 0.11);
     background-color: #b8d432;
+    &:hover {
+        opacity: 0.88;
+        color: #fff;
+    }
 }
 
 .btn_round-green {
     background-color: #b8d432;
+    &:hover {
+        background-color: #a0b344;
+    }
 }
 
-.btn_round-strong-green {
+.btn_round-lightgreen {
+    background-color: #eaf1ca;
+    color: #35612e;
+    &:hover {
+        color: #2d4828;
+        background-color: #ecf7bc;
+    }
+}
+
+.btn_round-darkgreen {
     background-color: #35612e;
 }
 
@@ -148,6 +165,15 @@ main#main{
     background-color: #001e49;
 }
 
+.btn_round-lightblue {
+    background-color: #baeae5;
+    color: #fff;
+    &:hover {
+        background-color: #9fded9;
+        color: #fff;
+    }
+}
+
 .btn_round-brown {
     background-color: #3f342a;
 }
@@ -159,6 +185,10 @@ main#main{
 .btn_round-lightgrey {
     background-color: #dfdfdf;    
     color: #2c1716;
+    &:hover {
+        color: #383c40;
+        background-color: #d6d5d5;
+    }
 }
 
 .btn_right-arrow {
@@ -242,6 +272,24 @@ main#main{
     span {
         &:before, &:after{
             background-color: #bedff2;
+        }
+    }
+}
+
+.headline-line-through-darkblue{
+    color: #001e49;
+    span {
+        &:before, &:after{
+            background-color: #bedff2;
+        }
+    }
+}
+
+.headline-line-through-darkgreen{
+    color: #35612e;
+    span {
+        &:before, &:after{
+            background-color: #eaf1ca;
         }
     }
 }
@@ -333,6 +381,11 @@ main#main{
             color: #f3ecb9;
         }
     }
+    .left-side {
+        .copyright {
+            color: #495786;
+        }
+    } 
 }
 
 #footer.footer-blue {
@@ -342,6 +395,25 @@ main#main{
             color: #19213d;
         }
     }
+    .left-side {
+        .copyright {
+            color: #495786;
+        }
+    } 
+}
+
+#footer.footer-darkblue {
+    .nav-link {
+        color: #001e49;
+        &:hover {
+            color: #baeae5;
+        }
+    }
+    .left-side {
+        .copyright {
+            color: #495786;
+        }
+    } 
 }
 
 #footer.footer-brown {
@@ -351,6 +423,11 @@ main#main{
             color: #b8d432;
         }
     }
+    .left-side {
+        .copyright {
+            color: #495786;
+        }
+    } 
 }
 
 #footer.footer-grey {
@@ -360,6 +437,11 @@ main#main{
             color: #dfdfdf;
         }
     }
+    .left-side {
+        .copyright {
+            color: #495786;
+        }
+    } 
 }
 
 /*animation */
