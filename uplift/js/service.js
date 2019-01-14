@@ -26,7 +26,6 @@ window.onbeforeunload = function () {
 }
 
 $(function(){
-  $.scrollSpeed(100, 800);
   resetStyleHomePage();
   //set action header
   var iScrollPos = 0;
