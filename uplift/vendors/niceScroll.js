@@ -22,7 +22,6 @@
             return false;
             
         $window.on('mousewheel', function(e) {
-            console.log(e.target.nodeName);
             var deltaY = e.originalEvent.wheelDeltaY,
                 detail = e.originalEvent.detail;
                 scrollY = $document.height() > $window.height();
