@@ -10,7 +10,7 @@ function custom_class( $classes ) {
     if ( is_page_template( 'testpage.php' ) ) {
         $classes[] = 'invest-bond-p';
     }
-    if ( is_page_template( 'index.php' ) ) {
+    if ( is_home() ) {
         $classes[] = 'home-p';
     }
     return $classes;
