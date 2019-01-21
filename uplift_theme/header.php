@@ -12,12 +12,17 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/vendors/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/vendors/animate.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/style.css">
     <title>Uplift</title>
     <?php wp_head(); ?>
   </head>
 <body <?php body_class(); ?>>
-    <header id="top-nav" class="navbar">
+    <header id="top-nav" class="navbar <?php 
+        $flag="";
+        echo apply_filters('dinhlam_flag', $flag);
+      ?>">
         <a class="navbar-brand" href="/" aria-label="uplift">
             <img class="logo" src="<?php bloginfo('template_directory') ?>/images/logo.svg">
             <img class="logo-color" src="<?php bloginfo('template_directory') ?>/images/color_logo.svg">

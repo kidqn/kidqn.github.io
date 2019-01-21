@@ -1,4 +1,5 @@
 /*Theme Name: uplift_theme*/
+/* main scss. Reformat css file to find duplicated CSS classes */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
 
 * { -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; /* Introduced in IE 10. See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/ */ -ms-user-select: none; user-select: none; font-weight: normal; }
@@ -14,7 +15,7 @@ body { font-size: 16px; font-family: 'HelveticaNeue', sans-serif; font-weight: n
 /* common element */
 a:hover { text-decoration: none; transition: all 0.3s ease; }
 
-main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms ease-out; }
+main#main { min-height: 100%; position: relative; z-index: 1; transition: -webkit-transform 200ms ease-out; }
 
 /* layout */
 .uplift-container { padding: 0 70px; }
@@ -627,9 +628,11 @@ section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active
 
 .home-p section#about { position: relative; min-height: 662px; padding: 141px 0; background: url(./images/green-decorator.png) top right no-repeat; background-size: contain; }
 
-.home-p section#about::after { display: block; content: ''; padding-bottom: 18%; }
+.home-p section#about:after { display: block; content: ''; padding-bottom: 18%; }
 
-.home-p section#about .head-info { position: relative; width: 610px; height: 165px; }
+.home-p section#about > .container { position: relative; }
+
+.home-p section#about .head-info { position: absolute; top: 0; width: 610px; height: 165px; }
 
 .home-p section#about .head-info:after { content: ''; display: block; position: absolute; bottom: -33px; width: 174px; height: 8px; background-color: #b8d432; }
 

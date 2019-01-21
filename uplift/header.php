@@ -17,10 +17,7 @@
     <?php wp_head(); ?>
   </head>
 <body <?php body_class(); ?>>
-    <?php
-        $custom_header_sizes = add_filter( 'body_class', 'custom_class' );
-    ?>  
-    <header id="top-nav" class="navbar <?php apply_filters('header_class', 'set_custom_header'); ?>">
+    <header id="top-nav" class="navbar">
         <a class="navbar-brand" href="/" aria-label="uplift">
             <img class="logo" src="<?php bloginfo('template_directory') ?>/images/logo.svg">
             <img class="logo-color" src="<?php bloginfo('template_directory') ?>/images/color_logo.svg">
