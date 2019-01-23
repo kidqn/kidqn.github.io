@@ -1,199 +1,7 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<?php
+/* Template Name: invest */
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="./vendors/owlcarousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="./vendors/animate.css">
-    <link rel="stylesheet" href="./main.css">
-
-    <title>Uplift</title>
-  </head>
-  <body class="invest-p">
-    <header id="top-nav" class="navbar header-green">
-        <a class="navbar-brand" href="/" aria-label="uplift">
-            <img class="logo" src="./images/color_logo.svg">
-            <img class="logo-color" src="./images/color_logo.svg">
-        </a>
-      
-        <div class="navbar-nav-scroll ml-auto mr-auto">
-          <ul class="navbar-nav bd-navbar-nav flex-row menu-home">
-            <li class="nav-item dropdown">
-              <a class="nav-item nav-link" href="#" id="invest-option">Invest</a>
-              <div class="dropdown-menu sub-menu">
-                <div class="sub-menu-container">
-                  <div class="row h-100">
-                    <div class="col-sm-5 left-side">
-                        <h3 class="title">Investment Philosophy</h3>
-                        <p>Our goal is to simplify socially responsible investing 
-                          so that more people, collectively, can make an impact with their power as investors.</p>
-                        <a href="#">LEARN MORE</a>
-                    </div>
-                    <div class="col-sm-7 right-side">
-                        <h3 class="title">INVEST IN</h3>
-                        <div class="row">
-                          <div class="col-sm-6">
-                              <ul>
-                                <li>
-                                  <a class="nav-link active" href="/" >SUSTAINABILITY</a>
-                                </li>
-                                <li>
-                                  <a class="nav-link active" href="/" >Technology
-                                  </a>
-                                </li>
-                                <li>
-                                    <a class="nav-link active" href="/" >Healthcare</a>
-                                </li>
-                              </ul>
-                          </div>
-                          <div class="col-sm-6">
-                              <ul>
-                                <li>
-                                  <a class="nav-link active" href="/" >Diversity & Inclusion
-                                  </a>
-                                </li>
-                                <li>
-                                  <a class="nav-link active" href="/" >Generic ESG
-                                  </a>
-                                </li>
-                                <li>
-                                  <a class="nav-link active" href="/" >IMPACT Bonds
-                                  </a>
-                                </li>
-                              </ul>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link active" href="#" id="pricing-option">Pricing</a>
-              <div class="dropdown-menu sub-menu">
-                <div class="sub-menu-container">
-                  <div class="row h-100">
-                    <div class="col-sm-5 left-side">
-                        <h3 class="title">Investment Philosophy</h3>
-                        <p>Our goal is to simplify socially responsible investing 
-                          so that more people, collectively, can make an impact with their power as investors.</p>
-                        <a href="#">LEARN MORE</a>
-                    </div>
-                    <div class="col-sm-7 right-side">
-                        <h3 class="title">INVEST IN</h3>
-                        <div class="row">
-                          <div class="col-sm-6">
-                              <ul>
-                                <li>
-                                  <a class="nav-link active" href="/" >SUSTAINABILITY</a>
-                                </li>
-                                <li>
-                                  <a class="nav-link active" href="/" >Technology
-                                  </a>
-                                </li>
-                                <li>
-                                    <a class="nav-link active" href="/" >Healthcare</a>
-                                </li>
-                              </ul>
-                          </div>
-                          <div class="col-sm-6">
-                              <ul>
-                                <li>
-                                  <a class="nav-link active" href="/" >Diversity & Inclusion
-                                  </a>
-                                </li>
-                                <li>
-                                  <a class="nav-link active" href="/" >Generic ESG
-                                  </a>
-                                </li>
-                                <li>
-                                  <a class="nav-link active" href="/" >IMPACT Bonds
-                                  </a>
-                                </li>
-                              </ul>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link " href="#" id="esg-option">ESG LEADERS</a>
-              <div class="dropdown-menu sub-menu">
-                <div class="sub-menu-container">
-                  <div class="row h-100">
-                    <div class="col-sm-5 left-side">
-                        <h3 class="title">Investment Philosophy</h3>
-                        <p>Our goal is to simplify socially responsible investing 
-                          so that more people, collectively, can make an impact with their power as investors.</p>
-                        <a href="#">LEARN MORE</a>
-                    </div>
-                    <div class="col-sm-7 right-side">
-                        <h3 class="title">INVEST IN</h3>
-                        <div class="row">
-                          <div class="col-sm-6">
-                              <ul>
-                                <li>
-                                  <a class="nav-link active" href="/" >SUSTAINABILITY</a>
-                                </li>
-                                <li>
-                                  <a class="nav-link active" href="/" >Technology
-                                  </a>
-                                </li>
-                                <li>
-                                    <a class="nav-link active" href="/" >Healthcare</a>
-                                </li>
-                              </ul>
-                          </div>
-                          <div class="col-sm-6">
-                              <ul>
-                                <li>
-                                  <a class="nav-link active" href="/" >Diversity & Inclusion
-                                  </a>
-                                </li>
-                                <li>
-                                  <a class="nav-link active" href="/" >Generic ESG
-                                  </a>
-                                </li>
-                                <li>
-                                  <a class="nav-link active" href="/" >IMPACT Bonds
-                                  </a>
-                                </li>
-                              </ul>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/" >ResourceS</a>
-            </li>
-          </ul>
-        </div>
-      
-        <ul class="navbar-nav flex-row d-none d-md-flex right-menu">
-          <li class="nav-item">
-            <a class="nav-link active" href="#" >Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#" >IB</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#" >English</a>
-          </li>
-          <li>
-            <a class="btn btn_round btn_round-green" href="#" id="start-invest">Start Investing</a>
-          </li>
-        </ul>
-      
-    </header>
+get_header(); ?>
 
     <main id="main">
         <section id="invest-philosophy">
@@ -209,7 +17,7 @@
                     <div class="article-body">
                         <div class="lead-image">
                             <div class="inner">
-                              <img src="./images/investp/article_01.jpg" alt="">
+                              <img src="<?php bloginfo('template_directory') ?>/images/investp/article_01.jpg" alt="">
                               <div class="info">
                                 <h3>Human  Capiltal</h3>
                                 <p>
@@ -243,7 +51,7 @@
                   <div class="article-body carousel-lead-image">
                       <div class="lead-image">
                           <div class="owl-carousel owl-theme">
-                            <div class="item" style="background-image:url(./images/investp/article_02.jpg)">
+                            <div class="item" style="background-image:url(<?php bloginfo('template_directory') ?>/images/investp/article_02.jpg)">
                               <div class="inner fadeIn">
                                 <div class="info fadeInUp">
                                   <h3>Climate Change</h3>
@@ -254,7 +62,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="item" style="background-image:url(./images/investhealthcarep/tower.jpg)">
+                            <div class="item" style="background-image:url(<?php bloginfo('template_directory') ?>/images/investhealthcarep/tower.jpg)">
                               <div class="inner fadeIn">
                                 <div class="info fadeInUp">
                                   <h3>Natural Resource</h3>
@@ -265,7 +73,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="item" style="background-image:url(./images/investp/article_02.jpg)">
+                            <div class="item" style="background-image:url(<?php bloginfo('template_directory') ?>/images/investp/article_02.jpg)">
                               <div class="inner fadeIn">
                                 <div class="info fadeInUp">
                                   <h3>Pollution & waste</h3>
@@ -276,7 +84,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="item" style="background-image:url(./images/investhealthcarep/tower.jpg)">
+                            <div class="item" style="background-image:url(<?php bloginfo('template_directory') ?>/images/investhealthcarep/tower.jpg)">
                               <div class="inner fadeIn">
                                 <div class="info fadeInUp">
                                   <h3>Environment & Oppotunities</h3>
@@ -319,7 +127,7 @@
                   <div class="article-body carousel-lead-image">
                       <div class="lead-image">
                           <div class="owl-carousel owl-theme">
-                            <div class="item" style="background-image:url(./images/investp/article_03.jpg)">
+                            <div class="item" style="background-image:url(<?php bloginfo('template_directory') ?>/images/investp/article_03.jpg)">
                               <div class="inner fadeIn">
                                 <div class="info">
                                   <h3>Climate Change</h3>
@@ -330,7 +138,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="item" style="background-image:url(./images/investp/article_02.jpg)">
+                            <div class="item" style="background-image:url(<?php bloginfo('template_directory') ?>/images/investp/article_02.jpg)">
                               <div class="inner fadeIn">
                                 <div class="info">
                                   <h3>Natural Resource</h3>
@@ -341,7 +149,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="item" style="background-image:url(./images/investp/article_03.jpg)">
+                            <div class="item" style="background-image:url(<?php bloginfo('template_directory') ?>/images/investp/article_03.jpg)">
                               <div class="inner fadeIn">
                                 <div class="info">
                                   <h3>Pollution & waste</h3>
@@ -352,7 +160,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="item" style="background-image:url(./images/investp/article_02.jpg)">
+                            <div class="item" style="background-image:url(<?php bloginfo('template_directory') ?>/images/investp/article_02.jpg)">
                               <div class="inner fadeIn">
                                 <div class="info">
                                   <h3>Environment & Oppotunities</h3>
@@ -396,7 +204,7 @@
                     <div class="article-body carousel-lead-image">
                         <div class="lead-image">
                           <div class="owl-carousel owl-theme">
-                            <div class="item" style="background-image:url(./images/investp/article_04.jpg)">
+                            <div class="item" style="background-image:url(<?php bloginfo('template_directory') ?>/images/investp/article_04.jpg)">
                               <div class="inner fadeIn">
                                 <div class="info">
                                   <h3>Corporate Governance</h3>
@@ -407,7 +215,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="item" style="background-image:url(./images/investp/article_03.jpg)">
+                            <div class="item" style="background-image:url(<?php bloginfo('template_directory') ?>/images/investp/article_03.jpg)">
                               <div class="inner fadeIn">
                                 <div class="info">
                                   <h3>Corporate Behavior</h3>
@@ -454,7 +262,7 @@
                     <a class="card h-100" href="#">
                       <div class="card-body">
                           <div class="icon">
-                              <img src="./images/homep/model-subtain.svg" alt="...">
+                              <img src="<?php bloginfo('template_directory') ?>/images/homep/model-subtain.svg" alt="...">
                           </div>
                           <h3 class="card-title">Sustainability</h3>
                           <p class="card-text">You always get to choose how to invest your money, but you'll never be alone. 
@@ -469,7 +277,7 @@
                       <a class="card h-100" href="#">
                           <div class="card-body">
                               <div class="icon">
-                                  <img src="./images/homep/model-tech.svg" alt="...">
+                                  <img src="<?php bloginfo('template_directory') ?>/images/homep/model-tech.svg" alt="...">
                               </div>                          <h3 class="card-title">TECHNOLOGY</h3>
                               <p class="card-text">You always get to choose how to invest your money, but you'll never be alone. 
                                   We give you the choices, tools, and tips you need to build a portfolio that reflects you.</p>
@@ -483,7 +291,7 @@
                     <a class="card h-100" href="#">
                         <div class="card-body">
                             <div class="icon">
-                                <img src="./images/homep/model-health.svg" alt="...">
+                                <img src="<?php bloginfo('template_directory') ?>/images/homep/model-health.svg" alt="...">
                             </div>                        <h3 class="card-title">HEALTHCARE</h3>
                             <p class="card-text">You always get to choose how to invest your money, but you'll never be alone. 
                                 We give you the choices, tools, and tips you need to build a portfolio that reflects you.</p>
@@ -497,7 +305,7 @@
                     <a class="card h-100" href="#">
                         <div class="card-body">
                             <div class="icon">
-                                <img src="./images/homep/model-balance.svg" alt="...">
+                                <img src="<?php bloginfo('template_directory') ?>/images/homep/model-balance.svg" alt="...">
                             </div>
                             <h3 class="card-title">DIVERSITY &amp; INCLUSION
                             </h3>
@@ -514,7 +322,7 @@
                     <a class="card h-100" href="#">
                         <div class="card-body">
                             <div class="icon">
-                                <img src="./images/homep/model-esg.svg" alt="...">
+                                <img src="<?php bloginfo('template_directory') ?>/images/homep/model-esg.svg" alt="...">
                             </div>
                             <h3 class="card-title">GENERIC ESG</h3>
                             <p class="card-text">You always get to choose how to invest your money, but you'll never be alone. 
@@ -530,7 +338,7 @@
                     <div class="card h-100 sidebar">
                         <div class="card-body text-white">
                             <div class="icon">
-                                <img src="./images/homep/build-your-own.svg" alt="...">
+                                <img src="<?php bloginfo('template_directory') ?>/images/homep/build-your-own.svg" alt="...">
                             </div>
                             <h3 class="card-title">Build your own</h3>
                             <p class="card-text">You always get to choose how to invest your money, but you'll never be alone. 
@@ -561,7 +369,7 @@
 
         <section id="subscribe">
           <div class="container uplift-container">
-            <div class="icon"><img src="./images/homep/email.svg" alt="email"></div>
+            <div class="icon"><img src="<?php bloginfo('template_directory') ?>/images/homep/email.svg" alt="email"></div>
             <h3 class="headline-line-through headline-line-through-black"><span>Sign Up For Our Newsletter</span></h3>
             <form action="/subscribe" role="form" id="mc-subscribe-bot-form" class="subscribe-field input-group">
               <input type="email" name="" id="join-uplift-bottom" 
@@ -571,98 +379,5 @@
           </div>
         </section>
     </main>
-    <footer id="footer">
-      <div class="container uplift-container">
-        <div class="wrapper navbar">
-          <div class="left-side">
-            <div class="logo">
-              <img src="./images/color_logo.svg" alt="">
-            </div>
-            <p class="copyright">© Uplift. Copyright 2018</p>
-          </div>
-          <div class="mid-side">
-            <ul class="footer-mid-menu row-flex">
-              <li>
-                  <a href="#" class="nav-link">
-                    Invest            
-                  </a>
-                  <a href="#" class="nav-link">
-                    Pricing
-                  </a>
-                  <a href="#" class="nav-link">
-                    Resource                       
-                  </a>
-                  <a href="#" class="nav-link">
-                    Institutional 
-                  </a>
-              </li>
 
-              <li>
-                  <a href="#" class="nav-link">
-                    Company                     
-                  </a>
-                  <a href="#" class="nav-link">
-                    Disclaimer
-                  </a>
-                  <a href="#" class="nav-link">
-                    Contact                       
-                  </a>
-                  <a href="#"class="nav-link">
-                    FAQ 
-                  </a>
-              </li>
-
-              <li>
-                  <a href="#" class="nav-link">
-                    Giving                     
-                  </a>
-                  <a href="#" class="nav-link">
-                    Build Your Own Portfolio
-                  </a>
-                  <a href="#" class="nav-link">
-                    Suggest a Theme                       
-                  </a>
-              </li>
-            </ul>
-          </div>
-          <div class="right-side">
-            <a href="#" class="nav-link">
-              Follow us                     
-            </a>
-            <ul class="social-follow">
-              <li>
-                <a href="#" class="fb">
-                  <img src="images/social-fb.svg" alt="logo uplift">
-                </a>
-              </li>
-              <li>
-                <a href="#" class="fb">
-                  <img src="images/social-twitter.svg" alt="logo uplift">
-                </a>
-              </li>
-              <li>
-                <a href="#" class="fb">
-                  <img src="images/social-linked.svg" alt="logo uplift">
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <script src="./vendors/owlcarousel/owl.carousel.min.js"></script>
-    <!-- FontAwesome -->
-    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>  
-    
-    <!-- custom js -->
-    <script src="./js/service.js"></script>
-    <script src="./js/invest-srv.js"></script>
-  </body>
-</html>
+<?php get_footer(); ?>
