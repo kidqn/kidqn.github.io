@@ -1,0 +1,99 @@
+.top-news-section{
+	width: 100%;
+	height: 200px;
+  	background-color: #ffffff;
+  	box-shadow: 10px 10px 25px 0 rgba(0, 0, 0, 0.15);
+}
+.news-detail-p #icon-action-bar{
+	width: 40px;
+    position: absolute;
+    z-index: 100;
+    top: 136px;
+    left: -70px;
+    -webkit-transition: top 200ms ease-in-out;
+	-moz-transition: top 200ms ease-in-out;
+	-ms-transition: top 200ms ease-in-out;
+	-o-transition: top 200ms ease-in-out;
+	transition: top 200ms ease-in-out;
+    a{
+    	img{
+    		margin-bottom: 20px;
+    	}
+    	img:nth-of-type(2){
+    		display: none;
+    	}
+    }
+    a:hover{
+    	img:nth-of-type(1){
+    		display: none;
+    	}
+    	img:nth-of-type(2){
+    		display: block;
+    	}
+    }
+    &.fixed{
+    	position: fixed;
+    }
+}
+.news-detail-p #news-banner{
+	height: 680px;
+	width: 100%;
+	background: url('../images/news/banner_news_detail.png') center center no-repeat;
+	background-size: cover;
+}
+.news-detail-p{
+	main{
+		& > .container{
+			margin-top: -87px;
+			min-height: 500px;
+		}
+	}
+}
+.news-detail-p #news{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    min-height: 500px;
+    border-bottom: 1px solid #d8d8d8;
+}
+.news-detail-p #related-news{
+    margin-bottom: 60px;
+	.title-heading{
+		margin: 50px 0 100px 0;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px){
+    .news-detail-p .top-news-section{
+        height: auto;
+    }
+    .news-detail-p  .article-top-news {
+        padding: 32px 100px 30px 100px;
+        height: auto;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .news-detail-p .top-news-section{
+        height: auto;
+    }
+    .news-detail-p  .article-top-news {
+        padding: 32px 100px 30px 100px;
+        height: auto;
+    } 
+    .news-detail-p #news-banner{
+        height: 400px;
+    } 
+}
+@media only screen and (max-width: 767px) {
+    .news-detail-p main>.container {
+        padding: 0;
+    }
+    .news-detail-p #news-banner{
+        height: 300px;
+    }
+    .news-detail-p .top-news-section{
+        height: auto;
+    }
+    .news-detail-p  .article-top-news {
+        padding: 20px;
+        height: auto;
+    } 
+}

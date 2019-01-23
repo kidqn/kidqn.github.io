@@ -1,0 +1,123 @@
+.top-section_title-shadow_left-ic{
+	  height: 230px;
+	  border-radius: 2px;
+	  background-color: #ffffff;
+	  box-shadow: 10px 10px 25px 0 rgba(0, 0, 0, 0.15);
+	  padding: 20px 60px;
+	  .icon{
+	  	position: absolute;
+	  	top: 50px;
+	  	left: 50px;
+	  	height: 36px;
+	  	width: 33px;
+	  	background: url(../images/ic-tp-top-section.svg) center center no-repeat;
+	  	background-size: 100% 100%;
+	  }
+	.vertical-logo{
+		top: 140px;
+    	left: 17px;
+    	width: 100px;
+    	text-transform: uppercase;
+    	&:before{
+    		width: 110px;
+    		margin-left: -110px;
+    	}
+	}
+	.title-group{
+	    margin: 0 0 23px 0;
+	    .title-heading{
+	        margin: 45px 0 0 0;
+	    }
+	}
+}
+.partner-p{
+	main{
+		& > .container{
+			margin-top: -75px;
+			min-height: 500px;
+		}
+	}
+}
+.partner-p #partner-banner{
+	background: url('../images/pn/partner_banner.png') center center no-repeat;
+	background-size: cover;
+	height: 400px;
+	h2{
+		left: -100px;
+	}
+}
+.partner-p #partner-top-section{
+	.vertical-logo{
+    	&:before{
+    		width: 33px;
+    		margin-left: -33px;
+    	}
+	}
+}
+.partner-p .partner-panel{
+    top: -24px;
+    left: 50%;
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.partner-p .partner-section{
+	position: relative;
+	padding-top: 46px;
+}
+.partner-p .list-detail{
+	.detail-item{
+		.image{
+		    height: 270px;
+		    width: 100%;
+		    display: table;
+		    padding: 0 20px;
+		    img{
+			    display: block;
+			    margin: 120px auto 0 auto;
+		    }
+		}
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	.partner-p .list-detail>.row>div {
+	    padding: 0 10px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+@media only screen and (max-width: 767px) {
+	.partner-p main>.container {
+	    padding: 0;
+	}
+	.partner-p #partner-banner {
+	    height: 300px;
+	}
+	#partner-top-section{
+		padding: 20px;
+		.vertical-logo, .icon{
+			display: none;
+		}
+		.title-group {
+			 .title-heading {
+			    margin: 25px 0 0 0;
+			}
+		}
+	}
+	.partner-p .list-detail .detail-item{
+		.image{
+		    height: 180px;
+		    width: 100%;
+		    padding: 0;
+		    img{
+		        margin: 70px auto 0 auto;
+		    }
+		}
+		figcaption{
+		    padding: 0 0 0 10px;
+		}
+     }
+}

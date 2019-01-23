@@ -1,0 +1,203 @@
+/* drop down bao gia */
+/* Default custom select styles */
+.tp-dropdown-select {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    text-align: left;
+    background: #fff;
+    z-index: 100;
+    width: 100%;
+    max-width: 500px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tp-dropdown-select:focus {
+    outline: none; /* For better accessibility add a style for this in your skin */
+}
+
+.tp-dropdown-select select {
+    display: none;
+}
+
+.tp-dropdown-select span {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Placeholder and selected option */
+
+.tp-dropdown-select > span::after,
+.tp-dropdown-select .tp-dropdown-selected span::after {
+    speak: none;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.tp-dropdown-select > span::after {
+    content: '';
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    background: url(../images/ic-arrow-dropdown.svg) center center no-repeat;
+    background-size: 0.625em 0.3125em;
+}
+
+.tp-dropdown-select .tp-dropdown-selected{
+    color: #f58221;
+    background: #f5f3ec;
+}
+
+.tp-dropdown-select.tp-dropdown-active > span::after {
+    -webkit-transform: translateY(-50%) rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.tp-dropdown-active {
+    z-index: 200;
+}
+
+/* Options */
+.tp-dropdown-select .tp-dropdown-options {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    background: #fff;
+    visibility: hidden;
+}
+
+.tp-dropdown-select.tp-dropdown-active .tp-dropdown-options {
+    visibility: visible;
+}
+
+.tp-dropdown-select ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.tp-dropdown-select ul span {
+    padding: 1em;
+}
+
+.tp-dropdown-select ul li.tp-dropdown-focus span {
+    background-color: #ddd;
+}
+
+/* Optgroup and optgroup label */
+.tp-dropdown-select li.tp-dropdown-optgroup ul {
+    padding-left: 1em;
+}
+
+.tp-dropdown-select li.tp-dropdown-optgroup > span {
+    cursor: default;
+}
+
+.tp-dropdown-skin-border {
+    background: transparent;
+    max-width: 600px;
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+    color: #333333;
+}
+
+
+.tp-dropdown-skin-border > span {
+    -webkit-transition: background 0.2s;
+    transition: background 0.2s;
+}
+
+/*.tp-dropdown-skin-border > span::after,
+.tp-dropdown-skin-border .tp-dropdown-selected span::after {
+    font-family: 'icomoon';
+    content: '\e000';
+}*/
+
+.tp-dropdown-skin-border ul span::after {
+    content: '';
+    opacity: 0;
+}
+
+.tp-dropdown-skin-border.tp-dropdown-active > span {
+    background: #fff;
+    border-color: #fff;
+}
+
+.tp-dropdown-skin-border .tp-dropdown-options {
+    opacity: 0;
+    -webkit-transition: opacity 0.2s, visibility 0s 0.2s;
+    transition: opacity 0.2s, visibility 0s 0.2s;
+    margin-top: 10px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 25px 0 rgba(0, 0, 0, 0.15);
+}
+
+.tp-dropdown-skin-border.tp-dropdown-active .tp-dropdown-options {
+    opacity: 1;
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+}
+
+.tp-dropdown-skin-border ul span {
+    padding: 0.6em 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.tp-dropdown-skin-border .tp-dropdown-options li span:hover,
+.tp-dropdown-skin-border li.tp-dropdown-focus span {
+    background: #f5f3ec;
+}
+/*end dropdown*/
+/* add more  custom css*/
+.tp-dropdown-order{
+    width: 90px;
+    margin-top: -2px;
+    .tp-dropdown-placeholder{
+        padding-left: 1em;
+    }
+    .tp-dropdown-options{
+        margin-top: 5px;
+        .tp-dropdown-select ul span{
+            padding: 0.2em 0.2em 0.2em 1em;
+        }
+    }
+    .tp-dropdown-select .tp-dropdown-selected {
+        color: initial;
+        background: initial;
+    }
+    &.search{
+        width: 116px;
+        span::after{
+            background: url(../images/ic-arrow-top-color.png) center 1px no-repeat;
+            background-size: 1em 1em;
+            -webkit-transform: translateY(-50%) rotate(0);
+            transform: translateY(-50%) rotate(0);
+        }
+    }
+    &.tp-dropdown-active.search{
+        span::after{
+            background: url(../images/ic-arrow-top-color.png) center 6px no-repeat;
+            background-size: 1em 1em;
+            -webkit-transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+}

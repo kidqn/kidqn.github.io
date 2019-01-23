@@ -1,0 +1,150 @@
+#about-top-section{
+		min-height: 230px;
+		border-radius: 2px;
+		background-color: #ffffff;
+		box-shadow: 10px 10px 25px 0 rgba(0,0,0,0.15);
+		padding: 50px 200px;
+		position: relative;
+		font-family: 'Tinos';
+	  &:before{
+	  	width: 110px;
+    	margin-left: -110px;
+	  }
+	  .image{
+		position: relative;
+		float: right;
+		margin: -95px -130px 30px 50px;
+		box-shadow: 10px 10px 25px 0 rgba(0,0,0,0.15);
+	  }
+	  .icon{
+	  	position: absolute;
+	  	top: 50px;
+	  	left: 50px;
+	  	height: 36px;
+	  	width: 33px;
+	  	background: url(../images/ic-tp-top-section.svg) center center no-repeat;
+	  	background-size: 100% 100%;
+	  }
+	.vertical-logo{
+		top: 140px;
+    	left: 17px;
+    	width: 100px;
+    	&:before{
+		    width: 544px;
+		    margin-left: -544px;
+    	}
+	}
+	p.pullQuote{
+		position: relative;
+		&:before{
+		    content: open-quote;
+		    display: block;
+		    position: absolute;
+		    width: 40px;
+		    height: 40px;
+		    border-radius: 50%;
+		    background-color: #ffffff;
+		    box-shadow: 10px 10px 25px 0 rgba(0,0,0,0.15);
+		    font-size: 48px;
+		    text-align: center;
+		    line-height: 1.1;
+		    font-weight: bold;
+		    font-style: normal;
+		    color: #ff7500;
+		    top: 0;
+		    left: -160px;
+		    z-index: 1;
+		}	
+	}
+}
+.about-p{
+	main{
+		& > .container{
+		    margin-top: -70px;
+		    min-height: 500px;
+		}
+	}
+	.title-heading{
+	  	margin: 0 0 30px 0;
+	}
+	.content-body{
+		padding: 50px 200px;
+	}
+}
+.about-p #about-banner{
+	background: url('../images/about/about_banner.png') center center no-repeat;
+	background-size: cover;
+	position: relative;
+	height: 400px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	#about-top-section{
+		padding: 50px 100px;
+	    text-align: center;
+	    .image{
+	    	float: none;
+		    display: inline-block;
+		    position: static;
+		    margin: 0 auto 30px auto;
+	    }
+	    p{
+	    	text-align: left;
+	    }
+	    p.pullQuote:before{
+	    	top: -5px;
+    		left: -60px;
+	    }
+	}
+	.about-p{
+		.content-body {
+	    	padding: 50px 100px;
+		}
+	}
+}
+@media only screen and (max-width: 767px) {
+	.about-p main>.container {
+	    padding: 0;
+	}
+	.about-p #about-banner {
+	    height: 300px;
+	}
+	#about-top-section{
+		box-shadow: none;
+		padding: 20px 10px;
+	    text-align: center;
+	    .vertical-logo, .icon{
+			display: none;
+		}
+	    .image{
+	    	float: none;
+		    display: inline-block;
+		    position: static;
+		    margin: 0 auto 30px auto;
+		    box-shadow: none;
+	    }
+	    p{
+	    	text-align: left;
+	    }
+	    p.pullQuote{
+	    	margin-bottom: 0;
+		    font-size: 1em;
+		    max-width: 200px;
+		    text-align: center;
+		    margin: auto;
+		    &:before{
+		    	top: -10px;
+    			left: -45px;
+		    }
+	    }
+	}
+	.about-p{
+		.content-body {
+	    	padding: 20px 10px;
+		}
+		.title-heading {
+		    margin: 0 0 5px 0;
+		}
+	}
+
+}
