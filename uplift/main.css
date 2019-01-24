@@ -982,3 +982,27 @@ section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active
 .invest-generic-p #subscribe-bottom-btn { font-size: 13px; }
 
 .invest-generic-p section#subscribe { padding: 94px 0 35px 0; }
+
+.resources-p #main { padding-top: 160px; }
+
+.resources-p section#resources-banner { position: relative; padding: 45px 45px 0 45px; }
+
+.resources-p section#resources-banner > .title { font-family: 'SFUIDisplay'; font-size: 60px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: normal; color: #454545; text-transform: uppercase; margin-bottom: 20px; }
+
+.resources-p #top-article-images-carousel .item { height: 680px; width: 100%; background-position: center top; background-repeat: no-repeat; background-size: cover; }
+
+.resources-p #top-article-carousel { width: 823px; height: 195px; background-color: #ffffff; padding: 30px 115px 20px 115px; position: absolute; bottom: 52px; left: 50%; transform: translate3d(-50%, 0, 0); }
+
+.resources-p #top-article-carousel .article .title { font-family: 'SFUIDisplay'; font-size: 30px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; color: #454545; margin-bottom: 4px; }
+
+.resources-p #top-article-carousel .article .date { height: 15px; font-size: 13px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.15; letter-spacing: normal; color: #b3b3b3; margin-bottom: 6px; }
+
+.resources-p #top-article-carousel .article p { font-size: 13px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.38; letter-spacing: 0.5px; color: #454545; }
+
+.resources-p #top-article-carousel .owl-prev, .resources-p #top-article-carousel .owl-next { width: 15.8px; height: 29.5px; object-fit: contain; transform: rotate(-180deg); position: absolute; top: 50%; transform: translate3d(0, -50%, 0); outline: 0; background-repeat: no-repeat; background-size: 100% 100%; background-position: center center; }
+
+.resources-p #top-article-carousel .owl-prev.disabled, .resources-p #top-article-carousel .owl-next.disabled { opacity: 0.3; }
+
+.resources-p #top-article-carousel .owl-prev { left: 40px; background-image: url("./images/arrow-left.png"); }
+
+.resources-p #top-article-carousel .owl-next { right: 40px; background-image: url("./images/arrow-right.png"); }
