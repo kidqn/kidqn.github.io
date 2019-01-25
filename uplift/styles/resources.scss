@@ -1,6 +1,6 @@
 .resources-p {
     #main {
-        padding-top: 160px;
+        padding-top: 100px;
     }
 }
 
@@ -96,5 +96,100 @@
     .owl-next {
         right: 40px;
         background-image: url('./images/arrow-right.png');
+    }
+}
+
+.resources-p section#article-categories{
+    ul.categories-tabs {
+        display: flex;
+        justify-content: center;
+        border: 0;
+        list-style: none;
+        margin: 0;
+        padding: 8px 0 0 0;
+        li {
+            padding: 10px;
+        }
+        .nav-link {
+            font-size: 11px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: 0.5px;
+            color: #35612e;
+            text-transform: uppercase;
+            &.active {
+                color: #b8d432;
+                border: 0;
+            }
+        }
+    }
+    .categories-tabs-content {
+        padding: 44px;
+        background-color: #fafdec;
+    }
+}
+.list-resources {
+    .wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+    }
+    .article {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background: #fff;
+        border-radius: 1px;
+    }
+    .article-img-top{
+        width: 100%;
+        height: 220px;       
+        img {
+            max-height: 100%;
+            width: auto;
+            object-fit: cover;
+        }
+    }
+    .article-body {
+        flex: 1 1 auto;
+        padding: 20px 20px 30px 20px;
+        .title {
+            font-size: 18px;
+            font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.33;
+            letter-spacing: normal;
+            color: #454545;
+            margin-bottom: 10px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .date {
+            height: 15px;
+            font-size: 13px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.15;
+            letter-spacing: normal;
+            color: #b3b3b3;
+            margin-bottom: 6px;
+        }
+        p {
+            font-size: 13px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.38;
+            letter-spacing: 0.5px;
+            color: #454545;
+        }
     }
 }

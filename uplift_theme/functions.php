@@ -15,11 +15,16 @@ function load_js() {
            $template_name === 'invest-healthcare.php' || $template_name === 'invest-suistain.php' ||
            $template_name === 'invest-generic.php'){
             //If page is using slider portfolio template then load our slider script
+            wp_enqueue_script('jquery.waypoints.min', get_template_directory_uri() .'/vendors/jquery.waypoints.min.js');		
             wp_enqueue_script('carousel-service', get_template_directory_uri() .'/js/carousel-service.js');		
         }
         if($template_name === 'invest.php'){
                //If page is using slider portfolio template then load our slider script
            wp_enqueue_script('invest-srv', get_template_directory_uri() .'/js/invest-srv.js');		
+        }
+        if($template_name === 'resources.php'){
+            //If page is using slider portfolio template then load our slider script
+            wp_enqueue_script('resources', get_template_directory_uri() .'/js/resources.js');		
         }
     }
 }
@@ -33,41 +38,56 @@ add_filter( 'body_class', 'custom_class' );
 function custom_class( $classes ) {
     if ( is_page_template( 'invest.php' ) ) {
         $classes[] = 'invest-p';
+        return $classes;
     }
 
     if ( is_page_template( 'invest-bond.php' ) ) {
         $classes[] = 'invest-bond-p';
+        return $classes;
     }
 
     if ( is_page_template( 'invest-suistain.php' ) ) {
         $classes[] = 'invest-suistain-p';
+        return $classes;
     }
 
     if ( is_page_template( 'invest-tech.php' ) ) {
         $classes[] = 'invest-tech-p';
+        return $classes;
     }
 
     if ( is_page_template( 'invest-healthcare.php' ) ) {
         $classes[] = 'invest-healthcare-p';
+        return $classes;
     }
 
     if ( is_page_template( 'invest-diversity.php' ) ) {
         $classes[] = 'invest-diversity-p';
+        return $classes;
     }
 
     if ( is_page_template( 'invest-generic.php' ) ) {
         $classes[] = 'invest-generic-p';
+        return $classes;
+    }
+
+    if ( is_page_template( 'resources.php' ) ) {
+        $classes[] = 'resources-p';
+        return $classes;
     }
 
     if ( is_home() ) {
         $classes[] = 'home-p';
+        return $classes;
     }
+
+    $classes[] = 'default-p';
     return $classes;
 }
 
 //header handle logic
 function change_header_flag ($output) {
-    if ( is_page_template( 'invest.php' ) ) {
+    if ( is_page_template( 'invest.php' ) || is_page_template( 'resources.php' ) ) {
         return $output = 'header-green';
     }
 
@@ -94,12 +114,15 @@ function change_header_flag ($output) {
         return $output = 'header-darkgreen';
     }
 
-    return $output;
+    if ( is_home() ) {
+        return $output = '';
+    }
+    return $output = 'header-green';
 }
 add_filter('header_flag', 'change_header_flag');
 
 function change_header_logo ($output) {
-    if ( is_page_template( 'invest.php' ) ) {
+    if ( is_page_template( 'invest.php' ) || is_page_template( 'resources.php' )  ) {
         return $output = 'color_logo';
     }
 
@@ -121,7 +144,10 @@ function change_header_logo ($output) {
     if ( is_page_template( 'invest-generic.php' ) ) {
         return $output = 'logo_darkgreen';
     }
-    return $output;
+    if ( is_home() ) {
+        return $output;
+    }
+    return $output = 'color_logo';
 }
 add_filter('header_logo_flag', 'change_header_logo');
 
@@ -174,7 +200,7 @@ function change_footer_social_icon ($output) {
 add_filter('footer_social_icon_flag', 'change_footer_social_icon');
 
 function change_footer_logo ($output) {
-    if ( is_page_template( 'invest.php' ) ) {
+    if ( is_page_template( 'invest.php' ) || is_page_template( 'resources.php' )  ) {
         return $output = 'color_logo';
     }
     if ( is_page_template( 'invest-bond.php' ) ) {
@@ -195,6 +221,6 @@ function change_footer_logo ($output) {
     if ( is_page_template( 'invest-generic.php' ) ) {
         return $output = 'logo_lightdarkgreen';
     }
-    return $output;
+    return $output = 'color_logo';
 }
 add_filter('footer_logo_flag', 'change_footer_logo');

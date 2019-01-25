@@ -93,7 +93,12 @@
               <a class="nav-link " href="#" id="esg-option">ESG LEADERS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/" >Resources</a>
+              <a class="nav-link" href="<?php bloginfo('url');?>/resources" >Resources</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php bloginfo('url');?>/company" >Company</a>
+            </li>
+            <li class="nav-item">
             </li>
           </ul>
         </div>
