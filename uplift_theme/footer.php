@@ -10,12 +10,18 @@
  */
 ?>
 
-    <footer id="footer">
+    <footer id="footer" class="<?php 
+        $flag="";
+        echo apply_filters('footer_flag', $flag);
+      ?>">
       <div class="container uplift-container">
         <div class="wrapper navbar">
           <div class="left-side">
             <div class="logo">
-              <img src="<?php bloginfo('template_directory') ?>/images/color_logo.svg" alt="">
+              <img src="<?php bloginfo('template_directory') ?>/images/<?php 
+                    $flag="color_logo";
+                    echo apply_filters('footer_logo_flag', $flag);
+              ?>.svg" alt="">
             </div>
             <p class="copyright">© Uplift. Copyright 2018</p>
           </div>
@@ -71,17 +77,26 @@
             <ul class="social-follow">
               <li>
                 <a href="#" class="fb">
-                  <img src="<?php bloginfo('template_directory') ?>/images/social-fb.svg" alt="logo uplift">
+                  <img src="<?php bloginfo('template_directory') ?>/images/footer/social-fb<?php 
+                    $flag="";
+                    echo apply_filters('footer_social_icon_flag', $flag);
+                  ?>.svg" alt="logo uplift">
                 </a>
               </li>
               <li>
                 <a href="#" class="fb">
-                  <img src="<?php bloginfo('template_directory') ?>/images/social-twitter.svg" alt="logo uplift">
+                  <img src="<?php bloginfo('template_directory') ?>/images/footer/social-twitter<?php 
+                    $flag="";
+                    echo apply_filters('footer_social_icon_flag', $flag);
+                  ?>.svg" alt="logo uplift">
                 </a>
               </li>
               <li>
                 <a href="#" class="fb">
-                  <img src="<?php bloginfo('template_directory') ?>/images/social-linked.svg" alt="logo uplift">
+                  <img src="<?php bloginfo('template_directory') ?>/images/footer/social-linkedin<?php 
+                    $flag="";
+                    echo apply_filters('footer_social_icon_flag', $flag);
+                  ?>.svg" alt="logo uplift">
                 </a>
               </li>
             </ul>
@@ -90,7 +105,6 @@
       </div>
     </footer>
 
-<?php wp_footer(); ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
@@ -100,10 +114,8 @@
     <script src="<?php bloginfo('template_directory') ?>/vendors/jquery-mousewheel/jquery.mousewheel.min.js"></script> 
     <!-- FontAwesome -->
     <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script>  
-
-  <!-- custom js -->
-    <script src="<?php bloginfo('template_directory') ?>/js/service.js"></script>
-    <script src="<?php bloginfo('template_directory') ?>/js/carousel-service.js"></script>
+    <!-- custom js -->
+    <?php wp_footer(); ?>
 
   </body>
 </html>

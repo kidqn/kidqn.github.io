@@ -67,13 +67,17 @@
     padding: 141px 0;
     background: url(./images/green-decorator.png) top right no-repeat;
     background-size: contain;
-    &::after{
+    &:after{
         display: block;
         content: '';
         padding-bottom: 18%;
     }
-    .head-info{
+    & > .container {
         position: relative;
+    }
+    .head-info{
+        position: absolute;
+        top: 0;
         width: 610px;
         height: 165px;
         &:after {

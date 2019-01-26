@@ -1,4 +1,6 @@
-/*Theme Name: uplift_theme*/
+/*
+    Theme Name: Uplift Theme
+*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
 
 * { -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; /* Introduced in IE 10. See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/ */ -ms-user-select: none; user-select: none; font-weight: normal; }
@@ -14,7 +16,7 @@ body { font-size: 16px; font-family: 'HelveticaNeue', sans-serif; font-weight: n
 /* common element */
 a:hover { text-decoration: none; transition: all 0.3s ease; }
 
-main#main { position: relative; z-index: 1; transition: -webkit-transform 200ms ease-out; }
+main#main { min-height: 100%; position: relative; z-index: 1; transition: -webkit-transform 200ms ease-out; }
 
 /* layout */
 .uplift-container { padding: 0 70px; }
@@ -611,6 +613,32 @@ section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link:hover 
 
 section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active { color: #dadada; }
 
+.default-p #main { padding-top: 150px; }
+
+.wpcf7 input[type=submit] { width: 159px; height: 48px; border-radius: 2px; box-shadow: 0 4px 9px 0 rgba(26, 47, 59, 0.11); background-color: #b8d432; border: 0; font-size: 13px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.6px; text-align: center; color: #ffffff; text-transform: uppercase; }
+
+.wpcf7 input[type=text], .wpcf7 input[type=email] { width: 485px; height: 50px; border-radius: 1px; background-color: #fafdec; border: 0; outline: 0; }
+
+.wpcf7 input[type=text]:focus, .wpcf7 input[type=email]:focus { background: #edf9b7; outline: 0; }
+
+.wpcf7-form label { font-size: 14px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.4px; color: #454545; margin-bottom: 12px; }
+
+.wpcf7-form label span.required { color: #ff2965; }
+
+.wpcf7 textarea { width: 1001px; height: 128px; border-radius: 1px; background-color: #fafdec; border: 0; margin-bottom: 30px; }
+
+.wpcf7-previous { font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; color: #35612e; text-transform: uppercase; background: none; border: 0; }
+
+.wpcf7 h4 { font-size: 18px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: normal; color: #b8d432; margin-bottom: 20px; }
+
+.wpcf7 h6 { font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; color: #b8d432; margin-top: 12px; margin-bottom: 15px; }
+
+.wpcf7 .head-info { padding-bottom: 20px; border-bottom: 3px solid #ddf36f; }
+
+.wpcf7 .head-info .title { width: 424px; height: 71px; font-family: 'SFUIDisplay'; font-size: 60px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: normal; color: #454545; }
+
+.wpcf7 .head-info p.intro { font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.43; letter-spacing: 0.4px; color: #454545; }
+
 .home-p #uplift-video { position: absolute; bottom: 0px; right: 0px; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1000; overflow: hidden; }
 
 .home-p section#banner-video { height: 100%; width: 100%; overflow: hidden; position: relative; }
@@ -627,9 +655,11 @@ section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active
 
 .home-p section#about { position: relative; min-height: 662px; padding: 141px 0; background: url(./images/green-decorator.png) top right no-repeat; background-size: contain; }
 
-.home-p section#about::after { display: block; content: ''; padding-bottom: 18%; }
+.home-p section#about:after { display: block; content: ''; padding-bottom: 18%; }
 
-.home-p section#about .head-info { position: relative; width: 610px; height: 165px; }
+.home-p section#about > .container { position: relative; }
+
+.home-p section#about .head-info { position: absolute; top: 0; width: 610px; height: 165px; }
 
 .home-p section#about .head-info:after { content: ''; display: block; position: absolute; bottom: -33px; width: 174px; height: 8px; background-color: #b8d432; }
 
@@ -982,3 +1012,77 @@ section#carousel-fullscreen .menu-section .menu-box-grey .menu .menu-link.active
 .invest-generic-p #subscribe-bottom-btn { font-size: 13px; }
 
 .invest-generic-p section#subscribe { padding: 94px 0 35px 0; }
+
+.resources-p #main { padding-top: 160px; }
+
+.resources-p section#resources-banner { position: relative; padding: 45px 45px 0 45px; }
+
+.resources-p section#resources-banner > .title { font-family: 'SFUIDisplay'; font-size: 60px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.18; letter-spacing: normal; color: #454545; text-transform: uppercase; margin-bottom: 20px; }
+
+.resources-p #top-article-images-carousel .item { height: 680px; width: 100%; background-position: center top; background-repeat: no-repeat; background-size: cover; }
+
+.resources-p #top-article-carousel { width: 823px; height: 195px; background-color: #ffffff; padding: 30px 115px 20px 115px; position: absolute; bottom: 52px; left: 50%; transform: translate3d(-50%, 0, 0); }
+
+.resources-p #top-article-carousel .article .title { font-family: 'SFUIDisplay'; font-size: 30px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: normal; color: #454545; margin-bottom: 4px; }
+
+.resources-p #top-article-carousel .article .date { height: 15px; font-size: 13px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.15; letter-spacing: normal; color: #b3b3b3; margin-bottom: 6px; }
+
+.resources-p #top-article-carousel .article p { font-size: 13px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.38; letter-spacing: 0.5px; color: #454545; }
+
+.resources-p #top-article-carousel .owl-prev, .resources-p #top-article-carousel .owl-next { width: 15.8px; height: 29.5px; object-fit: contain; transform: rotate(-180deg); position: absolute; top: 50%; transform: translate3d(0, -50%, 0); outline: 0; background-repeat: no-repeat; background-size: 100% 100%; background-position: center center; }
+
+.resources-p #top-article-carousel .owl-prev.disabled, .resources-p #top-article-carousel .owl-next.disabled { opacity: 0.3; }
+
+.resources-p #top-article-carousel .owl-prev { left: 40px; background-image: url("./images/arrow-left.png"); }
+
+.resources-p #top-article-carousel .owl-next { right: 40px; background-image: url("./images/arrow-right.png"); }
+
+.resources-p section#article-categories ul.categories-tabs { display: flex; justify-content: center; border: 0; list-style: none; margin: 0; padding: 8px 0 0 0; }
+
+.resources-p section#article-categories ul.categories-tabs li { padding: 10px; }
+
+.resources-p section#article-categories ul.categories-tabs .nav-link { font-size: 11px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.5px; color: #35612e; text-transform: uppercase; }
+
+.resources-p section#article-categories ul.categories-tabs .nav-link.active { color: #b8d432; border: 0; }
+
+.resources-p section#article-categories .categories-tabs-content { padding: 44px; background-color: #fafdec; }
+
+.list-resources .wrapper { position: relative; display: flex; flex-direction: column; min-width: 0; word-wrap: break-word; }
+
+.list-resources .article { height: 100%; display: flex; flex-direction: column; position: relative; background: #fff; border-radius: 1px; }
+
+.list-resources .article-img-top { width: 100%; height: 220px; }
+
+.list-resources .article-img-top img { max-height: 100%; width: auto; object-fit: cover; }
+
+.list-resources .article-body { flex: 1 1 auto; padding: 20px 20px 30px 20px; }
+
+.list-resources .article-body .title { font-size: 18px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: normal; color: #454545; margin-bottom: 10px; }
+
+.list-resources .article-body .title:hover { text-decoration: underline; }
+
+.list-resources .article-body .date { height: 15px; font-size: 13px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.15; letter-spacing: normal; color: #b3b3b3; margin-bottom: 6px; }
+
+.list-resources .article-body p { font-size: 13px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.38; letter-spacing: 0.5px; color: #454545; }
+
+.thankyou-p #main { padding-top: 240px; }
+
+.thankyou-p section#share-idea .head-info { border-bottom: 1px solid #ddf36f; padding-bottom: 20px; }
+
+.thankyou-p section#share-idea .head-info .title { font-family: 'SFUIDisplay'; font-size: 60px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: normal; color: #454545; text-align: center; }
+
+.thankyou-p section#share-idea .head-info .intro { width: 777px; margin: auto; font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.43; letter-spacing: 0.4px; text-align: center; color: #454545; }
+
+.thankyou-p section#share-idea h4 { font-size: 18px; font-weight: 500; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: normal; text-align: center; color: #b8d432; text-align: center; margin: 20px auto; }
+
+.thankyou-p section#share-idea input { border-radius: 1px; background-color: #edf9b7; border: 0; outline: 0; padding: 16px; }
+
+.thankyou-p section#share-idea .sharenow-field { justify-content: center; width: 656px; margin: 0 auto 20px; }
+
+.thankyou-p section#share-idea .sharenow-field input { border-radius: 1px; background-color: #edf9b7; border: 0; outline: 0; padding: 16px; width: 476px; height: 50px; margin-right: 20px; }
+
+.thankyou-p section#share-idea .sharenow-field button { width: 159px; height: 50px; }
+
+.thankyou-p section#share-idea .note { font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.43; letter-spacing: 0.4px; text-align: center; color: #454545; }
+
+.thankyou-p section#share-idea .sub-note { font-size: 13px; font-weight: normal; font-style: italic; font-stretch: normal; line-height: 1.54; letter-spacing: 0.4px; text-align: center; color: #888888; }

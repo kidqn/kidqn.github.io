@@ -32,6 +32,7 @@ $(function(){
   var oneTime = 0;
   var delta = 5;
   var heightHeaderBar = $('#top-nav').outerHeight();
+  var carouselFs = $('#carousel-fullscreen .owl-carousel');
   $(window).scroll(function () {
       var iCurScrollPos = $(this).scrollTop();
       // Make sure they scroll more than delta
@@ -39,34 +40,22 @@ $(function(){
         //Note: different from homepage a bit
         $("#top-nav").removeClass('smart');
         return;
-      }else if($('.owl-carousel').length){
-        if(iCurScrollPos < ($('.owl-carousel').offset().top - 300) ||  iCurScrollPos > ($('.owl-carousel').height() + $('.owl-carousel').offset().top)) {
-          $("#top-nav").show();
-          $("#top-nav").addClass('smart');
-        }else {
-          $("#top-nav").hide();
-          $("#top-nav").removeClass('smart');
-        }
-      }else {
-        if(iCurScrollPos > 300) {
-          $("#top-nav").addClass('smart');
-        }else {
-          $("#top-nav").removeClass('smart');
-        }
-      }
-
-      // if scroll down
-      if(iCurScrollPos > iScrollPos) {
-        if($("#carousel-fullscreen").length && iCurScrollPos > ($('.owl-carousel').offset().top - 300)){
-            if(oneTime === 0) {
-              $('html, body').animate({
-                scrollTop: $("#carousel-fullscreen").offset().top
-                }, 1000);
-              oneTime = 1;
+      } 
+        
+      if(iCurScrollPos > 80) {
+          if(carouselFs.length) {
+            if(iCurScrollPos < (carouselFs.offset().top - 300) ||  iCurScrollPos > (carouselFs.height() + carouselFs.offset().top)) {
+              $("#top-nav").show();
+              $("#top-nav").addClass('smart');
+            }else {
+              $("#top-nav").hide();
+              $("#top-nav").removeClass('smart');
             }
-        }
-      }else {
-        // scroll up
+          } else {
+            $("#top-nav").addClass('smart');
+          }
+        }else {
+          $("#top-nav").removeClass('smart');
       }
 
       iScrollPos = iCurScrollPos;
