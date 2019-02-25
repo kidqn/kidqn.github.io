@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'SFUIDisplay';
+    src: url('./fonts/sf-ui-display-black-webfont.woff2') format('woff2'),
+         url('./fonts/sf-ui-display-black-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFUIDisplay';
+    src: url('./fonts/sf-ui-display-regular-webfont.woff2') format('woff2'),
+         url('./fonts/sf-ui-display-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SFUIDisplay';
+    src: url('./fonts/sfuidisplay-semibold-webfont.woff2') format('woff2'),
+         url('./fonts/sfuidisplay-semibold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd-Bd';
+    src: url('./fonts/HelveticaNeueLTStd-Bd.eot?#iefix') format('embedded-opentype'),  
+        url('./fonts/HelveticaNeueLTStd-Bd.otf')  format('opentype'),
+        url('./fonts/HelveticaNeueLTStd-Bd.woff') format('woff'), 
+        url('./fonts/HelveticaNeueLTStd-Bd.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLTStd-Blk';
+    src: url('./fonts/HelveticaNeueLTStd-Bd.eot?#iefix') format('embedded-opentype'),  
+        url('./fonts/HelveticaNeueLTStd-Bd.otf')  format('opentype'),
+        url('./fonts/HelveticaNeueLTStd-Bd.woff') format('woff'), 
+        url('./fonts/HelveticaNeueLTStd-Bd.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+  

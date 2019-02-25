@@ -1,0 +1,44 @@
+
+.about-us-p section#key-member {
+    padding: 40px 0;
+    .list-member {
+        .member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            .avatar {
+                width: 180px;
+                height: 180px;
+                border-radius: 1px;
+                box-shadow: 0 8px 13px 0 rgba(0, 0, 0, 0.15);
+                border: solid 1px #979797;
+                background-color: #d8d8d8;
+            }
+            .info{
+                width: calc(100% - 180px);
+                padding-left: 32px;
+                .name {
+                    font-family: 'SFUIDisplay';
+                    font-size: 20px;
+                    font-weight: 900;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.2;
+                    letter-spacing: 0.7px;
+                    color: #000000;
+                    margin-bottom: 16px;
+                }
+                p{
+                    font-family: Arial;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-style: normal;
+                    font-stretch: normal;
+                    line-height: 1.33;
+                    letter-spacing: 0.5px;
+                    color: #000000;
+                }
+            }
+        }
+    }
+}

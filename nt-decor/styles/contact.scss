@@ -1,0 +1,79 @@
+.contact-p  #contact-form {
+    width: 400px;
+    input, textarea {
+        width: 100%;
+        border: 0;
+        border-radius: 2px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+    }
+    input {
+        height: 50px;
+    }
+    label {
+        font-family: Arial;
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.17;
+        letter-spacing: 0.5px;
+        color: #000000;
+    }
+    button {
+        width: 195px;
+        height: 51px;
+        border-radius: 2px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+        background-color: #c61f2f;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+    }
+}
+
+.contact-p .contact-area {
+    .right-side {
+        padding-top: 30px;
+    }
+    .info-block {
+        margin-bottom: 32px;
+        h3 {
+            font-family: 'SFUIDisplay';
+            font-size: 20px;
+            font-weight: 900;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: 0.7px;
+            color: #000000;
+            margin-bottom: 7px;
+        }
+        p{
+            font-family: Arial;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.33;
+            letter-spacing: 0.5px;
+            color: #000000;
+        }
+    }
+    .info-block:nth-of-type(2){
+        margin-bottom: 20px;
+    }
+    .info-number-block{
+        font-family: Arial;
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.83;
+        letter-spacing: 0.5px;
+        color: #000000;
+        padding-top: 20px;
+        border-top: 1px solid #000;
+        max-width: 297px;
+    }
+}

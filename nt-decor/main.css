@@ -1,0 +1,156 @@
+/* main scss. Reformat css file to find duplicated CSS classes */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+
+html, body { width: 100%; height: 100%; margin: 0; }
+
+body { font-size: 16px; font-family: 'HelveticaNeue', sans-serif; font-weight: normal; color: #000000; text-rendering: optimizeLegibility !important; -webkit-font-smoothing: antialiased !important; }
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+img { max-width: 100%; height: auto; }
+
+button:hover, a:hover { opacity: 0.89; }
+
+main#main { padding-top: 214px; position: relative; z-index: 1; transition: -webkit-transform 200ms ease-out; }
+
+.nt-decor-container { padding: 0 70px; }
+
+.nt-decor-row-23 { margin-left: -23px; margin-right: -23px; }
+
+.nt-decor-row-23 > [class^=col-] { padding-left: 23px; padding-right: 23px; margin-bottom: 32px; }
+
+.heading-line-bottom { font-family: 'HelveticaNeueLTStd-Blk'; font-size: 19px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: 0.3px; color: #000000; text-transform: uppercase; display: inline-block; padding-bottom: 15px; border-bottom: 1px solid #000; margin-bottom: 20px; }
+
+.owl-carousel { height: 100%; }
+
+.owl-carousel .owl-stage-outer, .owl-carousel .owl-stage, .owl-carousel .owl-item, .owl-carousel .item, .owl-carousel .uplift-container { height: 100%; }
+
+.owl-carousel .owl-dots { position: absolute; top: -34px; right: 0; }
+
+.owl-carousel .owl-dots .owl-dot { width: 12px; height: 12px; background-color: #000000; margin-right: 17px; }
+
+.owl-carousel .owl-dots .owl-dot:nth-last-of-type(1) { margin-right: 0; }
+
+.owl-carousel .owl-dots .owl-dot.active { background-color: #a30010; }
+
+.owl-carousel .owl-item { overflow: hidden; }
+
+.owl-carousel .item { background-position: center top; background-size: cover; background-repeat: no-repeat; }
+
+.list-social-icons { margin-bottom: 50px; align-items: center; margin-top: 50px; }
+
+.list-social-icons li { margin-right: 36px; }
+
+.list-social-icons li p { font-family: Arial; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.4px; color: #b3b3b3; }
+
+.nt-decor-lead-section { min-height: 312px; background-color: #f6f6f6; padding: 20px 0; }
+
+.nt-decor-lead-section .head-info { margin-top: -50px; }
+
+.nt-decor-lead-section .head-info .strap { font-family: 'HelveticaNeueLTStd-Blk'; font-size: 19px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.3px; color: #000000; text-transform: uppercase; margin-bottom: 10px; margin-top: 18px; }
+
+.nt-decor-lead-section .head-info .strap span { color: #c61f2f; }
+
+.nt-decor-lead-section .head-info .title { font-family: 'HelveticaNeueLTStd-Blk'; font-size: 55px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: 0.8px; margin-bottom: 30px; }
+
+.nt-decor-lead-section .head-info h2.title { font-size: 38px; font-weight: 900; margin-bottom: 15px; }
+
+.nt-decor-lead-section .head-info .subtitle { font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 600; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: 0.5px; margin-bottom: 20px; }
+
+.nt-decor-lead-section .head-info p { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; margin-bottom: 20px; max-width: 670px; }
+
+.nt-decor-lead-section .head-info .more { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #c9051e; text-transform: uppercase; margin-top: 30px; }
+
+@font-face { font-family: 'SFUIDisplay'; src: url("./fonts/sf-ui-display-black-webfont.woff2") format("woff2"), url("./fonts/sf-ui-display-black-webfont.woff") format("woff"); font-weight: 900; font-style: normal; }
+
+@font-face { font-family: 'SFUIDisplay'; src: url("./fonts/sf-ui-display-regular-webfont.woff2") format("woff2"), url("./fonts/sf-ui-display-regular-webfont.woff") format("woff"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'SFUIDisplay'; src: url("./fonts/sfuidisplay-semibold-webfont.woff2") format("woff2"), url("./fonts/sfuidisplay-semibold-webfont.woff") format("woff"); font-weight: 600; font-style: normal; }
+
+@font-face { font-family: 'HelveticaNeueLTStd-Bd'; src: url("./fonts/HelveticaNeueLTStd-Bd.eot?#iefix") format("embedded-opentype"), url("./fonts/HelveticaNeueLTStd-Bd.otf") format("opentype"), url("./fonts/HelveticaNeueLTStd-Bd.woff") format("woff"), url("./fonts/HelveticaNeueLTStd-Bd.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'HelveticaNeueLTStd-Blk'; src: url("./fonts/HelveticaNeueLTStd-Bd.eot?#iefix") format("embedded-opentype"), url("./fonts/HelveticaNeueLTStd-Bd.otf") format("opentype"), url("./fonts/HelveticaNeueLTStd-Bd.woff") format("woff"), url("./fonts/HelveticaNeueLTStd-Bd.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+.content-section .content-body { padding-bottom: 54px; }
+
+.content-section .content-body .lead-image, .content-section .content-body > img:nth-of-type(1) { margin-top: -110px; }
+
+.content-section .content-body figcaption { padding: 15px; margin-bottom: 10px; }
+
+.content-section .content-body figcaption p { font-family: Arial; font-size: 12px; font-weight: normal; font-style: italic; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; text-align: center; color: #898989; }
+
+.content-section .content-body img + img { margin-top: 70px; }
+
+.list-related-projects { border-top: 2px solid  #f8f8f8; border-bottom: 2px solid  #f8f8f8; padding: 10px 0; }
+
+.list-related-projects > h3, .list-related-projects > h4 { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; text-transform: uppercase; color: #000000; margin-bottom: 24px; }
+
+.list-related-projects .project .image { width: 300px; height: 300px; overflow: hidden; margin-bottom: 14px; }
+
+.list-related-projects .project .section { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #c9051e; text-transform: uppercase; }
+
+.list-related-projects .project .title { font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: 0.7px; color: #000000; }
+
+#top-nav { width: 100%; height: 140px; padding: 30px; position: fixed; z-index: 1001; top: 0; left: 0; background: 0; transform: translate3d(0, 0, 0); -webkit-transition: all .3s ease-in; transition: all .3s ease-in; }
+
+#top-nav .navbar-brand { width: 233px; height: 80px; padding: 0; position: absolute; top: 0; left: 70px; }
+
+#top-nav .menu-home .nav-item .nav-link { padding: 26px 23px; font-family: 'HelveticaNeueLTStd-Bd'; font-size: 12px; font-weight: normal; font-style: normal; line-height: 2.5; letter-spacing: 0.5px; color: #000000; text-transform: uppercase; }
+
+#top-nav .menu-home .nav-item.active .nav-link, #top-nav .menu-home .nav-item:hover .nav-link { color: #c61f2f; }
+
+#right-nav-menu { padding-top: 35px; }
+
+#mobile-right-nav-menu-btn { top: 0; right: 0; position: absolute; }
+
+.about-us-p section#key-member { padding: 40px 0; }
+
+.about-us-p section#key-member .list-member .member { display: flex; align-items: center; margin-bottom: 40px; }
+
+.about-us-p section#key-member .list-member .member .avatar { width: 180px; height: 180px; border-radius: 1px; box-shadow: 0 8px 13px 0 rgba(0, 0, 0, 0.15); border: solid 1px #979797; background-color: #d8d8d8; }
+
+.about-us-p section#key-member .list-member .member .info { width: calc(100% - 180px); padding-left: 32px; }
+
+.about-us-p section#key-member .list-member .member .info .name { font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: 0.7px; color: #000000; margin-bottom: 16px; }
+
+.about-us-p section#key-member .list-member .member .info p { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; color: #000000; }
+
+.contact-p #contact-form { width: 400px; }
+
+.contact-p #contact-form input, .contact-p #contact-form textarea { width: 100%; border: 0; border-radius: 2px; box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1); background-color: #ffffff; }
+
+.contact-p #contact-form input { height: 50px; }
+
+.contact-p #contact-form label { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.17; letter-spacing: 0.5px; color: #000000; }
+
+.contact-p #contact-form button { width: 195px; height: 51px; border-radius: 2px; box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1); background-color: #c61f2f; margin-top: 20px; margin-bottom: 20px; border: 0; }
+
+.contact-p .contact-area .right-side { padding-top: 30px; }
+
+.contact-p .contact-area .info-block { margin-bottom: 32px; }
+
+.contact-p .contact-area .info-block h3 { font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 900; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: 0.7px; color: #000000; margin-bottom: 7px; }
+
+.contact-p .contact-area .info-block p { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; color: #000000; }
+
+.contact-p .contact-area .info-block:nth-of-type(2) { margin-bottom: 20px; }
+
+.contact-p .contact-area .info-number-block { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.83; letter-spacing: 0.5px; color: #000000; padding-top: 20px; border-top: 1px solid #000; max-width: 297px; }
+
+#factory-images-carousel { height: 675px; margin-top: -245px; }
+
+#factory-images-carousel .owl-prev, #factory-images-carousel .owl-next { width: 31.5px; height: 22.1px; object-fit: contain; transform: rotate(-180deg); position: absolute; top: 50%; transform: translate3d(0, -50%, 0); outline: 0; background-repeat: no-repeat; background-size: 100% 100%; background-position: center center; }
+
+#factory-images-carousel .owl-prev.disabled, #factory-images-carousel .owl-next.disabled { opacity: 0.3; }
+
+#factory-images-carousel .owl-prev { left: -52px; background-image: url("./images/prev-arrow.svg"); }
+
+#factory-images-carousel .owl-next { right: -52px; background-image: url("./images/next-arrow.svg"); }
+
+#factory-article-carousel { background: #fff; width: 890px; margin: -90px auto 0 auto; }
+
+#factory-article-carousel .item { padding: 25px 40px 25px 28px; display: flex; }
+
+#factory-article-carousel .item .right-content { padding-left: 40px; }
+
+#factory-article-carousel .item .right-content p.intro { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; color: #000000; margin-bottom: 40px; }

@@ -1,0 +1,54 @@
+.factory-p section#carouse-section {
+
+}
+#factory-images-carousel {
+    height: 675px;
+    margin-top: -245px;
+    .owl-prev, .owl-next {
+        width: 31.5px;
+        height: 22.1px;
+        object-fit: contain;
+        transform: rotate(-180deg);
+        position: absolute;
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+        outline: 0;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+        &.disabled {
+            opacity: 0.3;
+        }
+    }
+    .owl-prev {
+        left: -52px;
+        background-image: url('./images/prev-arrow.svg');
+    }
+    .owl-next {
+        right: -52px;
+        background-image: url('./images/next-arrow.svg');
+    }
+}
+#factory-article-carousel {
+    background: #fff;
+    width: 890px;
+    margin: -90px auto 0 auto;
+    .item {
+        padding: 25px 40px 25px 28px;
+        display: flex;
+        .right-content {
+            padding-left: 40px;
+            p.intro {
+                font-family: Arial;
+                font-size: 12px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.33;
+                letter-spacing: 0.5px;
+                color: #000000;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

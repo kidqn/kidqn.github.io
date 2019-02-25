@@ -1,0 +1,75 @@
+.content-section {
+    .content-body {
+        padding-bottom: 54px;
+        .lead-image, 
+        & >img:nth-of-type(1) { 
+            margin-top: -110px;
+        }
+        figcaption {
+            padding: 15px;
+            margin-bottom: 10px;
+            p {
+                font-family: Arial;
+                font-size: 12px;
+                font-weight: normal;
+                font-style: italic;
+                font-stretch: normal;
+                line-height: 1.33;
+                letter-spacing: 0.5px;
+                text-align: center;
+                color: #898989;
+            }
+        }
+        img + img {
+            margin-top: 70px;
+        }
+    }
+}
+
+.list-related-projects {
+    border-top: 2px solid  #f8f8f8;
+    border-bottom: 2px solid  #f8f8f8;
+    padding: 10px 0;
+    & > h3,
+    & > h4 {
+        font-family: 'HelveticaNeueLTStd-Bd';
+        font-size: 11px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2.73;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 24px;
+    }
+    .project {
+        .image {
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            margin-bottom: 14px;
+        }
+        .section {
+            font-family: 'HelveticaNeueLTStd-Bd';
+            font-size: 11px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 2.73;
+            letter-spacing: 0.4px;
+            color: #c9051e;
+            text-transform: uppercase;
+        }
+        .title {
+            font-family: 'SFUIDisplay';
+            font-size: 20px;
+            font-weight: 900;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.2;
+            letter-spacing: 0.7px;
+            color: #000000;
+        }
+    }
+}
