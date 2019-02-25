@@ -1,11 +1,5 @@
 //chinh size banner video khi kick thuoc man hinh thay doi
 function resetStyleHomePage(){
-    if($('section#banner-video')){
-      $('section#banner-video').css('height',window.innerHeight + 'px');
-    }
-    if($('section#carousel-fullscreen')){
-      $('section#carousel-fullscreen').css('height',window.innerHeight + 'px');
-    }
 }
 //handle resize event//
 window.addEventListener("resize", resizeThrottler, false);
@@ -21,9 +15,9 @@ function resizeThrottler() {
        }, 66);
     }
 }
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-}
+// window.onbeforeunload = function () {
+//   window.scrollTo(0, 0);
+// }
 
 $(function(){
   resetStyleHomePage();
@@ -32,7 +26,6 @@ $(function(){
   var oneTime = 0;
   var delta = 5;
   var heightHeaderBar = $('#top-nav').outerHeight();
-  var carouselFs = $('#carousel-fullscreen .owl-carousel');
   $(window).scroll(function () {
       var iCurScrollPos = $(this).scrollTop();
       // Make sure they scroll more than delta
@@ -42,25 +35,11 @@ $(function(){
         return;
       } 
         
-      if(iCurScrollPos > 80) {
-          if(carouselFs.length) {
-            if(iCurScrollPos < (carouselFs.offset().top - 300) ||  iCurScrollPos > (carouselFs.height() + carouselFs.offset().top)) {
-              $("#top-nav").show();
-              $("#top-nav").addClass('smart');
-            }else {
-              $("#top-nav").hide();
-              $("#top-nav").removeClass('smart');
-            }
-          } else {
-            $("#top-nav").addClass('smart');
-          }
-        }else {
-          $("#top-nav").removeClass('smart');
+      if(iCurScrollPos > 200) {
+        $("#top-nav").addClass('smart');
       }
 
       iScrollPos = iCurScrollPos;
-      // console.log('scrollTop',iCurScrollPos)
-      // console.log($('.owl-carousel').offset().top);
   });
 
   //---------//

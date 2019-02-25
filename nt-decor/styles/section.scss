@@ -73,3 +73,34 @@
         }
     }
 }
+
+section.section-categories {
+    .categories-tabs {
+        margin-top: -200px;
+        margin-bottom: 30px;
+        justify-content: center;
+        &:before {
+            content: '';
+            display: block;
+            width: 36px;
+            height: 5px;
+            margin-top: 11px;
+            background-color: #c61f2f;
+        }
+        .nav-link {
+            font-family: 'HelveticaNeueLTStd-Bd';
+            font-size: 11px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 2.73;
+            letter-spacing: 0.4px;
+            padding: 0 20px;
+            color: #000000;
+            text-transform: uppercase;
+            &.active {
+                color: #c61f2f;
+            }
+        }
+    }
+}
