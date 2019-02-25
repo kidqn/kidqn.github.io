@@ -51,7 +51,7 @@ main#main { padding-top: 214px; position: relative; z-index: 1; transition: -web
 
 .nt-decor-lead-section .head-info .strap span { color: #c61f2f; }
 
-.nt-decor-lead-section .head-info .title { font-family: 'HelveticaNeueLTStd-Blk'; font-size: 55px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: 0.8px; margin-bottom: 30px; }
+.nt-decor-lead-section .head-info .title { font-family: 'HelveticaNeueLTStd-Blk'; font-size: 55px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 30px; }
 
 .nt-decor-lead-section .head-info h2.title { font-size: 38px; font-weight: 900; margin-bottom: 15px; }
 
@@ -60,6 +60,12 @@ main#main { padding-top: 214px; position: relative; z-index: 1; transition: -web
 .nt-decor-lead-section .head-info p { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; margin-bottom: 20px; max-width: 670px; }
 
 .nt-decor-lead-section .head-info .more { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #c9051e; text-transform: uppercase; margin-top: 30px; }
+
+ul.pagination { justify-content: center; padding-top: 8px; }
+
+ul.pagination .page-item .page-link { padding: 17px; font-family: 'HelveticaNeueLTStd-Bd'; font-size: 20px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.8px; color: #c9051e; background: no-repeat; border: none; }
+
+ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page-link { color: #000; }
 
 @font-face { font-family: 'SFUIDisplay'; src: url("./fonts/sf-ui-display-black-webfont.woff2") format("woff2"), url("./fonts/sf-ui-display-black-webfont.woff") format("woff"); font-weight: 900; font-style: normal; }
 
