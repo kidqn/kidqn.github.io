@@ -74,32 +74,144 @@
     }
 }
 
-section.section-categories {
-    .categories-tabs {
-        margin-top: -200px;
-        margin-bottom: 30px;
-        justify-content: center;
-        &:before {
-            content: '';
-            display: block;
-            width: 36px;
-            height: 5px;
-            margin-top: 11px;
-            background-color: #c61f2f;
+.categories-tabs {
+    margin-top: -200px;
+    margin-bottom: 30px;
+    justify-content: center;
+    &:before {
+        content: '';
+        display: block;
+        width: 36px;
+        height: 5px;
+        margin-top: 11px;
+        background-color: #c61f2f;
+    }
+    .nav-link {
+        font-family: 'HelveticaNeueLTStd-Bd';
+        font-size: 11px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2.73;
+        letter-spacing: 0.4px;
+        padding: 0 20px;
+        color: #000000;
+        text-transform: uppercase;
+        &.active {
+            color: #c61f2f;
         }
-        .nav-link {
-            font-family: 'HelveticaNeueLTStd-Bd';
-            font-size: 11px;
-            font-weight: normal;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 2.73;
-            letter-spacing: 0.4px;
-            padding: 0 20px;
-            color: #000000;
-            text-transform: uppercase;
-            &.active {
-                color: #c61f2f;
+    }
+}
+
+.list-architecture-projects {
+    .project {
+        position: relative;
+        margin-bottom: 140px;
+        .image {
+            &:before {
+                content: '';
+                display: block;
+                padding-top: 54.24%
+            }
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .info-detail {
+            h4 {
+                font-family: 'HelveticaNeueLTStd-Bd';
+                font-size: 11px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 2.73;
+                letter-spacing: 0.4px;
+                color: #c9051e;
+                text-transform: uppercase;
+            }
+            h3 {
+                font-family: 'SFUIDisplay';
+                font-size: 20px;
+                font-weight: 900;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.2;
+                letter-spacing: 0.7px;
+                color: #000000;
+            }
+            p {
+                font-family: Arial;
+                font-size: 12px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.33;
+                letter-spacing: 0.5px;
+                color: #000000;
+            }
+            .info-title {
+                padding-bottom: 15px;
+                border-bottom: 3px solid #c61f2f;
+            }
+        }
+    }
+    .project:nth-of-type(3n+1){
+        .image {
+            &:before {
+                padding-top: 54.24%;
+            }
+        }
+        .info-detail {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            width: calc(100% - 96px);
+            left: 50%;
+            bottom: -20px;
+            transform: translate3d(-50%, 0, 0);
+            padding: 20px 40px;
+            display: flex;
+            flex-direction: row;
+            .info-title {
+                flex: 0 0 auto;
+                width: 345px;
+            }
+            .info-content {
+                padding-left: 24px;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+    .project:nth-of-type(3n+2){
+        .image {
+            width: 767px;
+            &:before {
+                padding-top: 62.84%;
+            }
+        }
+        .info-detail {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            width: calc(100% - 96px);
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+            padding: 20px 40px 0 40px;
+            display: flex;
+            flex-direction: row;
+            .info-title {
+                flex: 0 0 auto;
+                width: 345px;
+            }
+            .info-content {
+                padding-left: 24px;
+                display: flex;
+                align-items: center;
             }
         }
     }
