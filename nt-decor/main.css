@@ -118,7 +118,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .categories-tabs .nav-link { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; padding: 0 20px; color: #000000; text-transform: uppercase; }
 
-.categories-tabs .nav-link.active { color: #c61f2f; }
+.categories-tabs .nav-link.active, .categories-tabs .nav-link.hover { color: #c61f2f; }
 
 .list-architecture-projects .project { position: relative; margin-bottom: 140px; }
 
