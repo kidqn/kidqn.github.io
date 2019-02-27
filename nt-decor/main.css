@@ -69,6 +69,13 @@ ul.pagination .page-item .page-link { padding: 17px; font-family: 'HelveticaNeue
 
 ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page-link { color: #000; }
 
+/*animation */
+@keyframes slidenavAnimation { from { opacity: 0; }
+  to { opacity: 1; } }
+
+@-webkit-keyframes slidenavAnimation { from { opacity: 0; }
+  to { opacity: 1; } }
+
 @media (max-width: 575px) { .nt-decor-container { padding: 0 10px; } }
 
 @media (min-width: 576px) and (max-width: 767px) { .nt-decor-container { padding: 0 30px; } }
@@ -163,8 +170,6 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 #top-nav .menu-home .nav-item .nav-link { padding: 26px 23px; font-family: 'HelveticaNeueLTStd-Bd'; font-size: 12px; font-weight: normal; font-style: normal; line-height: 2.5; letter-spacing: 0.5px; color: #000000; text-transform: uppercase; }
 
-#top-nav .menu-home .nav-item:hover .dropdown-menu { display: block; }
-
 #top-nav .menu-home .nav-item.active .nav-link, #top-nav .menu-home .nav-item:hover .nav-link { color: #c61f2f; }
 
 #right-nav-menu { padding-top: 35px; }
@@ -180,6 +185,10 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 .dropdown-menu .menu-level-2 .dropdown-item { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #ffffff; text-transform: uppercase; }
 
 .dropdown-menu .menu-level-2 .dropdown-item:hover { border-radius: 2px; color: #000; }
+
+@media (min-width: 768px) { #top-nav .menu-home .nav-item.dropdown .nav-link { padding: 26px 23px; font-family: 'HelveticaNeueLTStd-Bd'; font-size: 12px; font-weight: normal; font-style: normal; line-height: 2.5; letter-spacing: 0.5px; color: #000000; text-transform: uppercase; }
+  #top-nav .menu-home .nav-item.dropdown:hover .dropdown-menu { display: block; animation-name: slidenavAnimation; animation-duration: 0.3s; -webkit-animation-name: slidenavAnimation; -webkit-animation-duration: .3s; -moz-animation-name: slidenavAnimation; -moz-animation-duration: .3s; }
+  #top-nav .menu-home .nav-item.dropdown:hover .nav-link { color: #c61f2f; } }
 
 .home-p main#main { padding-top: 152px; }
 

@@ -251,6 +251,23 @@ ul.pagination {
         }
     }
 }
+/*animation */
+@keyframes slidenavAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+@-webkit-keyframes slidenavAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575px) { 
