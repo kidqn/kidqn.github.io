@@ -26,19 +26,26 @@
             <div id="right-nav-menu" class="collapse navbar-collapse">
               <ul class="navbar-nav ml-auto menu-home">
                 <li class="nav-item">
-                  <a class="nav-link" href="/" >Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/" >Projects</a>
+                    <a class="nav-link" href="./" >Home</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="/" >Factory</a>
+                  <a class="nav-link" href="./factory.html" >Factory</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_project" href="#" >
+                        Projects</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown_project">
+                        <ul class="navbar-nav flex-column menu-level-2">
+                            <li><a href="./project-interior.html" class="dropdown-item">Interior Design</a></li>
+                            <li><a href="./architecture.html" class="dropdown-item">Architecture</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/" >About Us</a>
+                  <a class="nav-link" href="./about-us.html" >About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/" >Contact</a>
+                  <a class="nav-link" href="./contact-us.html" >Contact</a>
                 </li>
               </ul>
             </div>
@@ -46,7 +53,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
           </nav>
-    </header>
+      </header>
 
     <main id="main">
       <section class="nt-decor-lead-section">
@@ -84,18 +91,17 @@
         </div>
       </section>
 
+      <footer>
+        <div class="navbar container nt-decor-container">
+          <ul class="navbar-nav flex-row list-social-icons">
+            <li><a><img src="./images/fb-ft.svg"></a></li>
+            <li><a><img src="./images/ins-ft.svg"></a></li>
+            <li><a><img src="./images/twitter-ft.svg"></a></li>
+            <li><p>© 2019 NTDecor. All rights reserved.</p></li>
+          </ul>
+        </div>
+      </footer>
     </main>
-
-    <footer>
-      <div class="navbar container nt-decor-container">
-        <ul class="navbar-nav flex-row list-social-icons">
-          <li><a><img src="./images/fb-ft.svg"></a></li>
-          <li><a><img src="./images/ins-ft.svg"></a></li>
-          <li><a><img src="./images/twitter-ft.svg"></a></li>
-          <li><p>© 2019 NTDecor. All rights reserved.</p></li>
-        </ul>
-      </div>
-    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>

@@ -25,7 +25,10 @@ p,
     font-family: inherit;
     vertical-align: baseline;
 }
-
+html {
+    background-color: #fcfcfc;
+    padding: 40px 38px 50px;
+}
 html,body{
     width: 100%;
     height: 100%;
@@ -64,6 +67,9 @@ main#main{
     position: relative;
     z-index: 1;
     transition: -webkit-transform 200ms ease-out;
+    box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+    margin-bottom: 60px;
 }
 
 .nt-decor-container {
