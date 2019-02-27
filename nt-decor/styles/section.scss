@@ -96,7 +96,7 @@
         padding: 0 20px;
         color: #000000;
         text-transform: uppercase;
-        &.active, &.hover {
+        &.active, &:hover {
             color: #c61f2f;
         }
     }
