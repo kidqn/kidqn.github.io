@@ -29,13 +29,13 @@ $(function(){
   $(window).scroll(function () {
       var iCurScrollPos = $(this).scrollTop();
       // Make sure they scroll more than delta
-      if(iCurScrollPos < heightHeaderBar + 50){
+      if(iCurScrollPos < heightHeaderBar + 20){
         //Note: different from homepage a bit
         $("#top-nav").removeClass('smart');
         return;
       } 
         
-      if(iCurScrollPos > 200) {
+      if(iCurScrollPos > 20) {
         $("#top-nav").addClass('smart');
       }
 

@@ -12,11 +12,9 @@
 
     <link rel="stylesheet" href="./main.css">
 
-    <!-- FontAwesome -->
-    <script src="../vendors/fontawesome.min.js" crossorigin="anonymous"></script>
     <title>NT Decor</title>
   </head>
-  <body class="factory-p">
+  <body class="home-p">
     <header id="top-nav">
         <nav class="navbar navbar-expand-md container nt-decor-container">
             <a class="navbar-brand" href="/" aria-label="uplift">
@@ -26,13 +24,20 @@
             <div id="right-nav-menu" class="collapse navbar-collapse">
               <ul class="navbar-nav ml-auto menu-home">
                 <li class="nav-item">
-                  <a class="nav-link" href="/" >Home</a>
+                    <a class="nav-link" href="/" >Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/" >Projects</a>
-                </li>
-                <li class="nav-item active">
                   <a class="nav-link" href="/" >Factory</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_project" href="#" >
+                        Projects</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown_project">
+                        <ul class="navbar-nav flex-column menu-level-2">
+                            <li><a href="./project-interior.html" class="dropdown-item">Interior Design</a></li>
+                            <li><a href="./architecture.html" class="dropdown-item">Architecture</a></li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/" >About Us</a>
@@ -49,41 +54,30 @@
     </header>
 
     <main id="main">
-      <section class="nt-decor-lead-section">
+      <section id="new-ideas">
         <div class="container nt-decor-container">
             <div class="head-info">
-                <h1 class="title">Factory</h1>
+                <h3 class="subtitle">new ideas for</h3>
+                <h2 class="title">your space</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                <a href="#">Learn more about us</a>
+            </div>
+            <div class="author">
+                <span>ARCHITECTURE  | </span> <span>Bioinnova, designed by NTDEcor</span>
+            </div>
+            <div id="home-carousel" class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="image" style="background-image:url(./images/project/img1.jpg)"></div>
+                </div>     
+                <div class="item">
+                    <div class="image" style="background-image:url(./images/project/img2.jpg)"></div>
+                </div>    
+                <div class="item">
+                    <div class="image" style="background-image:url(./images/project/img3.jpg)"></div>
+                </div>                     
             </div>
         </div>
       </section>
-      <section id="carousel-section">
-        <div class="container nt-decor-container">
-            <div id="factory-images-carousel" class="owl-carousel owl-theme">
-                <div class="item" style="background-image: url('images/factory/factory.jpg')"></div>
-                <div class="item" style="background-image: url('images/factory/factory.jpg')"></div>
-                <div class="item" style="background-image: url('images/factory/factory.jpg')"></div>
-                <div class="item" style="background-image: url('images/factory/factory.jpg')"></div>
-                <div class="item" style="background-image: url('images/factory/factory.jpg')"></div>
-            </div>
-    
-            <div id="factory-article">
-                <div class="article">
-                   <div class="left-side"> 
-                       <h3 class="heading-line-bottom">Factory</h3>
-                    </div>
-                    <div class="right-content">
-                        <p class="intro">
-                        Our commitment to our customer satisfaction is the most important aspect of our business. By forming a well-trained and experienced marketing team, Home Decor Factory has been able to stay ahead of it's markets with excellent design and value pricing You are dealing directly with the factories, which are manufacturing the full line of home decor items. 
-                        </p>
-                        <p class="intro">
-                        Our commitment to our customer satisfaction is the most important aspect of our business. By forming a well-trained and experienced marketing team, Home Decor Factory has been able to stay ahead of it's markets with excellent design and value pricing You are dealing directly with the factories, which are manufacturing the full line of home decor items. 
-                        </p>
-                    </div>
-                </div>                       
-            </div>
-        </div>
-      </section>
-
     </main>
 
     <footer>
@@ -102,8 +96,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="./vendors/owlcarousel/owl.carousel.min.js"></script>
+    <!-- FontAwesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+
     <!-- custom js -->
     <script src="./js/service.js"></script>
-    <script src="./js/factory.js"></script>
+    <script src="./js/home.js"></script>
   </body>
 </html>

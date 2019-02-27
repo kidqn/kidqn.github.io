@@ -53,6 +53,7 @@ img {
     height: auto;
 }
 button, a {
+    cursor: pointer;
     &:hover {
         opacity: 0.89;
     }
@@ -131,9 +132,11 @@ main#main{
 }
 
 .list-social-icons {
+    border-top: 1px solid #f8f8f8;
     margin-bottom: 50px;
     align-items: center;
-    margin-top: 50px;
+    padding-top: 50px;
+    width: 100%;
     li {
         margin-right: 36px;
         p{
@@ -226,6 +229,7 @@ main#main{
 ul.pagination {
     justify-content: center;
     padding-top: 8px;
+    border-top: 2px solid #f8f8f8;
     .page-item {
         .page-link {
             padding: 17px;
@@ -246,4 +250,27 @@ ul.pagination {
             }
         }
     }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) { 
+    .nt-decor-container {
+        padding: 0 10px;
+    }
+ }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) {
+    .nt-decor-container {
+        padding: 0 30px;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) { 
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+
 }

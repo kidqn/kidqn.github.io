@@ -28,7 +28,6 @@
 
 .list-related-projects {
     border-top: 2px solid  #f8f8f8;
-    border-bottom: 2px solid  #f8f8f8;
     padding: 10px 0;
     & > h3,
     & > h4 {
@@ -164,8 +163,6 @@
         .info-detail {
             position: absolute;
             bottom: 0;
-            left: 0;
-            width: 100%;
             background: #fff;
             width: calc(100% - 96px);
             left: 50%;
@@ -194,25 +191,54 @@
         }
         .info-detail {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
             background: #fff;
-            width: calc(100% - 96px);
-            left: 50%;
-            transform: translate3d(-50%, 0, 0);
-            padding: 20px 40px 0 40px;
+            width: 340px;
+            height: 370px;
+            right: 0;
+            left: auto;
+            top: 50%;
+            transform: translate3d(0, -50%, 0);
+            flex-direction: column;
+            justify-content: space-between;
+            flex-wrap: wrap;
             display: flex;
-            flex-direction: row;
+            padding: 70px 30px 10px;
             .info-title {
                 flex: 0 0 auto;
-                width: 345px;
             }
             .info-content {
-                padding-left: 24px;
-                display: flex;
-                align-items: center;
+                padding: 20px 0 10px 0;
+                flex: 1 0 auto;
             }
         }
+    }
+    .project:nth-of-type(3n){
+        .image {
+            width: 659px;
+            height: 482px;
+            margin-left: auto;
+        }
+        .info-detail {
+            position: absolute;
+            z-index: 1;
+            background: #fff;
+            width: calc(100% - 659px);
+            height: 482px;
+            left: 0;
+            top: 0;
+            transform: translate3d(0, 0%, 0);
+            flex-direction: column;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: center;
+            padding: 70px 50px 10px 0;
+            .info-content {
+                padding: 20px 0 10px 0;
+            }
+        }
+    }
+    .project:nth-last-of-type(1) {
+        margin-bottom: 55px;
     }
 }
