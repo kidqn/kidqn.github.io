@@ -164,11 +164,11 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .list-architecture-projects .project:nth-of-type(3n+2) .image:before { padding-top: 62.84%; }
 
-.list-architecture-projects .project:nth-of-type(3n+2) .info-detail { position: absolute; background: #fff; width: 340px; height: 370px; right: 0; left: auto; top: 50%; transform: translate3d(0, -50%, 0); flex-direction: column; justify-content: space-between; flex-wrap: wrap; display: flex; padding: 70px 30px 10px; }
+.list-architecture-projects .project:nth-of-type(3n+2) .info-detail { position: absolute; background: #fff; width: 340px; height: 370px; right: 0; left: auto; top: 50%; transform: translate3d(0, -50%, 0); flex-direction: column; justify-content: center; flex-wrap: wrap; display: flex; padding: 70px 30px 10px; }
 
 .list-architecture-projects .project:nth-of-type(3n+2) .info-detail .info-title { flex: 0 0 auto; }
 
-.list-architecture-projects .project:nth-of-type(3n+2) .info-detail .info-content { padding: 20px 0 10px 0; flex: 1 0 auto; }
+.list-architecture-projects .project:nth-of-type(3n+2) .info-detail .info-content { padding: 20px 0 10px 0; flex: 0 1 auto; }
 
 .list-architecture-projects .project:nth-of-type(3n) .image { width: 659px; height: 482px; margin-left: auto; }
 
@@ -178,9 +178,24 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .list-architecture-projects .project:nth-last-of-type(1) { margin-bottom: 55px; }
 
+@media (min-width: 992px) and (max-width: 1199px) { .list-architecture-projects .project:nth-of-type(3n) .info-detail { width: calc(100% - 560px); padding: 50px 30px 10px 0; } }
+
+@media (min-width: 768px) and (max-width: 991px) { .list-architecture-projects .project:nth-of-type(3n+1) .image { height: 336px; }
+  .list-architecture-projects .project:nth-of-type(3n+1) .info-detail { padding: 10px 20px; }
+  .list-architecture-projects .project:nth-of-type(3n+1) .info-detail .info-title { width: 200px; }
+  .list-architecture-projects .project:nth-of-type(3n+2) .image { width: 100%; height: 336px; }
+  .list-architecture-projects .project:nth-of-type(3n+2) .info-detail { padding: 10px 20px; width: 300px; height: 280px; }
+  .list-architecture-projects .project:nth-of-type(3n) .image { width: 459px; height: 336px; }
+  .list-architecture-projects .project:nth-of-type(3n) .info-detail { padding: 10px 20px; width: calc(100% - 350px); height: 336px; } }
+
 @media only screen and (max-width: 767px) { .nt-decor-lead-section { min-height: 265px; }
   .nt-decor-lead-section .head-info { margin-top: -30px; }
-  .nt-decor-lead-section .head-info .title { font-size: 26px; } }
+  .nt-decor-lead-section .head-info .title { font-size: 26px; }
+  .list-architecture-projects .project { margin-bottom: 20px; }
+  .list-architecture-projects .project:nth-of-type(3n) .image, .list-architecture-projects .project:nth-of-type(3n+1) .image, .list-architecture-projects .project:nth-of-type(3n+2) .image { width: 100%; height: 243px; }
+  .list-architecture-projects .project:nth-of-type(3n) .info-detail, .list-architecture-projects .project:nth-of-type(3n+1) .info-detail, .list-architecture-projects .project:nth-of-type(3n+2) .info-detail { position: static; transform: translate3d(0, 0, 0); width: 100%; padding: 10px; flex-direction: column; height: auto; }
+  .list-architecture-projects .project:nth-of-type(3n) .info-detail .info-content, .list-architecture-projects .project:nth-of-type(3n+1) .info-detail .info-content, .list-architecture-projects .project:nth-of-type(3n+2) .info-detail .info-content { padding: 20px 0 10px 0; }
+  .list-architecture-projects .project:nth-last-of-type(1) { margin-bottom: 15px; } }
 
 @media (min-width: 576px) and (max-width: 767px) { .list-related-projects .project .image { width: 150px; height: 150px; overflow: hidden; margin-bottom: 14px; }
   .list-related-projects .project .title { font-size: 16px; } }
