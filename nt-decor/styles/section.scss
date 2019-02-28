@@ -173,6 +173,10 @@
         &.active, &:hover {
             color: #c61f2f;
         }
+        &:hover {
+            border-radius: 2px;
+            background: #ebcdcd;
+        }
     }
 }
 
@@ -322,9 +326,36 @@
     .nt-decor-lead-section {
         min-height: 265px;
         .head-info {
-            margin-top: -40px;
+            margin-top: -30px;
             .title {
-                font-size: 35px;
+                font-size: 26px;
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) {
+    .list-related-projects {
+        .project {
+            .image {
+                width: 150px;
+                height: 150px;
+                overflow: hidden;
+                margin-bottom: 14px;
+            }
+            .title {
+               font-size: 16px;
+            }
+        }
+    }
+}
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) { 
+    .list-related-projects {
+        .project {
+            .image {
+                margin: auto;
             }
         }
     }

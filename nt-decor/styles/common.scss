@@ -55,6 +55,12 @@ img {
     max-width: 100%;
     height: auto;
 }
+a{
+    color: inherit;
+    &:hover {
+        opacity: 0.69;
+    }
+}
 button, a {
     cursor: pointer;
     &:hover {
@@ -205,6 +211,15 @@ ul.pagination {
 @media (max-width: 575px) { 
     .nt-decor-container {
         padding: 0 10px;
+    }
+    .nt-decor-row-23 {
+        margin-left: -10px;
+        margin-right: -10px;
+        & > [class^=col-] {
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 20px;
+        }
     }
  }
 

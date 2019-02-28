@@ -11,6 +11,10 @@ body { font-size: 16px; font-family: 'HelveticaNeue', sans-serif; font-weight: n
 
 img { max-width: 100%; height: auto; }
 
+a { color: inherit; }
+
+a:hover { opacity: 0.69; }
+
 button, a { cursor: pointer; }
 
 button:hover, a:hover { opacity: 0.89; }
@@ -60,7 +64,9 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 @-webkit-keyframes slidenavAnimation { from { opacity: 0; }
   to { opacity: 1; } }
 
-@media (max-width: 575px) { .nt-decor-container { padding: 0 10px; } }
+@media (max-width: 575px) { .nt-decor-container { padding: 0 10px; }
+  .nt-decor-row-23 { margin-left: -10px; margin-right: -10px; }
+  .nt-decor-row-23 > [class^=col-] { padding-left: 10px; padding-right: 10px; margin-bottom: 20px; } }
 
 @media (min-width: 576px) and (max-width: 767px) { .nt-decor-container { padding: 0 30px; } }
 
@@ -130,6 +136,8 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .categories-tabs .nav-link.active, .categories-tabs .nav-link:hover { color: #c61f2f; }
 
+.categories-tabs .nav-link:hover { border-radius: 2px; background: #ebcdcd; }
+
 .list-architecture-projects .project { position: relative; margin-bottom: 140px; }
 
 .list-architecture-projects .project .image { background-size: cover; background-position: center center; background-repeat: no-repeat; }
@@ -171,8 +179,13 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 .list-architecture-projects .project:nth-last-of-type(1) { margin-bottom: 55px; }
 
 @media only screen and (max-width: 767px) { .nt-decor-lead-section { min-height: 265px; }
-  .nt-decor-lead-section .head-info { margin-top: -40px; }
-  .nt-decor-lead-section .head-info .title { font-size: 35px; } }
+  .nt-decor-lead-section .head-info { margin-top: -30px; }
+  .nt-decor-lead-section .head-info .title { font-size: 26px; } }
+
+@media (min-width: 576px) and (max-width: 767px) { .list-related-projects .project .image { width: 150px; height: 150px; overflow: hidden; margin-bottom: 14px; }
+  .list-related-projects .project .title { font-size: 16px; } }
+
+@media (max-width: 575px) { .list-related-projects .project .image { margin: auto; } }
 
 #top-nav { width: 100%; height: 140px; padding: 40px 0 0 0; position: fixed; z-index: 1001; top: 0; left: 0; background: 0; transform: translate3d(0, 0, 0); -webkit-transition: all .3s ease; transition: all .3s ease; width: calc(100% - 75px); left: 50%; transform: translate3d(-50%, 0, 0); }
 
@@ -242,9 +255,9 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .home-p section#new-ideas .author { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #fff; height: 64px; display: flex; flex-direction: row; align-items: center; position: absolute; bottom: 0; left: 205px; z-index: 2; padding: 10px 20px; text-transform: uppercase; }
 
-.home-p section#new-ideas .author span:nth-of-type(1) { color: #ca000f; position: relative; margin-right: 8px; padding-right: 10px; }
+.home-p section#new-ideas .author .author-nav:nth-of-type(1) { color: #ca000f; position: relative; margin-right: 8px; padding-right: 10px; }
 
-.home-p section#new-ideas .author span:nth-of-type(1):after { content: ''; display: block; background: #ca000f; position: absolute; width: 2px; height: 14px; right: 0; top: 9px; }
+.home-p section#new-ideas .author .author-nav:nth-of-type(1):after { content: ''; display: block; background: #ca000f; position: absolute; width: 2px; height: 14px; right: 0; top: 9px; }
 
 #home-carousel { position: absolute; left: auto; height: 100%; width: auto; min-width: 100%; }
 
@@ -272,9 +285,9 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
   .home-p section#new-ideas .head-info .subtitle { font-size: 13px; }
   .home-p section#new-ideas .head-info .title { font-size: 30px; }
   .home-p section#new-ideas .author { position: absolute; width: calc(100% - 130px); left: 130px; background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.89)); flex-direction: column; justify-content: center; align-items: flex-start; }
-  .home-p section#new-ideas .author span { line-height: 1.2; }
-  .home-p section#new-ideas .author span:nth-of-type(1) { margin-bottom: 2px; }
-  .home-p section#new-ideas .author span:nth-of-type(1):after { display: none; }
+  .home-p section#new-ideas .author .author-nav { line-height: 1.2; }
+  .home-p section#new-ideas .author .author-nav:nth-of-type(1) { margin-bottom: 2px; }
+  .home-p section#new-ideas .author .author-nav:nth-of-type(1):after { display: none; }
   #home-carousel { flex: 1; position: static; height: initial; }
   #home-carousel .item:after { display: none; }
   .list-social-icons { flex-flow: row wrap; justify-content: space-around; margin-bottom: 20px; padding-top: 20px; }
