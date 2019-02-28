@@ -15,9 +15,9 @@ function resizeThrottler() {
        }, 66);
     }
 }
-// window.onbeforeunload = function () {
-//   window.scrollTo(0, 0);
-// }
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
 
 $(function(){
   resetStyleHomePage();
@@ -29,13 +29,12 @@ $(function(){
   $(window).scroll(function () {
       var iCurScrollPos = $(this).scrollTop();
       // Make sure they scroll more than delta
-      if(iCurScrollPos < heightHeaderBar + 20){
-        //Note: different from homepage a bit
+      if(iCurScrollPos < 15){
         $("#top-nav").removeClass('smart');
         return;
       } 
         
-      if(iCurScrollPos > 20) {
+      if(iCurScrollPos >= 15) {
         $("#top-nav").addClass('smart');
       }
 

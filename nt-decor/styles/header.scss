@@ -8,16 +8,17 @@
     left: 0;
     background: 0;
     transform: translate3d(0, 0, 0);
-    -webkit-transition: all .3s ease-in;
-    transition: all .3s ease-in;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    width: calc(100% - 75px);
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
     &.smart {
         background: #fff;
         color: #000;
         height: 70px;
         padding: 0;
-        .nt-decor-container {
-            box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15);
-        }
+        box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15);
         .navbar-brand {
             width: 145px;
             height: 50px;
@@ -61,11 +62,40 @@
     padding-top: 72px;
     margin-right: -23px;
 }
+
 #mobile-right-nav-menu-btn {
-    top: 0;
-    right: 0;
     position: absolute;
+    right: 0;
+    display: none;
+    cursor: pointer;
+    border: 1px solid #333;
+    background: #fff;
 }
+
+#mobile-right-nav-menu-btn {
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+}
+
+#mobile-right-nav-menu-btn.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+#mobile-right-nav-menu-btn.change .bar2 {
+    opacity: 0;
+}
+
+#mobile-right-nav-menu-btn.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
 .dropdown-menu {
     border: 0;
     background: #c61f2f;
@@ -112,7 +142,41 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767px) {}
-
+// handle moble
+@media only screen and (max-width: 767px) {
+    #top-nav {
+        width: 100%;
+        height: 70px;
+        padding: 0;
+        left: 0;
+        transform: translate3d(0, 0, 0);
+        .navbar-brand {
+            width: 180px;
+            height: 62px;
+            top: 4px;
+            left: 20px;        
+        }
+        & > .nt-decor-container {
+            width: 100%;
+            max-width: none;
+            padding: 0;
+        }
+        .menu-home {
+            background: #fff;
+            box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15)
+        }
+    }
+    #right-nav-menu {
+        padding: 0px;
+        margin-top: 69px;
+        border-top: 1px solid rgba(0,0,0,0.25);
+    }
+    #mobile-right-nav-menu-btn {
+        display: block;
+        top: 14px;
+        right: 20px;
+    }
+}
 // Support devices (desktops, tablets, 768px and up)
 @media (min-width: 768px) { 
     #top-nav .menu-home {

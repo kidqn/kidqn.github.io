@@ -1,7 +1,7 @@
 /* main scss. Reformat css file to find duplicated CSS classes */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
 
-html { background-color: #fcfcfc; padding: 40px 38px 50px; }
+html { background-color: #fcfcfc; padding: 40px 35px 50px 40px; }
 
 html, body { width: 100%; height: 100%; margin: 0; }
 
@@ -82,6 +82,14 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 @media (min-width: 576px) and (max-width: 767px) { .nt-decor-container { padding: 0 30px; } }
 
+@media only screen and (max-width: 767px) { html { padding: 0; }
+  main#main { padding-top: 150px; box-shadow: none; }
+  .nt-decor-lead-section { min-height: 265px; }
+  .list-social-icons { flex-flow: row wrap; justify-content: space-around; margin-bottom: 20px; padding-top: 20px; }
+  .list-social-icons li { margin-right: 0; }
+  .list-social-icons li p { font-size: 13px; }
+  .list-social-icons li:nth-last-of-type(1) { width: 100%; margin: 20px 0 0 0; text-align: center; } }
+
 @font-face { font-family: 'SFUIDisplay'; src: url("./fonts/sf-ui-display-black-webfont.woff2") format("woff2"), url("./fonts/sf-ui-display-black-webfont.woff") format("woff"); font-weight: 900; font-style: normal; }
 
 @font-face { font-family: 'SFUIDisplay'; src: url("./fonts/sf-ui-display-regular-webfont.woff2") format("woff2"), url("./fonts/sf-ui-display-regular-webfont.woff") format("woff"); font-weight: normal; font-style: normal; }
@@ -160,11 +168,9 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .list-architecture-projects .project:nth-last-of-type(1) { margin-bottom: 55px; }
 
-#top-nav { width: 100%; height: 140px; padding: 40px 0 0 0; position: fixed; z-index: 1001; top: 0; left: 0; background: 0; transform: translate3d(0, 0, 0); -webkit-transition: all .3s ease-in; transition: all .3s ease-in; }
+#top-nav { width: 100%; height: 140px; padding: 40px 0 0 0; position: fixed; z-index: 1001; top: 0; left: 0; background: 0; transform: translate3d(0, 0, 0); -webkit-transition: all .3s ease; transition: all .3s ease; width: calc(100% - 75px); left: 50%; transform: translate3d(-50%, 0, 0); }
 
-#top-nav.smart { background: #fff; color: #000; height: 70px; padding: 0; }
-
-#top-nav.smart .nt-decor-container { box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15); }
+#top-nav.smart { background: #fff; color: #000; height: 70px; padding: 0; box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15); }
 
 #top-nav.smart .navbar-brand { width: 145px; height: 50px; padding: 0; top: 5px; }
 
@@ -178,7 +184,15 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 #right-nav-menu { padding-top: 72px; margin-right: -23px; }
 
-#mobile-right-nav-menu-btn { top: 0; right: 0; position: absolute; }
+#mobile-right-nav-menu-btn { position: absolute; right: 0; display: none; cursor: pointer; border: 1px solid #333; background: #fff; }
+
+#mobile-right-nav-menu-btn .bar1, #mobile-right-nav-menu-btn .bar2, #mobile-right-nav-menu-btn .bar3 { width: 35px; height: 5px; background-color: #333; margin: 6px 0; transition: 0.4s; }
+
+#mobile-right-nav-menu-btn.change .bar1 { -webkit-transform: rotate(-45deg) translate(-9px, 6px); transform: rotate(-45deg) translate(-9px, 6px); }
+
+#mobile-right-nav-menu-btn.change .bar2 { opacity: 0; }
+
+#mobile-right-nav-menu-btn.change .bar3 { -webkit-transform: rotate(45deg) translate(-8px, -8px); transform: rotate(45deg) translate(-8px, -8px); }
 
 .dropdown-menu { border: 0; background: #c61f2f; padding: 0; left: 23px; top: 50px; border-radius: 2px; }
 
@@ -190,12 +204,19 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .dropdown-menu .menu-level-2 .dropdown-item:hover { border-radius: 2px; color: #000; }
 
+@media only screen and (max-width: 767px) { #top-nav { width: 100%; height: 70px; padding: 0; left: 0; transform: translate3d(0, 0, 0); }
+  #top-nav .navbar-brand { width: 180px; height: 62px; top: 4px; left: 20px; }
+  #top-nav > .nt-decor-container { width: 100%; max-width: none; padding: 0; }
+  #top-nav .menu-home { background: #fff; box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15); }
+  #right-nav-menu { padding: 0px; margin-top: 69px; border-top: 1px solid rgba(0, 0, 0, 0.25); }
+  #mobile-right-nav-menu-btn { display: block; top: 14px; right: 20px; } }
+
 @media (min-width: 768px) { #top-nav .menu-home .nav-item.dropdown:hover .dropdown-menu { display: block; animation-name: slidenavAnimation; animation-duration: 0.3s; -webkit-animation-name: slidenavAnimation; -webkit-animation-duration: .3s; -moz-animation-name: slidenavAnimation; -moz-animation-duration: .3s; }
   #top-nav .menu-home .nav-item.dropdown:hover .nav-link { color: #c61f2f; } }
 
-.home-p main#main { padding-top: 152px; }
+.home-p main#main { padding-top: 152px; height: 100%; margin-bottom: 0; }
 
-.home-p section#new-ideas { height: 645px; overflow: hidden; }
+.home-p section#new-ideas { height: calc(100% - 125px); overflow: hidden; }
 
 .home-p section#new-ideas .nt-decor-container { position: relative; height: 100%; }
 
@@ -213,9 +234,9 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .home-p section#new-ideas .author span:nth-of-type(1) { color: #ca000f; margin-right: 5px; }
 
-#home-carousel { position: absolute; left: auto; height: 645px; }
+#home-carousel { position: absolute; left: auto; height: 100%; width: auto; min-width: 100%; }
 
-#home-carousel .item { width: 1069px; height: 645px; background-color: #fff; cursor: pointer; position: relative; }
+#home-carousel .item { width: 500px; height: 100%; background-color: #fff; cursor: pointer; position: relative; }
 
 #home-carousel .item:after { display: block; content: ''; height: 64px; width: 100%; object-fit: contain; border-radius: 1px; background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.76)); bottom: 0; position: absolute; }
 
@@ -298,7 +319,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
   #factory-images-carousel { height: 300px; }
   #factory-images-carousel .owl-prev, #factory-images-carousel .owl-next { display: none; }
   #factory-article { width: 100%; position: relative; bottom: auto; margin-top: 20px; }
-  #factory-article .article { padding: 10px; }
+  #factory-article .article { padding: 0; }
   #factory-article .article .right-content p.intro { margin-bottom: 15px; } }
 
 .architecture-p .section-categories-architecture .categories-tabs { margin-top: -260px; }

@@ -27,7 +27,7 @@ p,
 }
 html {
     background-color: #fcfcfc;
-    padding: 40px 38px 50px;
+    padding: 40px 35px 50px 40px;
 }
 html,body{
     width: 100%;
@@ -286,6 +286,38 @@ ul.pagination {
 @media (min-width: 576px) and (max-width: 767px) {
     .nt-decor-container {
         padding: 0 30px;
+    }
+}
+
+// handle moble
+@media only screen and (max-width: 767px) {
+    html {
+        padding: 0;
+    }
+    main#main {
+        padding-top: 150px;
+        box-shadow: none;
+    }
+    .nt-decor-lead-section {
+        min-height: 265px;
+    }
+
+    .list-social-icons {
+        flex-flow: row wrap;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        padding-top: 20px;
+        li {
+            margin-right: 0;
+            p {
+                font-size: 13px;
+            }
+        }
+        li:nth-last-of-type(1){
+            width: 100%;
+            margin: 20px 0 0 0;
+            text-align: center
+        }
     }
 }
 

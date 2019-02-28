@@ -20,40 +20,42 @@
     <header id="top-nav">
         <nav class="navbar navbar-expand-md container nt-decor-container">
             <a class="navbar-brand" href="/" aria-label="uplift">
-                <img class="logo" src="./images/nt-decor-logo.png">
+              <img class="logo" src="./images/nt-decor-logo.png">
             </a>
-            
-        <div id="right-nav-menu" class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto menu-home">
-            <li class="nav-item">
-                <a class="nav-link" href="./" >Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./factory.html" >Factory</a>
-            </li>
-            <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_project" href="#" >
-                    Projects</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown_project">
-                    <ul class="navbar-nav flex-column menu-level-2">
-                        <li><a href="./project-interior.html" class="dropdown-item">Interior Design</a></li>
-                        <li><a href="./architecture.html" class="dropdown-item">Architecture</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./about-us.html" >About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./contact-us.html" >Contact</a>
-            </li>
-            </ul>
-        </div>
-        <button id="mobile-right-nav-menu-btn" class="navbar-toggler" data-toggle="collapse" data-target="#right-nav-menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        </nav>
-    </header>
+          
+            <div id="right-nav-menu" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto menu-home">
+                <li class="nav-item">
+                    <a class="nav-link" href="./home.html" >Home</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="./factory.html" >Factory</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_project" href="#" >
+                        Projects</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown_project">
+                        <ul class="navbar-nav flex-column menu-level-2">
+                            <li><a href="./project-interior.html" class="dropdown-item">Interior Design</a></li>
+                            <li><a href="./architecture.html" class="dropdown-item">Architecture</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./about-us.html" >About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./contact-us.html" >Contact</a>
+                </li>
+              </ul>
+            </div>
+            <button id="mobile-right-nav-menu-btn" class="navbar-toggler" data-toggle="collapse" data-target="#right-nav-menu" onclick="this.classList.toggle('change')">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </button>
+          </nav>
+      </header>
 
     <main id="main">
       <section id="contact-us"  class="nt-decor-lead-section">
