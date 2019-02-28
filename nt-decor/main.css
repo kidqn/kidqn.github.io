@@ -47,24 +47,6 @@ main#main { padding-top: 214px; position: relative; z-index: 1; transition: -web
 
 .list-social-icons li p { font-family: Arial; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.4px; color: #b3b3b3; }
 
-.nt-decor-lead-section { min-height: 312px; background-color: #f6f6f6; padding: 20px 0; }
-
-.nt-decor-lead-section .head-info { margin-top: -50px; }
-
-.nt-decor-lead-section .head-info .strap { font-family: 'HelveticaNeueLTStd-Blk'; font-size: 19px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.3px; color: #000000; text-transform: uppercase; margin-bottom: 10px; margin-top: 18px; }
-
-.nt-decor-lead-section .head-info .strap span { color: #c61f2f; }
-
-.nt-decor-lead-section .head-info .title { font-family: 'HelveticaNeueLTStd-Blk'; font-size: 55px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 30px; }
-
-.nt-decor-lead-section .head-info h2.title { font-size: 38px; font-weight: 900; margin-bottom: 15px; }
-
-.nt-decor-lead-section .head-info .subtitle { font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 600; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: 0.5px; margin-bottom: 20px; }
-
-.nt-decor-lead-section .head-info p { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; margin-bottom: 20px; max-width: 670px; }
-
-.nt-decor-lead-section .head-info .more { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #c9051e; text-transform: uppercase; margin-top: 30px; }
-
 ul.pagination { justify-content: center; padding-top: 8px; border-top: 2px solid #f8f8f8; }
 
 ul.pagination .page-item .page-link { padding: 17px; font-family: 'HelveticaNeueLTStd-Bd'; font-size: 20px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.8px; color: #c9051e; background: no-repeat; border: none; }
@@ -109,6 +91,24 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 .content-section .content-body figcaption p { font-family: Arial; font-size: 12px; font-weight: normal; font-style: italic; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; text-align: center; color: #898989; }
 
 .content-section .content-body img + img { margin-top: 70px; }
+
+.nt-decor-lead-section { min-height: 312px; background-color: #f6f6f6; padding: 20px 0; }
+
+.nt-decor-lead-section .head-info { margin-top: -50px; }
+
+.nt-decor-lead-section .head-info .strap { font-family: 'HelveticaNeueLTStd-Blk'; font-size: 19px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: 0.3px; color: #000000; text-transform: uppercase; margin-bottom: 10px; margin-top: 18px; }
+
+.nt-decor-lead-section .head-info .strap span { color: #c61f2f; }
+
+.nt-decor-lead-section .head-info .title { font-family: 'HelveticaNeueLTStd-Blk'; font-size: 55px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 30px; }
+
+.nt-decor-lead-section .head-info h2.title { font-size: 38px; font-weight: 900; margin-bottom: 15px; }
+
+.nt-decor-lead-section .head-info .subtitle { font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 600; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: 0.5px; margin-bottom: 20px; }
+
+.nt-decor-lead-section .head-info p { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; margin-bottom: 20px; max-width: 670px; }
+
+.nt-decor-lead-section .head-info .more { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #c9051e; text-transform: uppercase; margin-top: 30px; }
 
 .list-related-projects { border-top: 2px solid  #f8f8f8; padding: 10px 0; }
 
@@ -168,6 +168,10 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .list-architecture-projects .project:nth-last-of-type(1) { margin-bottom: 55px; }
 
+@media only screen and (max-width: 767px) { .nt-decor-lead-section { min-height: 265px; }
+  .nt-decor-lead-section .head-info { margin-top: -40px; }
+  .nt-decor-lead-section .head-info .title { font-size: 35px; } }
+
 #top-nav { width: 100%; height: 140px; padding: 40px 0 0 0; position: fixed; z-index: 1001; top: 0; left: 0; background: 0; transform: translate3d(0, 0, 0); -webkit-transition: all .3s ease; transition: all .3s ease; width: calc(100% - 75px); left: 50%; transform: translate3d(-50%, 0, 0); }
 
 #top-nav.smart { background: #fff; color: #000; height: 70px; padding: 0; box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15); }
@@ -205,7 +209,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 .dropdown-menu .menu-level-2 .dropdown-item:hover { border-radius: 2px; color: #000; }
 
 @media only screen and (max-width: 767px) { #top-nav { width: 100%; height: 70px; padding: 0; left: 0; transform: translate3d(0, 0, 0); }
-  #top-nav .navbar-brand { width: 180px; height: 62px; top: 4px; left: 20px; }
+  #top-nav .navbar-brand { width: 155px; height: 55px; top: 4px; left: 50%; transform: translate3d(-50%, 0, 0); }
   #top-nav > .nt-decor-container { width: 100%; max-width: none; padding: 0; }
   #top-nav .menu-home { background: #fff; box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15); }
   #right-nav-menu { padding: 0px; margin-top: 69px; border-top: 1px solid rgba(0, 0, 0, 0.25); }
@@ -230,9 +234,11 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .home-p section#new-ideas .head-info a { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 10px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: 0.4px; color: #c61f2f; text-transform: uppercase; }
 
-.home-p section#new-ideas .author { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #fff; height: 65px; display: flex; flex-direction: row; align-items: center; position: absolute; bottom: 0; left: 205px; z-index: 2; padding: 10px 20px; text-transform: uppercase; }
+.home-p section#new-ideas .author { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #fff; height: 64px; display: flex; flex-direction: row; align-items: center; position: absolute; bottom: 0; left: 205px; z-index: 2; padding: 10px 20px; text-transform: uppercase; }
 
-.home-p section#new-ideas .author span:nth-of-type(1) { color: #ca000f; margin-right: 5px; }
+.home-p section#new-ideas .author span:nth-of-type(1) { color: #ca000f; position: relative; margin-right: 8px; padding-right: 10px; }
+
+.home-p section#new-ideas .author span:nth-of-type(1):after { content: ''; display: block; background: #ca000f; position: absolute; width: 2px; height: 14px; right: 0; top: 9px; }
 
 #home-carousel { position: absolute; left: auto; height: 100%; width: auto; min-width: 100%; }
 
@@ -249,6 +255,23 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 #home-carousel .owl-prev.disabled, #home-carousel .owl-next.disabled { opacity: 0.3; }
 
 #home-carousel .owl-next { left: 65px; }
+
+@media only screen and (max-width: 767px) { .home-p main#main { padding-top: 73px; height: 100%; }
+  .home-p footer { display: none; }
+  .home-p section#new-ideas { height: calc(100% - 70px); }
+  .home-p section#new-ideas > .nt-decor-container { padding: 0; display: flex; flex-direction: column; position: static; }
+  .home-p section#new-ideas .head-info { padding: 36px 10px 10px 10px; position: static; width: auto; height: auto; flex: 0 0 auto; }
+  .home-p section#new-ideas .head-info .subtitle { font-size: 13px; }
+  .home-p section#new-ideas .head-info .title { font-size: 30px; }
+  .home-p section#new-ideas .author { position: absolute; width: calc(100% - 130px); left: 130px; background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.89)); flex-direction: column; justify-content: center; align-items: flex-start; }
+  .home-p section#new-ideas .author span { line-height: 1.2; }
+  .home-p section#new-ideas .author span:nth-of-type(1):after { display: none; }
+  #home-carousel { flex: 1; position: static; height: initial; }
+  #home-carousel .item:after { display: none; }
+  .list-social-icons { flex-flow: row wrap; justify-content: space-around; margin-bottom: 20px; padding-top: 20px; }
+  .list-social-icons li { margin-right: 0; }
+  .list-social-icons li p { font-size: 13px; }
+  .list-social-icons li:nth-last-of-type(1) { width: 100%; margin: 20px 0 0 0; text-align: center; } }
 
 .about-us-p section#key-member { padding: 40px 0; }
 

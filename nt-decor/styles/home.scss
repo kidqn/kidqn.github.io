@@ -73,7 +73,7 @@
         line-height: 2.73;
         letter-spacing: 0.4px;
         color: #fff;
-        height: 65px;
+        height: 64px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -85,7 +85,19 @@
         text-transform: uppercase;
         span:nth-of-type(1) {
             color: #ca000f;
-            margin-right: 5px;
+            position: relative;
+            margin-right: 8px;
+            padding-right: 10px;
+            &:after {
+                content: '';
+                display: block;
+                background: #ca000f;
+                position: absolute;
+                width: 2px;
+                height: 14px;
+                right: 0;
+                top: 9px;
+            }
         }
     }
 }
@@ -147,7 +159,83 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767px) {}
-
+// handle moble
+@media only screen and (max-width: 767px) {
+    .home-p main#main {
+        padding-top: 73px;
+        height: 100%;
+    }
+    .home-p footer {
+        display: none;
+    }
+    .home-p section#new-ideas {
+        height: calc(100% - 70px);
+        & > .nt-decor-container {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            position: static;
+        }
+        .head-info {
+            padding: 36px 10px 10px 10px;
+            position: static;
+            width: auto;
+            height: auto;
+            flex: 0 0 auto;
+            .subtitle {
+                font-size: 13px;
+            }
+            .title {
+                font-size: 30px;
+            }
+        }
+        .author {
+            position: absolute;
+            width: calc(100% - 130px);
+            left: 130px;
+            background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.89));
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            span {
+                line-height: 1.2;
+            }
+            span:nth-of-type(1) {
+                margin-bottom: 2px;
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+    #home-carousel {
+        flex: 1;
+        position: static;
+        height: initial;
+        .item {
+            &:after {
+                display: none;
+            }
+        }
+    }
+    .list-social-icons {
+        flex-flow: row wrap;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        padding-top: 20px;
+        li {
+            margin-right: 0;
+            p {
+                font-size: 13px;
+            }
+        }
+        li:nth-last-of-type(1){
+            width: 100%;
+            margin: 20px 0 0 0;
+            text-align: center
+        }
+    }
+}
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991px) { }
 

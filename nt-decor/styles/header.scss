@@ -151,10 +151,11 @@
         left: 0;
         transform: translate3d(0, 0, 0);
         .navbar-brand {
-            width: 180px;
-            height: 62px;
+            width: 155px;
+            height: 55px;
             top: 4px;
-            left: 20px;        
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);      
         }
         & > .nt-decor-container {
             width: 100%;
