@@ -224,7 +224,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .home-p section#new-ideas .nt-decor-container { position: relative; height: 100%; }
 
-.home-p section#new-ideas .head-info { padding: 46px 23px 16px 0; width: 428px; height: 229px; background-color: #ffffff; position: absolute; z-index: 2; bottom: 64px; }
+.home-p section#new-ideas .head-info { padding: 46px 23px 16px 0; width: 428px; height: 229px; background-color: rgba(255, 255, 255, 0.8); position: absolute; z-index: 2; bottom: 64px; }
 
 .home-p section#new-ideas .head-info .subtitle { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 20px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: 0.8px; color: #000000; text-transform: uppercase; margin-bottom: 3px; }
 
@@ -254,6 +254,8 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 #home-carousel .owl-prev.disabled, #home-carousel .owl-next.disabled { opacity: 0.3; }
 
+#home-carousel .owl-prev { left: 0; }
+
 #home-carousel .owl-next { left: 65px; }
 
 @media only screen and (max-width: 767px) { .home-p main#main { padding-top: 73px; height: 100%; }
@@ -265,6 +267,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
   .home-p section#new-ideas .head-info .title { font-size: 30px; }
   .home-p section#new-ideas .author { position: absolute; width: calc(100% - 130px); left: 130px; background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.89)); flex-direction: column; justify-content: center; align-items: flex-start; }
   .home-p section#new-ideas .author span { line-height: 1.2; }
+  .home-p section#new-ideas .author span:nth-of-type(1) { margin-bottom: 2px; }
   .home-p section#new-ideas .author span:nth-of-type(1):after { display: none; }
   #home-carousel { flex: 1; position: static; height: initial; }
   #home-carousel .item:after { display: none; }
