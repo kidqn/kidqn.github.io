@@ -59,6 +59,8 @@ a{
     color: inherit;
     &:hover {
         opacity: 0.69;
+        color: #c61f2f;
+        transition: -webkit-transform 200ms ease;
     }
 }
 button, a {

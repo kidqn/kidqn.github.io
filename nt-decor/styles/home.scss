@@ -14,7 +14,7 @@
         padding: 46px 23px 16px 0;
         width: 428px;
         height: 229px;
-        background-color: rgba(255,255,255,0.8);
+        background-color: rgba(255,255,255,1);
         position: absolute;
         z-index: 2;
         bottom: 64px;
@@ -162,7 +162,7 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767px) {}
-// handle moble
+// handle mobile
 @media only screen and (max-width: 767px) {
     .home-p main#main {
         padding-top: 73px;

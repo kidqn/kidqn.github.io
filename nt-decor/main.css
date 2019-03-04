@@ -13,7 +13,7 @@ img { max-width: 100%; height: auto; }
 
 a { color: inherit; }
 
-a:hover { opacity: 0.69; }
+a:hover { opacity: 0.69; color: #c61f2f; transition: -webkit-transform 200ms ease; }
 
 button, a { cursor: pointer; }
 
@@ -92,7 +92,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .content-section .content-body { padding-bottom: 54px; }
 
-.content-section .content-body .lead-image, .content-section .content-body > img:nth-of-type(1) { margin-top: -110px; }
+.content-section .content-body .lead-image, .content-section .content-body > img:nth-of-type(1) { margin-top: -135px; }
 
 .content-section .content-body figcaption { padding: 15px; margin-bottom: 10px; }
 
@@ -108,13 +108,13 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .nt-decor-lead-section .head-info .strap span { color: #c61f2f; }
 
-.nt-decor-lead-section .head-info .title { font-family: 'HelveticaNeueLTStd-Blk'; font-size: 55px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 30px; }
+.nt-decor-lead-section .head-info .title { font-family: 'HelveticaNeueLTStd-Blk'; font-size: 55px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: 0.8px; margin-bottom: 30px; }
 
 .nt-decor-lead-section .head-info h2.title { font-size: 38px; font-weight: 900; margin-bottom: 15px; }
 
 .nt-decor-lead-section .head-info .subtitle { font-family: 'SFUIDisplay'; font-size: 20px; font-weight: 600; font-style: normal; font-stretch: normal; line-height: 1.2; letter-spacing: 0.5px; margin-bottom: 20px; }
 
-.nt-decor-lead-section .head-info p { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; margin-bottom: 20px; max-width: 670px; }
+.nt-decor-lead-section .head-info p { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; margin-bottom: 20px; }
 
 .nt-decor-lead-section .head-info .more { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #c9051e; text-transform: uppercase; margin-top: 30px; }
 
@@ -186,16 +186,24 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
   .list-architecture-projects .project:nth-of-type(3n+2) .image { width: 100%; height: 336px; }
   .list-architecture-projects .project:nth-of-type(3n+2) .info-detail { padding: 10px 20px; width: 300px; height: 280px; }
   .list-architecture-projects .project:nth-of-type(3n) .image { width: 459px; height: 336px; }
-  .list-architecture-projects .project:nth-of-type(3n) .info-detail { padding: 10px 20px; width: calc(100% - 350px); height: 336px; } }
+  .list-architecture-projects .project:nth-of-type(3n) .info-detail { padding: 10px 20px; width: calc(100% - 350px); height: 336px; }
+  .content-section .content-body .lead-image, .content-section .content-body > img:nth-of-type(1) { margin-top: -96px; }
+  .list-related-projects > h3, .list-related-projects > h4 { margin-bottom: 15px; }
+  .list-related-projects .project .image { width: 100%; height: auto; margin-bottom: 5px; } }
 
 @media only screen and (max-width: 767px) { .nt-decor-lead-section { min-height: 265px; }
-  .nt-decor-lead-section .head-info { margin-top: -30px; }
-  .nt-decor-lead-section .head-info .title { font-size: 26px; }
+  .nt-decor-lead-section .head-info { margin-top: 0; }
+  .nt-decor-lead-section .head-info .strap { font-size: 16px; }
+  .nt-decor-lead-section .head-info h2.title, .nt-decor-lead-section .head-info .title { font-size: 22px; margin-bottom: 10px; }
   .list-architecture-projects .project { margin-bottom: 20px; }
   .list-architecture-projects .project:nth-of-type(3n) .image, .list-architecture-projects .project:nth-of-type(3n+1) .image, .list-architecture-projects .project:nth-of-type(3n+2) .image { width: 100%; height: 243px; }
   .list-architecture-projects .project:nth-of-type(3n) .info-detail, .list-architecture-projects .project:nth-of-type(3n+1) .info-detail, .list-architecture-projects .project:nth-of-type(3n+2) .info-detail { position: static; transform: translate3d(0, 0, 0); width: 100%; padding: 10px; flex-direction: column; height: auto; }
   .list-architecture-projects .project:nth-of-type(3n) .info-detail .info-content, .list-architecture-projects .project:nth-of-type(3n+1) .info-detail .info-content, .list-architecture-projects .project:nth-of-type(3n+2) .info-detail .info-content { padding: 20px 0 10px 0; }
-  .list-architecture-projects .project:nth-last-of-type(1) { margin-bottom: 15px; } }
+  .list-architecture-projects .project:nth-last-of-type(1) { margin-bottom: 15px; }
+  .content-section .content-body { padding-bottom: 34px; }
+  .content-section .content-body figcaption { padding: 10px; margin-bottom: 5px; }
+  .content-section .content-body figcaption p { font-size: 11px; text-align: left; }
+  .content-section .content-body img + img { margin-top: 20px; } }
 
 @media (min-width: 576px) and (max-width: 767px) { .list-related-projects .project .image { width: 150px; height: 150px; overflow: hidden; margin-bottom: 14px; }
   .list-related-projects .project .title { font-size: 16px; } }
@@ -236,17 +244,17 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .dropdown-menu .menu-level-2 .dropdown-item { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #ffffff; text-transform: uppercase; }
 
-.dropdown-menu .menu-level-2 .dropdown-item:hover { border-radius: 2px; color: #000; }
-
 @media only screen and (max-width: 767px) { #top-nav { width: 100%; height: 70px; padding: 0; left: 0; transform: translate3d(0, 0, 0); }
-  #top-nav .navbar-brand { width: 155px; height: 55px; top: 4px; left: 50%; transform: translate3d(-50%, 0, 0); }
+  #top-nav .navbar-brand { width: 120px; height: auto; padding: 0; top: 12px; left: 50%; transform: translate3d(-50%, 0, 0); }
+  #top-nav.smart .navbar-brand { width: 120px; height: auto; padding: 0; top: 12px; }
   #top-nav > .nt-decor-container { width: 100%; max-width: none; padding: 0; }
   #top-nav .menu-home { background: #fff; box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15); }
   #right-nav-menu { padding: 0px; margin-top: 69px; border-top: 1px solid rgba(0, 0, 0, 0.25); }
   #mobile-right-nav-menu-btn { display: block; top: 14px; right: 20px; } }
 
 @media (min-width: 768px) { #top-nav .menu-home .nav-item.dropdown:hover .dropdown-menu { display: block; animation-name: slidenavAnimation; animation-duration: 0.3s; -webkit-animation-name: slidenavAnimation; -webkit-animation-duration: .3s; -moz-animation-name: slidenavAnimation; -moz-animation-duration: .3s; }
-  #top-nav .menu-home .nav-item.dropdown:hover .nav-link { color: #c61f2f; } }
+  #top-nav .menu-home .nav-item.dropdown:hover .nav-link { color: #c61f2f; }
+  #top-nav .menu-home .menu-level-2 .dropdown-item:hover { border-radius: 2px; background-color: rgba(198, 31, 47, 0.7); opacity: 0.7; } }
 
 @media (min-width: 768px) and (max-width: 991px) { #top-nav .navbar-brand { width: 185px; height: 81px; left: 30px; }
   #top-nav .menu-home .nav-item .nav-link { padding: 12px; }
@@ -258,7 +266,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .home-p section#new-ideas .nt-decor-container { position: relative; height: 100%; }
 
-.home-p section#new-ideas .head-info { padding: 46px 23px 16px 0; width: 428px; height: 229px; background-color: rgba(255, 255, 255, 0.8); position: absolute; z-index: 2; bottom: 64px; }
+.home-p section#new-ideas .head-info { padding: 46px 23px 16px 0; width: 428px; height: 229px; background-color: white; position: absolute; z-index: 2; bottom: 64px; }
 
 .home-p section#new-ideas .head-info .subtitle { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 20px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1; letter-spacing: 0.8px; color: #000000; text-transform: uppercase; margin-bottom: 3px; }
 
@@ -322,8 +330,27 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .about-us-p section#key-member .list-member .member .info p { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: 0.5px; color: #000000; }
 
+#our-team-carousel .item { width: 996px; height: auto; display: flex; flex-wrap: wrap; flex-direction: row; }
+
+#our-team-carousel .item .image { width: 100%; height: 100%; overflow: hidden; background-size: cover; background-position: center center; background-repeat: no-repeat; }
+
+#our-team-carousel .item .block { width: 166px; height: 166px; background-size: cover; background-position: center center; background-repeat: no-repeat; background-image: url("../images/aboutus/greysquare.png"); }
+
+@media (min-width: 992px) and (max-width: 1199px) { #our-team-carousel .item { width: 777px; }
+  #our-team-carousel .item .block { width: 129px; height: 129px; } }
+
 @media (min-width: 768px) and (max-width: 991px) { .about-us-p section#key-member .list-member .member .avatar { width: 150px; height: 150px; }
-  .about-us-p section#key-member .list-member .member .info { padding-left: 20px; flex: 1; } }
+  .about-us-p section#key-member .list-member .member .info { padding-left: 20px; flex: 1; }
+  #our-team-carousel .item { width: 633px; }
+  #our-team-carousel .item .block { width: 105px; height: 105px; } }
+
+@media only screen and (max-width: 767px) { .about-us-p section#key-member { padding: 20px 0; }
+  .about-us-p section#key-member .list-member .member .avatar { width: 120px; height: 120px; }
+  .about-us-p section#key-member .list-member .member .info { width: calc(100% - 120px); padding-left: 10px; flex: 1; }
+  .about-us-p section#our-team { margin-bottom: 20px; }
+  #our-team-carousel .item { width: 100%; }
+  #our-team-carousel .item .block:not(.image) { display: none; }
+  #our-team-carousel .item .block.image { width: 50%; } }
 
 .contact-p #contact-form { width: 400px; }
 
@@ -333,7 +360,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .contact-p #contact-form label { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.17; letter-spacing: 0.5px; color: #000000; }
 
-.contact-p #contact-form button { width: 195px; height: 51px; border-radius: 2px; box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1); background-color: #c61f2f; margin-top: 20px; margin-bottom: 20px; border: 0; }
+.contact-p #contact-form button { width: 195px; height: 51px; border-radius: 2px; box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1); background-color: #c61f2f; margin-top: 20px; margin-bottom: 20px; border: 0; font-family: HelveticaNeueLTStd-Bd; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #ffffff; text-transform: uppercase; }
 
 .contact-p .contact-area .right-side { padding-top: 30px; }
 
@@ -346,6 +373,10 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 .contact-p .contact-area .info-block:nth-of-type(2) { margin-bottom: 20px; }
 
 .contact-p .contact-area .info-number-block { font-family: Arial; font-size: 12px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.83; letter-spacing: 0.5px; color: #000000; padding-top: 20px; border-top: 1px solid #000; max-width: 297px; }
+
+@media (min-width: 992px) and (max-width: 1199px) { .contact-p #contact-form { width: 380px; } }
+
+@media only screen and (max-width: 991px) { .contact-p #contact-form { width: 100%; } }
 
 .factory-p section#carousel-section .container { margin-bottom: 166px; position: relative; }
 
@@ -379,7 +410,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
   #factory-article .article { padding: 20px 30px 20px 22px; } }
 
 @media only screen and (max-width: 767px) { .factory-p section#carousel-section .container { margin-bottom: 10px; }
-  #factory-images-carousel { height: 300px; }
+  #factory-images-carousel { height: 300px; margin-top: -200px; }
   #factory-images-carousel .owl-prev, #factory-images-carousel .owl-next { display: none; }
   #factory-article { width: 100%; position: relative; bottom: auto; margin-top: 20px; }
   #factory-article .article { padding: 0; }
