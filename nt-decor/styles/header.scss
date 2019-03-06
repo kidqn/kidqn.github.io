@@ -11,7 +11,7 @@
     transition: all .3s ease;
     width: calc(100% - 75px);
     left: 50%;
-    transform: translateX(calc(-50% - 0.5px));
+    transform: translateX(-50%);
     &.smart {
         background: #fff;
         color: #000;
