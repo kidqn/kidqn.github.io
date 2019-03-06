@@ -60,7 +60,7 @@ a{
     &:hover {
         opacity: 0.69;
         color: #c61f2f;
-        transition: -webkit-transform 200ms ease;
+        transition: transform 200ms ease;
     }
 }
 button, a {
@@ -74,7 +74,7 @@ main#main{
     padding-top: 214px;
     position: relative;
     z-index: 1;
-    transition: -webkit-transform 200ms ease-out;
+    transition: transform 200ms ease-out;
     box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.06);
     background-color: #ffffff;
     margin-bottom: 60px;
@@ -238,7 +238,7 @@ ul.pagination {
         padding: 0;
     }
     main#main {
-        padding-top: 150px;
+        padding-top: 110px;
         box-shadow: none;
     }
     .nt-decor-lead-section {

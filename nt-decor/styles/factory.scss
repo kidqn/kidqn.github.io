@@ -14,7 +14,7 @@
         transform: rotate(-180deg);
         position: absolute;
         top: 50%;
-        transform: translate3d(0, -50%, 0);
+        transform: translate3d(0, calc(-50% - 0.5px), 0);
         outline: 0;
         background-repeat: no-repeat;
         background-size: 100% 100%;

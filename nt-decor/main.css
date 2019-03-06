@@ -13,13 +13,13 @@ img { max-width: 100%; height: auto; }
 
 a { color: inherit; }
 
-a:hover { opacity: 0.69; color: #c61f2f; transition: -webkit-transform 200ms ease; }
+a:hover { opacity: 0.69; color: #c61f2f; transition: transform 200ms ease; }
 
 button, a { cursor: pointer; }
 
 button:hover, a:hover { opacity: 0.89; }
 
-main#main { padding-top: 214px; position: relative; z-index: 1; transition: -webkit-transform 200ms ease-out; box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.06); background-color: #ffffff; margin-bottom: 60px; }
+main#main { padding-top: 214px; position: relative; z-index: 1; transition: transform 200ms ease-out; box-shadow: 0 5px 16px 0 rgba(0, 0, 0, 0.06); background-color: #ffffff; margin-bottom: 60px; }
 
 .nt-decor-container { padding: 0 70px; }
 
@@ -71,7 +71,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 @media (min-width: 576px) and (max-width: 767px) { .nt-decor-container { padding: 0 30px; } }
 
 @media only screen and (max-width: 767px) { html { padding: 0; }
-  main#main { padding-top: 150px; box-shadow: none; }
+  main#main { padding-top: 110px; box-shadow: none; }
   .nt-decor-lead-section { min-height: 265px; }
   .list-social-icons { flex-flow: row wrap; justify-content: space-around; margin-bottom: 20px; padding-top: 20px; }
   .list-social-icons li { margin-right: 0; }
@@ -154,7 +154,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .list-architecture-projects .project:nth-of-type(3n+1) .image:before { padding-top: 54.24%; }
 
-.list-architecture-projects .project:nth-of-type(3n+1) .info-detail { position: absolute; bottom: 0; background: #fff; width: calc(100% - 96px); left: 50%; bottom: -20px; transform: translate3d(-50%, 0, 0); padding: 20px 40px; display: flex; flex-direction: row; }
+.list-architecture-projects .project:nth-of-type(3n+1) .info-detail { position: absolute; bottom: 0; background: #fff; width: calc(100% - 96px); left: 50%; bottom: -20px; transform: translateX(-50%); padding: 20px 40px; display: flex; flex-direction: row; }
 
 .list-architecture-projects .project:nth-of-type(3n+1) .info-detail .info-title { flex: 0 0 auto; width: 345px; }
 
@@ -164,7 +164,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .list-architecture-projects .project:nth-of-type(3n+2) .image:before { padding-top: 62.84%; }
 
-.list-architecture-projects .project:nth-of-type(3n+2) .info-detail { position: absolute; background: #fff; width: 340px; height: 370px; right: 0; left: auto; top: 50%; transform: translate3d(0, -50%, 0); flex-direction: column; justify-content: center; flex-wrap: wrap; display: flex; padding: 70px 30px 10px; }
+.list-architecture-projects .project:nth-of-type(3n+2) .info-detail { position: absolute; background: #fff; width: 340px; height: 370px; right: 0; left: auto; top: 50%; transform: translate3d(0, calc(-50% - 0.5px), 0); flex-direction: column; justify-content: center; flex-wrap: wrap; display: flex; padding: 70px 30px 10px; }
 
 .list-architecture-projects .project:nth-of-type(3n+2) .info-detail .info-title { flex: 0 0 auto; }
 
@@ -172,7 +172,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .list-architecture-projects .project:nth-of-type(3n) .image { width: 659px; height: 482px; margin-left: auto; }
 
-.list-architecture-projects .project:nth-of-type(3n) .info-detail { position: absolute; z-index: 1; background: #fff; width: calc(100% - 659px); height: 482px; left: 0; top: 0; transform: translate3d(0, 0%, 0); flex-direction: column; justify-content: space-between; flex-wrap: wrap; display: flex; justify-content: center; padding: 70px 50px 10px 0; }
+.list-architecture-projects .project:nth-of-type(3n) .info-detail { position: absolute; z-index: 1; background: #fff; width: calc(100% - 659px); height: 482px; left: 0; top: 0; transform: translate3d(0, 0, 0); flex-direction: column; justify-content: space-between; flex-wrap: wrap; display: flex; justify-content: center; padding: 70px 50px 10px 0; }
 
 .list-architecture-projects .project:nth-of-type(3n) .info-detail .info-content { padding: 20px 0 10px 0; }
 
@@ -210,7 +210,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 @media (max-width: 575px) { .list-related-projects .project .image { margin: auto; } }
 
-#top-nav { width: 100%; height: 140px; padding: 40px 0 0 0; position: fixed; z-index: 1001; top: 0; left: 0; background: 0; transform: translate3d(0, 0, 0); -webkit-transition: all .3s ease; transition: all .3s ease; width: calc(100% - 75px); left: 50%; transform: translate3d(-50%, 0, 0); }
+#top-nav { width: 100%; height: 140px; padding: 40px 0 0 0; position: fixed; z-index: 1001; top: 0; left: 0; background: 0; -webkit-transition: all .3s ease; transition: all .3s ease; width: calc(100% - 75px); left: 50%; transform: translateX(-50%); }
 
 #top-nav.smart { background: #fff; color: #000; height: 70px; padding: 0; box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15); }
 
@@ -228,13 +228,13 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 #mobile-right-nav-menu-btn { position: absolute; right: 0; display: none; cursor: pointer; border: 1px solid #333; background: #fff; }
 
-#mobile-right-nav-menu-btn .bar1, #mobile-right-nav-menu-btn .bar2, #mobile-right-nav-menu-btn .bar3 { width: 35px; height: 5px; background-color: #333; margin: 6px 0; transition: 0.4s; }
+#mobile-right-nav-menu-btn .bar1, #mobile-right-nav-menu-btn .bar2, #mobile-right-nav-menu-btn .bar3 { width: 20px; height: 4px; background-color: #333; margin: 4px 0; transition: 0.4s; }
 
-#mobile-right-nav-menu-btn.change .bar1 { -webkit-transform: rotate(-45deg) translate(-9px, 6px); transform: rotate(-45deg) translate(-9px, 6px); }
+#mobile-right-nav-menu-btn.change .bar1 { -webkit-transform: rotate(-45deg) translate(-6px, 6px); transform: rotate(-45deg) translate(-6px, 6px); }
 
 #mobile-right-nav-menu-btn.change .bar2 { opacity: 0; }
 
-#mobile-right-nav-menu-btn.change .bar3 { -webkit-transform: rotate(45deg) translate(-8px, -8px); transform: rotate(45deg) translate(-8px, -8px); }
+#mobile-right-nav-menu-btn.change .bar3 { -webkit-transform: rotate(45deg) translate(-5px, -6px); transform: rotate(45deg) translate(-5px, -6px); }
 
 .dropdown-menu { border: 0; background: #c61f2f; padding: 0; left: 23px; top: 50px; border-radius: 2px; }
 
@@ -245,12 +245,13 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 .dropdown-menu .menu-level-2 .dropdown-item { font-family: 'HelveticaNeueLTStd-Bd'; font-size: 11px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 2.73; letter-spacing: 0.4px; color: #ffffff; text-transform: uppercase; }
 
 @media only screen and (max-width: 767px) { #top-nav { width: 100%; height: 70px; padding: 0; left: 0; transform: translate3d(0, 0, 0); }
-  #top-nav .navbar-brand { width: 120px; height: auto; padding: 0; top: 12px; left: 50%; transform: translate3d(-50%, 0, 0); }
+  #top-nav .navbar-brand { width: 120px; height: auto; padding: 0; top: 12px; left: 50%; transform: translate3d(calc(-50% - 0.5px), 0, 0); }
   #top-nav.smart .navbar-brand { width: 120px; height: auto; padding: 0; top: 12px; }
   #top-nav > .nt-decor-container { width: 100%; max-width: none; padding: 0; }
   #top-nav .menu-home { background: #fff; box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15); }
   #right-nav-menu { padding: 0px; margin-top: 69px; border-top: 1px solid rgba(0, 0, 0, 0.25); }
-  #mobile-right-nav-menu-btn { display: block; top: 14px; right: 20px; } }
+  #mobile-right-nav-menu-btn { display: block; top: 14px; right: 20px; }
+  .dropdown-item:focus, .dropdown-item:hover { background-color: initial; } }
 
 @media (min-width: 768px) { #top-nav .menu-home .nav-item.dropdown:hover .dropdown-menu { display: block; animation-name: slidenavAnimation; animation-duration: 0.3s; -webkit-animation-name: slidenavAnimation; -webkit-animation-duration: .3s; -moz-animation-name: slidenavAnimation; -moz-animation-duration: .3s; }
   #top-nav .menu-home .nav-item.dropdown:hover .nav-link { color: #c61f2f; }
@@ -282,11 +283,11 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 .home-p section#new-ideas .author .author-nav:nth-of-type(1):after { content: ''; display: block; background: #ca000f; position: absolute; width: 2px; height: 14px; right: 0; top: 9px; }
 
+.home-p section#new-ideas .mask { display: block; content: ''; height: 64px; width: calc(100% - 270px); object-fit: contain; border-radius: 1px; background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.76)); bottom: 0; position: absolute; z-index: 2; left: 200px; }
+
 #home-carousel { position: absolute; left: auto; height: 100%; width: auto; min-width: 100%; }
 
 #home-carousel .item { width: 500px; height: 100%; background-color: #fff; cursor: pointer; position: relative; }
-
-#home-carousel .item:after { display: block; content: ''; height: 64px; width: 100%; object-fit: contain; border-radius: 1px; background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.76)); bottom: 0; position: absolute; }
 
 #home-carousel .item .image { width: 100%; height: 100%; overflow: hidden; background-size: cover; background-position: center center; background-repeat: no-repeat; }
 
@@ -382,7 +383,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 #factory-images-carousel { height: 675px; margin-top: -245px; }
 
-#factory-images-carousel .owl-prev, #factory-images-carousel .owl-next { width: 31.5px; height: 22.1px; object-fit: contain; transform: rotate(-180deg); position: absolute; top: 50%; transform: translate3d(0, -50%, 0); outline: 0; background-repeat: no-repeat; background-size: 100% 100%; background-position: center center; }
+#factory-images-carousel .owl-prev, #factory-images-carousel .owl-next { width: 31.5px; height: 22.1px; object-fit: contain; transform: rotate(-180deg); position: absolute; top: 50%; transform: translate3d(0, calc(-50% - 0.5px), 0); outline: 0; background-repeat: no-repeat; background-size: 100% 100%; background-position: center center; }
 
 #factory-images-carousel .owl-prev.disabled, #factory-images-carousel .owl-next.disabled { opacity: 0.3; }
 

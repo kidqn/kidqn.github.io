@@ -1,9 +1,11 @@
 var fixOwl = function(){
-    var $el = $('.owl-item')
+    var $el = $('.owl-item');
+    var newWidth;
     $el.each(function() {
-        var newWidth =  ( $(this).find('.item').height() / 60.33 ) * 100;
+        newWidth =  ( $(this).find('.item').height() / 60.33 ) * 100;
         $(this).find('.item').width(newWidth)
     });
+    $('.home-p section#new-ideas > .container > .mask').width(newWidth - 130);
 }
 var refreshOwl = function(){
     fixOwl();
