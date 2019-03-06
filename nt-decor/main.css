@@ -210,7 +210,7 @@ ul.pagination .page-item.active .page-link, ul.pagination .page-item:hover .page
 
 @media (max-width: 575px) { .list-related-projects .project .image { margin: auto; } }
 
-#top-nav { width: 100%; height: 140px; padding: 40px 0 0 0; position: fixed; z-index: 1001; top: 0; left: 0; background: 0; -webkit-transition: all .3s ease; transition: all .3s ease; width: calc(100% - 75px); left: 50%; transform: translateX(-50%); }
+#top-nav { width: 100%; height: 140px; padding: 40px 0 0 0; position: fixed; z-index: 1001; top: 0; left: 0; background: 0; -webkit-transition: padding height .3s ease-in; transition: padding height .3s ease-in; width: calc(100% - 75px); left: 50%; transform: translateX(-50%); }
 
 #top-nav.smart { background: #fff; color: #000; height: 70px; padding: 0; box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15); }
 
