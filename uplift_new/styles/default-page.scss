@@ -1,0 +1,143 @@
+.default-p #main{
+    padding-top: 150px;
+    min-height: 25%;
+}
+
+.wpcf7 input[type=submit] {
+    width: 159px;
+    height: 48px;
+    border-radius: 2px;
+    box-shadow: 0 4px 9px 0 rgba(26, 47, 59, 0.11);
+    background-color: #b8d432;	
+    border: 0;
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.6px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.wpcf7  {
+    input[type=text], 
+    input[type=tel],
+    input[type=number],
+    input[type=password],
+    input[type=email] {
+        width: 100%;
+        height: 50px;
+        border-radius: 1px;
+        background-color: #fafdec;
+        border: 0;
+        outline: 0;
+        &:focus{
+                background: #edf9b7;
+                outline: 0;
+        }
+    }
+}
+
+.wpcf7-form label {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    color: #454545;
+    margin-bottom: 12px;
+    span.required {
+        color: #ff2965;
+    }
+}
+.wpcf7-radio {}
+.wpcf7 textarea {
+    width: 100%;
+    height: 128px;
+    border-radius: 1px;
+    background-color: #fafdec;
+    border: 0;
+    margin-bottom: 30px;
+}
+.wpcf7-previous {
+    font-size: 11px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    color: #35612e;
+    text-transform: uppercase;
+    background: none;
+    border: 0;
+}
+
+.wpcf7 h4 {
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #b8d432;
+    margin-bottom: 20px;
+}
+.wpcf7 h6 {
+    font-size: 11px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    color: #b8d432;
+    margin-top: 12px;
+    margin-bottom: 15px;
+}
+.wpcf7 .screen-reader-response {
+    height: auto !important;
+    width: 100% !important;
+}
+
+.wpcf7 .head-info {
+    padding-bottom: 20px;
+    border-bottom: 3px solid #ddf36f;
+    .title {
+        font-family: 'SFUIDisplay';
+        font-size: 60px;
+        font-weight: 900;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.16;
+        letter-spacing: normal;
+        color: #454545;
+    }
+    p.intro {
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.43;
+        letter-spacing: 0.4px;
+        color: #454545;
+    }
+}
+.wpcf7 .steps-navbar {
+    display: flex;
+    flex-direction: row;
+    .step {
+        margin-right: 45px;
+        height: 24px;
+        font-size: 11px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2;
+        letter-spacing: 0.5px;
+        color: #35612e;
+        &.active {
+            color: #b8d432;
+        }
+    }
+}
