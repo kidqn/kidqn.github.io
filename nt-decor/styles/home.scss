@@ -11,16 +11,16 @@
         height: 100%;
     }
     .head-info {
-        padding: 46px 23px 16px 0;
+        padding: 35px 23px 12px 0;
         width: 428px;
-        height: 229px;
-        background-color: rgba(255,255,255,1);
+        min-height: 190px;
+        background-color: white;
         position: absolute;
         z-index: 2;
         bottom: 64px;
         .subtitle {
             font-family: 'HelveticaNeueLTStd-Bd';
-            font-size: 20px;
+            font-size: 16px;
             font-weight: normal;
             font-style: normal;
             font-stretch: normal;
@@ -32,7 +32,7 @@
         }
         .title {
             font-family: 'HelveticaNeueLTStd-Blk';
-            font-size: 50px;
+            font-size: 38px;
             font-weight: normal;
             font-style: normal;
             font-stretch: normal;
@@ -133,6 +133,9 @@
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
+        }
+        .info {
+            display: none;
         }
     }
     .owl-prev, .owl-next {
