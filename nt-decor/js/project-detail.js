@@ -19,6 +19,8 @@ $(function(){
             slideSpeed : 500,
             items: 1,
             autoHeight:true,
+            autoWidth: false,
+            margin: 20,
             loop:true,
             nav:true,
             dots: false,
