@@ -11,16 +11,16 @@
         height: 100%;
     }
     .head-info {
-        padding: 35px 23px 12px 0;
-        width: 428px;
-        min-height: 190px;
+        padding: 15px 10px 0px 0;
+        width: 415px;
+        min-height: 145px;
         background-color: white;
         position: absolute;
         z-index: 2;
         bottom: 64px;
         .subtitle {
             font-family: 'HelveticaNeueLTStd-Bd';
-            font-size: 16px;
+            font-size: 14px;
             font-weight: normal;
             font-style: normal;
             font-stretch: normal;
@@ -32,7 +32,7 @@
         }
         .title {
             font-family: 'HelveticaNeueLTStd-Blk';
-            font-size: 38px;
+            font-size: 30px;
             font-weight: normal;
             font-style: normal;
             font-stretch: normal;
@@ -47,10 +47,9 @@
             font-weight: normal;
             font-style: normal;
             font-stretch: normal;
-            line-height: 1.33;
+            line-height: 1.15;
             letter-spacing: 0.5px;
             color: #000000;
-            margin-bottom: 10px;
         }
         a {
             font-family: 'HelveticaNeueLTStd-Bd';
@@ -168,7 +167,7 @@
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767px) {}
 // handle mobile
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 812px) {
     .home-p main#main {
         padding-top: 73px;
         height: 100%;
@@ -178,6 +177,7 @@
     }
     .home-p section#new-ideas {
         height: calc(100% - 70px);
+        overflow: auto;
         & > .nt-decor-container {
             padding: 0;
             display: flex;
@@ -198,8 +198,9 @@
             }
         }
         .author {
-            position: absolute;
+            position: fixed;
             width: calc(100% - 130px);
+            bottom: 0;
             left: 130px;
             background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.89));
             flex-direction: column;
@@ -222,11 +223,19 @@
     #home-carousel {
         flex: 1;
         position: static;
-        height: initial;
+        height: 340px;
         .item {
+            width: 100%;
             &:after {
                 display: none;
             }
+            .image {
+                background-size: 100% auto;
+                background-position: 0 0;
+            }
+        }
+        .owl-prev, .owl-next {
+            position: fixed;
         }
     }
     .list-social-icons {
@@ -252,3 +261,13 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) and (max-width: 1199px) { }
+
+// Large devices, macbooks (laptop, 992px and up to 1440px)
+@media (min-width: 992px) and (max-width: 1440px) { 
+    .home-p main#main {
+        padding-top: 120px;
+    }
+    .home-p section#new-ideas {
+        height: calc(100% - 85px);
+    }
+}

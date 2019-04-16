@@ -5,6 +5,9 @@
         & >img:nth-of-type(1) { 
             margin-top: -135px;
         }
+        img {
+            cursor: zoom-in;
+        }
         figcaption {
             padding: 15px;
             margin-bottom: 10px;
@@ -329,9 +332,23 @@
             }
         }
     }
+
+    .list-related-projects {
+        & > h3,
+        & > h4 {
+            margin-bottom: 15px;
+        }
+        .project {
+            .image {
+                width: 100%;
+                height: auto;
+                margin-bottom: 5px;
+            }
+        }
+    }
 }
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991px) { 
+@media (min-width: 813px) and (max-width: 991px) { 
     .list-architecture-projects {
         .project:nth-of-type(3n+1) {
             .image {
@@ -392,7 +409,7 @@
     }
 }
 // handle moble
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 812px) {
     .nt-decor-lead-section {
         min-height: 265px;
         .head-info {
@@ -450,11 +467,20 @@
             }
         }
     }
+    .list-related-projects {
+        .project {
+            .image {
+                width: 100%;
+                height: auto;
+                text-align: center;
+            }
+        }
+    }
     
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 812px) {
     .list-related-projects {
         .project {
             .image {
@@ -470,12 +496,4 @@
     }
 }
 // Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575px) { 
-    .list-related-projects {
-        .project {
-            .image {
-                margin: auto;
-            }
-        }
-    }
-}
+@media (max-width: 575px) { }
