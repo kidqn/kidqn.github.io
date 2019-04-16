@@ -1,15 +1,15 @@
 {
-  "name": "uplift",
-  "version": "1.0.0",
-  "description": "uplift wp",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node-sass-chokidar ./styles/main.scss -o ./ --watch --output-style compact"
-  },
-  "author": "dinhlam",
-  "license": "ISC",
-  "devDependencies": {
-    "node-sass-chokidar": "^1.3.4"
+    "name": "uplift",
+    "version": "1.0.0",
+    "description": "uplift wp",
+    "main": "index.html",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node-sass-chokidar ./styles/main.scss -o ./ --watch --output-style compact"
+    },
+    "author": "dinhlam",
+    "license": "ISC",
+    "devDependencies": {
+      "node-sass-chokidar": "^1.3.4"
+    }
   }
-}
