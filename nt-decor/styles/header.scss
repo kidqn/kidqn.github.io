@@ -7,10 +7,10 @@
     top: 0;
     left: 0;
     background: 0;
-    -webkit-transition: padding .5s ease;
-    transition: padding .5s ease;
-    left: 50%;
-    transform: translateX(-50%);
+    -webkit-transition: padding .3s ease;
+    transition: padding .3s ease;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
     &.smart {
         background: #fff;
         color: #000;
