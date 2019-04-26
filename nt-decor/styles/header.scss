@@ -1,26 +1,19 @@
 #top-nav {
     width: 100%;
-    height: 140px;
-    padding: 40px 0 0 0;
+    height: 160px;
+    padding: 25px 0 0 0;
     position: fixed;
     z-index: 1001;
     top: 0;
     left: 0;
     background: 0;
-    -webkit-transition: padding .4s ease-in-out;
-    transition: padding .4s ease-in-out;
+    -webkit-transition: box-shadow .25s ease-in-out;
+    transition: box-shadow .25s ease-in-out;
     will-change: transform;
     &.smart {
         background: #fff;
         color: #000;
-        padding: 20px 0 0 0;
         box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.15);
-        .navbar-brand {
-            top: 24px;
-        }
-        #right-nav-menu {
-            padding-top: 66px;
-        }
     }
     .navbar-brand {
         width: 233px;
@@ -257,7 +250,7 @@
 @media (min-width: 992px) and (max-width: 1440px) { 
     #top-nav {
         height: 120px;
-        padding: 20px 0 0 0;
+        padding: 10px 0 0 0;
         .navbar-brand {
             top: 0;
         }
