@@ -9,6 +9,7 @@
     background: 0;
     -webkit-transition: padding .4s ease-in-out;
     transition: padding .4s ease-in-out;
+    will-change: transform;
     &.smart {
         background: #fff;
         color: #000;
