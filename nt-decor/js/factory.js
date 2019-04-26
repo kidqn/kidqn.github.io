@@ -5,5 +5,10 @@ $(function(){
         nav:true,
         dots: false,
         navText: ["",""],
+        loop: true,
+        smartSpeed: 1000,
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause:true
     })
 })

@@ -5,7 +5,6 @@ $(function(){
         temp = $("<div>", {"class": "item"});
         cloneImg = $(listImg[i]).clone();
         if($(listImg[i]).next()[0] && $(listImg[i]).next()[0].nodeName === 'FIGCAPTION') {
-            console.log($(listImg[i]).next()[0].nodeName);
             cloneFigcation = $(listImg[i]).next().clone();
             temp.append(cloneImg).append(cloneFigcation);
         } else {

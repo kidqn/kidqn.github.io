@@ -38,12 +38,14 @@
             outline: 0;
             width: 42px;
             height: 40px;
-            background-color: #000000;
-            color: #fff;
+            background-color: #ffffff;
+            color: #c61f2f;
+            box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
             top: 50%;
             transform: translate3d(0,-50%,0);
             &:hover{
                 background-color: #c61f2f;
+                color: #fff;
             }
         }
         .owl-prev {
