@@ -1,0 +1,271 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+/* custom checkbox */
+/* The container */
+.container-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.container-checkbox > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  border-radius: 4px;
+  border: solid 1px rgba(10, 44, 77, 0.15);
+}
+
+/* On mouse-over, add a grey background color */
+.container-checkbox:hover input ~ .container-checkbox > label {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container-checkbox input:checked ~ .container-checkbox > label {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.container-checkbox > label:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container-checkbox input:checked ~ .container-checkbox > label:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-checkbox .container-checkbox > label:after {
+  left: 6px;
+  top: 3px;
+  width: 3px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 1px 1px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/* Phieu thu */
+.phieuthu {
+  font-family: 'Open Sans', sans-serif;
+  color: #0a2c4d;
+}
+.phieuthu .modal-content {
+  width: 690px;
+  height: 718px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.phieuthu-header {
+  position: relative;
+  height: 70px;
+  padding: 0 30px;
+  align-items: center;
+}
+
+.phieuthu-label {
+  opacity: 0.8;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
+.phieuthu-header .phieuthu-title{
+  width: 130px;
+  height: 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: #0a2c4d;
+  margin: 0;
+}
+.phieuthu-header .close {
+  position: absolute;
+  left: calc(100% + 14px);
+  background: white;
+  width: 32px;
+  height: 32px;
+  line-height: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1;
+}
+.phieuthu-header .close:hover span {
+  opacity: 0.8;
+}
+.phieuthu-header .close span {
+  opacity: 0.3;
+}
+
+.phieuthu-header .right-side {
+  display: flex;
+}
+
+.phieuthu-header .right-side p {
+  opacity: 0.5;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0a2c4d;
+  margin-bottom: 2px;
+}
+.phieuthu-header .right-side h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  text-align: right;
+  color: #0a2c4d;
+  margin-bottom: 0;
+}
+.phieuthu-header .right-side .chi-nhanh {
+  padding-right: 30px;
+}
+.phieuthu-header .right-side .thanh-toan {
+  border-left: 1px solid rgba(237, 239, 240, 1);
+  padding-left: 30px;
+}
+.phieuthu-header .right-side .thanh-toan h4 {
+  color: #fa4242;
+}
+
+.phieuthu-body {
+  padding: 0 30px 20px 30px;
+}
+.phieuthu-body input[type="text"] {
+  height: 40px;
+  border-radius: 8px;
+  border: solid 1px rgba(10, 44, 77, 0.15);
+} 
+
+.phieuthu-body #section-thanh-toan .form-group{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+.phieuthu-body .field-input {
+  position: relative;
+  width: 180px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: rgba(10, 44, 77, 0.5);
+}
+.phieuthu-body .field-input.rest-money {
+  width: 280px;
+}
+.phieuthu-body .field-input span {
+  position: absolute;
+  left: 14px;
+  top: 9px;
+  opacity: 0.8;
+}
+.phieuthu-body .field-input input {
+  padding: 6px 17px 8px 69px;
+  color: #0a2c4d;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
+.phieuthu-info .card-header {
+  height: 14px;
+  background: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  border: 0;
+  flex-direction: row;
+}
+.phieuthu-info .card-header:after {
+  content: '';
+  display: block;
+  background-color: rgba(10, 44, 77, 0.05);
+  flex: 1;
+  width: auto;
+  height: 3px;
+}
+.heading-middle-line {
+  opacity: 0.5;
+  font-size: 10px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  color: #0a2c4d;
+  margin: 0 10px 0 0;
+  text-transform: uppercase;
+}
+
+.phieuthu-body #section-phuongthuc .form-group {
+  display: flex;
+  padding: 20px 0 30px 0;
+  margin: 0;
+}
+.phieuthu-body #section-phuongthuc label {
+  opacity: 0.8;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
