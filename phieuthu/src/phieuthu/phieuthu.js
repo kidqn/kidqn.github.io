@@ -56,33 +56,53 @@ export default class PhieuThuPopup extends React.Component {
                             <Accordion.Collapse eventKey="0">
                                 <div className="section-phuongthuc-wrapper">
                                     <Form.Group controlId="cashCheckbox">
-                                        <Form.Check type="checkbox" label="Tiền mặt" />
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1" />
+                                            <label class="custom-control-label" for="customCheck">Tiền mặt</label>
+                                        </div>                                        
                                         <div className="field-input">
                                             <span>Số tiền</span>
                                             <Form.Control placeholder="10,000,000" type="text" />
                                         </div>
                                     </Form.Group>
-                                    <Form.Group controlId="cardCheckbox">
-                                        <Form.Check type="checkbox" label="Thẻ" />
+                                    <Form.Group className="group-cash">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1" />
+                                            <label class="custom-control-label" for="customCheck">Thẻ</label>
+                                        </div> 
                                         <div className="field-input">
                                             <span>Số tiền</span>
                                             <Form.Control placeholder="10,000,000" type="text" />
                                         </div>
-                                        <div className="field-input">
-                                        <Form.Control as="select">
-                                            <option>Viettel QR Code</option>
-                                            <option>Viettel QR Code</option>
-                                            <option>Viettel QR Code</option>
-                                            <option>Viettel QR Code</option>
-                                            <option>Viettel QR Code</option>
-                                        </Form.Control>
+                                        <div className="field-input select">
+                                            <span>Ngân hàng</span>
+                                            <Form.Control as="select">
+                                                <option>Viettel QR Code</option>
+                                                <option>VNPT QR Code</option>
+                                                <option>FPT QR Code</option>
+                                                <option>Viettel QR Code</option>
+                                                <option>Viettel QR Code</option>
+                                            </Form.Control>
                                         </div>
                                     </Form.Group>
-                                    <Form.Group controlId="transferCheckbox">
-                                        <Form.Check type="checkbox" label="Chuyển khoản" />
+                                    <Form.Group className="group-transfer">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck" name="example1" />
+                                            <label class="custom-control-label" for="customCheck">Chuyển khoản</label>
+                                        </div>
                                         <div className="field-input">
                                             <span>Số tiền</span>
                                             <Form.Control placeholder="10,000,000" type="text" />
+                                        </div>
+                                        <div className="field-input select">
+                                            <span>Ngân hàng</span>
+                                            <Form.Control as="select">
+                                                <option>VCB Biên Hòa</option>
+                                                <option>BIDV HCM</option>
+                                                <option>Vietin Bank</option>
+                                                <option>ACB</option>
+                                                <option>Viettel QR Code</option>
+                                            </Form.Control>
                                         </div>
                                     </Form.Group>
                                 </div>
@@ -106,7 +126,8 @@ export default class PhieuThuPopup extends React.Component {
                         </section>
                     </Modal.Body>
                     <Modal.Footer>
-                    <Button onClick={this.props.onHide}>Close</Button>
+                    <Button className="btn-close" onClick={this.props.onHide}>Thoát</Button>
+                    <Button className="btn-submit" onClick={this.props.onHide}>Xác nhận</Button>
                     </Modal.Footer>
             </Modal>
         </Form>
