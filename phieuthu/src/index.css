@@ -400,8 +400,14 @@ code {
 .phieuthu-body .ic {
   cursor: pointer;
 }
+.phieuthu-body .ic-remove {
+  width: 12px;
+  height: 15px;
+  background-image: url('./trash-white.svg');
+  background-repeat: no-repeat;
+}
 .phieuthu-body .ic-remove:hover {
-  color: #FA4242;
+  background-image: url('./trash-red.svg');
 }
 .phieuthu-body  .ic-add-new {
   display: inline-block;

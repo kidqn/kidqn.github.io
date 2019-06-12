@@ -17,7 +17,9 @@ export default class PhieuThuPopup extends React.Component {
             totalMoneyPay: 45000000,
             moneyPay: 0,
             restMoneyPay: 45000000,
-            insurance: ''
+            insurance: '',
+            note: '',
+            isConfirm: false
         };
     
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -41,7 +43,9 @@ export default class PhieuThuPopup extends React.Component {
     }
     handleConfirm(event) {
         console.log('An essay was submitted: ' + this.state.insurance);
+        console.log('An essay was submitted: ' + this.state.note);
         event.preventDefault();
+        this.setState({isConfirm: !this.state.isConfirm});
     }
 
     handleOpenMethods(key) {
@@ -90,8 +94,9 @@ export default class PhieuThuPopup extends React.Component {
                             </div>
                         </div>
                     </Modal.Header>
-
                     <Modal.Body className="phieuthu-body">
+                    {!this.state.isConfirm ? (<section id="phieuthu-step1">
+
                         <section id="section-thanh-toan">
                             <Form.Group>
                                 <Form.Label className="phieuthu-label">Khách thanh toán</Form.Label>
@@ -109,7 +114,7 @@ export default class PhieuThuPopup extends React.Component {
                                         <span>Số tiền</span>
                                         <Form.Control name="moneyPay" 
                                             value={this.toCurrency(this.state.moneyPay)}
-                                            onFocus={this.toggleEditing.bind(this)}
+                                            onFocus={this.toggleEditing}
                                             placeholder="1,000,000" type="text" />
                                     </div>
                                 )}
@@ -118,7 +123,7 @@ export default class PhieuThuPopup extends React.Component {
                                     <span>Còn lại</span>
                                     <Form.Control 
                                         value={this.toCurrency(this.state.restMoneyPay)}
-                                        placeholder="1,000,000" type="number" disabled/>
+                                        placeholder="1,000,000" type="text" disabled/>
                                 </div>
                             </Form.Group>
                         </section>
@@ -273,7 +278,7 @@ export default class PhieuThuPopup extends React.Component {
                                                     <span>Số tiền</span>
                                                     <Form.Control placeholder="10,000,000" type="text" />
                                                 </div>
-                                                <FontAwesomeIcon className="ic ic-remove" icon={faTrash} />
+                                                <i className="ic ic-remove"></i>
                                             </div>
                                             <div className="form-group-row">
                                                 <a className="add-new-insurance"><i className="ic-add-new"></i>Thêm mới</a>
@@ -323,14 +328,92 @@ export default class PhieuThuPopup extends React.Component {
                         <section id="ghichu">
                         <Form.Group controlId="exampleForm.ControlTextarea1">
                             <Form.Label>Ghi chú</Form.Label>
-                            <Form.Control as="textarea" rows="3" />
+                            <Form.Control value={this.state.note} as="textarea" rows="3" />
                         </Form.Group>
                         </section>
+                    </section> 
+                    ) :
+                    (<section id="phieuthu-step2">
+                            <div className="table-result">
+                                <div className="result-row">
+                                    <div className="result-col label">
+                                        Tiền mặt
+                                    </div>
+                                    <div className="result-col">
+                                        
+                                    </div>
+                                    <div className="result-col number">
+                                        <p className="head">10,000,000</p>
+                                    </div>
+                                </div>
+                                <div className="result-row">
+                                    <div className="result-col label">
+                                        Thẻ
+                                    </div>
+                                    <div className="result-col">
+                                        <p className="head">Viettel QR Code</p>
+                                    </div>
+                                    <div className="result-col number">
+                                        <p className="head">10,000,000</p>
+                                    </div>
+                                </div>
+                                <div className="result-row">
+                                    <div className="result-col label">
+                                        Chuyển khoản
+                                    </div>
+                                    <div className="result-col">
+                                        <p className="head">VCB Biên Hòa</p>
+                                    </div>
+                                    <div className="result-col number">
+                                        <p className="head">10,000,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="table-result">
+                                <div className="result-row">
+                                    <div className="result-col label">
+                                        Bảo hiểm
+                                    </div>
+                                    <div className="result-col">
+                                        <p className="head">TNHH DV Nam Á</p>
+                                        <p className="sub">Bàn chải kẽ chỉnh nha</p>
+                                        <p className="sub">Nhổ răng gây tê - R34</p>
+                                    </div>
+                                    <div className="result-col number">
+                                        10,000,000
+                                        <p className="sub">1,000,000</p>
+                                        <p className="sub">1,000,000</p>
+                                    </div>
+                                </div>
+                                <div className="result-row">
+                                    <div className="result-col label">
+                                        Công ty
+                                    </div>
+                                    <div className="result-col">
+                                        <p className="head">CTY TNHH Thương mại và dịch vụLe Gourmet Pass</p>
+                                        <p className="sub">Nhổ răng gây tê - R35</p>
+                                    </div>
+                                    <div className="result-col number">
+                                        <p className="head">10,000,000</p>
+                                        <p className="sub">1,000,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    )}
                     </Modal.Body>
-                    <Modal.Footer>
-                        <Button className="btn-close" onClick={this.props.onHide}>Thoát</Button>
-                        <Button className="btn-submit" type="submit">Xác nhận</Button>
-                    </Modal.Footer>
+                        {this.state.isConfirm ?
+                        (
+                            <Modal.Footer>
+                                <Button className="btn-close" onClick={this.handleConfirm}>Quay lại</Button>
+                                <Button className="btn-submit" type="submit">Tạo phiếu thu</Button>
+                            </Modal.Footer>                       
+                        ) : (
+                            <Modal.Footer>
+                                <Button className="btn-close" onClick={this.props.onHide}>Thoát</Button>
+                                <Button className="btn-submit" type="submit">Xác nhận</Button>
+                            </Modal.Footer>
+                        )}
             </Form>
             </Modal>
 
