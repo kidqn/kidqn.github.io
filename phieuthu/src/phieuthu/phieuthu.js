@@ -72,13 +72,13 @@ export default class PhieuThuPopup extends React.Component {
         if( key === 'openPayMethod') {
             this.setState({
                 openPayMethod: !this.state.openPayMethod,
-                openInsuranceMethod: this.state.openPayMethod ? false : true
+                openInsuranceMethod: this.state.openPayMethod ? this.state.openInsuranceMethod :this.state.openPayMethod
             })
         }
         if( key === 'openInsuranceMethod') {
             this.setState({
-                openPayMethod: this.state.openInsuranceMethod ? false : true,
-                openInsuranceMethod: !this.state.openInsuranceMethod
+                openInsuranceMethod: !this.state.openInsuranceMethod,
+                openPayMethod: this.state.openInsuranceMethod ? this.state.openPayMethod :this.state.openInsuranceMethod
             })
         }
     }
@@ -97,7 +97,9 @@ export default class PhieuThuPopup extends React.Component {
     render() {
         const isEditing = this.state.isEditing;
         const isShowMethodTable = !this.state.openPayMethod && (this.state.cashCheck || this.state.cardCheck || this.state.transferCheck);
-        const isShowInsuranceTable = this.state.openInsuranceMethod && (this.state.insuranceCheck || this.state.companyCheck);
+        const isShowInsuranceTable = !this.state.openInsuranceMethod && (this.state.insuranceCheck || this.state.companyCheck);
+        console.log('isShowMethodTable', this.state.openPayMethod);
+        console.log('isShowInsuranceTable', this.state.openInsuranceMethod);
 
         return (
             <Modal
