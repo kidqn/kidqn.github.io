@@ -365,7 +365,8 @@ code {
 .phieuthu-body .section-insurance-wrapper {
   padding: 20px 0;
 }
-.phieuthu-body .section-insurance-wrapper .insurance {
+.phieuthu-body .section-insurance-wrapper .form-group.insurance,
+.phieuthu-body .section-insurance-wrapper .form-group.company {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
