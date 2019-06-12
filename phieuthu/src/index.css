@@ -351,8 +351,9 @@ code {
   display: -ms-flexbox;
   display: flex;
   margin: 0 0 10px 0;
+  min-height: 40px;
 }
-.phieuthu-body #section-phuongthuc .form-group.group-cash .field-input.select,
+.phieuthu-body #section-phuongthuc .form-group.group-card .field-input.select,
 .phieuthu-body #section-phuongthuc .form-group.group-transfer .field-input.select{
   margin-left: 16px;
 }
