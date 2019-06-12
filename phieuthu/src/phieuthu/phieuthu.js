@@ -11,6 +11,7 @@ export default class PhieuThuPopup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            isEditing: false,
             openPayMethod: false,
             openInsuranceMethod: false,
             totalMoneyPay: 45000000,
@@ -22,6 +23,8 @@ export default class PhieuThuPopup extends React.Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleConfirm = this.handleConfirm.bind(this);
         this.handleOpenMethods = this.handleOpenMethods.bind(this);
+        this.toggleEditing = this.toggleEditing.bind(this);
+
       }
 
     handleInputChange(event) {
@@ -47,7 +50,19 @@ export default class PhieuThuPopup extends React.Component {
         })
     }
 
+    toCurrency(number) {
+        const formatter = new Intl.NumberFormat('en-US', 
+            { maximumSignificantDigits: 3 });
+    
+        return formatter.format(number);
+    }
+
+    toggleEditing() {
+        this.setState({ isEditing: !this.state.isEditing });
+    }
+
     render() {
+        const isEditing = this.state.isEditing;
 
         return (
             <Modal
@@ -71,7 +86,7 @@ export default class PhieuThuPopup extends React.Component {
                             </div>
                             <div className="thanh-toan">
                                 <p>Cần thanh toán</p>
-                                <h4>{this.state.totalMoneyPay}</h4>
+                                <h4>{this.toCurrency(this.state.totalMoneyPay)}</h4>
                             </div>
                         </div>
                     </Modal.Header>
@@ -80,17 +95,29 @@ export default class PhieuThuPopup extends React.Component {
                         <section id="section-thanh-toan">
                             <Form.Group>
                                 <Form.Label className="phieuthu-label">Khách thanh toán</Form.Label>
-                                <div className="field-input">
-                                    <span>Số tiền</span>
-                                    <Form.Control name="moneyPay" 
-                                        value={this.state.moneyPay}
-                                        onChange={this.handleInputChange}
-                                        placeholder="1,000,000" type="number" />
-                                </div>
+                                {isEditing ? (
+                                    <div className="field-input">
+                                        <span>Số tiền</span>
+                                        <Form.Control name="moneyPay" 
+                                            value={this.state.moneyPay}
+                                            onChange={this.handleInputChange}
+                                            onBlur={this.toggleEditing}
+                                            placeholder="1,000,000" type="number" />
+                                    </div>
+                                ) : (
+                                    <div className="field-input">
+                                        <span>Số tiền</span>
+                                        <Form.Control name="moneyPay" 
+                                            value={this.toCurrency(this.state.moneyPay)}
+                                            onFocus={this.toggleEditing.bind(this)}
+                                            placeholder="1,000,000" type="text" />
+                                    </div>
+                                )}
+
                                 <div className="field-input rest-money">
                                     <span>Còn lại</span>
                                     <Form.Control 
-                                        value={this.state.restMoneyPay}
+                                        value={this.toCurrency(this.state.restMoneyPay)}
                                         placeholder="1,000,000" type="number" disabled/>
                                 </div>
                             </Form.Group>
@@ -191,6 +218,7 @@ export default class PhieuThuPopup extends React.Component {
                                     </div>
                                 </div> }
                         </section>
+                        <section id="section-insurance">
                             <Accordion.Toggle as={Card.Header} eventKey="1" onClick={() => this.handleOpenMethods('openInsuranceMethod')}>
                                 <h3 className="heading-middle-line">Bảo hiểm và công ty liên kết</h3>
                             </Accordion.Toggle>
@@ -290,8 +318,8 @@ export default class PhieuThuPopup extends React.Component {
                                     </div>
                                 </div>
                             </div> }
+                        </section>
                         </Accordion>
-
                         <section id="ghichu">
                         <Form.Group controlId="exampleForm.ControlTextarea1">
                             <Form.Label>Ghi chú</Form.Label>
