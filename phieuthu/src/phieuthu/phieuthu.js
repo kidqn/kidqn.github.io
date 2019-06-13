@@ -617,7 +617,7 @@ export default class PhieuThuPopup extends React.Component {
                                 </div>
                             </div>
 
-                            {(this.cashCheck || this.state.cardCheck || this.state.transferCheck) && <React.Fragment>
+                            {(this.state.cashCheck || this.state.cardCheck || this.state.transferCheck) && <React.Fragment>
                                     <h3 className="heading-middle-line">Phương thức thanh toán</h3>
                                     <div className="table-result">
                                         {this.state.cashCheck && <div className="result-row">
