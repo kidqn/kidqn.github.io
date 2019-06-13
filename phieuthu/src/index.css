@@ -63,11 +63,20 @@ code {
       -ms-flex-direction: column;
           flex-direction: column;
 }
+.phieuthu .form-control:disabled,
+.phieuthu  .form-control[readonly] {
+  background-color: rgba(10, 44, 77, 0.05);
+  color: #0a2c4d;
+}
 .phieuthu .modal-content {
   width: 690px;
   min-height: 718px;
   border-radius: 8px;
   background-color: #fff;
+}
+.phieuthu input::placeholder {
+  color: rgba(10, 44, 77, 0.5);
+  opacity: 1; /* Firefox */
 }
 .phieuthu select {
   -webkit-appearance: none;
@@ -289,6 +298,9 @@ code {
 .phieuthu-body .field-input select {
   padding: 0 17px 0 95px;
 }
+.phieuthu-body .field-input.no-label input {
+  padding: 0 17px 0 10px;
+}
 /* section phieuthu-info */
 .phieuthu-info {
   margin-bottom: 30px;
@@ -361,6 +373,13 @@ code {
   padding: 20px 0;
 }
 
+.phieuthu-body .thekim-pin {
+  width: 110px;
+  margin-left: 16px;
+}
+.phieuthu-body .thekim-btn {
+  text-align: right;
+}
 /* bao hiem - congty */
 .phieuthu-body .section-insurance-wrapper {
   padding: 20px 0;

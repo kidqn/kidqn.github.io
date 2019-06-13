@@ -3,7 +3,6 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 
@@ -11,34 +10,31 @@ export default class PhieuThuPopup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isEditing: false,
             openPayMethod: true,
             openInsuranceMethod: false,
             totalMoneyPay: 45000000,
-            moneyPay: 0,
+            moneyPay: '',
             cashCheck: false,
-            cashMethod: 0,
+            cashMethod: null,
             cardCheck: false,
-            cardMethod: 0,
+            cardMethod: null,
             cardBank: '',
             transferCheck: false,
-            transferMethod: 0,
+            transferMethod: null,
             transferBank: '',
+            theKIMCode: '',
+            theKIMPIN:'',
             restMoneyPay: 45000000,
             insurance: '',
             insuranceCheck: false,
             insuranceService: '',
-            insuranceServicePrice: 0,
-            insuranceServiceExtra: '',
-            insuranceServiceExtraPrice: 0,
-            insuranceServicePayMoney: 0,
+            insuranceServicePrice: null,
+            insuranceServicePayMoney: null,
             companyCheck: false,
             company: '',
             companyService: '',
-            companyServicePrice: 0,
-            companyServiceExtra: '',
-            companyServiceExtraPrice: 0,
-            companyServicePayMoney: 0,
+            companyServicePrice: null,
+            companyServicePayMoney: null,
             keynote: '',
             isConfirm: false
         };
@@ -47,11 +43,11 @@ export default class PhieuThuPopup extends React.Component {
         this.handleConfirm = this.handleConfirm.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleShowTableResult = this.handleShowTableResult.bind(this);
-        this.toggleEditing = this.toggleEditing.bind(this);
-
+        this.calcRestMoney = this.calcRestMoney.bind(this);
+        this.calcMoneyPay = this.calcMoneyPay.bind(this);
       }
 
-    handleInputChange(event) {
+    handleInputChange(event, type) {
         const target = event.target;
         let value =  target.value;
         if(target.type === 'checkbox') {
@@ -60,24 +56,18 @@ export default class PhieuThuPopup extends React.Component {
         if(target.type === 'number') {
             value = parseInt(target.value)
         }
-        
+        if(type && type ==='currency') {
+            value = this.toCurrency(value)
+        }
         const name = target.name;
 
         this.setState({
             [name]: value 
         }, () => {
-            const newRestMoney = this.state.totalMoneyPay - this.state.moneyPay;
-            console.log('subtract', this.state.totalMoneyPay, this.state.moneyPay);
-            const newInsuranceServiceMoney = this.state.insuranceServicePrice + this.state.insuranceServiceExtraPrice;
-            console.log('add', this.state.insuranceServicePrice, this.state.insuranceServiceExtraPrice);
-            const newCompanyServiceMoney = this.state.companyServicePrice + this.state.companyServiceExtraPrice;
-            this.setState({
-                restMoneyPay: newRestMoney,
-                insuranceServicePayMoney: newInsuranceServiceMoney,
-                companyServicePayMoney: newCompanyServiceMoney
-            });
+
         });
     }
+
     handleConfirm(event) {
         console.log('Note: ' + this.state.keynote);
         console.log('Cash method: ' + this.state.cashMethod);
@@ -109,19 +99,35 @@ export default class PhieuThuPopup extends React.Component {
         }
     }
 
-    toCurrency(number) {
-        const formatter = new Intl.NumberFormat('en-US', 
-            { maximumSignificantDigits: 3 });
+    toCurrency(inputNumber) {
+        const temp = '' + inputNumber;
+        const formatter = temp.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     
-        return formatter.format(number);
+        return formatter;
     }
-
-    toggleEditing() {
-        this.setState({ isEditing: !this.state.isEditing });
+    convertCurrencyToNumber(currency) {
+        if(!currency) {
+            return 0;
+        }
+        return Number(currency.replace(/[^0-9\.-]+/g,""));
+    }
+    calcRestMoney() {
+        const moneyPay = this.state.moneyPay ? this.convertCurrencyToNumber(this.state.moneyPay) : 0;
+        const newRestMoney = this.state.totalMoneyPay - moneyPay;
+        this.setState({restMoneyPay: newRestMoney});
+    }
+    calcMoneyPay() {
+        const moneyPay = this.state.moneyPay ? this.convertCurrencyToNumber(this.state.moneyPay) : 0;
+        const cashMethod = this.state.cashMethod ? this.convertCurrencyToNumber(this.state.cashMethod) : 0;
+        const cardMethod = this.state.cardMethod ? this.convertCurrencyToNumber(this.state.cardMethod) : 0;
+        const transferMethod = this.state.transferMethod ? this.convertCurrencyToNumber(this.state.transferMethod) : 0;
+        const insuranceServicePrice = this.state.insuranceServicePrice ? this.convertCurrencyToNumber(this.state.insuranceServicePrice) : 0;
+        const companyServicePrice = this.state.companyServicePrice ? this.convertCurrencyToNumber(this.state.companyServicePrice) : 0;
+        const newMoneyPay = moneyPay - (cashMethod + cardMethod + transferMethod + insuranceServicePrice + companyServicePrice);
+        this.setState({MoneyPay: newMoneyPay});
     }
 
     render() {
-        const isEditing = this.state.isEditing;
         const isShowMethodTable = !this.state.openPayMethod && (this.state.cashCheck || this.state.cardCheck || this.state.transferCheck);
         const isShowInsuranceTable = !this.state.openInsuranceMethod && (this.state.insuranceCheck || this.state.companyCheck);
 
@@ -158,31 +164,20 @@ export default class PhieuThuPopup extends React.Component {
                         <section id="section-thanh-toan">
                             <Form.Group>
                                 <Form.Label className="phieuthu-label">Khách thanh toán</Form.Label>
-                                {isEditing ? (
                                     <div className="field-input">
                                         <span>Số tiền</span>
                                         <Form.Control name="moneyPay" 
                                             value={this.state.moneyPay}
-                                            onChange={this.handleInputChange}
-                                            onBlur={this.toggleEditing}
-                                            placeholder="1,000,000" type="number" />
-                                    </div>
-                                ) : (
-                                    <div className="field-input">
-                                        <span>Số tiền</span>
-                                        <Form.Control
-                                            value={this.toCurrency(this.state.moneyPay)}
-                                            onFocus={this.toggleEditing}
+                                            onChange={(e) => {this.handleInputChange(e, 'currency')} }
+                                            onBlur={this.calcRestMoney}
                                             placeholder="1,000,000" type="text" />
                                     </div>
-                                )}
-
-                                <div className="field-input rest-money">
-                                    <span>Còn lại</span>
-                                    <Form.Control 
-                                        value={this.toCurrency(this.state.restMoneyPay)}
-                                        placeholder="1,000,000" type="text" disabled/>
-                                </div>
+                                    <div className="field-input rest-money">
+                                        <span>Còn lại</span>
+                                        <Form.Control 
+                                            value={this.toCurrency(this.state.restMoneyPay)}
+                                            placeholder="1,000,000" type="text" disabled/>
+                                    </div>
                             </Form.Group>
                         </section>
 
@@ -201,30 +196,18 @@ export default class PhieuThuPopup extends React.Component {
                                                    checked={this.state.cashCheck}
                                                    onChange={this.handleInputChange} 
                                             />
-                                            <label className="custom-control-label" htmlFor="cashCheck">Tiền mặt:</label>
+                                            <label className="custom-control-label" htmlFor="cashCheck">Tiền mặt</label>
                                         </div>                                        
                                         {this.state.cashCheck && 
                                             <React.Fragment>
                                                 <div className="field-input">
                                                     <span>Số tiền:</span>
-                                                    {isEditing ? (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control name="cashMethod" 
-                                                                value={this.state.cashMethod}
-                                                                onChange={this.handleInputChange}
-                                                                onBlur={this.toggleEditing}
-                                                                placeholder="10,000,000" type="number" />
-                                                        </div>
-                                                    ) : (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control 
-                                                                value={this.toCurrency(this.state.cashMethod)}
-                                                                onFocus={this.toggleEditing}
-                                                                placeholder="10,000,000" type="text" />
-                                                        </div>
-                                                    )}
+                                                    <Form.Control name="cashMethod" 
+                                                        value={this.state.cashMethod}
+                                                        onChange={(e) => {this.handleInputChange(e, 'currency')} }
+                                                        onBlur={this.calcMoneyPay}
+                                                        placeholder="10,000,000" type="text" />
+                                                    
                                                 </div>
                                             </React.Fragment>
                                         }
@@ -236,30 +219,20 @@ export default class PhieuThuPopup extends React.Component {
                                                     name="cardCheck"
                                                     checked={this.state.cardCheck}
                                                     onChange={this.handleInputChange}/>
-                                            <label className="custom-control-label" htmlFor="cardCheck">Thẻ:</label>
+                                            <label className="custom-control-label" htmlFor="cardCheck">Thẻ</label>
                                         </div> 
                                         {this.state.cardCheck && 
                                             <React.Fragment>
                                                 <div className="field-input">
                                                     <span>Số tiền:</span>
-                                                    {isEditing ? (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control name="cardMethod" 
-                                                                value={this.state.cardMethod}
-                                                                onChange={this.handleInputChange}
-                                                                onBlur={this.toggleEditing}
-                                                                placeholder="10,000,000" type="number" />
-                                                        </div>
-                                                    ) : (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control 
-                                                                value={this.toCurrency(this.state.cardMethod)}
-                                                                onFocus={this.toggleEditing}
-                                                                placeholder="10,000,000" type="text" />
-                                                        </div>
-                                                    )}
+                                                    <div className="field-input">
+                                                        <span>Số tiền</span>
+                                                        <Form.Control name="cardMethod" 
+                                                            value={this.state.cardMethod}
+                                                            onChange={(e) => {this.handleInputChange(e, 'currency')} }
+                                                            onBlur={this.calcMoneyPay}
+                                                            placeholder="10,000,000" type="text" />
+                                                    </div>
                                                 </div>
                                                 <div className="field-input select">
                                                     <span>Ngân hàng:</span>
@@ -281,30 +254,20 @@ export default class PhieuThuPopup extends React.Component {
                                                 name="transferCheck"
                                                 checked={this.state.transferCheck}
                                                 onChange={this.handleInputChange}/>
-                                            <label className="custom-control-label" htmlFor="transferCheck">Chuyển khoản:</label>
+                                            <label className="custom-control-label" htmlFor="transferCheck">Chuyển khoản</label>
                                         </div>
                                         {this.state.transferCheck && 
                                             <React.Fragment>
                                                 <div className="field-input">
                                                     <span>Số tiền:</span>
-                                                    {isEditing ? (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control name="transferMethod" 
-                                                                value={this.state.transferMethod}
-                                                                onChange={this.handleInputChange}
-                                                                onBlur={this.toggleEditing}
-                                                                placeholder="10,000,000" type="number" />
-                                                        </div>
-                                                    ) : (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control 
-                                                                value={this.toCurrency(this.state.transferMethod)}
-                                                                onFocus={this.toggleEditing}
-                                                                placeholder="10,000,000" type="text" />
-                                                        </div>
-                                                    )}
+                                                    <div className="field-input">
+                                                        <span>Số tiền</span>
+                                                        <Form.Control name="transferMethod" 
+                                                            value={this.state.transferMethod}
+                                                            onChange={(e) => {this.handleInputChange(e, 'currency')} }
+                                                            onBlur={this.calcMoneyPay}
+                                                            placeholder="10,000,000" type="text" />
+                                                    </div>
                                                 </div>
                                                 <div className="field-input select">
                                                     <span>Ngân hàng:</span>
@@ -315,6 +278,38 @@ export default class PhieuThuPopup extends React.Component {
                                                         <option value="ACB">ACB</option>
                                                         <option value="Viettel QR Code">Viettel QR Code</option>
                                                     </Form.Control>
+                                                </div>
+                                            </React.Fragment>
+                                        }
+                                    </Form.Group>
+                                    <Form.Group className="group-thekim" controlId="theKIMCheckbox">
+                                        <div className="custom-control custom-checkbox">
+                                            <input type="checkbox" 
+                                                   className="custom-control-input" id="theKIMCheck"
+                                                   name="theKIMCheck"
+                                                   checked={this.state.theKIMCheck}
+                                                   onChange={this.handleInputChange} 
+                                            />
+                                            <label className="custom-control-label" htmlFor="theKIMCheck">Thẻ KIM</label>
+                                        </div>                                        
+                                        {this.state.theKIMCheck && 
+                                            <React.Fragment>
+                                                <div className="field-input no-label thekim-code">
+                                                    <Form.Control 
+                                                        name="theKIMCode"
+                                                        value={this.state.theKIMCode}
+                                                        onChange={this.handleInputChange}
+                                                        placeholder="Nhập mã thẻ" type="text" />
+                                                </div>
+                                                <div className="field-input no-label thekim-pin">
+                                                    <Form.Control 
+                                                        name="theKIMPIN"
+                                                        value={this.state.theKIMPIN}
+                                                        onChange={this.handleInputChange}
+                                                        placeholder="Mã PIN" type="text" />
+                                                </div>
+                                                <div className="field-input thekim-btn">
+                                                    <button className="btn btn-primary">KIỂM TRA MÃ PIN</button>
                                                 </div>
                                             </React.Fragment>
                                         }
@@ -407,57 +402,14 @@ export default class PhieuThuPopup extends React.Component {
                                                 </div>
                                                 <div className="field-input">
                                                     <span>Số tiền</span>
-                                                    {isEditing ? (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control name="insuranceServicePrice" 
-                                                                value={this.state.insuranceServicePrice}
-                                                                onChange={this.handleInputChange}
-                                                                onBlur={this.toggleEditing}
-                                                                placeholder="10,000,000" type="number" />
-                                                        </div>
-                                                    ) : (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control 
-                                                                value={this.toCurrency(this.state.insuranceServicePrice)}
-                                                                onFocus={this.toggleEditing}
-                                                                placeholder="10,000,000" type="text" />
-                                                        </div>
-                                                    )}                                                
-                                                </div>
-                                            </div>
-                                            <div className="form-group-row">
-                                                <div className="field-input select">
-                                                    <span>Dịch vụ:</span>
-                                                    <Form.Control as="select" name="insuranceServiceExtra" value={this.state.insuranceServiceExtra} onChange={this.handleInputChange}>
-                                                        <option value="Nhổ răng gây tê - R34">Nhổ răng gây tê - R34</option>
-                                                        <option value="Bàn chải kẽ">Bàn chải kẽ </option>
-                                                        <option value="Cạo vôi răng">Cạo vôi răng</option>
-                                                        <option value="Tẩy trắng răng">Tẩy trắng răng</option>
-                                                        <option value="Bàn chải kẽ chỉnh răng">Bàn chải kẽ chỉnh răng</option>
-                                                    </Form.Control>
-                                                </div>
-                                                <div className="field-input">
-                                                    <span>Số tiền</span>
-                                                    {isEditing ? (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control name="insuranceServiceExtraPrice" 
-                                                                value={this.state.insuranceServiceExtraPrice}
-                                                                onChange={this.handleInputChange}
-                                                                onBlur={this.toggleEditing}
-                                                                placeholder="10,000,000" type="number" />
-                                                        </div>
-                                                    ) : (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control 
-                                                                value={this.toCurrency(this.state.insuranceServiceExtraPrice)}
-                                                                onFocus={this.toggleEditing}
-                                                                placeholder="10,000,000" type="text" />
-                                                        </div>
-                                                    )}   
+                                                    <div className="field-input">
+                                                        <span>Số tiền</span>
+                                                        <Form.Control name="insuranceServicePrice" 
+                                                            value={this.state.insuranceServicePrice}
+                                                            onChange={(e) => {this.handleInputChange(e, 'currency')} }
+                                                            onBlur={this.calcMoneyPay}
+                                                            placeholder="10,000,000" type="text" />
+                                                    </div>                                               
                                                 </div>
                                                 <i className="ic ic-remove"></i>
                                             </div>
@@ -503,57 +455,14 @@ export default class PhieuThuPopup extends React.Component {
                                                 </div>
                                                 <div className="field-input">
                                                     <span>Số tiền</span>
-                                                    {isEditing ? (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control name="companyServicePrice" 
-                                                                value={this.state.companyServicePrice}
-                                                                onChange={this.handleInputChange}
-                                                                onBlur={this.toggleEditing}
-                                                                placeholder="10,000,000" type="number" />
-                                                        </div>
-                                                    ) : (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control 
-                                                                value={this.toCurrency(this.state.companyServicePrice)}
-                                                                onFocus={this.toggleEditing}
-                                                                placeholder="10,000,000" type="text" />
-                                                        </div>
-                                                    )}                                                
-                                                </div>
-                                            </div>
-                                            <div className="form-group-row">
-                                                <div className="field-input select">
-                                                    <span>Dịch vụ:</span>
-                                                    <Form.Control as="select" name="companyServiceExtra" value={this.state.companyServiceExtra} onChange={this.handleInputChange}>
-                                                        <option value="Nhổ răng gây tê - R34">Nhổ răng gây tê - R34</option>
-                                                        <option value="Bàn chải kẽ">Bàn chải kẽ </option>
-                                                        <option value="Cạo vôi răng">Cạo vôi răng</option>
-                                                        <option value="Tẩy trắng răng">Tẩy trắng răng</option>
-                                                        <option value="Bàn chải kẽ chỉnh răng">Bàn chải kẽ chỉnh răng</option>
-                                                    </Form.Control>
-                                                </div>
-                                                <div className="field-input">
-                                                    <span>Số tiền</span>
-                                                    {isEditing ? (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control name="companyServiceExtraPrice" 
-                                                                value={this.state.companyServiceExtraPrice}
-                                                                onChange={this.handleInputChange}
-                                                                onBlur={this.toggleEditing}
-                                                                placeholder="10,000,000" type="number" />
-                                                        </div>
-                                                    ) : (
-                                                        <div className="field-input">
-                                                            <span>Số tiền</span>
-                                                            <Form.Control 
-                                                                value={this.toCurrency(this.state.companyServiceExtraPrice)}
-                                                                onFocus={this.toggleEditing}
-                                                                placeholder="10,000,000" type="text" />
-                                                        </div>
-                                                    )}   
+                                                    <div className="field-input">
+                                                        <span>Số tiền</span>
+                                                        <Form.Control name="companyServicePrice" 
+                                                            value={this.state.companyServicePrice}
+                                                            onChange={(e) => {this.handleInputChange(e, 'currency')} }
+                                                            onBlur={this.calcMoneyPay}
+                                                            placeholder="10,000,000" type="text" />
+                                                    </div>                                               
                                                 </div>
                                                 <i className="ic ic-remove"></i>
                                             </div>
@@ -575,12 +484,10 @@ export default class PhieuThuPopup extends React.Component {
                                             <div className="result-col">
                                                 <p className="head">{this.state.insurance}</p>
                                                 <p className="sub">{this.state.insuranceService}</p>
-                                                <p className="sub">{this.state.insuranceServiceExtra}</p>
                                             </div>
                                             <div className="result-col number">
                                                 <p className="head">{this.toCurrency(this.state.insuranceServicePayMoney)}</p>
                                                 <p className="sub">{this.toCurrency(this.state.insuranceServicePrice)}</p>
-                                                <p className="sub">{this.toCurrency(this.state.insuranceServiceExtraPrice)}</p>
                                             </div>
                                         </div>}
                                         {this.state.companyCheck && <div className="result-row">
@@ -590,12 +497,10 @@ export default class PhieuThuPopup extends React.Component {
                                             <div className="result-col">
                                                 <p className="head">{this.state.company}</p>
                                                 <p className="sub">{this.state.companyService}</p>
-                                                <p className="sub">{this.state.companyServiceExtra}</p>
                                             </div>
                                             <div className="result-col number">
                                                 <p className="head">{this.toCurrency(this.state.companyServicePayMoney)}</p>
                                                 <p className="sub">{this.toCurrency(this.state.companyServicePrice)}</p>
-                                                <p className="sub">{this.toCurrency(this.state.companyServiceExtraPrice)}</p>
                                             </div>
                                         </div>
                                         }
@@ -625,7 +530,7 @@ export default class PhieuThuPopup extends React.Component {
                                     <div className="result-col number">
                                         <p className="sub">Khách thanh toán</p>
                                         <p className="head">
-                                            {this.toCurrency(this.state.restMoneyPay)}
+                                            {this.toCurrency(this.state.moneyPay)}
                                         </p>
                                     </div>
                                 </div>
@@ -680,12 +585,10 @@ export default class PhieuThuPopup extends React.Component {
                                 <div className="result-col">
                                     <p className="head">{this.state.insurance}</p>
                                     <p className="sub">{this.state.insuranceService}</p>
-                                    <p className="sub">{this.state.insuranceServiceExtra}</p>
                                 </div>
                                 <div className="result-col number">
-                                    <p className="head">{this.toCurrency(this.state.insuranceServicePayMoney)}</p>
+                                    <p className="head">{this.toCurrency(this.state.insuranceServicePrice)}</p>
                                     <p className="sub">{this.toCurrency(this.state.insuranceServicePrice)}</p>
-                                    <p className="sub">{this.toCurrency(this.state.insuranceServiceExtraPrice)}</p>
                                 </div>
                             </div>}
                             {this.state.companyCheck && <div className="result-row">
@@ -695,12 +598,10 @@ export default class PhieuThuPopup extends React.Component {
                                 <div className="result-col">
                                     <p className="head">{this.state.company}</p>
                                     <p className="sub">{this.state.companyService}</p>
-                                    <p className="sub">{this.state.companyServiceExtra}</p>
                                 </div>
                                 <div className="result-col number">
-                                    <p className="head">{this.toCurrency(this.state.companyServicePayMoney)}</p>
+                                    <p className="head">{this.toCurrency(this.state.companyServicePrice)}</p>
                                     <p className="sub">{this.toCurrency(this.state.companyServicePrice)}</p>
-                                    <p className="sub">{this.toCurrency(this.state.companyServiceExtraPrice)}</p>
                                 </div>
                             </div>
                             }
