@@ -13,17 +13,26 @@ code {
 }
 
 /* custom checkbox */
-.phieuthu-body .custom-checkbox {
+.phieuthu .custom-checkbox {
   width: 152px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding-left: 0;
+  padding-top: 8px;
 }
-
+.phieuthu .custom-control-input:checked~.custom-control-label:before {
+  color: #fff;
+  background-color: #0093ee !important;
+}
+.phieuthu .custom-control-input.is-valid~.custom-control-label::before, 
+.phieuthu .was-validated .custom-control-input:valid~.custom-control-label::before {
+  border-color: #adb5bd !important;
+}
+.phieuthu .custom-control-input.is-valid~.custom-control-label, 
+.phieuthu .was-validated .custom-control-input:valid~.custom-control-label {
+  color: #0a2c4d;
+}
 .phieuthu .custom-checkbox .custom-control-label {
   opacity: 0.8;
   font-size: 14px;
@@ -152,6 +161,7 @@ code {
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal;
+  padding-top: 8px;
 }
 .phieuthu-header .phieuthu-title{
   font-family: 'Open Sans', sans-serif;
@@ -250,9 +260,6 @@ code {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 30px 0;
   margin: 0;
 }
@@ -385,6 +392,7 @@ code {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  margin-bottom: 20px;
 }
 .phieuthu-body .section-insurance-wrapper .right-side {
   -webkit-box-flex: 1;
@@ -406,9 +414,7 @@ code {
 .phieuthu-body .section-insurance-wrapper .field-input select {
   padding: 0 17px 0 69px;
 }
-.phieuthu-body .section-insurance-wrapper .form-group.company {
-  margin-bottom: 10px;
-}
+
 .phieuthu-body .section-insurance-wrapper .form-group.insurance .field-input:not(.select),
 .phieuthu-body .section-insurance-wrapper .form-group.company .field-input:not(.select){
   width: 150px;
@@ -507,7 +513,7 @@ code {
   background-color: #fff;
   color: #0a2c4d;
 }
-.phieuthu .modal-footer button.btn-submit {
+.phieuthu button.btn-azure {
   border: solid 1px #0093ee;
   background-color: #0093ee;
   color: #fff;

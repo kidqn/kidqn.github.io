@@ -36,7 +36,8 @@ export default class PhieuThuPopup extends React.Component {
             companyServicePrice: null,
             companyServicePayMoney: null,
             keynote: '',
-            isConfirm: false
+            isConfirm: false,
+            validated: false
         };
     
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -67,22 +68,44 @@ export default class PhieuThuPopup extends React.Component {
         });
     }
 
-    handleConfirm(event) {
+    handleSubmit(event) {
         console.log('Note: ' + this.state.keynote);
         console.log('Cash method: ' + this.state.cashMethod);
         console.log('Card: ' + this.state.cardMethod , this.state.cardBank);
         console.log('Transfer: ' + this.state.transferMethod , this.state.transferBank);
         event.preventDefault();
-        this.setState({
-            isConfirm: !this.state.isConfirm,
-            openPayMethod: true,
-            openInsuranceMethod: false
-        });
+        console.log('Tao phieu thu here');
     }
-    handleSubmit(event) {
-        console.log('push to server');
+    handleConfirm(event) {
         event.preventDefault();
+        event.stopPropagation();
+        if(!this.state.isConfirm) {
+            // if being in step 1
+            const form = event.currentTarget;
+            console.log('form status', form.checkValidity());
+            if (form.checkValidity() === false) {
+                this.setState({ 
+                    validated: true,
+                });
+            } else {
+                this.setState({
+                    validated: true,
+                    isConfirm: !this.state.isConfirm,
+                    openPayMethod: true,
+                    openInsuranceMethod: false
+                });
+            }
+
+        } else {
+            this.setState({
+                isConfirm: !this.state.isConfirm,
+                openPayMethod: true,
+                openInsuranceMethod: false
+            });
+        }
+
     }
+
     handleShowTableResult(key) {
         if( key === 'openPayMethod') {
             this.setState({
@@ -122,6 +145,7 @@ export default class PhieuThuPopup extends React.Component {
     }
 
     render() {
+        const { validated } = this.state;
         const isShowMethodTable = !this.state.openPayMethod && (this.state.cashCheck || this.state.cardCheck || this.state.transferCheck);
         const isShowInsuranceTable = !this.state.openInsuranceMethod && (this.state.insuranceCheck || this.state.companyCheck);
 
@@ -135,7 +159,8 @@ export default class PhieuThuPopup extends React.Component {
             >                
             <Form 
                 noValidate
-                onSubmit={this.handleSubmit}>
+                validated={validated}
+                onSubmit={this.handleConfirm}>
                     <Modal.Header className="phieuthu-header" closeButton>
                         <Modal.Title>
                             <h2 className="phieuthu-title">Phiếu Thu</h2>
@@ -164,7 +189,11 @@ export default class PhieuThuPopup extends React.Component {
                                             value={this.state.moneyPay}
                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                             onBlur={this.calcRestMoney}
+                                            required
                                             placeholder="1,000,000" type="text" />
+                                        <Form.Control.Feedback type="invalid">
+                                            Điền thông tin được yêu cầu
+                                        </Form.Control.Feedback>
                                     </div>
                                     <div className="field-input rest-money">
                                         <span>Còn lại</span>
@@ -200,8 +229,11 @@ export default class PhieuThuPopup extends React.Component {
                                                         value={this.state.cashMethod}
                                                         onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                                         onBlur={this.calcRestMoney}
+                                                        required
                                                         placeholder="10,000,000" type="text" />
-                                                    
+                                                    <Form.Control.Feedback type="invalid">
+                                                        Điền thông tin được yêu cầu
+                                                    </Form.Control.Feedback>
                                                 </div>
                                             </React.Fragment>
                                         }
@@ -225,7 +257,11 @@ export default class PhieuThuPopup extends React.Component {
                                                             value={this.state.cardMethod}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                                             onBlur={this.calcRestMoney}
+                                                            required
                                                             placeholder="10,000,000" type="text" />
+                                                        <Form.Control.Feedback type="invalid">
+                                                            Điền thông tin được yêu cầu
+                                                        </Form.Control.Feedback>
                                                     </div>
                                                 </div>
                                                 <div className="field-input select">
@@ -260,7 +296,11 @@ export default class PhieuThuPopup extends React.Component {
                                                             value={this.state.transferMethod}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                                             onBlur={this.calcRestMoney}
+                                                            required
                                                             placeholder="10,000,000" type="text" />
+                                                        <Form.Control.Feedback type="invalid">
+                                                            Điền thông tin được yêu cầu
+                                                        </Form.Control.Feedback>
                                                     </div>
                                                 </div>
                                                 <div className="field-input select">
@@ -370,7 +410,11 @@ export default class PhieuThuPopup extends React.Component {
                                                             value={this.state.insuranceServicePrice}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                                             onBlur={this.calcRestMoney}
+                                                            required
                                                             placeholder="10,000,000" type="text" />
+                                                        <Form.Control.Feedback type="invalid">
+                                                            Điền thông tin được yêu cầu
+                                                        </Form.Control.Feedback>
                                                     </div>                                               
                                                 </div>
                                                 <i className="ic ic-remove"></i>
@@ -423,7 +467,11 @@ export default class PhieuThuPopup extends React.Component {
                                                             value={this.state.companyServicePrice}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                                             onBlur={this.calcRestMoney}
+                                                            required
                                                             placeholder="10,000,000" type="text" />
+                                                        <Form.Control.Feedback type="invalid">
+                                                            Điền thông tin được yêu cầu
+                                                        </Form.Control.Feedback>
                                                     </div>                                               
                                                 </div>
                                                 <i className="ic ic-remove"></i>
@@ -461,7 +509,7 @@ export default class PhieuThuPopup extends React.Component {
                                                         placeholder="Mã PIN" type="text" />
                                                 </div>
                                                 <div className="field-input thekim-btn">
-                                                    <button className="btn btn-primary">KIỂM TRA MÃ PIN</button>
+                                                    <button className="btn btn-azure">KIỂM TRA MÃ PIN</button>
                                                 </div>
                                             </React.Fragment>
                                         }
@@ -607,12 +655,12 @@ export default class PhieuThuPopup extends React.Component {
                         (
                             <Modal.Footer>
                                 <Button className="btn-close" onClick={this.handleConfirm}>Quay lại</Button>
-                                <Button className="btn-submit" type="submit">Tạo phiếu thu</Button>
+                                <Button className="btn-submit" type="button" onClick={this.onSubmit}>Tạo phiếu thu</Button>
                             </Modal.Footer>                       
                         ) : (
                             <Modal.Footer>
                                 <Button className="btn-close" onClick={this.props.onHide}>Thoát</Button>
-                                <Button className="btn-submit" type="button" onClick={this.handleConfirm}>Xác nhận</Button>
+                                <Button className="btn-submit btn-azure" type="submit" >Xác nhận</Button>
                             </Modal.Footer>
                         )}
             </Form>
