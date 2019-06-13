@@ -83,7 +83,7 @@ export default class PhieuThuPopup extends React.Component {
             // if being in step 1
             const form = event.currentTarget;
             console.log('form status', form.checkValidity());
-            if (form.checkValidity() === false || !this.state.validateRestMoney) {
+            if (form.checkValidity() === false || !this.state.validatedRestMoney) {
                 this.setState({ 
                     validated: true,
                 });
