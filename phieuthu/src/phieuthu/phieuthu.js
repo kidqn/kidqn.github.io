@@ -24,7 +24,7 @@ export default class PhieuThuPopup extends React.Component {
             transferBank: '',
             theKIMCode: '',
             theKIMPIN:'',
-            restMoneyPay: 45000000,
+            restMoneyPay: '',
             insurance: '',
             insuranceCheck: false,
             insuranceService: '',
@@ -44,7 +44,6 @@ export default class PhieuThuPopup extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleShowTableResult = this.handleShowTableResult.bind(this);
         this.calcRestMoney = this.calcRestMoney.bind(this);
-        this.calcMoneyPay = this.calcMoneyPay.bind(this);
       }
 
     handleInputChange(event, type) {
@@ -113,18 +112,13 @@ export default class PhieuThuPopup extends React.Component {
     }
     calcRestMoney() {
         const moneyPay = this.state.moneyPay ? this.convertCurrencyToNumber(this.state.moneyPay) : 0;
-        const newRestMoney = this.state.totalMoneyPay - moneyPay;
-        this.setState({restMoneyPay: newRestMoney});
-    }
-    calcMoneyPay() {
-        const moneyPay = this.state.moneyPay ? this.convertCurrencyToNumber(this.state.moneyPay) : 0;
         const cashMethod = this.state.cashMethod ? this.convertCurrencyToNumber(this.state.cashMethod) : 0;
         const cardMethod = this.state.cardMethod ? this.convertCurrencyToNumber(this.state.cardMethod) : 0;
         const transferMethod = this.state.transferMethod ? this.convertCurrencyToNumber(this.state.transferMethod) : 0;
         const insuranceServicePrice = this.state.insuranceServicePrice ? this.convertCurrencyToNumber(this.state.insuranceServicePrice) : 0;
         const companyServicePrice = this.state.companyServicePrice ? this.convertCurrencyToNumber(this.state.companyServicePrice) : 0;
-        const newMoneyPay = moneyPay - (cashMethod + cardMethod + transferMethod + insuranceServicePrice + companyServicePrice);
-        this.setState({MoneyPay: newMoneyPay});
+        const newRestMoney = moneyPay - (cashMethod + cardMethod + transferMethod + insuranceServicePrice + companyServicePrice);
+        this.setState({restMoneyPay: newRestMoney});
     }
 
     render() {
@@ -205,7 +199,7 @@ export default class PhieuThuPopup extends React.Component {
                                                     <Form.Control name="cashMethod" 
                                                         value={this.state.cashMethod}
                                                         onChange={(e) => {this.handleInputChange(e, 'currency')} }
-                                                        onBlur={this.calcMoneyPay}
+                                                        onBlur={this.calcRestMoney}
                                                         placeholder="10,000,000" type="text" />
                                                     
                                                 </div>
@@ -230,7 +224,7 @@ export default class PhieuThuPopup extends React.Component {
                                                         <Form.Control name="cardMethod" 
                                                             value={this.state.cardMethod}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
-                                                            onBlur={this.calcMoneyPay}
+                                                            onBlur={this.calcRestMoney}
                                                             placeholder="10,000,000" type="text" />
                                                     </div>
                                                 </div>
@@ -265,7 +259,7 @@ export default class PhieuThuPopup extends React.Component {
                                                         <Form.Control name="transferMethod" 
                                                             value={this.state.transferMethod}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
-                                                            onBlur={this.calcMoneyPay}
+                                                            onBlur={this.calcRestMoney}
                                                             placeholder="10,000,000" type="text" />
                                                     </div>
                                                 </div>
@@ -375,7 +369,7 @@ export default class PhieuThuPopup extends React.Component {
                                                         <Form.Control name="insuranceServicePrice" 
                                                             value={this.state.insuranceServicePrice}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
-                                                            onBlur={this.calcMoneyPay}
+                                                            onBlur={this.calcRestMoney}
                                                             placeholder="10,000,000" type="text" />
                                                     </div>                                               
                                                 </div>
@@ -428,7 +422,7 @@ export default class PhieuThuPopup extends React.Component {
                                                         <Form.Control name="companyServicePrice" 
                                                             value={this.state.companyServicePrice}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
-                                                            onBlur={this.calcMoneyPay}
+                                                            onBlur={this.calcRestMoney}
                                                             placeholder="10,000,000" type="text" />
                                                     </div>                                               
                                                 </div>
