@@ -129,6 +129,10 @@ code {
   letter-spacing: normal;
   margin: 0;
 }
+.phieuthu .table-result .result-col p.note {
+  font-size: 14px;
+  font-weight: normal;
+}
 .phieuthu .table-result .result-col p.sub {
   font-size: 12px;
   opacity: 0.5;

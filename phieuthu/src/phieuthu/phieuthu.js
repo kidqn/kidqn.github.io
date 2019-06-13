@@ -46,8 +46,14 @@ export default class PhieuThuPopup extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleShowTableResult = this.handleShowTableResult.bind(this);
         this.calcRestMoney = this.calcRestMoney.bind(this);
+        this.handleAccordion = this.handleAccordion.bind(this);
       }
-
+    
+    handleAccordion(id) {
+        if(id && document.querySelector('#' +id)) {
+            document.querySelector('#' +id).click();
+        }
+    }
     handleInputChange(event, type) {
         const target = event.target;
         let value =  target.value;
@@ -213,7 +219,7 @@ export default class PhieuThuPopup extends React.Component {
 
                         <Accordion className="phieuthu-info" defaultActiveKey="0">
                         <section id="section-phuongthuc">
-                            <Accordion.Toggle as={Card.Header} eventKey="0" onClick={() => this.handleShowTableResult('openPayMethod')}>
+                            <Accordion.Toggle as={Card.Header} id="tab-phuongthuc" eventKey="0" onClick={() => this.handleShowTableResult('openPayMethod')}>
                                 <h3 className="heading-middle-line">Phương thức thanh toán</h3>
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="0">
@@ -333,7 +339,7 @@ export default class PhieuThuPopup extends React.Component {
                             </Accordion.Collapse>
                                 {isShowMethodTable && 
                                     <React.Fragment>
-                                        <div className="table-result">
+                                        <div className="table-result" onClick={() => this.handleAccordion('tab-phuongthuc')}>
                                             {this.state.cashCheck && <div className="result-row">
                                                 <div className="result-col label">
                                                     Tiền mặt
@@ -376,7 +382,7 @@ export default class PhieuThuPopup extends React.Component {
                         </section>
 
                         <section id="section-insurance">
-                            <Accordion.Toggle as={Card.Header} eventKey="1" onClick={() => this.handleShowTableResult('openInsuranceMethod')}>
+                            <Accordion.Toggle as={Card.Header} id="tab-insurance" eventKey="1" onClick={() => this.handleShowTableResult('openInsuranceMethod')}>
                                 <h3 className="heading-middle-line">Bảo hiểm và công ty liên kết</h3>
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="1">
@@ -545,7 +551,7 @@ export default class PhieuThuPopup extends React.Component {
                             </Accordion.Collapse>
                             {isShowInsuranceTable && 
                                 <React.Fragment>
-                                    <div className="table-result">
+                                    <div className="table-result" onClick={() => this.handleAccordion('tab-insurance')}>
                                         {this.state.insuranceCheck && <div className="result-row">
                                             <div className="result-col label">
                                                 Bảo hiểm
@@ -606,7 +612,7 @@ export default class PhieuThuPopup extends React.Component {
                                 <div className="result-row">
                                     <div className="result-col label">
                                         <p className="sub">Ghi chú</p>
-                                        <p>{this.state.keynote}</p>
+                                        <p className="note">{this.state.keynote}</p>
                                     </div>
                                     <div className="result-col number">
                                         <p className="sub">Khách thanh toán</p>
