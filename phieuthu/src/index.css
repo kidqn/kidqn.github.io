@@ -52,6 +52,7 @@ code {
 .phieuthu  .custom-control-label::after {
   top: 1px;
   left: 1px;
+  background-image: url('./ic-checkbox.svg') !important;
 }
 
 /* Phieu thu */
