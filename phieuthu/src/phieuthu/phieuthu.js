@@ -195,7 +195,7 @@ export default class PhieuThuPopup extends React.Component {
                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                             onBlur={this.calcRestMoney}
                                             required
-                                            placeholder="1,000,000" type="text" />
+                                            placeholder="0" type="text" />
                                         <Form.Control.Feedback type="invalid">
                                             Điền thông tin được yêu cầu
                                         </Form.Control.Feedback>
@@ -204,7 +204,7 @@ export default class PhieuThuPopup extends React.Component {
                                         <span>Còn lại</span>
                                         <Form.Control 
                                             value={this.toCurrency(this.state.restMoneyPay)}
-                                            placeholder="1,000,000" type="text" disabled/>
+                                            placeholder="0" type="text" disabled/>
                                     </div>
                             </Form.Group>
                         </section>
@@ -235,7 +235,7 @@ export default class PhieuThuPopup extends React.Component {
                                                         onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                                         onBlur={this.calcRestMoney}
                                                         required
-                                                        placeholder="10,000,000" type="text" />
+                                                        placeholder="0" type="text" />
                                                     <Form.Control.Feedback type="invalid">
                                                         Điền thông tin được yêu cầu
                                                     </Form.Control.Feedback>
@@ -263,7 +263,7 @@ export default class PhieuThuPopup extends React.Component {
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                                             onBlur={this.calcRestMoney}
                                                             required
-                                                            placeholder="10,000,000" type="text" />
+                                                            placeholder="0" type="text" />
                                                         <Form.Control.Feedback type="invalid">
                                                             Điền thông tin được yêu cầu
                                                         </Form.Control.Feedback>
@@ -305,7 +305,7 @@ export default class PhieuThuPopup extends React.Component {
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                                             onBlur={this.calcRestMoney}
                                                             required
-                                                            placeholder="10,000,000" type="text" />
+                                                            placeholder="0" type="text" />
                                                         <Form.Control.Feedback type="invalid">
                                                             Điền thông tin được yêu cầu
                                                         </Form.Control.Feedback>
@@ -428,7 +428,7 @@ export default class PhieuThuPopup extends React.Component {
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                                             onBlur={this.calcRestMoney}
                                                             required
-                                                            placeholder="10,000,000" type="text" />
+                                                            placeholder="0" type="text" />
                                                         <Form.Control.Feedback type="invalid">
                                                             Điền thông tin được yêu cầu
                                                         </Form.Control.Feedback>
@@ -491,7 +491,7 @@ export default class PhieuThuPopup extends React.Component {
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                                             onBlur={this.calcRestMoney}
                                                             required
-                                                            placeholder="10,000,000" type="text" />
+                                                            placeholder="0" type="text" />
                                                         <Form.Control.Feedback type="invalid">
                                                             Điền thông tin được yêu cầu
                                                         </Form.Control.Feedback>
