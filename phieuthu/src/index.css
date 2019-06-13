@@ -373,13 +373,6 @@ code {
   padding: 20px 0;
 }
 
-.phieuthu-body .thekim-pin {
-  width: 110px;
-  margin-left: 16px;
-}
-.phieuthu-body .thekim-btn {
-  text-align: right;
-}
 /* bao hiem - congty */
 .phieuthu-body .section-insurance-wrapper {
   padding: 20px 0;
@@ -413,8 +406,11 @@ code {
 .phieuthu-body .section-insurance-wrapper .field-input select {
   padding: 0 17px 0 69px;
 }
-
-.phieuthu-body .section-insurance-wrapper .field-input:not(.select){
+.phieuthu-body .section-insurance-wrapper .form-group.company {
+  margin-bottom: 10px;
+}
+.phieuthu-body .section-insurance-wrapper .form-group.insurance .field-input:not(.select),
+.phieuthu-body .section-insurance-wrapper .form-group.company .field-input:not(.select){
   width: 150px;
   margin-right: auto;
 }
@@ -449,6 +445,18 @@ code {
   letter-spacing: normal;
   color: #0093ee;
   margin-top: 5px;
+}
+
+.phieuthu-body .section-insurance-wrapper .form-group.thekim {
+  display: flex;
+  min-height: 40px;
+}
+.phieuthu-body .thekim-pin {
+  width: 110px;
+  margin-left: 16px;
+}
+.phieuthu-body .thekim-btn {
+  text-align: right;
 }
 /* ghichu */
 .phieuthu #ghichu label{

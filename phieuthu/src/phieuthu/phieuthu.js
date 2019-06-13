@@ -282,38 +282,6 @@ export default class PhieuThuPopup extends React.Component {
                                             </React.Fragment>
                                         }
                                     </Form.Group>
-                                    <Form.Group className="group-thekim" controlId="theKIMCheckbox">
-                                        <div className="custom-control custom-checkbox">
-                                            <input type="checkbox" 
-                                                   className="custom-control-input" id="theKIMCheck"
-                                                   name="theKIMCheck"
-                                                   checked={this.state.theKIMCheck}
-                                                   onChange={this.handleInputChange} 
-                                            />
-                                            <label className="custom-control-label" htmlFor="theKIMCheck">Thẻ KIM</label>
-                                        </div>                                        
-                                        {this.state.theKIMCheck && 
-                                            <React.Fragment>
-                                                <div className="field-input no-label thekim-code">
-                                                    <Form.Control 
-                                                        name="theKIMCode"
-                                                        value={this.state.theKIMCode}
-                                                        onChange={this.handleInputChange}
-                                                        placeholder="Nhập mã thẻ" type="text" />
-                                                </div>
-                                                <div className="field-input no-label thekim-pin">
-                                                    <Form.Control 
-                                                        name="theKIMPIN"
-                                                        value={this.state.theKIMPIN}
-                                                        onChange={this.handleInputChange}
-                                                        placeholder="Mã PIN" type="text" />
-                                                </div>
-                                                <div className="field-input thekim-btn">
-                                                    <button className="btn btn-primary">KIỂM TRA MÃ PIN</button>
-                                                </div>
-                                            </React.Fragment>
-                                        }
-                                    </Form.Group>
                                 </div>
                             </Accordion.Collapse>
                                 {isShowMethodTable && 
@@ -470,6 +438,38 @@ export default class PhieuThuPopup extends React.Component {
                                                 <a className="add-new-insurance"><i className="ic-add-new"></i>Thêm mới</a>
                                             </div>
                                         </div>
+                                        }
+                                    </Form.Group>
+                                    <Form.Group className="thekim" controlId="theKIMCheckbox">
+                                        <div className="custom-control custom-checkbox">
+                                            <input type="checkbox" 
+                                                   className="custom-control-input" id="theKIMCheck"
+                                                   name="theKIMCheck"
+                                                   checked={this.state.theKIMCheck}
+                                                   onChange={this.handleInputChange} 
+                                            />
+                                            <label className="custom-control-label" htmlFor="theKIMCheck">Thẻ KIM</label>
+                                        </div>                                        
+                                        {this.state.theKIMCheck && 
+                                            <React.Fragment>
+                                                <div className="field-input no-label thekim-code">
+                                                    <Form.Control 
+                                                        name="theKIMCode"
+                                                        value={this.state.theKIMCode}
+                                                        onChange={this.handleInputChange}
+                                                        placeholder="Nhập mã thẻ" type="text" />
+                                                </div>
+                                                <div className="field-input no-label thekim-pin">
+                                                    <Form.Control 
+                                                        name="theKIMPIN"
+                                                        value={this.state.theKIMPIN}
+                                                        onChange={this.handleInputChange}
+                                                        placeholder="Mã PIN" type="text" />
+                                                </div>
+                                                <div className="field-input thekim-btn">
+                                                    <button className="btn btn-primary">KIỂM TRA MÃ PIN</button>
+                                                </div>
+                                            </React.Fragment>
                                         }
                                     </Form.Group>
                                 </section>
