@@ -530,6 +530,6 @@ code {
   color: #fff;
 }
 
-.phieuthu #phieuthu-errors .invalid-feedback {
+.phieuthu .was-validated #phieuthu-errors .invalid-feedback {
   display: block;
 }

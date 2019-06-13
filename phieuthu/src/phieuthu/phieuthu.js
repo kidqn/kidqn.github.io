@@ -37,7 +37,8 @@ export default class PhieuThuPopup extends React.Component {
             keynote: '',
             isConfirm: false,
             validated: false,
-            validatedRestMoney: true
+            validatedRestMoney: true,
+            validatedIsEnoughMoneyPay: false
         };
     
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -83,7 +84,7 @@ export default class PhieuThuPopup extends React.Component {
             // if being in step 1
             const form = event.currentTarget;
             console.log('form status', form.checkValidity());
-            if (form.checkValidity() === false || !this.state.validatedRestMoney) {
+            if (form.checkValidity() === false || !this.state.validatedRestMoney || !this.state.validatedIsEnoughMoneyPay) {
                 this.setState({ 
                     validated: true,
                 });
@@ -145,7 +146,8 @@ export default class PhieuThuPopup extends React.Component {
 
         this.setState({
             restMoneyPay: newValidateRestMoney ? newRestMoney : 0,
-            validatedRestMoney: newValidateRestMoney
+            validatedRestMoney: newValidateRestMoney,
+            validatedIsEnoughMoneyPay: newRestMoney === 0 ? true : false
         });
     }
 
@@ -591,6 +593,10 @@ export default class PhieuThuPopup extends React.Component {
                                     Số tiền nhập vượt quá số tiền còn lại
                                     </Form.Control.Feedback>
                                 }
+                                {!this.state.validatedIsEnoughMoneyPay &&  <Form.Control.Feedback type="invalid">
+                                    Chưa thanh toán đủ số tiền
+                                    </Form.Control.Feedback>
+                                }
                             </React.Fragment>
                         </section>
                     </section> 
@@ -611,76 +617,81 @@ export default class PhieuThuPopup extends React.Component {
                                 </div>
                             </div>
 
-                            <h3 className="heading-middle-line">Phương thức thanh toán</h3>
-                            <div className="table-result">
-                                {this.state.cashCheck && <div className="result-row">
-                                    <div className="result-col label">
-                                        Tiền mặt
+                            {(this.cashCheck || this.state.cardCheck || this.state.transferCheck) && <React.Fragment>
+                                    <h3 className="heading-middle-line">Phương thức thanh toán</h3>
+                                    <div className="table-result">
+                                        {this.state.cashCheck && <div className="result-row">
+                                            <div className="result-col label">
+                                                Tiền mặt
+                                            </div>
+                                            <div className="result-col">
+                                                
+                                            </div>
+                                            <div className="result-col number">
+                                                <p className="head">{this.toCurrency(this.state.cashMethod)}</p>
+                                            </div>
+                                        </div>
+                                        }
+                                        {this.state.cardCheck && <div className="result-row">
+                                            <div className="result-col label">
+                                                Thẻ
+                                            </div>
+                                            <div className="result-col">
+                                                <p className="head">{this.state.cardBank}</p>
+                                            </div>
+                                            <div className="result-col number">
+                                                <p className="head">{this.toCurrency(this.state.cardMethod)}</p>
+                                            </div>
+                                        </div>
+                                        }
+                                        {this.state.transferCheck && <div className="result-row">
+                                            <div className="result-col label">
+                                                Chuyển khoản
+                                            </div>
+                                            <div className="result-col">
+                                                <p className="head">{this.state.transferBank}</p>
+                                            </div>
+                                            <div className="result-col number">
+                                                <p className="head">{this.toCurrency(this.state.transferMethod)}</p>
+                                            </div>
+                                        </div>
+                                        }
                                     </div>
-                                    <div className="result-col">
-                                        
-                                    </div>
-                                    <div className="result-col number">
-                                        <p className="head">{this.toCurrency(this.state.cashMethod)}</p>
-                                    </div>
-                                </div>
-                                }
-                                {this.state.cardCheck && <div className="result-row">
-                                    <div className="result-col label">
-                                        Thẻ
-                                    </div>
-                                    <div className="result-col">
-                                        <p className="head">{this.state.cardBank}</p>
-                                    </div>
-                                    <div className="result-col number">
-                                        <p className="head">{this.toCurrency(this.state.cardMethod)}</p>
-                                    </div>
-                                </div>
-                                }
-                                {this.state.transferCheck && <div className="result-row">
-                                    <div className="result-col label">
-                                        Chuyển khoản
-                                    </div>
-                                    <div className="result-col">
-                                        <p className="head">{this.state.transferBank}</p>
-                                    </div>
-                                    <div className="result-col number">
-                                        <p className="head">{this.toCurrency(this.state.transferMethod)}</p>
-                                    </div>
-                                </div>
-                                }
-                            </div>
-
-                            <h3 className="heading-middle-line">Bảo hiểm và công ty liên kết</h3>
-                            <div className="table-result">
-                            {this.state.insuranceCheck && <div className="result-row">
-                                <div className="result-col label">
-                                    Bảo hiểm
-                                </div>
-                                <div className="result-col">
-                                    <p className="head">{this.state.insurance}</p>
-                                    <p className="sub">{this.state.insuranceService}</p>
-                                </div>
-                                <div className="result-col number">
-                                    <p className="head">{this.toCurrency(this.state.insuranceServicePrice)}</p>
-                                    <p className="sub">{this.toCurrency(this.state.insuranceServicePrice)}</p>
-                                </div>
-                            </div>}
-                            {this.state.companyCheck && <div className="result-row">
-                                <div className="result-col label">
-                                    Công ty
-                                </div>
-                                <div className="result-col">
-                                    <p className="head">{this.state.company}</p>
-                                    <p className="sub">{this.state.companyService}</p>
-                                </div>
-                                <div className="result-col number">
-                                    <p className="head">{this.toCurrency(this.state.companyServicePrice)}</p>
-                                    <p className="sub">{this.toCurrency(this.state.companyServicePrice)}</p>
-                                </div>
-                            </div>
+                                </React.Fragment>
                             }
-                        </div>
+
+                            {(this.state.insuranceCheck || this.state.companyCheck) && <React.Fragment>
+                                <h3 className="heading-middle-line">Bảo hiểm và công ty liên kết</h3>
+                                <div className="table-result">
+                                {this.state.insuranceCheck && <div className="result-row">
+                                    <div className="result-col label">
+                                        Bảo hiểm
+                                    </div>
+                                    <div className="result-col">
+                                        <p className="head">{this.state.insurance}</p>
+                                        <p className="sub">{this.state.insuranceService}</p>
+                                    </div>
+                                    <div className="result-col number">
+                                        <p className="head">{this.toCurrency(this.state.insuranceServicePrice)}</p>
+                                        <p className="sub">{this.toCurrency(this.state.insuranceServicePrice)}</p>
+                                    </div>
+                                </div>}
+                                {this.state.companyCheck && <div className="result-row">
+                                    <div className="result-col label">
+                                        Công ty
+                                    </div>
+                                    <div className="result-col">
+                                        <p className="head">{this.state.company}</p>
+                                        <p className="sub">{this.state.companyService}</p>
+                                    </div>
+                                    <div className="result-col number">
+                                        <p className="head">{this.toCurrency(this.state.companyServicePrice)}</p>
+                                        <p className="sub">{this.toCurrency(this.state.companyServicePrice)}</p>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                            </React.Fragment>}
                         </section>
                     )}
                     </Modal.Body>
