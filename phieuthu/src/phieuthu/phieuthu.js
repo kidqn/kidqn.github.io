@@ -36,7 +36,8 @@ export default class PhieuThuPopup extends React.Component {
             companyServicePayMoney: null,
             keynote: '',
             isConfirm: false,
-            validated: false
+            validated: false,
+            validatedRestMoney: true
         };
     
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -82,7 +83,7 @@ export default class PhieuThuPopup extends React.Component {
             // if being in step 1
             const form = event.currentTarget;
             console.log('form status', form.checkValidity());
-            if (form.checkValidity() === false) {
+            if (form.checkValidity() === false || !this.state.validateRestMoney) {
                 this.setState({ 
                     validated: true,
                 });
@@ -140,7 +141,12 @@ export default class PhieuThuPopup extends React.Component {
         const insuranceServicePrice = this.state.insuranceServicePrice ? this.convertCurrencyToNumber(this.state.insuranceServicePrice) : 0;
         const companyServicePrice = this.state.companyServicePrice ? this.convertCurrencyToNumber(this.state.companyServicePrice) : 0;
         const newRestMoney = moneyPay - (cashMethod + cardMethod + transferMethod + insuranceServicePrice + companyServicePrice);
-        this.setState({restMoneyPay: newRestMoney});
+        const newValidateRestMoney = newRestMoney < 0 ? false : true;
+
+        this.setState({
+            restMoneyPay: newValidateRestMoney ? newRestMoney : 0,
+            validatedRestMoney: newValidateRestMoney
+        });
     }
 
     render() {
@@ -578,6 +584,14 @@ export default class PhieuThuPopup extends React.Component {
                                         value={this.state.keynote}
                                         onChange={this.handleInputChange}/>
                             </Form.Group>
+                        </section>
+                        <section id="phieuthu-errors">
+                            <React.Fragment>
+                                {!this.state.validatedRestMoney &&  <Form.Control.Feedback type="invalid">
+                                    Số tiền nhập vượt quá số tiền còn lại
+                                    </Form.Control.Feedback>
+                                }
+                            </React.Fragment>
                         </section>
                     </section> 
                     ) :

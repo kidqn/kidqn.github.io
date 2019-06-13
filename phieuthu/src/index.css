@@ -529,3 +529,7 @@ code {
   background-color: #0093ee;
   color: #fff;
 }
+
+.phieuthu #phieuthu-errors .invalid-feedback {
+  display: block;
+}
