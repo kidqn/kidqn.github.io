@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
 
@@ -24,7 +23,7 @@ export default class PhieuThuPopup extends React.Component {
             transferBank: '',
             theKIMCode: '',
             theKIMPIN:'',
-            restMoneyPay: 45000000,
+            restMoneyPay: '',
             insurance: '',
             insuranceCheck: false,
             insuranceService: '',
@@ -36,7 +35,10 @@ export default class PhieuThuPopup extends React.Component {
             companyServicePrice: null,
             companyServicePayMoney: null,
             keynote: '',
-            isConfirm: false
+            isConfirm: false,
+            validated: false,
+            validatedRestMoney: true,
+            validatedIsEnoughMoneyPay: false
         };
     
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -44,9 +46,14 @@ export default class PhieuThuPopup extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleShowTableResult = this.handleShowTableResult.bind(this);
         this.calcRestMoney = this.calcRestMoney.bind(this);
-        this.calcMoneyPay = this.calcMoneyPay.bind(this);
+        this.handleAccordion = this.handleAccordion.bind(this);
       }
-
+    
+    handleAccordion(id) {
+        if(id && document.querySelector('#' +id)) {
+            document.querySelector('#' +id).click();
+        }
+    }
     handleInputChange(event, type) {
         const target = event.target;
         let value =  target.value;
@@ -68,22 +75,44 @@ export default class PhieuThuPopup extends React.Component {
         });
     }
 
-    handleConfirm(event) {
+    handleSubmit(event) {
         console.log('Note: ' + this.state.keynote);
         console.log('Cash method: ' + this.state.cashMethod);
         console.log('Card: ' + this.state.cardMethod , this.state.cardBank);
         console.log('Transfer: ' + this.state.transferMethod , this.state.transferBank);
         event.preventDefault();
-        this.setState({
-            isConfirm: !this.state.isConfirm,
-            openPayMethod: true,
-            openInsuranceMethod: false
-        });
+        console.log('Tao phieu thu here');
     }
-    handleSubmit(event) {
-        console.log('push to server');
+    handleConfirm(event) {
         event.preventDefault();
+        event.stopPropagation();
+        if(!this.state.isConfirm) {
+            // if being in step 1
+            const form = event.currentTarget;
+            console.log('form status', form.checkValidity());
+            if (form.checkValidity() === false || !this.state.validatedRestMoney || !this.state.validatedIsEnoughMoneyPay) {
+                this.setState({ 
+                    validated: true,
+                });
+            } else {
+                this.setState({
+                    validated: true,
+                    isConfirm: !this.state.isConfirm,
+                    openPayMethod: true,
+                    openInsuranceMethod: false
+                });
+            }
+
+        } else {
+            this.setState({
+                isConfirm: !this.state.isConfirm,
+                openPayMethod: true,
+                openInsuranceMethod: false
+            });
+        }
+
     }
+
     handleShowTableResult(key) {
         if( key === 'openPayMethod') {
             this.setState({
@@ -113,21 +142,23 @@ export default class PhieuThuPopup extends React.Component {
     }
     calcRestMoney() {
         const moneyPay = this.state.moneyPay ? this.convertCurrencyToNumber(this.state.moneyPay) : 0;
-        const newRestMoney = this.state.totalMoneyPay - moneyPay;
-        this.setState({restMoneyPay: newRestMoney});
-    }
-    calcMoneyPay() {
-        const moneyPay = this.state.moneyPay ? this.convertCurrencyToNumber(this.state.moneyPay) : 0;
         const cashMethod = this.state.cashMethod ? this.convertCurrencyToNumber(this.state.cashMethod) : 0;
         const cardMethod = this.state.cardMethod ? this.convertCurrencyToNumber(this.state.cardMethod) : 0;
         const transferMethod = this.state.transferMethod ? this.convertCurrencyToNumber(this.state.transferMethod) : 0;
         const insuranceServicePrice = this.state.insuranceServicePrice ? this.convertCurrencyToNumber(this.state.insuranceServicePrice) : 0;
         const companyServicePrice = this.state.companyServicePrice ? this.convertCurrencyToNumber(this.state.companyServicePrice) : 0;
-        const newMoneyPay = moneyPay - (cashMethod + cardMethod + transferMethod + insuranceServicePrice + companyServicePrice);
-        this.setState({MoneyPay: newMoneyPay});
+        const newRestMoney = moneyPay - (cashMethod + cardMethod + transferMethod + insuranceServicePrice + companyServicePrice);
+        const newValidateRestMoney = newRestMoney < 0 ? false : true;
+
+        this.setState({
+            restMoneyPay: newValidateRestMoney ? newRestMoney : 0,
+            validatedRestMoney: newValidateRestMoney,
+            validatedIsEnoughMoneyPay: newRestMoney === 0 ? true : false
+        });
     }
 
     render() {
+        const { validated } = this.state;
         const isShowMethodTable = !this.state.openPayMethod && (this.state.cashCheck || this.state.cardCheck || this.state.transferCheck);
         const isShowInsuranceTable = !this.state.openInsuranceMethod && (this.state.insuranceCheck || this.state.companyCheck);
 
@@ -141,7 +172,8 @@ export default class PhieuThuPopup extends React.Component {
             >                
             <Form 
                 noValidate
-                onSubmit={this.handleSubmit}>
+                validated={validated}
+                onSubmit={this.handleConfirm}>
                     <Modal.Header className="phieuthu-header" closeButton>
                         <Modal.Title>
                             <h2 className="phieuthu-title">Phiếu Thu</h2>
@@ -164,26 +196,30 @@ export default class PhieuThuPopup extends React.Component {
                         <section id="section-thanh-toan">
                             <Form.Group>
                                 <Form.Label className="phieuthu-label">Khách thanh toán</Form.Label>
-                                    <div className="field-input">
+                                    <div className="field-input required">
                                         <span>Số tiền</span>
-                                        <Form.Control name="moneyPay" 
+                                        <Form.Control name="moneyPay"
                                             value={this.state.moneyPay}
                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
                                             onBlur={this.calcRestMoney}
-                                            placeholder="1,000,000" type="text" />
+                                            required
+                                            placeholder="0" type="text" />
+                                        <Form.Control.Feedback type="invalid">
+                                            Điền thông tin được yêu cầu
+                                        </Form.Control.Feedback>
                                     </div>
                                     <div className="field-input rest-money">
                                         <span>Còn lại</span>
                                         <Form.Control 
                                             value={this.toCurrency(this.state.restMoneyPay)}
-                                            placeholder="1,000,000" type="text" disabled/>
+                                            placeholder="0" type="text" disabled/>
                                     </div>
                             </Form.Group>
                         </section>
 
                         <Accordion className="phieuthu-info" defaultActiveKey="0">
                         <section id="section-phuongthuc">
-                            <Accordion.Toggle as={Card.Header} eventKey="0" onClick={() => this.handleShowTableResult('openPayMethod')}>
+                            <Accordion.Toggle as={Card.Header} id="tab-phuongthuc" eventKey="0" onClick={() => this.handleShowTableResult('openPayMethod')}>
                                 <h3 className="heading-middle-line">Phương thức thanh toán</h3>
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="0">
@@ -200,14 +236,17 @@ export default class PhieuThuPopup extends React.Component {
                                         </div>                                        
                                         {this.state.cashCheck && 
                                             <React.Fragment>
-                                                <div className="field-input">
+                                                <div className="field-input required">
                                                     <span>Số tiền:</span>
-                                                    <Form.Control name="cashMethod" 
+                                                    <Form.Control name="cashMethod"
                                                         value={this.state.cashMethod}
                                                         onChange={(e) => {this.handleInputChange(e, 'currency')} }
-                                                        onBlur={this.calcMoneyPay}
-                                                        placeholder="10,000,000" type="text" />
-                                                    
+                                                        onBlur={this.calcRestMoney}
+                                                        required
+                                                        placeholder="0" type="text" />
+                                                    <Form.Control.Feedback type="invalid">
+                                                        Điền thông tin được yêu cầu
+                                                    </Form.Control.Feedback>
                                                 </div>
                                             </React.Fragment>
                                         }
@@ -225,18 +264,25 @@ export default class PhieuThuPopup extends React.Component {
                                             <React.Fragment>
                                                 <div className="field-input">
                                                     <span>Số tiền:</span>
-                                                    <div className="field-input">
+                                                    <div className="field-input required">
                                                         <span>Số tiền</span>
-                                                        <Form.Control name="cardMethod" 
+                                                        <Form.Control name="cardMethod"
                                                             value={this.state.cardMethod}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
-                                                            onBlur={this.calcMoneyPay}
-                                                            placeholder="10,000,000" type="text" />
+                                                            onBlur={this.calcRestMoney}
+                                                            required
+                                                            placeholder="0" type="text" />
+                                                        <Form.Control.Feedback type="invalid">
+                                                            Điền thông tin được yêu cầu
+                                                        </Form.Control.Feedback>
                                                     </div>
                                                 </div>
                                                 <div className="field-input select">
                                                     <span>Ngân hàng:</span>
-                                                    <Form.Control as="select"  name="cardBank" value={this.state.cardBank} onChange={this.handleInputChange}>
+                                                    <Form.Control as="select"  name="cardBank" 
+                                                        defaultValue="Viettel QR Code"
+                                                        value={this.state.cardBank} 
+                                                        onChange={this.handleInputChange}>
                                                         <option value="Viettel QR Code">Viettel QR Code</option>
                                                         <option value="VNPT QR Code">VNPT QR Code</option>
                                                         <option value="FPT QR Code">FPT QR Code</option>
@@ -260,18 +306,25 @@ export default class PhieuThuPopup extends React.Component {
                                             <React.Fragment>
                                                 <div className="field-input">
                                                     <span>Số tiền:</span>
-                                                    <div className="field-input">
+                                                    <div className="field-input required">
                                                         <span>Số tiền</span>
-                                                        <Form.Control name="transferMethod" 
+                                                        <Form.Control name="transferMethod"
                                                             value={this.state.transferMethod}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
-                                                            onBlur={this.calcMoneyPay}
-                                                            placeholder="10,000,000" type="text" />
+                                                            onBlur={this.calcRestMoney}
+                                                            required
+                                                            placeholder="0" type="text" />
+                                                        <Form.Control.Feedback type="invalid">
+                                                            Điền thông tin được yêu cầu
+                                                        </Form.Control.Feedback>
                                                     </div>
                                                 </div>
                                                 <div className="field-input select">
                                                     <span>Ngân hàng:</span>
-                                                    <Form.Control as="select"  name="transferBank" value={this.state.transferBank} onChange={this.handleInputChange}>
+                                                    <Form.Control as="select"  name="transferBank"
+                                                        defaultValue="VCB Biên Hòa"
+                                                         value={this.state.transferBank} 
+                                                         onChange={this.handleInputChange}>
                                                         <option value="VCB Biên Hòa">VCB Biên Hòa</option>
                                                         <option value="BIDV HCM">BIDV HCM</option>
                                                         <option value="Vietin Bank">Vietin Bank</option>
@@ -286,7 +339,7 @@ export default class PhieuThuPopup extends React.Component {
                             </Accordion.Collapse>
                                 {isShowMethodTable && 
                                     <React.Fragment>
-                                        <div className="table-result">
+                                        <div className="table-result" onClick={() => this.handleAccordion('tab-phuongthuc')}>
                                             {this.state.cashCheck && <div className="result-row">
                                                 <div className="result-col label">
                                                     Tiền mặt
@@ -329,7 +382,7 @@ export default class PhieuThuPopup extends React.Component {
                         </section>
 
                         <section id="section-insurance">
-                            <Accordion.Toggle as={Card.Header} eventKey="1" onClick={() => this.handleShowTableResult('openInsuranceMethod')}>
+                            <Accordion.Toggle as={Card.Header} id="tab-insurance" eventKey="1" onClick={() => this.handleShowTableResult('openInsuranceMethod')}>
                                 <h3 className="heading-middle-line">Bảo hiểm và công ty liên kết</h3>
                             </Accordion.Toggle>
                             <Accordion.Collapse eventKey="1">
@@ -348,7 +401,10 @@ export default class PhieuThuPopup extends React.Component {
                                             <div className="form-group-row">
                                                 <div className="field-input select">
                                                     <span>Công ty:</span>
-                                                    <Form.Control as="select" name="insurance" value={this.state.insurance} onChange={this.handleInputChange}>
+                                                    <Form.Control as="select" name="insurance" 
+                                                        defaultValue="TNHH DV Nam Á"
+                                                        value={this.state.insurance} 
+                                                        onChange={this.handleInputChange}>
                                                         <option value="TNHH DV Nam Á">TNHH DV Nam Á</option>
                                                         <option value="TNHH DV Đông Á">TNHH DV Đông Á</option>
                                                         <option value="TNHH DV Bắc Á">TNHH DV Bắc Á</option>
@@ -360,7 +416,10 @@ export default class PhieuThuPopup extends React.Component {
                                             <div className="form-group-row">
                                                 <div className="field-input select">
                                                     <span>Dịch vụ:</span>
-                                                    <Form.Control as="select" name="insuranceService" value={this.state.insuranceService} onChange={this.handleInputChange}>
+                                                    <Form.Control as="select" name="insuranceService" 
+                                                        defaultValue="Bàn chải kẽ chỉnh nha"
+                                                        value={this.state.insuranceService} 
+                                                        onChange={this.handleInputChange}>
                                                         <option value="Bàn chải kẽ chỉnh nha">Bàn chải kẽ chỉnh nha</option>
                                                         <option value="Bàn chải kẽ">Bàn chải kẽ </option>
                                                         <option value="Kem ống">Kem ống</option>
@@ -370,13 +429,17 @@ export default class PhieuThuPopup extends React.Component {
                                                 </div>
                                                 <div className="field-input">
                                                     <span>Số tiền</span>
-                                                    <div className="field-input">
+                                                    <div className="field-input required">
                                                         <span>Số tiền</span>
-                                                        <Form.Control name="insuranceServicePrice" 
+                                                        <Form.Control name="insuranceServicePrice"
                                                             value={this.state.insuranceServicePrice}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
-                                                            onBlur={this.calcMoneyPay}
-                                                            placeholder="10,000,000" type="text" />
+                                                            onBlur={this.calcRestMoney}
+                                                            required
+                                                            placeholder="0" type="text" />
+                                                        <Form.Control.Feedback type="invalid">
+                                                            Điền thông tin được yêu cầu
+                                                        </Form.Control.Feedback>
                                                     </div>                                               
                                                 </div>
                                                 <i className="ic ic-remove"></i>
@@ -401,7 +464,10 @@ export default class PhieuThuPopup extends React.Component {
                                             <div className="form-group-row">
                                                 <div className="field-input select">
                                                     <span>Công ty:</span>
-                                                    <Form.Control as="select" name="company" value={this.state.company} onChange={this.handleInputChange}>
+                                                    <Form.Control as="select" name="company" 
+                                                        defaultValue="TNHH DV Nam Á"
+                                                        value={this.state.company} 
+                                                        onChange={this.handleInputChange}>
                                                         <option value="TNHH DV Nam Á">TNHH DV Nam Á</option>
                                                         <option value="TNHH DV Đông Á">TNHH DV Đông Á</option>
                                                         <option value="TNHH DV Bắc Á">TNHH DV Bắc Á</option>
@@ -413,7 +479,10 @@ export default class PhieuThuPopup extends React.Component {
                                             <div className="form-group-row">
                                                 <div className="field-input select">
                                                     <span>Dịch vụ:</span>
-                                                    <Form.Control as="select" name="companyService" value={this.state.companyService} onChange={this.handleInputChange}>
+                                                    <Form.Control as="select" name="companyService" 
+                                                        defaultValue="Bàn chải kẽ chỉnh nha"
+                                                        value={this.state.companyService} 
+                                                        onChange={this.handleInputChange}>
                                                         <option value="Bàn chải kẽ chỉnh nha">Bàn chải kẽ chỉnh nha</option>
                                                         <option value="Bàn chải kẽ">Bàn chải kẽ </option>
                                                         <option value="Kem ống">Kem ống</option>
@@ -423,13 +492,17 @@ export default class PhieuThuPopup extends React.Component {
                                                 </div>
                                                 <div className="field-input">
                                                     <span>Số tiền</span>
-                                                    <div className="field-input">
+                                                    <div className="field-input required">
                                                         <span>Số tiền</span>
-                                                        <Form.Control name="companyServicePrice" 
+                                                        <Form.Control name="companyServicePrice"
                                                             value={this.state.companyServicePrice}
                                                             onChange={(e) => {this.handleInputChange(e, 'currency')} }
-                                                            onBlur={this.calcMoneyPay}
-                                                            placeholder="10,000,000" type="text" />
+                                                            onBlur={this.calcRestMoney}
+                                                            required
+                                                            placeholder="0" type="text" />
+                                                        <Form.Control.Feedback type="invalid">
+                                                            Điền thông tin được yêu cầu
+                                                        </Form.Control.Feedback>
                                                     </div>                                               
                                                 </div>
                                                 <i className="ic ic-remove"></i>
@@ -452,22 +525,24 @@ export default class PhieuThuPopup extends React.Component {
                                         </div>                                        
                                         {this.state.theKIMCheck && 
                                             <React.Fragment>
-                                                <div className="field-input no-label thekim-code">
+                                                <div className="field-input required no-label thekim-code">
                                                     <Form.Control 
                                                         name="theKIMCode"
                                                         value={this.state.theKIMCode}
                                                         onChange={this.handleInputChange}
+                                                        required
                                                         placeholder="Nhập mã thẻ" type="text" />
                                                 </div>
-                                                <div className="field-input no-label thekim-pin">
+                                                <div className="field-input no-label required thekim-pin">
                                                     <Form.Control 
                                                         name="theKIMPIN"
                                                         value={this.state.theKIMPIN}
                                                         onChange={this.handleInputChange}
+                                                        required
                                                         placeholder="Mã PIN" type="text" />
                                                 </div>
                                                 <div className="field-input thekim-btn">
-                                                    <button className="btn btn-primary">KIỂM TRA MÃ PIN</button>
+                                                    <button className="btn btn-azure">KIỂM TRA MÃ PIN</button>
                                                 </div>
                                             </React.Fragment>
                                         }
@@ -476,7 +551,7 @@ export default class PhieuThuPopup extends React.Component {
                             </Accordion.Collapse>
                             {isShowInsuranceTable && 
                                 <React.Fragment>
-                                    <div className="table-result">
+                                    <div className="table-result" onClick={() => this.handleAccordion('tab-insurance')}>
                                         {this.state.insuranceCheck && <div className="result-row">
                                             <div className="result-col label">
                                                 Bảo hiểm
@@ -518,6 +593,18 @@ export default class PhieuThuPopup extends React.Component {
                                         onChange={this.handleInputChange}/>
                             </Form.Group>
                         </section>
+                        <section id="phieuthu-errors">
+                            <React.Fragment>
+                                {!this.state.validatedRestMoney &&  <Form.Control.Feedback type="invalid">
+                                    Số tiền nhập vượt quá số tiền còn lại
+                                    </Form.Control.Feedback>
+                                }
+                                {!this.state.validatedIsEnoughMoneyPay &&  <Form.Control.Feedback type="invalid">
+                                    Chưa thanh toán đủ số tiền
+                                    </Form.Control.Feedback>
+                                }
+                            </React.Fragment>
+                        </section>
                     </section> 
                     ) :
                     (<section id="phieuthu-step2">
@@ -525,7 +612,7 @@ export default class PhieuThuPopup extends React.Component {
                                 <div className="result-row">
                                     <div className="result-col label">
                                         <p className="sub">Ghi chú</p>
-                                        <p>{this.state.keynote}</p>
+                                        <p className="note">{this.state.keynote}</p>
                                     </div>
                                     <div className="result-col number">
                                         <p className="sub">Khách thanh toán</p>
@@ -536,76 +623,81 @@ export default class PhieuThuPopup extends React.Component {
                                 </div>
                             </div>
 
-                            <h3 className="heading-middle-line">Phương thức thanh toán</h3>
-                            <div className="table-result">
-                                {this.state.cashCheck && <div className="result-row">
-                                    <div className="result-col label">
-                                        Tiền mặt
+                            {(this.state.cashCheck || this.state.cardCheck || this.state.transferCheck) && <React.Fragment>
+                                    <h3 className="heading-middle-line">Phương thức thanh toán</h3>
+                                    <div className="table-result">
+                                        {this.state.cashCheck && <div className="result-row">
+                                            <div className="result-col label">
+                                                Tiền mặt
+                                            </div>
+                                            <div className="result-col">
+                                                
+                                            </div>
+                                            <div className="result-col number">
+                                                <p className="head">{this.toCurrency(this.state.cashMethod)}</p>
+                                            </div>
+                                        </div>
+                                        }
+                                        {this.state.cardCheck && <div className="result-row">
+                                            <div className="result-col label">
+                                                Thẻ
+                                            </div>
+                                            <div className="result-col">
+                                                <p className="head">{this.state.cardBank}</p>
+                                            </div>
+                                            <div className="result-col number">
+                                                <p className="head">{this.toCurrency(this.state.cardMethod)}</p>
+                                            </div>
+                                        </div>
+                                        }
+                                        {this.state.transferCheck && <div className="result-row">
+                                            <div className="result-col label">
+                                                Chuyển khoản
+                                            </div>
+                                            <div className="result-col">
+                                                <p className="head">{this.state.transferBank}</p>
+                                            </div>
+                                            <div className="result-col number">
+                                                <p className="head">{this.toCurrency(this.state.transferMethod)}</p>
+                                            </div>
+                                        </div>
+                                        }
                                     </div>
-                                    <div className="result-col">
-                                        
-                                    </div>
-                                    <div className="result-col number">
-                                        <p className="head">{this.toCurrency(this.state.cashMethod)}</p>
-                                    </div>
-                                </div>
-                                }
-                                {this.state.cardCheck && <div className="result-row">
-                                    <div className="result-col label">
-                                        Thẻ
-                                    </div>
-                                    <div className="result-col">
-                                        <p className="head">{this.state.cardBank}</p>
-                                    </div>
-                                    <div className="result-col number">
-                                        <p className="head">{this.toCurrency(this.state.cardMethod)}</p>
-                                    </div>
-                                </div>
-                                }
-                                {this.state.transferCheck && <div className="result-row">
-                                    <div className="result-col label">
-                                        Chuyển khoản
-                                    </div>
-                                    <div className="result-col">
-                                        <p className="head">{this.state.transferBank}</p>
-                                    </div>
-                                    <div className="result-col number">
-                                        <p className="head">{this.toCurrency(this.state.transferMethod)}</p>
-                                    </div>
-                                </div>
-                                }
-                            </div>
-
-                            <h3 className="heading-middle-line">Bảo hiểm và công ty liên kết</h3>
-                            <div className="table-result">
-                            {this.state.insuranceCheck && <div className="result-row">
-                                <div className="result-col label">
-                                    Bảo hiểm
-                                </div>
-                                <div className="result-col">
-                                    <p className="head">{this.state.insurance}</p>
-                                    <p className="sub">{this.state.insuranceService}</p>
-                                </div>
-                                <div className="result-col number">
-                                    <p className="head">{this.toCurrency(this.state.insuranceServicePrice)}</p>
-                                    <p className="sub">{this.toCurrency(this.state.insuranceServicePrice)}</p>
-                                </div>
-                            </div>}
-                            {this.state.companyCheck && <div className="result-row">
-                                <div className="result-col label">
-                                    Công ty
-                                </div>
-                                <div className="result-col">
-                                    <p className="head">{this.state.company}</p>
-                                    <p className="sub">{this.state.companyService}</p>
-                                </div>
-                                <div className="result-col number">
-                                    <p className="head">{this.toCurrency(this.state.companyServicePrice)}</p>
-                                    <p className="sub">{this.toCurrency(this.state.companyServicePrice)}</p>
-                                </div>
-                            </div>
+                                </React.Fragment>
                             }
-                        </div>
+
+                            {(this.state.insuranceCheck || this.state.companyCheck) && <React.Fragment>
+                                <h3 className="heading-middle-line">Bảo hiểm và công ty liên kết</h3>
+                                <div className="table-result">
+                                {this.state.insuranceCheck && <div className="result-row">
+                                    <div className="result-col label">
+                                        Bảo hiểm
+                                    </div>
+                                    <div className="result-col">
+                                        <p className="head">{this.state.insurance}</p>
+                                        <p className="sub">{this.state.insuranceService}</p>
+                                    </div>
+                                    <div className="result-col number">
+                                        <p className="head">{this.toCurrency(this.state.insuranceServicePrice)}</p>
+                                        <p className="sub">{this.toCurrency(this.state.insuranceServicePrice)}</p>
+                                    </div>
+                                </div>}
+                                {this.state.companyCheck && <div className="result-row">
+                                    <div className="result-col label">
+                                        Công ty
+                                    </div>
+                                    <div className="result-col">
+                                        <p className="head">{this.state.company}</p>
+                                        <p className="sub">{this.state.companyService}</p>
+                                    </div>
+                                    <div className="result-col number">
+                                        <p className="head">{this.toCurrency(this.state.companyServicePrice)}</p>
+                                        <p className="sub">{this.toCurrency(this.state.companyServicePrice)}</p>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                            </React.Fragment>}
                         </section>
                     )}
                     </Modal.Body>
@@ -613,12 +705,12 @@ export default class PhieuThuPopup extends React.Component {
                         (
                             <Modal.Footer>
                                 <Button className="btn-close" onClick={this.handleConfirm}>Quay lại</Button>
-                                <Button className="btn-submit" type="submit">Tạo phiếu thu</Button>
+                                <Button className="btn-submit" type="button" onClick={this.onSubmit}>Tạo phiếu thu</Button>
                             </Modal.Footer>                       
                         ) : (
                             <Modal.Footer>
                                 <Button className="btn-close" onClick={this.props.onHide}>Thoát</Button>
-                                <Button className="btn-submit" type="button" onClick={this.handleConfirm}>Xác nhận</Button>
+                                <Button className="btn-submit btn-azure" type="submit" >Xác nhận</Button>
                             </Modal.Footer>
                         )}
             </Form>

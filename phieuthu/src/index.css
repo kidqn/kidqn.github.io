@@ -13,17 +13,35 @@ code {
 }
 
 /* custom checkbox */
-.phieuthu-body .custom-checkbox {
+.phieuthu .custom-checkbox {
   width: 152px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding-left: 0;
+  padding-top: 8px;
+}
+.phieuthu .custom-control-input:checked~.custom-control-label:before {
+  color: #fff;
+  background-color: #0093ee !important;
+}
+.phieuthu .custom-control-input.is-valid~.custom-control-label::before, 
+.phieuthu .was-validated .custom-control-input:valid~.custom-control-label::before {
+  border-color: #adb5bd !important;
 }
 
+.phieuthu .custom-control-input.is-valid:checked~.custom-control-label::before, 
+.phieuthu .was-validated .custom-control-input:valid:checked~.custom-control-label::before {
+  border: 0;
+}
+
+.phieuthu .custom-control-input.is-valid~.custom-control-label, 
+.phieuthu .was-validated .custom-control-input:valid~.custom-control-label {
+  color: #0a2c4d;
+}
+.phieuthu .form-control.is-valid, .was-validated .form-control:valid {
+  background-size: 10px 10px;
+}
 .phieuthu .custom-checkbox .custom-control-label {
   opacity: 0.8;
   font-size: 14px;
@@ -67,7 +85,9 @@ code {
 .phieuthu  .form-control[readonly] {
   background-color: rgba(10, 44, 77, 0.05);
   color: #0a2c4d;
+  opacity: 0.8;
 }
+
 .phieuthu .modal-content {
   width: 690px;
   min-height: 718px;
@@ -118,6 +138,10 @@ code {
   letter-spacing: normal;
   margin: 0;
 }
+.phieuthu .table-result .result-col p.note {
+  font-size: 14px;
+  font-weight: normal;
+}
 .phieuthu .table-result .result-col p.sub {
   font-size: 12px;
   opacity: 0.5;
@@ -152,6 +176,7 @@ code {
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal;
+  padding-top: 8px;
 }
 .phieuthu-header .phieuthu-title{
   font-family: 'Open Sans', sans-serif;
@@ -250,13 +275,10 @@ code {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 30px 0;
   margin: 0;
 }
-.phieuthu-body .field-input {
+.phieuthu .field-input {
   position: relative;
   width: 180px;
   font-family: 'Open Sans', sans-serif;
@@ -266,6 +288,17 @@ code {
   font-stretch: normal;
   letter-spacing: normal;
   color: rgba(10, 44, 77, 0.5);
+}
+
+.phieuthu .field-input.required:after {
+  content: " *";
+  color: red;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+.phieuthu .was-validated .field-input.required:after {
+  display: none;
 }
 .phieuthu-body .field-input.rest-money,
 .phieuthu-body .field-input.select {
@@ -385,6 +418,7 @@ code {
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
+  margin-bottom: 20px;
 }
 .phieuthu-body .section-insurance-wrapper .right-side {
   -webkit-box-flex: 1;
@@ -395,9 +429,6 @@ code {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-bottom: 10px;
 }
 .phieuthu-body .section-insurance-wrapper .field-input.select {
@@ -406,9 +437,7 @@ code {
 .phieuthu-body .section-insurance-wrapper .field-input select {
   padding: 0 17px 0 69px;
 }
-.phieuthu-body .section-insurance-wrapper .form-group.company {
-  margin-bottom: 10px;
-}
+
 .phieuthu-body .section-insurance-wrapper .form-group.insurance .field-input:not(.select),
 .phieuthu-body .section-insurance-wrapper .form-group.company .field-input:not(.select){
   width: 150px;
@@ -422,6 +451,7 @@ code {
   height: 15px;
   background-image: url('./trash-white.svg');
   background-repeat: no-repeat;
+  margin-top: 12px;
 }
 .phieuthu-body .ic-remove:hover {
   background-image: url('./trash-red.svg');
@@ -507,8 +537,12 @@ code {
   background-color: #fff;
   color: #0a2c4d;
 }
-.phieuthu .modal-footer button.btn-submit {
+.phieuthu button.btn-azure {
   border: solid 1px #0093ee;
   background-color: #0093ee;
   color: #fff;
+}
+
+.phieuthu .was-validated #phieuthu-errors .invalid-feedback {
+  display: block;
 }
