@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
+import 'react-dates/initialize';
+import moment from 'moment';
+import viLocale from 'moment/locale/vi';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 import lichhenImg from './lichhen-sec.svg';
 import dadenImg from './daden-sec.svg';
 import chuadenImg from './chuaden-sec.svg';
 import huyhenImg from './huyhen-sec.svg';
 import ngocTrinhImg from './ngoc-trinh.jpg';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 export default class LichHen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            date: moment(),
+            focused: false
         };
     
-        // this.handleInputChange = this.handleInputChange.bind(this);
       }
 
     render() {
+        moment.locale('vi', viLocale);
         return (
          <div className="lichhen">
             <div className="lichhen-header">
@@ -23,7 +31,24 @@ export default class LichHen extends React.Component {
             </div>
 
             <div className="lichhen-topbar">
-                <div className="lichhen-topbar-calendar"></div>
+                <div className="lichhen-topbar-calendar">
+                <FontAwesomeIcon className="nav-calendar prev" icon={faChevronLeft} />
+                <FontAwesomeIcon className="nav-calendar next" icon={faChevronRight} />
+                <div className="date-wrapper">
+                    <p className="date-picker-displayname">
+                        Hôm nay, thứ năm
+                    </p>
+                    <SingleDatePicker
+                        date={this.state.date}
+                        onDateChange={date => this.setState({ date })} 
+                        focused={this.state.focused} 
+                        onFocusChange={({ focused }) => this.setState({ focused })}
+                        id="lichhen-date-picker"
+                        numberOfMonths={1}
+                        displayFormat="DD/MM/YYYY"
+                        noBorder />
+                </div>
+                </div>
                 <div className="right-side">
                     <div className="lichhen-action-bar">
                         <div className="section section-lichhen">
@@ -269,6 +294,9 @@ export default class LichHen extends React.Component {
             </div>
             <div className="filter-content">
                 <a id="filter-lichhen"></a>
+                <div className="filter-box">
+
+                </div>
             </div>
          </div>    
         );

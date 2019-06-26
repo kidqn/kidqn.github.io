@@ -35,6 +35,51 @@ html, body {
 }
 .lichhen-topbar-calendar {
     width: 230px;
+    padding: 20px 50px;
+    position: relative;
+    display: flex;
+    .nav-calendar {
+        position: absolute;
+        top: 50%;
+        transform: translate3d(0,-50%,0);
+        opacity: 0.3;
+        &.prev {
+            left: 20px;
+        }
+        &.next {
+            right: 20px;
+        }
+    }
+    .date-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+    }
+    .date-picker-displayname {
+        opacity: 0.5;
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.41;
+        letter-spacing: normal;
+        color: #0a2c4d;
+        margin: 0 0 2px 0;
+    }
+    #lichhen-date-picker {
+        width: 130px;
+        height: 24px;
+        font-size: 24px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #0a2c4d;
+        padding: 0;
+        border: 0;
+    }
 }
 .lichhen-action-bar {
     display: flex;
@@ -200,7 +245,7 @@ html, body {
                 }
                 .info {
                     border: solid 1px rgba(10, 44, 77, 0.05);
-                    background-image: url(/static/media/info.d29ecebd.svg);
+                    background-image: url(/lichhen/info.svg);
                     background-position: center center;
                     background-size: 12px 12px;
                     background-repeat: no-repeat;
@@ -239,6 +284,9 @@ html, body {
                 &.status-4 {
                     background-color: #fa4242;
                 }
+            }
+            .stacks {
+                display: flex;
             }
         }
         .time {
@@ -307,7 +355,7 @@ html, body {
     height: 52px;
     border-radius: 100px;
     background-color: #faa111;
-    background-image: url(/static/media/filter.07aad97f.svg);
+    background-image: url(./lichhen/filter.svg);
     background-size: 16px 16px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -319,4 +367,12 @@ html, body {
     &:hover {
         opacity: 0.8;
     }
+}
+
+.lichhen .filter-box {
+    height: 52px;
+    width: calc(100% - 80px);
+    border-radius: 26px;
+    background-color: #fff;
+    bottom: 40px;
 }
