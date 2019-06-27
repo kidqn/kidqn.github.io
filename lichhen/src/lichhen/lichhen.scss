@@ -92,6 +92,9 @@ html, body {
     border-bottom: 1px solid #edeff0;
     min-height: 63px;
     padding: 26px 40px 12px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     span {
         opacity: 0.5;
         font-size: 12px;
@@ -101,6 +104,20 @@ html, body {
         line-height: 1.42;
         letter-spacing: normal;
         color: #0a2c4d;
+    }
+    #tao-lich-hen {
+        width: 140px;
+        height: 40px;
+        border-radius: 8px;
+        background-color: #faa111;
+        font-size: 14px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #fff;
     }
 }
 
@@ -122,15 +139,23 @@ html, body {
         position: absolute;
         top: 50%;
         transform: translate3d(0,-50%,0);
-        opacity: 0.3;
-        &:hover {
-            opacity: 0.8;
-        }
+        width: 7px;
+        height: 13px;
+        background-repeat: no-repeat;
+        background-position: center center;
         &.prev {
             left: 20px;
+            background-image: url(./arrow-left.svg);
+            &:hover {
+                background-image: url(./arrow-left-color.svg);
+            }
         }
         &.next {
             right: 20px;
+            background-image: url(./arrow-right.svg);
+            &:hover {
+                background-image: url(./arrow-right-color.svg);
+            }
         }
     }
     .date-wrapper {
@@ -624,11 +649,17 @@ html, body {
         }
         .clear-filter {
             position: absolute;
+            width: 8px;
+            height: 8px;
             right: 22px;
-            top: 18px;
-            opacity: 0.3;
+            top: 22px;
+            opacity: 0.8;
+            background-image: url(/static/media/clear_ic.b79e1650.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100% 100%;
             &:hover {
-                opacity: 0.8;
+                opacity: 1;
             }
         }
     }

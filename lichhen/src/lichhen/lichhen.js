@@ -68,11 +68,10 @@ export default class LichHen extends React.Component {
         });
     }
     // clear filter
-    clearFilter(type) {
+    clearFilter(type, stateName) {
         if(type === 'options') {
             this.setState({
-                filterNotArriveCheck: false,
-                filterCancelDateCheck: false,
+                [stateName]: false,
             });
         }
         if(type === 'calendar-dates') {
@@ -124,12 +123,13 @@ export default class LichHen extends React.Component {
          <div className="lichhen">
             <div className="lichhen-header">
                 <span>Lịch hẹn</span>
+                <button className="btn" id="tao-lich-hen">Tạo lịch hẹn</button>
             </div>
 
             <div className="lichhen-topbar">
                 <div className="lichhen-topbar-calendar">
-                <FontAwesomeIcon onClick={this.goPrevDate} className="nav-calendar prev" icon={faChevronLeft} />
-                <FontAwesomeIcon onClick={this.goNextDate} className="nav-calendar next" icon={faChevronRight} />
+                <div onClick={this.goPrevDate} className="nav-calendar prev"></div>
+                <div onClick={this.goNextDate} className="nav-calendar next"></div>
                 <div className="date-wrapper">
                     <p className="date-picker-displayname">
                         {todayText && <span>{todayText} ,</span>} {weekDaySelected}
@@ -612,21 +612,25 @@ export default class LichHen extends React.Component {
                 }
 
                 {showResultFilterBox && <div className="result-filter-box">
-                    <div className="result">
+                    {this.state.filterCancelDateCheck &&<div className="result">
                         <span className="field">Trạng thái: </span>
-                        {this.state.filterCancelDateCheck && <span>Hủy hẹn (1)</span>}
-                        {this.state.filterNotArriveCheck && <span>Chưa đến (1)</span>}
-                        <FontAwesomeIcon className="clear-filter" onClick={() => this.clearFilter('options')}  icon={faTimes} />
-                    </div>
+                        <span>Hủy hẹn (1)</span>
+                        <div className="clear-filter" onClick={() => this.clearFilter('options','filterCancelDateCheck')} ></div>
+                    </div>}
+                    {this.state.calendarDates && <div className="result">
+                        <span className="field">Trạng thái: </span>
+                        <span>Chưa đến (1)</span>
+                        <div className="clear-filter" onClick={() => this.clearFilter('options','calendarDates')}> </div>
+                    </div>}
                     {this.state.calendarDates && <div className="result">
                         <span className="field">Lịch hẹn: </span>
                         {this.state.calendarDates}
-                        <FontAwesomeIcon className="clear-filter" onClick={() => this.clearFilter('calendar-dates')} icon={faTimes} />
+                        <div className="clear-filter" onClick={() => this.clearFilter('calendar-dates')}></div>
                     </div> }
                     {this.state.doctorName && <div className="result">
                         <span className="field">Bác sĩ: </span>
                         {this.state.doctorName}
-                        <FontAwesomeIcon className="clear-filter" onClick={() => this.clearFilter('doctor-name')} icon={faTimes} />
+                        <div className="clear-filter" onClick={() => this.clearFilter('doctor-name')} ></div>
                     </div> }
                 </div>}
             </div>
