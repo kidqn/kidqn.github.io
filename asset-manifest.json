@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.99568c59.chunk.css",
-    "main.js": "/static/js/main.3882da7e.chunk.js",
-    "main.js.map": "/static/js/main.3882da7e.chunk.js.map",
+    "main.css": "/static/css/main.6d7d7680.chunk.css",
+    "main.js": "/static/js/main.d4c9454b.chunk.js",
+    "main.js.map": "/static/js/main.d4c9454b.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
     "static/css/2.6d2c8d95.chunk.css": "/static/css/2.6d2c8d95.chunk.css",
-    "static/js/2.e42cf0cc.chunk.js": "/static/js/2.e42cf0cc.chunk.js",
-    "static/js/2.e42cf0cc.chunk.js.map": "/static/js/2.e42cf0cc.chunk.js.map",
+    "static/js/2.ddaa7925.chunk.js": "/static/js/2.ddaa7925.chunk.js",
+    "static/js/2.ddaa7925.chunk.js.map": "/static/js/2.ddaa7925.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.acf68ab90fe199fa6b46fec7072dba5b.js": "/precache-manifest.acf68ab90fe199fa6b46fec7072dba5b.js",
+    "precache-manifest.1c0ad25b7b0a5e56771aad44f6eb6218.js": "/precache-manifest.1c0ad25b7b0a5e56771aad44f6eb6218.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.6d2c8d95.chunk.css.map": "/static/css/2.6d2c8d95.chunk.css.map",
-    "static/css/main.99568c59.chunk.css.map": "/static/css/main.99568c59.chunk.css.map",
-    "static/media/chuaden-sec.svg": "/static/media/chuaden-sec.69634998.svg",
-    "static/media/daden-sec.svg": "/static/media/daden-sec.44ed9083.svg",
-    "static/media/index.scss": "/static/media/night.e91899d9.svg",
-    "static/media/huyhen-sec.svg": "/static/media/huyhen-sec.c8927201.svg",
-    "static/media/lichhen-sec.svg": "/static/media/lichhen-sec.14701f03.svg",
-    "static/media/ngoc-trinh.jpg": "/static/media/ngoc-trinh.0f0e5441.jpg"
+    "static/css/main.6d7d7680.chunk.css.map": "/static/css/main.6d7d7680.chunk.css.map",
+    "static/media/lichhen.scss": "/static/media/time_update.ce1b0708.svg",
+    "static/media/chuaden-sec.svg": "/static/media/chuaden-sec.d864935b.svg",
+    "static/media/daden-sec.svg": "/static/media/daden-sec.dde8afd6.svg",
+    "static/media/huyhen-sec.svg": "/static/media/huyhen-sec.75380997.svg",
+    "static/media/lichhen-sec.svg": "/static/media/lichhen-sec.949bf446.svg",
+    "static/media/ngoc-trinh.jpg": "/static/media/ngoc-trinh.0f0e5441.jpg",
+    "static/media/no_date.svg": "/static/media/no_date.e1cb827c.svg"
   }
 }
