@@ -10,6 +10,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <div className="header"><h2>Nha Khoa Kim</h2></div>
+        <div className="sidebar"></div>
         <LichHen/>
       </div>
     );
