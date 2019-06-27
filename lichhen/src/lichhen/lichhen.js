@@ -35,6 +35,7 @@ export default class LichHen extends React.Component {
 
         this.onToggleDayLightMode = this.onToggleDayLightMode.bind(this);
         this.onToggleFilterBox = this.onToggleFilterBox.bind(this);
+        this.clearFilter = this.clearFilter.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.backToday = this.backToday.bind(this);
         this.goPrevDate = this.goPrevDate.bind(this);
@@ -66,6 +67,26 @@ export default class LichHen extends React.Component {
         this.setState({
             [name]: value 
         });
+    }
+    // clear filter
+    clearFilter(type) {
+        if(type === 'options') {
+            this.setState({
+                filterAllCheck: false,
+                filterNotArriveCheck: false,
+                filterCancelDateCheck: false,
+            });
+        }
+        if(type === 'calendar-dates') {
+            this.setState({
+                calendarDates: ''
+            });
+        }
+        if(type === 'doctor-name') {
+            this.setState({
+                doctorName: ''
+            });
+        }
     }
     backToday() {
         this.setState({
@@ -214,7 +235,10 @@ export default class LichHen extends React.Component {
                                             </div>
                                             <div className="profile-info">
                                                 <div className="name">Nguyễn Thị Kiều Oanh 
-                                                    <span><i className="info"></i></span>
+                                                    <span className="phone">
+                                                        <i className="info"></i>
+                                                        <div className="status status-2">098****123</div>
+                                                    </span>
                                                 </div>
                                                 <div className="stacks">
                                                     <div className="status status-0">Chưa đến</div>
@@ -243,7 +267,10 @@ export default class LichHen extends React.Component {
                                             </div>
                                             <div className="profile-info">
                                                 <div className="name">Phan Xuân Yến
-                                                    <span><i className="info"></i></span>
+                                                    <span className="phone">
+                                                        <i className="info"></i>
+                                                        <div className="status status-2">098****123</div>
+                                                    </span>
                                                 </div>
                                                 <div className="stacks">
                                                     <div className="status status-4">Hủy hẹn</div>
@@ -272,7 +299,10 @@ export default class LichHen extends React.Component {
                                             </div>
                                             <div className="profile-info">
                                                 <div className="name">Nguyễn Thị Kiều Oanh 
-                                                    <span><i className="info"></i></span>
+                                                    <span className="phone">
+                                                        <i className="info"></i>
+                                                        <div className="status status-2">098****123</div>
+                                                    </span>
                                                 </div>
                                                 <div className="stacks">
                                                     <div className="status status-0">Chưa đến</div>
@@ -298,7 +328,10 @@ export default class LichHen extends React.Component {
                                             </div>
                                             <div className="profile-info">
                                                 <div className="name">Phan Xuân Yến
-                                                    <span><i className="info"></i></span>
+                                                    <span className="phone">
+                                                        <i className="info"></i>
+                                                        <div className="status status-2">098****123</div>
+                                                    </span>
                                                 </div>
                                                 <div className="stacks">
                                                     <div className="status status-4">Hủy hẹn</div>
@@ -327,7 +360,10 @@ export default class LichHen extends React.Component {
                                             </div>
                                             <div className="profile-info">
                                                 <div className="name">Nguyễn Thị Kiều Oanh 
-                                                    <span><i className="info"></i></span>
+                                                    <span className="phone">
+                                                        <i className="info"></i>
+                                                        <div className="status status-2">098****123</div>
+                                                    </span>
                                                 </div>
                                                 <div className="stacks">
                                                     <div className="status">Chưa đến</div>
@@ -353,7 +389,10 @@ export default class LichHen extends React.Component {
                                             </div>
                                             <div className="profile-info">
                                                 <div className="name">Phan Xuân Yến
-                                                    <span><i className="info"></i></span>
+                                                    <span className="phone">
+                                                        <i className="info"></i>
+                                                        <div className="status status-2">098****123</div>
+                                                    </span>
                                                 </div>
                                                 <div className="stacks">
                                                     <div className="status status-3">Đã checkout</div>
@@ -387,15 +426,18 @@ export default class LichHen extends React.Component {
                                             </div>
                                             <div className="profile-info">
                                                 <div className="name">Nguyễn Thị Kiều Oanh 
-                                                    <span><i className="info"></i></span>
+                                                    <span className="phone">
+                                                        <i className="info"></i>
+                                                        <div className="status status-2">098****123</div>
+                                                    </span>
 
                                                     <span data-tip='Admin' 
                                                             data-for='time-update-id-001'>
                                                         <i className="time-update"></i>
                                                     </span>
-                                                    <ReactTooltip id='time-update-id-001' className='custom-tooltip' place="top" 
-                                                        getContent={(dataTip) => `Cập nhập lúc 8:40 bởi ${dataTip}`} />
                                                 </div>
+                                                <ReactTooltip id='time-update-id-001' className='custom-tooltip' place="top" 
+                                                        getContent={(dataTip) => `Cập nhập lúc 8:40 bởi ${dataTip}`} />
                                                 <div className="stacks">
                                                     <div className="status status-0">Chưa đến</div>
                                                 </div>
@@ -423,8 +465,10 @@ export default class LichHen extends React.Component {
                                             </div>
                                             <div className="profile-info">
                                                 <div className="name">Phan Xuân Yến
-                                                    <span><i className="info"></i></span>
-                                                    <div className="status status-2">098****123</div>
+                                                    <span className="phone">
+                                                        <i className="info"></i>
+                                                        <div className="status status-2">098****123</div>
+                                                    </span>
                                                 </div>
                                                 <div className="stacks">
                                                     <div className="status status-4">Hủy hẹn</div>
@@ -479,7 +523,10 @@ export default class LichHen extends React.Component {
                                             </div>
                                             <div className="profile-info">
                                                 <div className="name">Phan Xuân Yến
-                                                    <span><i className="info"></i></span>
+                                                    <span className="phone">
+                                                        <i className="info"></i>
+                                                        <div className="status status-2">098****123</div>
+                                                    </span>
                                                 </div>
                                                 <div className="stacks">
                                                     <div className="status status-4">Hủy hẹn</div>
@@ -581,18 +628,18 @@ export default class LichHen extends React.Component {
                         {this.state.filterAllCheck && <span>Tất cả (6)</span>}
                         {this.state.filterCancelDateCheck && <span>Hủy hẹn (1)</span>}
                         {this.state.filterNotArriveCheck && <span>Chưa đến (1)</span>}
-                        <FontAwesomeIcon className="clear-filter" icon={faTimes} />
+                        <FontAwesomeIcon className="clear-filter" onClick={() => this.clearFilter('options')}  icon={faTimes} />
                     </div>
-                    <div className="result">
+                    {this.state.calendarDates && <div className="result">
                         <span className="field">Lịch hẹn: </span>
                         {this.state.calendarDates}
-                        <FontAwesomeIcon className="clear-filter" icon={faTimes} />
-                    </div>
-                    <div className="result">
+                        <FontAwesomeIcon className="clear-filter" onClick={() => this.clearFilter('calendar-dates')} icon={faTimes} />
+                    </div> }
+                    {this.state.doctorName && <div className="result">
                         <span className="field">Bác sĩ: </span>
                         {this.state.doctorName}
-                        <FontAwesomeIcon className="clear-filter" icon={faTimes} />
-                    </div>
+                        <FontAwesomeIcon className="clear-filter" onClick={() => this.clearFilter('doctor-name')} icon={faTimes} />
+                    </div> }
                 </div>}
             </div>
          </div>    
