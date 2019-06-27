@@ -26,7 +26,6 @@ export default class LichHen extends React.Component {
             focused: false,
             dayLightMode: DAY_MODE,
             showFilterBox: false,
-            filterAllCheck: false,
             filterNotArriveCheck: false,
             filterCancelDateCheck: false,
             calendarDates: null,
@@ -72,7 +71,6 @@ export default class LichHen extends React.Component {
     clearFilter(type) {
         if(type === 'options') {
             this.setState({
-                filterAllCheck: false,
                 filterNotArriveCheck: false,
                 filterCancelDateCheck: false,
             });
@@ -105,7 +103,7 @@ export default class LichHen extends React.Component {
     }
     render() {
         moment.locale('vi', viLocale);
-        const showResultFilterBox = !this.state.showFilterBox && (this.state.filterAllCheck || this.state.filterCancelDateCheck || this.state.filterNotArriveCheck);
+        const showResultFilterBox = !this.state.showFilterBox && (this.state.filterCancelDateCheck || this.state.filterNotArriveCheck);
         const isToday = this.state.date.isSame(new Date(), 'day');
         const weekDaySelected = this.state.date ? moment(this.state.date).format('dddd') : '';
 
@@ -566,15 +564,6 @@ export default class LichHen extends React.Component {
                         <div className="filter-options">
                             <div className=" custom-checkbox">
                                 <input type="checkbox" 
-                                        className="custom-control-input" id="filterAllCheck"
-                                        name="filterAllCheck"
-                                        checked={this.state.filterAllCheck}
-                                        onChange={this.handleInputChange} 
-                                />
-                                <label className="custom-control-label" htmlFor="filterAllCheck">Tất cả (6)</label>
-                            </div>  
-                            <div className=" custom-checkbox">
-                                <input type="checkbox" 
                                         className="custom-control-input" id="filterNotArriveCheck"
                                         name="filterNotArriveCheck"
                                         checked={this.state.filterNotArriveCheck}
@@ -625,7 +614,6 @@ export default class LichHen extends React.Component {
                 {showResultFilterBox && <div className="result-filter-box">
                     <div className="result">
                         <span className="field">Trạng thái: </span>
-                        {this.state.filterAllCheck && <span>Tất cả (6)</span>}
                         {this.state.filterCancelDateCheck && <span>Hủy hẹn (1)</span>}
                         {this.state.filterNotArriveCheck && <span>Chưa đến (1)</span>}
                         <FontAwesomeIcon className="clear-filter" onClick={() => this.clearFilter('options')}  icon={faTimes} />

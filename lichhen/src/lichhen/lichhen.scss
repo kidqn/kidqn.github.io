@@ -3,8 +3,7 @@ html, body {
     height: 100%;
     width: 100%;
 }
-// common //
-.lichhen .DayPickerKeyboardShortcuts_buttonReset { display:none !important; }
+// common // 
 .lichhen {
     .CalendarDay__selected, 
     .CalendarDay__selected:active, 
@@ -12,6 +11,7 @@ html, body {
         background: #0A2C4D;
         border: 1px double #0A2C4D;
     }
+    .DayPickerKeyboardShortcuts_buttonReset { display:none !important; }
 }
 /* custom checkbox */
 .lichhen .custom-checkbox {
@@ -620,7 +620,7 @@ html, body {
             color: rgba(10, 44, 77, 0.5);
         }
         span:not(.field) {
-            margin-right: 2px;
+            margin-right: 5px;
         }
         .clear-filter {
             position: absolute;
