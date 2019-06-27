@@ -95,18 +95,10 @@ export default class LichHen extends React.Component {
         let todayText = ''; 
         if(isToday) {
             todayText = 'Hôm nay';
-        } else if (today.isAfter(dayselect, 'day')) {
-            if(today.diff(dayselect, 'day') <= 1) {
-                todayText = 'Hôm qua'
-            } else {
-                todayText = 'Hôm kia'
-            }
-        } else if (today.isBefore(dayselect, 'day')) {
-            if(today.diff(dayselect, 'day') > -1) {
-                todayText = 'Ngày mai'
-            } else {
-                todayText = 'Ngày kia'
-            }
+        } else if (today.isAfter(dayselect, 'day') && today.diff(dayselect, 'day') <= 1) {
+            todayText = 'Hôm qua'
+        } else if (today.isBefore(dayselect, 'day') && today.diff(dayselect, 'day') > -1) {
+            todayText = 'Ngày mai'
         }
 
         return (
@@ -121,7 +113,7 @@ export default class LichHen extends React.Component {
                 <FontAwesomeIcon onClick={this.goNextDate} className="nav-calendar next" icon={faChevronRight} />
                 <div className="date-wrapper">
                     <p className="date-picker-displayname">
-                        {todayText} , {weekDaySelected}
+                        {todayText && <span>{todayText} ,</span>} {weekDaySelected}
                     </p>
                     <SingleDatePicker
                         date={this.state.date}
