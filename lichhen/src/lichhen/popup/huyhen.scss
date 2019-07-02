@@ -1,0 +1,138 @@
+.cancel-date-popup {
+    font-family: 'OpenSans', sans-serif;
+    .modal-content {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 320px;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+}
+.cancel-date-popup-header {
+    padding: 0;
+    border: 0;
+    .close {
+        position: absolute;
+        left: calc(100% + 14px);
+        background: white;
+        width: 32px;
+        height: 32px;
+        line-height: 0;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        opacity: 1;
+        top: 16px;
+        span {
+            opacity: 0.3;
+        }
+        &:hover {
+            span {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.cancel-date-popup-body {
+    flex: 1;
+    padding: 40px 80px 30px 80px;
+    .title {
+        opacity: 0.8;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.71;
+        letter-spacing: normal;
+        text-align: center;
+        color: #0a2c4d;
+        margin-bottom: 16px;
+    }
+    .avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        margin: 0 auto 16px auto;
+        img {
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .fullname {
+        opacity: 0.8;
+        font-size: 14px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.21;
+        letter-spacing: normal;
+        color: #0a2c4d;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    .date {
+        opacity: 0.5;
+        font-size: 10px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.1;
+        letter-spacing: normal;
+        text-align: center;
+        color: #0a2c4d;
+        .date-type {
+            padding: 4px 8px;
+            border-radius: 16px;
+            border: solid 1px rgba(10, 44, 77, 0.05);
+            background-color: rgba(10, 44, 77, 0.05);
+            margin-right: 18px;
+        }
+        .date-time {
+            font-size: 12px;
+        }
+    }
+}
+
+.cancel-date-popup-footer {
+    padding: 0 30px 20px 30px;
+    justify-content: space-between;
+    border: 0;
+    button {
+        flex: 1;
+        height: 40px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    button.btn-close {
+        border: solid 1px rgba(10, 44, 77, 0.15);
+        background-color: #fff;
+        color: #0a2c4d;
+        margin: 0 30px 0 0;
+    }
+    button.btn-submit {
+        border: solid 1px #fa4242;
+        background-color: #fa4242;
+        color: #fff;
+        margin: 0;
+    }    
+}

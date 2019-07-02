@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+// components
+import CancelDatePopup from './popup/huyhen';
+import CheckinPopup from './popup/checkin';
+import DoctorPopup from './popup/bacsi';
+
 import 'react-dates/initialize';
 import moment from 'moment';
 import viLocale from 'moment/locale/vi';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ReactTooltip from 'react-tooltip';
 import './lichhen.scss';
 
@@ -13,11 +17,11 @@ import chuadenImg from './chuaden-sec.svg';
 import huyhenImg from './huyhen-sec.svg';
 import ngocTrinhImg from './ngoc-trinh.jpg';
 import noDateImg from './no_date.svg'
-import { faChevronLeft, faChevronRight, faTimes } from '@fortawesome/free-solid-svg-icons'
 import Form from 'react-bootstrap/Form'
-
+// constant
 const DAY_MODE = true;
 const NIGHT_MODE = false;
+
 export default class LichHen extends React.Component {
     constructor(props) {
         super(props);
@@ -29,7 +33,14 @@ export default class LichHen extends React.Component {
             filterNotArriveCheck: false,
             filterCancelDateCheck: false,
             calendarDates: null,
-            doctorName: null
+            doctorName: null,
+            statusDate: 0, 
+            // 0: checkin & hủy hẹn, 1: Khách hủy hẹn, 2: chuyển đến bác sỹ, 3: chuyển đến thu ngân,4 checkout, 5 da checkout
+            cancelDatePopupShow: false,
+            checkinPopupShow: false,
+            doctorPopupShow: false,
+            resolveData: null,
+
         };
 
         this.onToggleDayLightMode = this.onToggleDayLightMode.bind(this);
@@ -39,6 +50,9 @@ export default class LichHen extends React.Component {
         this.backToday = this.backToday.bind(this);
         this.goPrevDate = this.goPrevDate.bind(this);
         this.goNextDate = this.goNextDate.bind(this);
+        this.closePopup = this.closePopup.bind(this);
+        this.openPopup = this.openPopup.bind(this);
+        this.updateStatusDate = this.updateStatusDate.bind(this);
       }
 
     // toogle day light mode 
@@ -100,6 +114,26 @@ export default class LichHen extends React.Component {
             date: moment(this.state.date).add(-1,'days')
         })
     }
+    // handle popups
+    openPopup(name, data) {
+        this.setState({
+            [name]: true,
+            resolveData: data
+        });
+    };
+    closePopup(name) {
+        this.setState({
+            [name]: false 
+        });
+    };
+    updateStatusDate(numberStatus) {
+        if(numberStatus && numberStatus !== null) {
+            this.setState({
+                statusDate: numberStatus
+            });
+        }
+    }
+
     render() {
         moment.locale('vi', viLocale);
         const showResultFilterBox = !this.state.showFilterBox && (this.state.filterCancelDateCheck || this.state.filterNotArriveCheck);
@@ -235,11 +269,16 @@ export default class LichHen extends React.Component {
                                                 <div className="name">Nguyễn Thị Kiều Oanh 
                                                     <span className="phone">
                                                         <i className="info"></i>
-                                                        <div className="status status-2">098****123</div>
+                                                        <div className="status status-phone">098****123</div>
                                                     </span>
                                                 </div>
                                                 <div className="stacks">
-                                                    <div className="status status-0">Chưa đến</div>
+                                                    {this.state.statusDate === 0 && <div className="status status-0">Chưa đến</div> }
+                                                    {this.state.statusDate === 1 && <div className="status status-1">Hủy hẹn</div> }
+                                                    {this.state.statusDate === 2 && <div className="status ">Đã Checkin</div> }
+                                                    {this.state.statusDate === 3 && <div className="status">Đã chuyển đến bác sĩ</div> }
+                                                    {this.state.statusDate === 4 && <div className="status ">Đã thanh toán</div> }
+                                                    {this.state.statusDate === 5 && <div className="status status-5">Đã Checkout</div> }
                                                 </div>
                                             </div>
                                             <div className="time">8:00</div>
@@ -250,12 +289,49 @@ export default class LichHen extends React.Component {
                                             </p>
                                         </div>
                                         <div className="ticket-footer">
-                                            <button className="btn btn-ticket">
-                                                Check in
-                                            </button>
-                                            <button className="btn btn-ticket">
-                                                Hủy hẹn
-                                            </button>
+                                            {this.state.statusDate === 0 && <React.Fragment>
+                                                <button className="btn btn-ticket" onClick={() => this.openPopup('checkinPopupShow')}>
+                                                    Check in
+                                                </button>
+                                                <button className="btn btn-ticket" 
+                                                    onClick={() => this.openPopup('cancelDatePopupShow', 
+                                                    {
+                                                        name: 'Nguyễn Thị Kiều Oanh',
+                                                        avatar: ngocTrinhImg,
+                                                        dateType: 'Tư vấn',
+                                                        dateTime: '8:00 - 9:00'
+                                                    })}>
+                                                    Hủy hẹn
+                                                </button>
+                                            </React.Fragment>}
+                                            {this.state.statusDate === 1 && <React.Fragment>
+                                                <button disabled className="btn btn-ticket">
+                                                    Khách hủy hẹn
+                                                </button>
+                                            </React.Fragment>}
+                                            {this.state.statusDate === 2 && <React.Fragment>
+                                                <button className="btn btn-ticket"
+                                                    onClick={() => this.openPopup('doctorPopupShow')}>
+                                                    Chuyển đến bác sỹ
+                                                </button>
+                                            </React.Fragment>}
+                                            {this.state.statusDate === 3 && <React.Fragment>
+                                                <button className="btn btn-ticket"  
+                                                    onClick={() => this.updateStatusDate(4)}>
+                                                    Chuyển đến thu ngân
+                                                </button>
+                                            </React.Fragment>}
+                                            {this.state.statusDate === 4 && <React.Fragment>
+                                                <button className="btn btn-ticket"  
+                                                    onClick={() => this.updateStatusDate(5)}>
+                                                    Check out
+                                                </button>
+                                            </React.Fragment>}
+                                            {this.state.statusDate === 5 && <React.Fragment>
+                                                <button disabled className="btn btn-ticket">
+                                                    Khách đã Checkout
+                                                </button>
+                                            </React.Fragment>}
                                         </div>
                                     </div>
                                     <div className="ticket">
@@ -267,7 +343,7 @@ export default class LichHen extends React.Component {
                                                 <div className="name">Phan Xuân Yến
                                                     <span className="phone">
                                                         <i className="info"></i>
-                                                        <div className="status status-2">098****123</div>
+                                                        <div className="status status-phone">098****123</div>
                                                     </span>
                                                 </div>
                                                 <div className="stacks">
@@ -299,7 +375,7 @@ export default class LichHen extends React.Component {
                                                 <div className="name">Nguyễn Thị Kiều Oanh 
                                                     <span className="phone">
                                                         <i className="info"></i>
-                                                        <div className="status status-2">098****123</div>
+                                                        <div className="status status-phone">098****123</div>
                                                     </span>
                                                 </div>
                                                 <div className="stacks">
@@ -328,7 +404,7 @@ export default class LichHen extends React.Component {
                                                 <div className="name">Phan Xuân Yến
                                                     <span className="phone">
                                                         <i className="info"></i>
-                                                        <div className="status status-2">098****123</div>
+                                                        <div className="status status-phone">098****123</div>
                                                     </span>
                                                 </div>
                                                 <div className="stacks">
@@ -360,7 +436,7 @@ export default class LichHen extends React.Component {
                                                 <div className="name">Nguyễn Thị Kiều Oanh 
                                                     <span className="phone">
                                                         <i className="info"></i>
-                                                        <div className="status status-2">098****123</div>
+                                                        <div className="status status-phone">098****123</div>
                                                     </span>
                                                 </div>
                                                 <div className="stacks">
@@ -389,12 +465,12 @@ export default class LichHen extends React.Component {
                                                 <div className="name">Phan Xuân Yến
                                                     <span className="phone">
                                                         <i className="info"></i>
-                                                        <div className="status status-2">098****123</div>
+                                                        <div className="status status-phone">098****123</div>
                                                     </span>
                                                 </div>
                                                 <div className="stacks">
-                                                    <div className="status status-3">Đã checkout</div>
-                                                    <div className="status status-1">BS. Hoàng Minh</div>
+                                                    <div className="status status-5">Đã checkout</div>
+                                                    <div className="status status-bs">BS. Hoàng Minh</div>
                                                 </div>
                                             </div>
                                             <div className="time">8:00</div>
@@ -426,7 +502,7 @@ export default class LichHen extends React.Component {
                                                 <div className="name">Nguyễn Thị Kiều Oanh 
                                                     <span className="phone">
                                                         <i className="info"></i>
-                                                        <div className="status status-2">098****123</div>
+                                                        <div className="status status-phone">098****123</div>
                                                     </span>
 
                                                     <span data-tip='Admin' 
@@ -465,7 +541,7 @@ export default class LichHen extends React.Component {
                                                 <div className="name">Phan Xuân Yến
                                                     <span className="phone">
                                                         <i className="info"></i>
-                                                        <div className="status status-2">098****123</div>
+                                                        <div className="status status-phone">098****123</div>
                                                     </span>
                                                 </div>
                                                 <div className="stacks">
@@ -523,7 +599,7 @@ export default class LichHen extends React.Component {
                                                 <div className="name">Phan Xuân Yến
                                                     <span className="phone">
                                                         <i className="info"></i>
-                                                        <div className="status status-2">098****123</div>
+                                                        <div className="status status-phone">098****123</div>
                                                     </span>
                                                 </div>
                                                 <div className="stacks">
@@ -634,6 +710,24 @@ export default class LichHen extends React.Component {
                     </div> }
                 </div>}
             </div>
+
+            {this.state.cancelDatePopupShow && <CancelDatePopup  
+                resolve={this.state.resolveData}
+                updatestatus={this.updateStatusDate}
+                show={this.state.cancelDatePopupShow}
+                onHide={() => this.closePopup('cancelDatePopupShow')}/>
+            }
+            {this.state.checkinPopupShow && <CheckinPopup  
+                updatestatus={this.updateStatusDate}
+                show={this.state.checkinPopupShow}
+                onHide={() => this.closePopup('checkinPopupShow')}/>
+            }
+            {this.state.doctorPopupShow && <DoctorPopup  
+                resolve={this.state.resolveData}
+                updatestatus={this.updateStatusDate}
+                show={this.state.doctorPopupShow}
+                onHide={() => this.closePopup('doctorPopupShow')}/>
+            }
          </div>    
         );
     }

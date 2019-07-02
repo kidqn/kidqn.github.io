@@ -106,6 +106,7 @@ html, body {
         color: #0a2c4d;
     }
     #tao-lich-hen {
+        position: relative;
         width: 140px;
         height: 40px;
         border-radius: 8px;
@@ -118,6 +119,25 @@ html, body {
         letter-spacing: normal;
         text-align: center;
         color: #fff;
+        &:after {
+            content: '';
+            display: none;
+            width: 90%;
+            height: 100%;
+            position: absolute;
+            left: 5%;
+            top: 12%;
+            z-index: -1;
+            border-radius: 12px;
+            -webkit-filter: blur(7px);
+            filter: blur(7px);
+            background-color: #faa111;
+        }
+        &:hover {
+            &:after {
+                display: block;
+            }
+        }
     }
 }
 
@@ -442,19 +462,19 @@ html, body {
                 &.status-0 {
                     background-color: #faa111;
                 }
-                &.status-1 {
+                &.status-bs {
                     background-color: #edeff0;
                     color: #0a2c4d;
                     opacity: 0.5;
                 }
-                &.status-2 {
+                &.status-phone {
                     background-color: #0a2b4d;
                     color: #fff;
                 }
-                &.status-3 {
+                &.status-5 {
                     background-color: #86c13d;
                 }
-                &.status-4 {
+                &.status-1 {
                     background-color: #fa4242;
                 }
             }
@@ -654,7 +674,7 @@ html, body {
             right: 22px;
             top: 22px;
             opacity: 0.8;
-            background-image: url(/static/media/clear_ic.b79e1650.svg);
+            background-image: url(./clear_ic.svg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: 100% 100%;
