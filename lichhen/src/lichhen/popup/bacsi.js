@@ -56,7 +56,7 @@ export default class DoctorPopup extends React.Component {
 
       }
     handleConfirm() {
-        this.props.updatestatus(4);
+        this.props.updatestatus(3);
         this.props.onHide();
     }  
 

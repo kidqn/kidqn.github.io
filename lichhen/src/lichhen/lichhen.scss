@@ -3,16 +3,7 @@ html, body {
     height: 100%;
     width: 100%;
 }
-// common // 
-.lichhen {
-    .CalendarDay__selected, 
-    .CalendarDay__selected:active, 
-    .CalendarDay__selected:hover {
-        background: #0A2C4D;
-        border: 1px double #0A2C4D;
-    }
-    .DayPickerKeyboardShortcuts_buttonReset { display:none !important; }
-}
+
 /* custom checkbox */
 .lichhen .custom-checkbox {
     display: flex;

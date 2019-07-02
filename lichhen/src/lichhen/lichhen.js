@@ -3,11 +3,13 @@ import React from 'react';
 import CancelDatePopup from './popup/huyhen';
 import CheckinPopup from './popup/checkin';
 import DoctorPopup from './popup/bacsi';
+import CreateDatePopup from './popup/tao-lich-hen';
 
 import 'react-dates/initialize';
 import moment from 'moment';
 import viLocale from 'moment/locale/vi';
 import ReactTooltip from 'react-tooltip';
+import './common.scss';
 import './lichhen.scss';
 
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
@@ -39,7 +41,9 @@ export default class LichHen extends React.Component {
             cancelDatePopupShow: false,
             checkinPopupShow: false,
             doctorPopupShow: false,
+            createDatePopupShow: false,
             resolveData: null,
+            opacity:0.9
 
         };
 
@@ -154,10 +158,10 @@ export default class LichHen extends React.Component {
         }
 
         return (
-         <div className="lichhen">
+         <div className="lichhen use-bs-styles">
             <div className="lichhen-header">
                 <span>Lịch hẹn</span>
-                <button className="btn" id="tao-lich-hen">Tạo lịch hẹn</button>
+                <button className="btn" id="tao-lich-hen" onClick={() => this.openPopup('createDatePopupShow')}>Tạo lịch hẹn</button>
             </div>
 
             <div className="lichhen-topbar">
@@ -710,7 +714,11 @@ export default class LichHen extends React.Component {
                     </div> }
                 </div>}
             </div>
-
+            {/* <input type="range" className="custom-range" id="customRange" 
+                min="0.1" max="1.0" step="0.05" 
+                value={this.state.opacity}
+                onChange={event => this.setState({ opacity: event.target.value })} >
+                </input> */}
             {this.state.cancelDatePopupShow && <CancelDatePopup  
                 resolve={this.state.resolveData}
                 updatestatus={this.updateStatusDate}
@@ -727,6 +735,11 @@ export default class LichHen extends React.Component {
                 updatestatus={this.updateStatusDate}
                 show={this.state.doctorPopupShow}
                 onHide={() => this.closePopup('doctorPopupShow')}/>
+            }
+            {this.state.createDatePopupShow && <CreateDatePopup  
+                resolve={this.state.resolveData}
+                show={this.state.createDatePopupShow}
+                onHide={() => this.closePopup('createDatePopupShow')}/>
             }
          </div>    
         );
