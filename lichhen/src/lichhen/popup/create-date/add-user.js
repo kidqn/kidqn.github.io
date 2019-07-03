@@ -85,7 +85,7 @@ export default class AddUserPopup extends React.Component {
                             </div>
                             <div className="col-sm-6 field-input gender">
                                 <span>Giới tính:</span>
-                                <div className={"option " + (this.state.gender ? 'active': '')} onClick={(e) => this.handleInputChange(e,'gender')}>Name</div>
+                                <div className={"option " + (this.state.gender ? 'active': '')} onClick={(e) => this.handleInputChange(e,'gender')}>Nam</div>
                                 <div className={"option " + (!this.state.gender ? 'active': '')} onClick={(e) => this.handleInputChange(e,'gender')}>Nữ</div>
                             </div>
                         </div>
