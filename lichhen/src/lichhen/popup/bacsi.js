@@ -45,6 +45,7 @@ export default class DoctorPopup extends React.Component {
             seats: seats,
             doctors: doctors,
             searchDoctor: '',
+            resolveData: props.resolve,
             chosenDoctor: null,
             chosenSeat: null
         };
@@ -56,8 +57,11 @@ export default class DoctorPopup extends React.Component {
 
       }
     handleConfirm() {
-        this.props.updatestatus(3);
         this.props.onHide();
+        const newUser = {...this.props.resolve};
+        newUser.chosenDoctor = this.state.chosenDoctor;
+        newUser.chooseSeat = this.state.chooseSeat;
+        this.props.openPopup('confirmDoctorAndSeatPopupShow', newUser);
     }  
 
     handleInputChange(event, type) {

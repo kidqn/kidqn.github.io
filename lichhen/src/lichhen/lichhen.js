@@ -5,6 +5,8 @@ import CheckinPopup from './popup/checkin';
 import DoctorPopup from './popup/bacsi';
 import CreateDatePopup from './popup/tao-lich-hen';
 import BillPopup from './popup/thungan';
+import PaymentPopup from './popup/thanhtoan';
+import ConfirmDoctorAndSeatPopup from './popup/xacnhan-bacsi';
 
 import 'react-dates/initialize';
 import moment from 'moment';
@@ -25,6 +27,21 @@ import Form from 'react-bootstrap/Form'
 const DAY_MODE = true;
 const NIGHT_MODE = false;
 
+const selectedUser = {
+    avatar: ngocTrinhImg,
+    dateType: 'Tư vấn',
+    dateTime: '8:00 - 9:00',
+    fullname: 'Nguyễn Thị Kiều Oanh',
+    gender: 'M',
+    phoneNumber:'091231232',
+    date: moment(),
+    city: 'Ho chi minh',
+    district: 'Quan 2',
+    ward: 'Phuong 4',
+    chosenDoctor: null,
+    chosenSeat: null
+}
+
 export default class LichHen extends React.Component {
     constructor(props) {
         super(props);
@@ -44,7 +61,10 @@ export default class LichHen extends React.Component {
             doctorPopupShow: false,
             billPopupShow: false,
             createDatePopupShow: false,
+            paymentPopupShow: false,
+            confirmDoctorAndSeatPopupShow: false,
             resolveData: null,
+            selectedUser: selectedUser,
             opacity:0.9
 
         };
@@ -283,8 +303,9 @@ export default class LichHen extends React.Component {
                                                     {this.state.statusDate === 1 && <div className="status status-1">Hủy hẹn</div> }
                                                     {this.state.statusDate === 2 && <div className="status ">Đã Checkin</div> }
                                                     {this.state.statusDate === 3 && <div className="status">Đã chuyển đến bác sĩ</div> }
-                                                    {this.state.statusDate === 4 && <div className="status ">Đã thanh toán</div> }
-                                                    {this.state.statusDate === 5 && <div className="status status-5">Đã Checkout</div> }
+                                                    {this.state.statusDate === 4 && <div className="status ">Đã chuyển đến thu ngân</div> }
+                                                    {this.state.statusDate === 5 && <div className="status ">Đã thanh toán</div> }
+                                                    {this.state.statusDate === 6 && <div className="status status-5">Đã Checkout</div> }
                                                 </div>
                                             </div>
                                             <div className="time">8:00</div>
@@ -300,13 +321,7 @@ export default class LichHen extends React.Component {
                                                     Check in
                                                 </button>
                                                 <button className="btn btn-ticket" 
-                                                    onClick={() => this.openPopup('cancelDatePopupShow', 
-                                                    {
-                                                        name: 'Nguyễn Thị Kiều Oanh',
-                                                        avatar: ngocTrinhImg,
-                                                        dateType: 'Tư vấn',
-                                                        dateTime: '8:00 - 9:00'
-                                                    })}>
+                                                    onClick={() => this.openPopup('cancelDatePopupShow', this.state.selectedUser)}>
                                                     Hủy hẹn
                                                 </button>
                                             </React.Fragment>}
@@ -329,11 +344,17 @@ export default class LichHen extends React.Component {
                                             </React.Fragment>}
                                             {this.state.statusDate === 4 && <React.Fragment>
                                                 <button className="btn btn-ticket"  
-                                                    onClick={() => this.updateStatusDate(5)}>
-                                                    Check out
+                                                    onClick={() => this.openPopup('paymentPopupShow')}>
+                                                    Thanh toán
                                                 </button>
                                             </React.Fragment>}
                                             {this.state.statusDate === 5 && <React.Fragment>
+                                                <button className="btn btn-ticket"  
+                                                    onClick={() => this.updateStatusDate(6)}>
+                                                    Check out
+                                                </button>
+                                            </React.Fragment>}
+                                            {this.state.statusDate === 6 && <React.Fragment>
                                                 <button disabled className="btn btn-ticket">
                                                     Khách đã Checkout
                                                 </button>
@@ -720,6 +741,7 @@ export default class LichHen extends React.Component {
                 resolve={this.state.resolveData}
                 updatestatus={this.updateStatusDate}
                 show={this.state.cancelDatePopupShow}
+                openPopup={this.openPopup}
                 onHide={() => this.closePopup('cancelDatePopupShow')}/>
             }
             {this.state.checkinPopupShow && <CheckinPopup  
@@ -731,6 +753,7 @@ export default class LichHen extends React.Component {
                 resolve={this.state.resolveData}
                 updatestatus={this.updateStatusDate}
                 show={this.state.doctorPopupShow}
+                openPopup={this.openPopup}
                 onHide={() => this.closePopup('doctorPopupShow')}/>
             }
             {this.state.billPopupShow && <BillPopup  
@@ -739,10 +762,22 @@ export default class LichHen extends React.Component {
                 show={this.state.billPopupShow}
                 onHide={() => this.closePopup('billPopupShow')}/>
             }
+            {this.state.paymentPopupShow && <PaymentPopup  
+                updatestatus={this.updateStatusDate}
+                resolve={this.state.resolveData}
+                show={this.state.paymentPopupShow}
+                onHide={() => this.closePopup('paymentPopupShow')}/>
+            }
             {this.state.createDatePopupShow && <CreateDatePopup  
                 resolve={this.state.resolveData}
                 show={this.state.createDatePopupShow}
                 onHide={() => this.closePopup('createDatePopupShow')}/>
+            }
+            {this.state.confirmDoctorAndSeatPopupShow && <ConfirmDoctorAndSeatPopup
+                resolve={this.state.resolveData}
+                updatestatus={this.updateStatusDate}
+                show={this.state.confirmDoctorAndSeatPopupShow}
+                onHide={() => this.closePopup('confirmDoctorAndSeatPopupShow')}/>
             }
          </div>    
         );

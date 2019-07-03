@@ -50,9 +50,10 @@ export default class CreateDatePopup extends React.Component {
             filterSearch: '',
             dateTypes: dateTypes,
             chosenDateType: {},
-            userData: null,
+            userData: props.resolve,
             addUserPopupShow: false,
             resolveData: null,
+            chosenDoctor: null,
             timePicker: 8,
             doctors: doctors,
             keynote: ''
@@ -61,8 +62,22 @@ export default class CreateDatePopup extends React.Component {
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleConfirm = this.handleConfirm.bind(this);
         this.openPopup = this.openPopup.bind(this);
+        this.chooseDortor = this.chooseDortor.bind(this);
         this.addUser = this.addUser.bind(this);
-      }
+    }
+
+    componentDidUpdate(oldProps) {
+        // By duplicating the data, you have to then
+        // keep the local copy in sync with the
+        // updated props...
+        if(oldProps.resolve !== this.props.resolve) {
+            // This triggers an unnecessary re-render
+            this.setState({
+                userData: this.props.resolve
+            });
+        }
+    }
+
     handleConfirm() {
         this.props.onHide();
     }  
@@ -83,6 +98,11 @@ export default class CreateDatePopup extends React.Component {
     chooseDateTypes(type){
         this.setState({
             chosenDateType: type 
+        });
+    }
+    chooseDortor(doctor){
+        this.setState({
+            chosenDoctor: doctor 
         });
     }
     addUser(user) {
@@ -112,7 +132,7 @@ export default class CreateDatePopup extends React.Component {
     }
 
     render() {   
-        const {dateTypes, chosenDateType} = this.state;
+        const {dateTypes, chosenDateType, chosenDoctor} = this.state;
      
         return (
             <div className="use-bs-styles">
@@ -210,7 +230,9 @@ export default class CreateDatePopup extends React.Component {
                             <label className="label-section">Bác sỹ</label>
                             <div className="doctors-list">
                                 {doctors.map((value, index) => {
-                                    return <div className={"doctor"} key={index}>
+                                    return <div className={"doctor " + (value.name ===  chosenDoctor ? 'active' : '')}
+                                        key={index} 
+                                        onClick={() => this.chooseDortor(value.name)}>
                                         <div className="avatar"><img src={ngocTrinhImg} alt={value.name} /></div>
                                         {value.name}
                                     </div>

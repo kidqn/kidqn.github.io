@@ -30,7 +30,7 @@ export default class AddUserPopup extends React.Component {
         this.props.onHide();
         const newUser = {
             fullname: this.state.fullname,
-            gender: this.state.gender,
+            gender: this.state.gender ? 'M' : 'F',
             phoneNumber:this.state.phoneNumber,
             date: this.state.date,
             city: this.state.city,

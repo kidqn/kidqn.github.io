@@ -15,6 +15,7 @@ export default class CancelDatePopup extends React.Component {
     handleConfirm() {
         this.props.updatestatus(1);
         this.props.onHide();
+        this.props.openPopup('createDatePopupShow', this.props.resolve);
     }  
     render() {
         const {resolve} = this.props;
@@ -37,7 +38,7 @@ export default class CancelDatePopup extends React.Component {
                         <div className="avatar">
                             <img  src={resolve.avatar} alt="" />
                         </div>
-                        <h4 className="fullname">{resolve.name}</h4>
+                        <h4 className="fullname">{resolve.fullname}</h4>
                         <div className="date">
                             <span className="date-type">{resolve.dateType}</span>
                             <span className="date-time">{resolve.dateTime}</span>
