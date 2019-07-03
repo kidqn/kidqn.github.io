@@ -1,5 +1,8 @@
 .create-date-popup {
     font-family: 'OpenSans', sans-serif;
+    &.pending {
+        opacity: 0;
+    }
     .modal-content {
         width: 690px;
         min-height: 620px;        
@@ -70,8 +73,10 @@
 }
 
 .create-date-popup .create-date-popup-body {
-    flex: 1;
+    flex: 1 1;
     padding: 40px 30px 24px 30px;
+    max-height: 630px;
+    overflow: auto;
     .label-section {
         opacity: 0.8;
         font-size: 14px;
@@ -151,24 +156,6 @@
         }
     }
     .search-field {
-        position: relative;
-        width: 100%;
-        height: 40px;
-        padding: 8px 8px 8px 48px;
-        border-radius: 8px;
-        border: 0;
-        background-color: rgba(10, 44, 77, 0.05);
-        font-size: 14px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.71;
-        letter-spacing: normal;
-        color: #0a2c4d;
-        margin-bottom: 16px;
-        &::placeholder {
-            color: rgba(10, 44, 77, 0.5);
-        }
     }
     .ic-add-new {
         display: inline-block;
@@ -228,13 +215,10 @@
                 margin-right: 20px;
             }
         }
-        .SingleDatePicker,
-        .SingleDatePicker > div,
-        .SingleDatePickerInput {
-            width: 100%;
-        }
     }
-
+    .section-time-picker {
+        margin-bottom: 36px;
+    }
     .time-picker {
         position: relative;
         & > span {
@@ -264,12 +248,83 @@
                 right: 0;
             }
         }
-        .step {
+        .time-slider {
+            &:after {
+                box-shadow: 63px 0 0 #eef0f2, 
+                113px 0 0 #eef0f2, 
+                162px 0 0 #eef0f2, 
+                210px 0 0 #eef0f2, 
+                260px 0 0 #eef0f2, 
+                310px 0 0 #eef0f2, 
+                360px 0 0 #eef0f2, 
+                411px 0 0 #EEF0F2, 
+                460px 0 0 #eef0f2, 
+                509px 0 0 #eef0f2, 
+                560px 0 0 #eef0f2, 
+                622px 0 0 #eef0f2;            
+            }
+        }
+    }
+
+    .section-doctors{
+        min-height: 110px;
+        padding: 36px 20px 0 20px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        border: solid 1px rgba(10, 44, 77, 0.15);
+        position: relative;
+        .label-section {
             position: absolute;
-            top: 17px;
-            height: 6px;
-            width: 4px;
-            background-color: #eef0f2;
+            top: -12px;
+            left: 20px;
+            background:#fff;
+            z-index: 1;
+            padding: 0 6px;
+        }
+        .doctors-list {
+            display: flex;
+            flex-wrap: wrap;
+            .doctor {
+                position: relative;
+                display: flex;
+                align-items: center;
+                height: 25px;
+                border-radius: 8px;
+                border: solid 1px rgba(10, 44, 77, 0.15);
+                background-color: #fff;
+                padding: 8px 14px 8px 42px;
+                margin: 0 10px 24px 0;
+                font-size: 13px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.85;
+                letter-spacing: normal;
+                color: #0a2c4d;
+                cursor: pointer;
+                &.active {
+                    background: #0093ee;
+                    color: #fff;
+                    opacity: 1;
+                    box-shadow: 0px 17px 10px -10px rgba(0, 147, 238,0.4)
+                }
+                .avatar {
+                    position: absolute;
+                    top: -5px;
+                    left: -5px;
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    border: solid 2px #fff;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+            }
         }
     }
 }

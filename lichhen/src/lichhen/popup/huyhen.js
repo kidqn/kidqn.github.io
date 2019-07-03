@@ -26,7 +26,7 @@ export default class CancelDatePopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="cancel-date-popup"
+                className="cancel-date-popup use-bs-styles"
             >                
             <Form 
                 noValidate>

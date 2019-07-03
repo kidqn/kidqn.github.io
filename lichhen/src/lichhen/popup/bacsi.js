@@ -90,7 +90,7 @@ export default class DoctorPopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="doctor-popup"
+                className="doctor-popup use-bs-styles"
             >                
             <Form 
                 noValidate>

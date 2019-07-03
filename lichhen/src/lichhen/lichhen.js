@@ -4,6 +4,7 @@ import CancelDatePopup from './popup/huyhen';
 import CheckinPopup from './popup/checkin';
 import DoctorPopup from './popup/bacsi';
 import CreateDatePopup from './popup/tao-lich-hen';
+import BillPopup from './popup/thungan';
 
 import 'react-dates/initialize';
 import moment from 'moment';
@@ -41,6 +42,7 @@ export default class LichHen extends React.Component {
             cancelDatePopupShow: false,
             checkinPopupShow: false,
             doctorPopupShow: false,
+            billPopupShow: false,
             createDatePopupShow: false,
             resolveData: null,
             opacity:0.9
@@ -321,7 +323,7 @@ export default class LichHen extends React.Component {
                                             </React.Fragment>}
                                             {this.state.statusDate === 3 && <React.Fragment>
                                                 <button className="btn btn-ticket"  
-                                                    onClick={() => this.updateStatusDate(4)}>
+                                                    onClick={() => this.openPopup('billPopupShow')}>
                                                     Chuyển đến thu ngân
                                                 </button>
                                             </React.Fragment>}
@@ -730,6 +732,11 @@ export default class LichHen extends React.Component {
                 updatestatus={this.updateStatusDate}
                 show={this.state.doctorPopupShow}
                 onHide={() => this.closePopup('doctorPopupShow')}/>
+            }
+            {this.state.billPopupShow && <BillPopup  
+                resolve={this.state.resolveData}
+                show={this.state.billPopupShow}
+                onHide={() => this.closePopup('billPopupShow')}/>
             }
             {this.state.createDatePopupShow && <CreateDatePopup  
                 resolve={this.state.resolveData}

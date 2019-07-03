@@ -6,7 +6,6 @@ import Card from 'react-bootstrap/Card';
 import 'react-dates/initialize';
 import moment from 'moment';
 import viLocale from 'moment/locale/vi';
-import ReactTooltip from 'react-tooltip';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 //component
 import AddUserPopup from './add-user';
@@ -15,7 +14,34 @@ import './tao-lich-hen.scss';
 import ngocTrinhImg from '../ngoc-trinh.jpg';
 
 // fake data 
-const dateTypes = [ {id: 1, type: 'Tư vấn'}, {id: 2, type: 'Tái khám'}, {id: 3, type: 'Điều trị'}]
+const dateTypes = [ {id: 1, type: 'Tư vấn'}, {id: 2, type: 'Tái khám'}, {id: 3, type: 'Điều trị'}];
+const doctors = [
+    {
+        avartar: ngocTrinhImg,
+        name: 'Phạm Thùy Dương',
+        roomId:'DC761'
+    },
+    {        
+        avartar: ngocTrinhImg,
+        name: 'Lê Nguyễn Thanh Tâm',
+        roomId:'DC762'
+    },
+    {
+        avartar: ngocTrinhImg,
+        name: 'Trần Thục Trang',
+        roomId:'DC763'
+    },    
+    {
+        avartar: ngocTrinhImg,
+        name: 'Đỗ Thị Thu Hương',
+        roomId:'DC764'
+    },    
+    {
+        avartar: ngocTrinhImg,
+        name: 'Hồ Xuân Lệnh',
+        roomId:'DC765'
+    }
+];
 export default class CreateDatePopup extends React.Component {
     constructor(props) {
         super(props);
@@ -27,12 +53,15 @@ export default class CreateDatePopup extends React.Component {
             userData: null,
             addUserPopupShow: false,
             resolveData: null,
-            timePicker: 8
+            timePicker: 8,
+            doctors: doctors,
+            keynote: ''
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleConfirm = this.handleConfirm.bind(this);
         this.openPopup = this.openPopup.bind(this);
+        this.addUser = this.addUser.bind(this);
       }
     handleConfirm() {
         this.props.onHide();
@@ -56,12 +85,25 @@ export default class CreateDatePopup extends React.Component {
             chosenDateType: type 
         });
     }
+    addUser(user) {
+        console.log(user) 
+        this.setState({
+            userData: user
+        });
+    }
     // handle popups
     openPopup(name, data) {
-        this.setState({
-            [name]: true,
-            resolveData: data
-        });
+        if(name === 'addUserPopupShow') {
+            this.setState({
+                addUserPopupShow: true,
+                resolveData: data
+            });
+        } else {
+            this.setState({
+                [name]: true,
+                resolveData: data
+            });
+        }
     };
     closePopup(name) {
         this.setState({
@@ -73,14 +115,15 @@ export default class CreateDatePopup extends React.Component {
         const {dateTypes, chosenDateType} = this.state;
      
         return (
-            <Modal
+            <div className="use-bs-styles">
+                <Modal
                 {...this.props}
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="create-date-popup use-bs-styles"
-            >                
-            <Form 
+                className={"create-date-popup use-bs-styles " + (this.state.addUserPopupShow ? 'pending': '')}
+                >                
+                <Form 
                 noValidate>
                     <Modal.Header className="create-date-popup-header" closeButton>
                         <Modal.Title>
@@ -94,10 +137,10 @@ export default class CreateDatePopup extends React.Component {
                         {this.state.userData ? (<div className="user-info">
                             <div className="avatar"><img src={ngocTrinhImg} alt=""/></div>
                             <div className="info">
-                                <div className="name">Ngô Lê Thùy Trinh</div>
+                                <div className="name">{this.state.userData.fullname}</div>
                                 <div className="contact">
-                                    <div className="status status-phone">098****123</div>
-                                    <div className="address">CHUNG CƯ A2, QUANG VINH, BIÊN HÒA, ĐỒNG NAI</div>
+                                    <div className="status status-phone">{this.state.userData.phoneNumber}</div>
+                                    <div className="address">{this.state.userData.ward}, {this.state.userData.district}, {this.state.userData.city}</div>
                                 </div>
                             </div>
                         </div> ) : (<React.Fragment>
@@ -151,7 +194,7 @@ export default class CreateDatePopup extends React.Component {
                         <section className="section-time-picker">
                             <label className="label-section">Thời gian:</label>
                             <div className="time-picker">
-                                <input type="range" className="time-slider" id="customRange" 
+                                <input type="range" className="time-slider" id="time-slider" tooltip="sadas"
                                     min="8" max="20" step="1" 
                                     value={this.state.timePicker}
                                     onChange={event => this.setState({ timePicker: event.target.value })} />
@@ -162,20 +205,42 @@ export default class CreateDatePopup extends React.Component {
                                 <span className="hr-20">20</span>
                             </div>
                         </section>
+
+                        <section className="section-doctors">
+                            <label className="label-section">Bác sỹ</label>
+                            <div className="doctors-list">
+                                {doctors.map((value, index) => {
+                                    return <div className={"doctor"} key={index}>
+                                        <div className="avatar"><img src={ngocTrinhImg} alt={value.name} /></div>
+                                        {value.name}
+                                    </div>
+                                })}
+                            </div>
+                        </section>
+                        <section className="section-note">
+                            <Form.Group>
+                                <Form.Label>Ghi chú</Form.Label>
+                                <Form.Control as="textarea" rows="3" 
+                                        name="keynote"
+                                        value={this.state.keynote}
+                                        onChange={this.handleInputChange}/>
+                            </Form.Group>
+                        </section>
                     </Modal.Body>
                     <Modal.Footer className="create-date-popup-footer">
                         <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
                         <Button className="btn-submit" onClick={this.handleConfirm} >Tạo lịch hẹn</Button>
                     </Modal.Footer>
             </Form>
-            {this.state.addUserPopupShow && <AddUserPopup  
-                resolve={this.state.resolveData}
-                openPopup={this.openPopup}
-                show={this.state.addUserPopupShow}
-                onHide={() => this.closePopup('addUserPopupShow')}/>
-            }
-            </Modal>
-
+                </Modal>
+                {this.state.addUserPopupShow && <AddUserPopup  
+                    resolve={this.state.resolveData}
+                    openPopup={this.openPopup}
+                    onSubmit={this.addUser}
+                    show={this.state.addUserPopupShow}
+                    onHide={() => this.closePopup('addUserPopupShow')}/>
+                }
+            </div>
         );
     }
 }

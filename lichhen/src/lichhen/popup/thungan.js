@@ -4,16 +4,16 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
-import './checkin.scss';
+import './thungan.scss';
 
-export default class CheckinPopup extends React.Component {
+export default class BillPopup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
         this.handleConfirm = this.handleConfirm.bind(this);
       }
     handleConfirm() {
-        this.props.updatestatus(2);
+        this.props.updatestatus(4);
         this.props.onHide();
     }  
     render() {        
@@ -23,19 +23,18 @@ export default class CheckinPopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="checkin-popup use-bs-styles"
+                className="bill-popup use-bs-styles"
             >                
             <Form 
                 noValidate>
-                    <Modal.Header className="checkin-popup-header" closeButton>
+                    <Modal.Header className="bill-popup-header" closeButton>
                     </Modal.Header>
-                    <Modal.Body className="checkin-popup-body">
-                        <p className="title">Bạn không thể hoàn tác sau khi nhấn nút "Check In".<br/>
-                            Bạn có muốn tiếp tục không?</p>
+                    <Modal.Body className="bill-popup-body">
+                        <p className="title">Bạn đã hoàn thành việc khám chữa bệnh và muốn chuyển thông tin đến Thu ngân?</p>
                     </Modal.Body>
-                    <Modal.Footer className="checkin-popup-footer">
+                    <Modal.Footer className="bill-popup-footer">
                         <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
-                        <Button className="btn-submit" onClick={this.handleConfirm} >Check In</Button>
+                        <Button className="btn-submit" onClick={this.handleConfirm} >Xác nhận</Button>
                     </Modal.Footer>
             </Form>
             </Modal>

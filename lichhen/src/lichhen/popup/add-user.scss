@@ -56,46 +56,60 @@
 .add-user-popup-body {
     flex: 1;
     padding: 40px 28px 24px 28px;
-    .search-field {
-        position: relative;
-        width: 100%;
-        height: 40px;
-        padding: 8px 8px 8px 48px;
-        border-radius: 8px;
-        border: 0;
-        background-color: rgba(10, 44, 77, 0.05);
-        font-size: 14px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.71;
-        letter-spacing: normal;
-        color: #0a2c4d;
-        margin-bottom: 16px;
-        &::placeholder {
-            color: rgba(10, 44, 77, 0.5);
+    .field-input.gender {
+        display: flex;
+        align-items: center;
+        & > span,
+        & > .option {
+            position: static;
+            margin-right: 10px;
+        }
+        .option {
+            opacity: 0.5;
+            font-size: 13px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.85;
+            letter-spacing: normal;
+            color: #0a2c4d;
+            width: 65px;
+            height: 25px;
+            text-align: center;
+            border-radius: 8px;
+            border: solid 1px rgba(10, 44, 77, 0.15);
+            background-color: #fff;
+            cursor: pointer;
+            &.active {
+                border: 0;
+                background: #0093ee;
+                color: #fff;
+                opacity: 1;
+                box-shadow: 0px 17px 10px -10px rgba(0, 147, 238,0.4)
+            }
         }
     }
-    .ic-add-new {
-        display: inline-block;
-        width: 11px;
-        height: 11px;
-        margin-right: 9px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 11px 11px;
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSIxMSIgdmlld0JveD0iMCAwIDExIDExIj4gICAgPHBhdGggZmlsbD0iIzAwOTNFRSIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNMTAuMDYyIDQuODc1Yy4yNDIgMCAuNDM4LjE5Ni40MzguNDM4di44NzVhLjQzNy40MzcgMCAwIDEtLjQzOC40MzdINi4xMjV2My45MzhhLjQzNy40MzcgMCAwIDEtLjQzOC40MzdoLS44NzVhLjQzNy40MzcgMCAwIDEtLjQzNy0uNDM3VjYuNjI1SC40MzdBLjQzNy40MzcgMCAwIDEgMCA2LjE4OHYtLjg3NWMwLS4yNDIuMTk2LS40MzguNDM3LS40MzhoMy45MzhWLjkzOGMwLS4yNDIuMTk2LS40MzguNDM3LS40MzhoLjg3NWMuMjQyIDAgLjQzOC4xOTYuNDM4LjQzOHYzLjkzN2gzLjkzN3oiLz48L3N2Zz4=);
+    .field-input.district {
+        select {
+            padding: 0 30px 0 102px;
+        }
     }
-
-    .add-new {
-        font-size: 12px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        color: #0093ee;
-        margin-top: 5px;
+    .field-input.datepicker {
+        .SingleDatePicker {
+            .SingleDatePickerInput {
+                .DateInput input {
+                    padding: 0px 50px 0 85px;
+                }
+            }
+        }
+    }
+    .form-group-row {
+        margin-bottom: 6px;
+        .field-input {
+            span {
+                left: 24px;
+            }
+        }
     }
 }
 

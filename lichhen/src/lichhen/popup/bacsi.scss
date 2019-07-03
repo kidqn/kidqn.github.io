@@ -83,24 +83,6 @@
     }
     .doctors-section {
         .search-field {
-            position: relative;
-            width: 100%;
-            height: 40px;
-            padding: 8px 8px 8px 48px;
-            border-radius: 8px;
-            border: 0;
-            background-color: rgba(10, 44, 77, 0.05);
-            font-size: 14px;
-            font-weight: normal;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: 1.71;
-            letter-spacing: normal;
-            color: #0a2c4d;
-            margin-bottom: 23px;
-            &::placeholder {
-                color: rgba(10, 44, 77, 0.5);
-            }
         }
         .doctors-list {
             display: flex;
@@ -127,19 +109,7 @@
                     background: #0093ee;
                     color: #fff;
                     opacity: 1;
-                    &:after {
-                        content: '';
-                        display: block;
-                        width: 80%;
-                        height: 6px;
-                        position: absolute;
-                        left: 15%;
-                        top: 97%;
-                        z-index: 0;
-                        border-radius: 12px;
-                        filter: blur(7px);
-                        background-color: #0093ee;
-                    }
+                    box-shadow: 0px 17px 10px -10px rgba(0, 147, 238,0.4)
                 }
                 .avatar {
                     position: absolute;
