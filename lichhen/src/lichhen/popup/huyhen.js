@@ -27,13 +27,13 @@ export default class CancelDatePopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="cancel-date-popup use-bs-styles"
+                className="cancel-date-popup simple-popup use-bs-styles"
             >                
             <Form 
                 noValidate>
-                    <Modal.Header className="cancel-date-popup-header" closeButton>
+                    <Modal.Header className="simple-popup-header no-header" closeButton>
                     </Modal.Header>
-                    <Modal.Body className="cancel-date-popup-body">
+                    <Modal.Body className="simple-popup-body">
                         <p className="title">Bạn có chắc chắn muốn hủy lịch hẹn của khách hàng:</p>
                         <div className="avatar">
                             <img  src={resolve.avatar} alt="" />
@@ -44,9 +44,9 @@ export default class CancelDatePopup extends React.Component {
                             <span className="date-time">{resolve.dateTime}</span>
                         </div>
                     </Modal.Body>
-                    <Modal.Footer className="cancel-date-popup-footer">
+                    <Modal.Footer className="simple-popup-footer">
                         <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
-                        <Button className="btn-submit" onClick={this.handleConfirm} >Hủy lịch hẹn</Button>
+                        <Button className="btn-cancel-confirm" onClick={this.handleConfirm} >Hủy lịch hẹn</Button>
                     </Modal.Footer>
             </Form>
             </Modal>

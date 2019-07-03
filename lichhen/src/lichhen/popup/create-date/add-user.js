@@ -65,16 +65,16 @@ export default class AddUserPopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="add-user-popup use-bs-styles"
+                className="add-user-popup simple-popup use-bs-styles"
             >                
             <Form 
                 noValidate>
-                    <Modal.Header className="add-user-popup-header" closeButton>
+                    <Modal.Header className="simple-popup-header" closeButton>
                         <Modal.Title>
-                            <h2 className="add-user-popup-title">... / Khách hàng mới</h2>
+                            <h2 className="simple-popup-title">... / Khách hàng mới</h2>
                         </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body className="add-user-popup-body">
+                    <Modal.Body className="simple-popup-body">
                         <div className="row form-group-row">
                             <div className="col-sm-6 field-input">
                                     <span>Họ tên: </span>
@@ -164,7 +164,7 @@ export default class AddUserPopup extends React.Component {
                             </Form.Group>
                         </section>
                     </Modal.Body>
-                    <Modal.Footer className="add-user-popup-footer">
+                    <Modal.Footer className="simple-popup-footer">
                         <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
                         <Button className="btn-submit" onClick={this.handleConfirm} >Xác nhận</Button>
                     </Modal.Footer>

@@ -23,17 +23,17 @@ export default class CheckinPopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="checkin-popup use-bs-styles"
+                className="checkin-popup simple-popup use-bs-styles"
             >                
             <Form 
                 noValidate>
-                    <Modal.Header className="checkin-popup-header" closeButton>
+                    <Modal.Header className="simple-popup-header no-header" closeButton>
                     </Modal.Header>
-                    <Modal.Body className="checkin-popup-body">
+                    <Modal.Body className="simple-popup-body">
                         <p className="title">Bạn không thể hoàn tác sau khi nhấn nút "Check In".<br/>
                             Bạn có muốn tiếp tục không?</p>
                     </Modal.Body>
-                    <Modal.Footer className="checkin-popup-footer">
+                    <Modal.Footer className="simple-popup-footer">
                         <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
                         <Button className="btn-submit" onClick={this.handleConfirm} >Check In</Button>
                     </Modal.Footer>

@@ -94,16 +94,16 @@ export default class DoctorPopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="doctor-popup use-bs-styles"
+                className="doctor-popup simple-popup use-bs-styles"
             >                
             <Form 
                 noValidate>
-                    <Modal.Header className="doctor-popup-header" closeButton>
+                    <Modal.Header className="simple-popup-header" closeButton>
                         <Modal.Title>
-                            <h2 className="doctor-popup-title">Chuyển đến bác sỹ</h2>
+                            <h2 className="simple-popup-title">Chuyển đến bác sỹ</h2>
                         </Modal.Title>
                     </Modal.Header>
-                    <Modal.Body className="doctor-popup-body">
+                    <Modal.Body className="simple-popup-body">
                         <div className="doctors-section section">
                             <label className="section-label">Bác sỹ</label>
                             <Form.Control className="search-field" name="searchDoctor"
@@ -147,7 +147,7 @@ export default class DoctorPopup extends React.Component {
                             </div>
                         </div>
                     </Modal.Body>
-                    <Modal.Footer className="doctor-popup-footer">
+                    <Modal.Footer className="simple-popup-footer">
                         <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
                         <Button className="btn-submit" onClick={this.handleConfirm} >Xác nhận</Button>
                     </Modal.Footer>

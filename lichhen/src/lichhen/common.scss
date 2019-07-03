@@ -42,7 +42,7 @@
         letter-spacing: normal;
         color: #0a2c4d;
         margin-bottom: 16px;
-        background-image: url(./ic-search.png);
+        background-image: url(./ic-search.svg);
         background-position: 14px 14px;
         background-size: 14px 14px;
         background-repeat: no-repeat;      
@@ -196,8 +196,11 @@
     /* custom popup */
     &.simple-popup, .simple-popup {
         font-family: 'OpenSans', sans-serif;
+        &.pending {
+            opacity: 0;
+        }
         .modal-content {
-            width: 400px;
+            min-width: 400px;
             margin-left: auto;
             margin-right: auto;
             min-height: 188px;
@@ -211,8 +214,28 @@
         }
     }
     .simple-popup-header {
-        padding: 0;
-        border: 0;
+        padding: 0 30px;
+        height: 70px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        &.no-header {
+            height: 0;
+            padding: 0;
+            border: 0;
+        }
+        .simple-popup-title {
+            font-size: 24px;
+            font-weight: bold;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: uppercase;
+            color: #0a2c4d;
+            margin: 0;
+        }
         .close {
             position: absolute;
             left: calc(100% + 14px);
@@ -226,13 +249,12 @@
             flex-direction: column;
             opacity: 1;
             top: 16px;
+            background-image: url(./ic-close-popup.svg);
+            background-size: 10px 10px;
+            background-position: center center;
+            background-repeat: no-repeat;
             span {
-                opacity: 0.3;
-            }
-            &:hover {
-                span {
-                    opacity: 0.8;
-                }
+                display: none;
             }
         }
     }
@@ -240,6 +262,8 @@
     .simple-popup-body {
         flex: 1;
         padding: 40px 28px 24px 28px;
+        max-height: 630px;
+        overflow: auto;
         .title {
             opacity: 0.8;
             font-size: 14px;
@@ -255,7 +279,7 @@
     }
     
     .simple-popup-footer {
-        padding: 0 30px 20px 30px;
+        padding: 20px 30px;
         justify-content: space-between;
         border: 0;
         button {

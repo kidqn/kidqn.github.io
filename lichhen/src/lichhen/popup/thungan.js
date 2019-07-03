@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
 import './thungan.scss';
 
 export default class BillPopup extends React.Component {
@@ -23,16 +21,16 @@ export default class BillPopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="bill-popup use-bs-styles"
+                className="bill-popup simple-popup use-bs-styles"
             >                
             <Form 
                 noValidate>
-                    <Modal.Header className="bill-popup-header" closeButton>
+                    <Modal.Header className="simple-popup-header no-header" closeButton>
                     </Modal.Header>
-                    <Modal.Body className="bill-popup-body">
+                    <Modal.Body className="simple-popup-body">
                         <p className="title">Bạn đã hoàn thành việc khám chữa bệnh và muốn chuyển thông tin đến Thu ngân?</p>
                     </Modal.Body>
-                    <Modal.Footer className="bill-popup-footer">
+                    <Modal.Footer className="simple-popup-footer">
                         <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
                         <Button className="btn-submit" onClick={this.handleConfirm} >Xác nhận</Button>
                     </Modal.Footer>

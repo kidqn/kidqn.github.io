@@ -23,16 +23,16 @@ export default class ConfirmDoctorAndSeatPopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="confirm-doctor-seat-popup use-bs-styles"
+                className="confirm-doctor-seat-popup simple-popup use-bs-styles"
             >                
             <Form 
                 noValidate>
-                    <Modal.Header className="confirm-doctor-seat-popup-header" closeButton>
+                    <Modal.Header className="simple-popup-header no-header" closeButton>
                     </Modal.Header>
-                    <Modal.Body className="confirm-doctor-seat-popup-body">
+                    <Modal.Body className="simple-popup-body">
                         <p className="title">Hệ thống sẽ chuyển khách hàng đến bác sĩ {resolve.chosenDoctor} và {resolve.chosenSeat}. Bạn có muốn chuyển không?</p>
                     </Modal.Body>
-                    <Modal.Footer className="confirm-doctor-seat-popup-footer">
+                    <Modal.Footer className="simple-popup-footer">
                         <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
                         <Button className="btn-submit" onClick={this.handleConfirm} >Xác nhận</Button>
                     </Modal.Footer>

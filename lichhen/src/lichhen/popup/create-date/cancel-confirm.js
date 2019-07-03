@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import './cancel-confirm.scss';
 
 export default class CancelConfirmPopup extends React.Component {
     constructor(props) {
@@ -20,11 +21,11 @@ export default class CancelConfirmPopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="simple-popup use-bs-styles"
+                className="cancel-confirm-popup simple-popup use-bs-styles"
             >                
             <Form 
                 noValidate>
-                    <Modal.Header className="simple-popup-header" closeButton>
+                    <Modal.Header className="simple-popup-header no-header" closeButton>
                     </Modal.Header>
                     <Modal.Body className="simple-popup-body">
                         <p className="title">Bạn có muốn hủy Lịch Hẹn đang tạo không?</p>

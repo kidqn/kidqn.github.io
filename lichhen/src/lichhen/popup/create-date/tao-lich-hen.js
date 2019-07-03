@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Card from 'react-bootstrap/Card';
 import 'react-dates/initialize';
 import moment from 'moment';
 import viLocale from 'moment/locale/vi';
@@ -143,19 +142,19 @@ export default class CreateDatePopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className={"create-date-popup use-bs-styles " + (this.state.addUserPopupShow || this.state.cancelConfirmPopupShow ? 'pending': '')}
+                className={"create-date-popup simple-popup use-bs-styles " + (this.state.addUserPopupShow || this.state.cancelConfirmPopupShow ? 'pending': '')}
                 >                
                 <Form 
                 noValidate>
-                    <Modal.Header className="create-date-popup-header" closeButton>
+                    <Modal.Header className="simple-popup-header" closeButton>
                         <Modal.Title>
-                            <h2 className="create-date-popup-title">Tạo lịch hẹn</h2>
+                            <h2 className="simple-popup-title">Tạo lịch hẹn</h2>
                         </Modal.Title>
                         <div className="status-update">
                             Cập nhật lần cuối lúc <span>15:43 — 25/09/2019</span> bởi <span>Admin</span>
                         </div>
                     </Modal.Header>
-                    <Modal.Body className="create-date-popup-body">
+                    <Modal.Body className="simple-popup-body">
                         {this.state.userData ? (<div className="user-info">
                             <div className="avatar"><img src={ngocTrinhImg} alt=""/></div>
                             <div className="info">
@@ -251,7 +250,7 @@ export default class CreateDatePopup extends React.Component {
                             </Form.Group>
                         </section>
                     </Modal.Body>
-                    <Modal.Footer className="create-date-popup-footer">
+                    <Modal.Footer className="simple-popup-footer">
                         <Button className="btn-close" onClick={() => this.openPopup('cancelConfirmPopupShow')}>Thoát</Button>
                         <Button className="btn-submit" onClick={this.handleConfirm} >Tạo lịch hẹn</Button>
                     </Modal.Footer>

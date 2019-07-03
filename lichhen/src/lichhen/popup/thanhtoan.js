@@ -23,16 +23,16 @@ export default class PaymentPopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className="payment-popup use-bs-styles simple-popup"
+                className="payment-popup simple-popup use-bs-styles simple-popup"
             >                
             <Form 
                 noValidate>
-                    <Modal.Header className="payment-popup-header" closeButton>
+                    <Modal.Header className="simple-popup-header no-header" closeButton>
                     </Modal.Header>
-                    <Modal.Body className="payment-popup-body">
+                    <Modal.Body className="simple-popup-body">
                         <p className="title">Bạn có muốn đổi trạng thái lịch hẹn sang trạng thái 'Đã thanh toán' không?</p>
                     </Modal.Body>
-                    <Modal.Footer className="payment-popup-footer">
+                    <Modal.Footer className="simple-popup-footer">
                         <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
                         <Button className="btn-submit" onClick={this.handleConfirm} >Xác nhận</Button>
                     </Modal.Footer>
