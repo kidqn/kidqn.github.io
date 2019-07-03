@@ -714,11 +714,6 @@ export default class LichHen extends React.Component {
                     </div> }
                 </div>}
             </div>
-            {/* <input type="range" className="custom-range" id="customRange" 
-                min="0.1" max="1.0" step="0.05" 
-                value={this.state.opacity}
-                onChange={event => this.setState({ opacity: event.target.value })} >
-                </input> */}
             {this.state.cancelDatePopupShow && <CancelDatePopup  
                 resolve={this.state.resolveData}
                 updatestatus={this.updateStatusDate}

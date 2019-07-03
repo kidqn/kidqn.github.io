@@ -12,15 +12,22 @@ import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'rea
 import AddUserPopup from './add-user';
 import './tao-lich-hen.scss';
 
+import ngocTrinhImg from '../ngoc-trinh.jpg';
 
+// fake data 
+const dateTypes = [ {id: 1, type: 'Tư vấn'}, {id: 2, type: 'Tái khám'}, {id: 3, type: 'Điều trị'}]
 export default class CreateDatePopup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             date: moment(),
             filterSearch: '',
+            dateTypes: dateTypes,
+            chosenDateType: {},
+            userData: null,
             addUserPopupShow: false,
-            resolveData: null
+            resolveData: null,
+            timePicker: 8
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -44,6 +51,11 @@ export default class CreateDatePopup extends React.Component {
         });
     }
 
+    chooseDateTypes(type){
+        this.setState({
+            chosenDateType: type 
+        });
+    }
     // handle popups
     openPopup(name, data) {
         this.setState({
@@ -57,7 +69,9 @@ export default class CreateDatePopup extends React.Component {
         });
     }
 
-    render() {        
+    render() {   
+        const {dateTypes, chosenDateType} = this.state;
+     
         return (
             <Modal
                 {...this.props}
@@ -72,23 +86,42 @@ export default class CreateDatePopup extends React.Component {
                         <Modal.Title>
                             <h2 className="create-date-popup-title">Tạo lịch hẹn</h2>
                         </Modal.Title>
+                        <div className="status-update">
+                            Cập nhật lần cuối lúc <span>15:43 — 25/09/2019</span> bởi <span>Admin</span>
+                        </div>
                     </Modal.Header>
                     <Modal.Body className="create-date-popup-body">
-                        <Form.Control className="search-field" name="filterSearch"
-                            value={this.state.filterSearch}
-                            onChange={this.handleInputChange}
-                            placeholder="Tên, mã khách hàng hoặc số điện thoại" type="text" />
-                        <a href="#" className="add-new" 
-                            onClick={() => this.openPopup('addUserPopupShow')}>
-                            <i className="ic-add-new"></i>Thêm khách mới
-                        </a>
-                        <div className="date-types">
-                            <label>Lịch hẹn</label>
-                            <div className="type">Tư vấn</div>
-                            <div className="type">Tái khám</div>
-                            <div className="type">Điều trị</div>
-                        </div>
-                        <div className="form-group-row">
+                        {this.state.userData ? (<div className="user-info">
+                            <div className="avatar"><img src={ngocTrinhImg} alt=""/></div>
+                            <div className="info">
+                                <div className="name">Ngô Lê Thùy Trinh</div>
+                                <div className="contact">
+                                    <div className="status status-phone">098****123</div>
+                                    <div className="address">CHUNG CƯ A2, QUANG VINH, BIÊN HÒA, ĐỒNG NAI</div>
+                                </div>
+                            </div>
+                        </div> ) : (<React.Fragment>
+                            <Form.Control className="search-field" name="filterSearch"
+                                value={this.state.filterSearch}
+                                onChange={this.handleInputChange}
+                                placeholder="Tên, mã khách hàng hoặc số điện thoại" type="text" />
+                            <a href="#" className="add-new" 
+                                onClick={() => this.openPopup('addUserPopupShow')}>
+                                <i className="ic-add-new"></i>Thêm khách mới
+                            </a>
+                        </React.Fragment>) }
+                        <section className="date-types">
+                            <label className="label-section">Lịch hẹn:</label>
+                            {dateTypes.map((value, index) => {
+                                return <div className={"type " + (value.id ===  chosenDateType.id ? 'active' : '')} 
+                                    onClick={() => this.chooseDateTypes(value)}
+                                    key={index}>
+                                    {value.type}
+                                </div>
+                            })}
+                        </section>
+                        
+                        <section className="company-date form-group-row">
                             <div className="field-input select">
                                 <span>Chi nhánh:</span>
                                 <Form.Control as="select" name="company" 
@@ -113,7 +146,22 @@ export default class CreateDatePopup extends React.Component {
                                     displayFormat="DD/MM/YYYY"
                                     noBorder />
                             </div>
-                        </div>
+                        </section>
+
+                        <section className="section-time-picker">
+                            <label className="label-section">Thời gian:</label>
+                            <div className="time-picker">
+                                <input type="range" className="time-slider" id="customRange" 
+                                    min="8" max="20" step="1" 
+                                    value={this.state.timePicker}
+                                    onChange={event => this.setState({ timePicker: event.target.value })} />
+                                <span className="hr-8">8</span>
+                                <span className="hr-11">11</span>
+                                <span className="hr-14">14</span>
+                                <span className="hr-17" >17</span>
+                                <span className="hr-20">20</span>
+                            </div>
+                        </section>
                     </Modal.Body>
                     <Modal.Footer className="create-date-popup-footer">
                         <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
