@@ -3,7 +3,7 @@ import React from 'react';
 import CancelDatePopup from './popup/huyhen';
 import CheckinPopup from './popup/checkin';
 import DoctorPopup from './popup/bacsi';
-import CreateDatePopup from './popup/tao-lich-hen';
+import CreateDatePopup from './popup/create-date/tao-lich-hen';
 import BillPopup from './popup/thungan';
 import PaymentPopup from './popup/thanhtoan';
 import ConfirmDoctorAndSeatPopup from './popup/xacnhan-bacsi';

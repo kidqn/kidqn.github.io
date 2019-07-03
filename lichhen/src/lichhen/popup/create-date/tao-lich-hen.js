@@ -9,9 +9,10 @@ import viLocale from 'moment/locale/vi';
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
 //component
 import AddUserPopup from './add-user';
+import CancelConfirmPopup from './cancel-confirm';
 import './tao-lich-hen.scss';
 
-import ngocTrinhImg from '../ngoc-trinh.jpg';
+import ngocTrinhImg from '../../ngoc-trinh.jpg';
 
 // fake data 
 const dateTypes = [ {id: 1, type: 'Tư vấn'}, {id: 2, type: 'Tái khám'}, {id: 3, type: 'Điều trị'}];
@@ -52,6 +53,7 @@ export default class CreateDatePopup extends React.Component {
             chosenDateType: {},
             userData: props.resolve,
             addUserPopupShow: false,
+            cancelConfirmPopupShow: false,
             resolveData: null,
             chosenDoctor: null,
             timePicker: 8,
@@ -141,7 +143,7 @@ export default class CreateDatePopup extends React.Component {
                 size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
-                className={"create-date-popup use-bs-styles " + (this.state.addUserPopupShow ? 'pending': '')}
+                className={"create-date-popup use-bs-styles " + (this.state.addUserPopupShow || this.state.cancelConfirmPopupShow ? 'pending': '')}
                 >                
                 <Form 
                 noValidate>
@@ -250,7 +252,7 @@ export default class CreateDatePopup extends React.Component {
                         </section>
                     </Modal.Body>
                     <Modal.Footer className="create-date-popup-footer">
-                        <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
+                        <Button className="btn-close" onClick={() => this.openPopup('cancelConfirmPopupShow')}>Thoát</Button>
                         <Button className="btn-submit" onClick={this.handleConfirm} >Tạo lịch hẹn</Button>
                     </Modal.Footer>
             </Form>
@@ -261,6 +263,11 @@ export default class CreateDatePopup extends React.Component {
                     onSubmit={this.addUser}
                     show={this.state.addUserPopupShow}
                     onHide={() => this.closePopup('addUserPopupShow')}/>
+                }
+                {this.state.cancelConfirmPopupShow && <CancelConfirmPopup  
+                    onSubmit={this.props.onHide}
+                    show={this.state.cancelConfirmPopupShow}
+                    onHide={() => this.closePopup('cancelConfirmPopupShow')}/>
                 }
             </div>
         );
