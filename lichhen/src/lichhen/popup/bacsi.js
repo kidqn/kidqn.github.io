@@ -60,7 +60,7 @@ export default class DoctorPopup extends React.Component {
         this.props.onHide();
         const newUser = {...this.props.resolve};
         newUser.chosenDoctor = this.state.chosenDoctor;
-        newUser.chooseSeat = this.state.chooseSeat;
+        newUser.chosenSeat = this.state.chosenSeat;
         this.props.openPopup('confirmDoctorAndSeatPopupShow', newUser);
     }  
 
