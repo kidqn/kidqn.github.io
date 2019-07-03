@@ -27,11 +27,11 @@ export default class CancelConfirmPopup extends React.Component {
                     <Modal.Header className="simple-popup-header" closeButton>
                     </Modal.Header>
                     <Modal.Body className="simple-popup-body">
-                        <p className="title">Bạn có chắc chắn muốn THOÁT không?</p>
+                        <p className="title">Bạn có muốn hủy Lịch Hẹn đang tạo không?</p>
                     </Modal.Body>
                     <Modal.Footer className="simple-popup-footer">
                         <Button className="btn-close" onClick={this.props.onHide}>Không</Button>
-                        <Button className="btn-submit" onClick={this.handleConfirm} >Xác nhận</Button>
+                        <Button className="btn-cancel-confirm" onClick={this.handleConfirm} >Hủy</Button>
                     </Modal.Footer>
             </Form>
             </Modal>

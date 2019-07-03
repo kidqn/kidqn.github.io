@@ -279,7 +279,6 @@
             color: #0a2c4d;
             margin: 0 30px 0 0;
             &:hover {
-                opacity: 1;
                 background-color: rgba(10, 44, 77, 0.03);
             }
         }
@@ -289,6 +288,12 @@
             color: #fff;
             margin: 0;
         }    
+        button.btn-cancel-confirm {
+            border: solid 1px #fa4242;
+            background-color: #fa4242;
+            color: #fff;
+            margin: 0;
+        }   
     }
 }
 
