@@ -734,6 +734,7 @@ export default class LichHen extends React.Component {
                 onHide={() => this.closePopup('doctorPopupShow')}/>
             }
             {this.state.billPopupShow && <BillPopup  
+                updatestatus={this.updateStatusDate}
                 resolve={this.state.resolveData}
                 show={this.state.billPopupShow}
                 onHide={() => this.closePopup('billPopupShow')}/>
