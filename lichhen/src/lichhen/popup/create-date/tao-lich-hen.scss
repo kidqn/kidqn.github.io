@@ -174,7 +174,7 @@
                 letter-spacing: normal;
                 color: #0a2c4d;
                 position: absolute;
-                top: 25px;
+                top: 28px;
                 &.hr-8 {
                     left: 0;
                 }
@@ -192,15 +192,15 @@
                 }
             }
             &:before {
-                position: absolute;
-                z-index: 0;
-                height: 4px;
-                border-radius: 2px;
-                width: 100%;
-                content: '';
-                display: block;
-                background-color: #eef0f2;
-                top: 20px;
+                // position: absolute;
+                // z-index: 0;
+                // height: 4px;
+                // border-radius: 2px;
+                // width: 100%;
+                // content: '';
+                // display: block;
+                // background-color: #eef0f2;
+                // top: 20px;
             }
             &:after {
                 content: "";
