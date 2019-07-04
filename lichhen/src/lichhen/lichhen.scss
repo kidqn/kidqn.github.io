@@ -43,7 +43,13 @@ html, body {
     left: 1px;
     background-image: url('./ic-checkbox.svg') !important;
 }
-
+@supports (-ms-ime-align:auto) {
+    .lichhen  .custom-control-label::after {
+        top: 1px;
+        left: 1px;
+        background-image: url('./ic-checkbox.svg') !important;
+    }
+}
 .lichhen select {
     -webkit-appearance: none;
     -moz-appearance: none;

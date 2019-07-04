@@ -205,6 +205,22 @@
                     560px 0 0 #eef0f2, 
                     622px 0 0 #eef0f2;            
                 }
+                @supports (-ms-ime-align:auto) {
+                    &:after {
+                        box-shadow: 60px 0 0 #eef0f2, 
+                        110px 0 0 #eef0f2, 
+                        160px 0 0 #eef0f2, 
+                        210px 0 0 #eef0f2, 
+                        260px 0 0 #eef0f2, 
+                        310px 0 0 #eef0f2, 
+                        360px 0 0 #eef0f2, 
+                        410px 0 0 #EEF0F2, 
+                        460px 0 0 #eef0f2, 
+                        510px 0 0 #eef0f2, 
+                        560px 0 0 #eef0f2, 
+                        622px 0 0 #eef0f2;            
+                    }
+                }
             }
         }
     
