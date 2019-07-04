@@ -163,6 +163,7 @@
         }
         .time-picker {
             position: relative;
+            transform: scale(1);
             & > span {
                 opacity: 0.3;
                 font-size: 14px;
@@ -190,37 +191,38 @@
                     right: 0;
                 }
             }
-            .time-slider {
-                &:after {
-                    box-shadow: 60px 0 0 #eef0f2, 
-                    110px 0 0 #eef0f2, 
-                    160px 0 0 #eef0f2, 
-                    210px 0 0 #eef0f2, 
-                    260px 0 0 #eef0f2, 
-                    310px 0 0 #eef0f2, 
-                    360px 0 0 #eef0f2, 
-                    410px 0 0 #EEF0F2, 
-                    460px 0 0 #eef0f2, 
-                    510px 0 0 #eef0f2, 
-                    560px 0 0 #eef0f2, 
-                    622px 0 0 #eef0f2;            
-                }
-                @supports (-ms-ime-align:auto) {
-                    &:after {
-                        box-shadow: 60px 0 0 #eef0f2, 
-                        110px 0 0 #eef0f2, 
-                        160px 0 0 #eef0f2, 
-                        210px 0 0 #eef0f2, 
-                        260px 0 0 #eef0f2, 
-                        310px 0 0 #eef0f2, 
-                        360px 0 0 #eef0f2, 
-                        410px 0 0 #EEF0F2, 
-                        460px 0 0 #eef0f2, 
-                        510px 0 0 #eef0f2, 
-                        560px 0 0 #eef0f2, 
-                        622px 0 0 #eef0f2;            
-                    }
-                }
+            &:before {
+                position: absolute;
+                height: 4px;
+                border-radius: 2px;
+                width: 100%;
+                content: '';
+                display: block;
+                background-color: #eef0f2;
+                top: 20px;
+            }
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                background-color: #eef0f2;
+                width: 4px;
+                left: 1px;
+                height: 6px;
+                top: 24px;
+                z-index: 1;
+                box-shadow: 60px 0 0 #eef0f2, 
+                110px 0 0 #eef0f2, 
+                160px 0 0 #eef0f2, 
+                210px 0 0 #eef0f2, 
+                260px 0 0 #eef0f2, 
+                310px 0 0 #eef0f2, 
+                360px 0 0 #eef0f2, 
+                410px 0 0 #EEF0F2, 
+                460px 0 0 #eef0f2, 
+                510px 0 0 #eef0f2, 
+                560px 0 0 #eef0f2, 
+                622px 0 0 #eef0f2;            
             }
         }
     
