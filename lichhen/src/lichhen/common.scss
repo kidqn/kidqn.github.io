@@ -142,6 +142,7 @@
         height: 38px;
         overflow:hidden;
         margin: 4px 0 0 0;
+        z-index: 2;
         &::-webkit-slider-runnable-track {
             @include slider-track();
         }
@@ -153,7 +154,10 @@
         }
         &::-webkit-slider-thumb {@include  slider-thumb();}
         &::-moz-range-thumb { @include  slider-thumb(); }
-        &::-ms-thumb {  @include  slider-thumb();}
+        &::-ms-thumb {  @include  slider-thumb(); 
+            margin-top: -4px; 
+            position: relative;
+        }
     }
     input[type="range"]:focus{
         outline:none;

@@ -218,8 +218,8 @@ export default class CreateDatePopup extends React.Component {
                             })}
                         </section>
                         
-                        <section className="company-date form-group-row">
-                            <div className="field-input select">
+                        <section className="company-date row form-group-row">
+                            <div className="col-sm-6 field-input select">
                                 <span>Chi nhánh:</span>
                                 <Form.Control as="select" name="company" 
                                     defaultValue="TNHH DV Nam Á"
@@ -232,7 +232,7 @@ export default class CreateDatePopup extends React.Component {
                                     <option value="TNHH DV Á">TNHH DV Á</option>
                                 </Form.Control>
                             </div>
-                            <div className="field-input datepicker">
+                            <div className="col-sm-6 field-input datepicker">
                                 <span>Ngày:</span>
                                 <SingleDatePicker
                                     date={this.state.date}
