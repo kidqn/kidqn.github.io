@@ -152,10 +152,19 @@
         &::-ms-track{ 
             @include slider-track();
         }
-        &::-webkit-slider-thumb {@include  slider-thumb();}
-        &::-moz-range-thumb { @include  slider-thumb(); }
-        &::-ms-thumb {  @include  slider-thumb(); 
+        &::-webkit-slider-thumb {
+            @include  slider-thumb();
+        }
+        &::-moz-range-thumb { 
+            @include  slider-thumb();            
+        }
+        &::-ms-thumb {  
+            @include  slider-thumb(); 
             margin-top: -4px; 
+        }
+    }
+    @supports (-ms-ime-align:auto) {
+        input[type="range"] {
             position: relative;
         }
     }
