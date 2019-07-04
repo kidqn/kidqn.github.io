@@ -120,6 +120,13 @@ html, body {
     min-height: 138px;
     display: flex;
     box-shadow: 0 2px 5px 0 rgba(10, 44, 77, 0.05);
+    &.stick {
+        position: fixed;
+        top: 0;
+        width: calc(100% - 230px);
+        background: #fff;
+        z-index: 999;
+    }
     .right-side {
         width: calc(100% - 230px);
         border-left: 1px solid #edeff0;

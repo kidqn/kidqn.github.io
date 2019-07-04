@@ -192,16 +192,16 @@
             }
             .time-slider {
                 &:after {
-                    box-shadow: 63px 0 0 #eef0f2, 
-                    113px 0 0 #eef0f2, 
-                    162px 0 0 #eef0f2, 
+                    box-shadow: 60px 0 0 #eef0f2, 
+                    110px 0 0 #eef0f2, 
+                    160px 0 0 #eef0f2, 
                     210px 0 0 #eef0f2, 
                     260px 0 0 #eef0f2, 
                     310px 0 0 #eef0f2, 
                     360px 0 0 #eef0f2, 
-                    411px 0 0 #EEF0F2, 
+                    410px 0 0 #EEF0F2, 
                     460px 0 0 #eef0f2, 
-                    509px 0 0 #eef0f2, 
+                    510px 0 0 #eef0f2, 
                     560px 0 0 #eef0f2, 
                     622px 0 0 #eef0f2;            
                 }
@@ -266,6 +266,49 @@
                             object-position: center;
                         }
                     }
+                }
+            }
+        }
+        #time-picker-tooltip {
+
+            width: 105px;
+            height: 24px;
+            border-radius: 8px;
+            position: absolute;
+            top: -20px;
+            font-size: 12px;
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #fff;
+            background-color: #0a2c4d;
+            text-align: center;
+            padding: 4px;
+            &:after {
+                margin-top: 5px;
+                margin-left: calc(50% - 6px);
+                border-top: 8px solid #0a2c4d;
+                border-right: 8px solid transparent;
+                border-left: 8px solid transparent;
+                width: 0;
+                height: 0;
+                display: block;
+                content: '';
+            }
+            &.min {
+                left: 0 !important;
+                right: auto !important;
+                &:after {
+                    margin-left: 6px;
+                }
+            }
+            &.max {
+                right: 0 !important;
+                left: auto !important;
+                &:after {
+                    margin-left: calc(100% - 16px);
                 }
             }
         }

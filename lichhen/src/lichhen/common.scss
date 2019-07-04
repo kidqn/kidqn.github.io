@@ -135,14 +135,8 @@
         background-color:#0093ee;
         width: 30px;
         height: 16px;
-        z-index:8;
-        &:after {
-            content: '';
-            display: block;
-            width: 20px;
-            height: 10px;
-            background: red;
-        }
+        margin-top: 6px;
+        z-index: 8;
     }
     input[type=range]:before {
         position: absolute;
@@ -318,6 +312,33 @@
             color: #fff;
             margin: 0;
         }   
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 4px;
+    height: 100px;
+    opacity: 0.1;
+        border-radius: 2px;
+    
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: rgba(10, 44, 77, 0.1);
+        border-radius: 2px;
+    
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: rgba(10, 44, 77, 0.3);
+    
     }
 }
 

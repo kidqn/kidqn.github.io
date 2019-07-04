@@ -89,7 +89,7 @@ export default class LichHen extends React.Component {
     onToggleFilterBox() {
         this.setState({showFilterBox: !this.state.showFilterBox});
     } 
-
+    
     // handle filter box
     handleInputChange(event, type) {
         const target = event.target;
@@ -159,6 +159,26 @@ export default class LichHen extends React.Component {
             });
         }
     }
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll, { passive: true })
+      }
+    
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll)
+    }
+
+    handleScroll(event) {
+        let topbar = document.querySelector('#lichhen-topbar');
+        let top = topbar.offsetTop;
+        let y = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+        console.log(top, y)
+        if (y >= top && y - top > 20) {
+            topbar.classList.add('stick');
+        }
+        else {
+            topbar.classList.remove("stick");
+        }
+    }
 
     render() {
         moment.locale('vi', viLocale);
@@ -180,13 +200,13 @@ export default class LichHen extends React.Component {
         }
 
         return (
-         <div className="lichhen use-bs-styles">
+         <div  className="lichhen use-bs-styles">
             <div className="lichhen-header">
                 <span>Lịch hẹn</span>
                 <button className="btn" id="tao-lich-hen" onClick={() => this.openPopup('createDatePopupShow')}>Tạo lịch hẹn</button>
             </div>
 
-            <div className="lichhen-topbar">
+            <div id="lichhen-topbar" className="lichhen-topbar">
                 <div className="lichhen-topbar-calendar">
                 <div onClick={this.goPrevDate} className="nav-calendar prev"></div>
                 <div onClick={this.goNextDate} className="nav-calendar next"></div>

@@ -42,6 +42,9 @@ const doctors = [
         roomId:'DC765'
     }
 ];
+const TIME_RANGE = [ '8:00 - 8:30','8:30 - 9:00','9:30 - 10:00','10:30 - 11:00','11:30 - 12:00',
+'12:30 - 13:00','13:30 - 14:00','14:30 - 15:00','15:30 - 16:30','16:30 - 17:00',
+'17:30 - 18:00','18:30 - 19:00','19:30 - 20:00']
 export default class CreateDatePopup extends React.Component {
     constructor(props) {
         super(props);
@@ -65,6 +68,7 @@ export default class CreateDatePopup extends React.Component {
         this.openPopup = this.openPopup.bind(this);
         this.chooseDortor = this.chooseDortor.bind(this);
         this.addUser = this.addUser.bind(this);
+        this.handleTimePicker = this.handleTimePicker.bind(this);
     }
 
     componentDidUpdate(oldProps) {
@@ -77,6 +81,9 @@ export default class CreateDatePopup extends React.Component {
                 userData: this.props.resolve
             });
         }
+    }
+    componentDidMount() {
+        this.setTooltipTimeSlider();
     }
 
     handleConfirm() {
@@ -111,6 +118,32 @@ export default class CreateDatePopup extends React.Component {
         this.setState({
             userData: user
         });
+    }
+    // handle time picker
+    handleTimePicker(event) {
+        this.setState({ timePicker: event.target.value }, () => {
+            this.setTooltipTimeSlider();
+        })
+    }
+    setTooltipTimeSlider() {
+        const tooltipSlider = document.querySelector('#time-picker-tooltip');
+        const widthThumbSlider = 30;
+        const widthTooltip = 105;
+        const widthTotalSlider = document.querySelector('#time-slider').clientWidth;
+        const widthAStep = 50;
+        const valueTime = this.state.timePicker;
+        if(valueTime - 8 === 0) {
+            tooltipSlider.classList.add("min");
+        } else if (valueTime - 8 === 12) {
+            tooltipSlider.classList.add("max");
+        } else {
+            tooltipSlider.classList.remove("min");
+            tooltipSlider.classList.remove("max");
+            let newPosition = (valueTime - 8) * widthAStep;
+            tooltipSlider.style.left = newPosition + (widthThumbSlider/2) - (widthTooltip/2) -2 + 'px';
+        }
+
+        tooltipSlider.textContent = TIME_RANGE[this.state.timePicker - 8];
     }
     // handle popups
     openPopup(name, data) {
@@ -218,7 +251,9 @@ export default class CreateDatePopup extends React.Component {
                                 <input type="range" className="time-slider" id="time-slider" tooltip="sadas"
                                     min="8" max="20" step="1" 
                                     value={this.state.timePicker}
-                                    onChange={event => this.setState({ timePicker: event.target.value })} />
+                                    onChange={event => this.handleTimePicker(event)} />
+                                <div id="time-picker-tooltip">
+                                </div>
                                 <span className="hr-8">8</span>
                                 <span className="hr-11">11</span>
                                 <span className="hr-14">14</span>
