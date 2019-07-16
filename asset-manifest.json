@@ -1,25 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.f9aa8e72.chunk.css",
-    "main.js": "/static/js/main.4de1e168.chunk.js",
-    "main.js.map": "/static/js/main.4de1e168.chunk.js.map",
+    "main.css": "/static/css/main.b9b34c40.chunk.css",
+    "main.js": "/static/js/main.d5b1f153.chunk.js",
+    "main.js.map": "/static/js/main.d5b1f153.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
     "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.5fe0b685.chunk.css": "/static/css/2.5fe0b685.chunk.css",
-    "static/js/2.e16a7204.chunk.js": "/static/js/2.e16a7204.chunk.js",
-    "static/js/2.e16a7204.chunk.js.map": "/static/js/2.e16a7204.chunk.js.map",
+    "static/css/2.22a7d4ef.chunk.css": "/static/css/2.22a7d4ef.chunk.css",
+    "static/js/2.3e98b908.chunk.js": "/static/js/2.3e98b908.chunk.js",
+    "static/js/2.3e98b908.chunk.js.map": "/static/js/2.3e98b908.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.bcc782a7cf57a0d2ac8c1e6d21c17d27.js": "/precache-manifest.bcc782a7cf57a0d2ac8c1e6d21c17d27.js",
+    "precache-manifest.dcb1b484023905c69328034b167f078e.js": "/precache-manifest.dcb1b484023905c69328034b167f078e.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.5fe0b685.chunk.css.map": "/static/css/2.5fe0b685.chunk.css.map",
-    "static/css/main.f9aa8e72.chunk.css.map": "/static/css/main.f9aa8e72.chunk.css.map",
-    "static/media/lichhen.scss": "/static/media/time_update.ce1b0708.svg",
-    "static/media/chuaden-sec.svg": "/static/media/chuaden-sec.69634998.svg",
-    "static/media/daden-sec.svg": "/static/media/daden-sec.44ed9083.svg",
-    "static/media/huyhen-sec.svg": "/static/media/huyhen-sec.c8927201.svg",
-    "static/media/common.scss": "/static/media/ic-search.2b4fb3c5.svg",
-    "static/media/lichhen-sec.svg": "/static/media/lichhen-sec.14701f03.svg",
-    "static/media/ngoc-trinh.jpg": "/static/media/ngoc-trinh.0f0e5441.jpg",
-    "static/media/no_date.svg": "/static/media/no_date.e1cb827c.svg"
+    "static/css/2.22a7d4ef.chunk.css.map": "/static/css/2.22a7d4ef.chunk.css.map",
+    "static/css/main.b9b34c40.chunk.css.map": "/static/css/main.b9b34c40.chunk.css.map",
+    "static/media/index.css": "/static/media/trash-white.8ae71d6f.svg"
   }
 }
