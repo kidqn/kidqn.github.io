@@ -1,7 +1,9 @@
 var FB;
+var accessTokenFB = '';
 FB.login(function(response) {
     if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ', response);
+     accessTokenFB = response.authResponse.accessToken;
      FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
      });
@@ -31,4 +33,12 @@ var logout = function() {
         // user is now logged out
         console.log('Logout successfully', response);
     });
+}
+
+var authByFirebase = function() {
+    var credential = firebase.auth.FacebookAuthProvider.credential(accessTokenFB);
+    firebase.auth().signInWithCredential(credential).then((userData) => { 
+        console.log('validate by firebase', userData);
+    })
+    .catch((err) => console.log(err));
 }
