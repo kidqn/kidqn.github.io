@@ -38,13 +38,18 @@ var logout = function() {
 }
 
 var authByFirebase = function() {
-    var provider = new firebase.auth.FacebookAuthProvider();
-    firebase.auth().signInWithRedirect(provider).then(function(result) {
-        console.log('data tu firebase', result)
-        if (result.credential) {
-          // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-          var token = result.credential.accessToken;
-        }
-      }).catch(function(error) {
-    });
+    var credential = firebase.auth.FacebookAuthProvider.credential(accessTokenFB)
+    firebase.auth().signInWithCredential(credential).then((userData) => { 
+        console.log('validate by firebase', userData);
+    })
+    .catch((err) => console.log(err));
+    // var provider = new firebase.auth.FacebookAuthProvider();
+    // firebase.auth().signInWithRedirect(provider).then(function(result) {
+    //     console.log('data tu firebase', result)
+    //     if (result.credential) {
+    //       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    //       var token = result.credential.accessToken;
+    //     }
+    //   }).catch(function(error) {
+    //   });
 }
