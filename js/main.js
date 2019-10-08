@@ -12,3 +12,10 @@ FB.login(function(response) {
     scope: 'email', 
     return_scopes: true
 });
+
+var logout = function() {
+    FB.logout(function(response) {
+        // user is now logged out
+        console.log('Logout successfully', response);
+    });
+}
