@@ -1,4 +1,5 @@
 var FB;
+var firebase;
 var accessTokenFB = '';
 FB.login(function(response) {
     if (response.authResponse) {
