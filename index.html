@@ -12,6 +12,10 @@
             xfbml            : true,
             version          : 'v4.0'
             });
+
+            FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+                statusChangeCallback(response);        // Returns the login status.
+            });
         };
     </script>
     <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
@@ -37,6 +41,8 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 </script>  
+
+<button onclick="checkLoginState()">Check login status</button>
 
 <button onclick="logout()">Logout</button>
 <script src="./js/main.js"></script>

@@ -13,6 +13,19 @@ FB.login(function(response) {
     return_scopes: true
 });
 
+function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+    console.log('statusChangeCallback');
+    console.log(response);                   // The current login status of the person.
+    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+    
+    }
+}
+
+function checkLoginState() {               // Called when a person is finished with the Login Button.
+    FB.getLoginStatus(function(response) {   // See the onlogin handler
+        statusChangeCallback(response);
+    });
+}
 var logout = function() {
     FB.logout(function(response) {
         // user is now logged out
