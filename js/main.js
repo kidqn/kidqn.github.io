@@ -37,9 +37,10 @@ var logout = function() {
 }
 
 var authByFirebase = function() {
-    var credential = firebase.auth.FacebookAuthProvider.credential(accessTokenFB);
-    firebase.auth().signInWithCredential(credential).then((userData) => { 
-        console.log('validate by firebase', userData);
-    })
-    .catch((err) => console.log(err));
+    console.log(firebase)
+    // var credential = firebase.auth.FacebookAuthProvider.credential(accessTokenFB);
+    // firebase.auth().signInWithCredential(credential).then((userData) => { 
+    //     console.log('validate by firebase', userData);
+    // })
+    // .catch((err) => console.log(err));
 }
