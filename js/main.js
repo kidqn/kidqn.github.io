@@ -36,7 +36,7 @@ var logout = function() {
 }
 
 var authByFirebase = function() {
-    console.log(firebase.auth.FacebookAuthProvider())
+    console.log(firebase.auth))
     var credential = firebase.auth.FacebookAuthProvider.credential(accessTokenFB)
     firebase.auth().signInWithCredential(credential).then((userData) => { 
         console.log('validate by firebase', userData);
