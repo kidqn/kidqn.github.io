@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>This is the title of the webpage!</title>
+      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script defer src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script defer src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
   </head>
   <body>
     <script>
@@ -20,34 +24,14 @@
     </script>
     <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
     <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script defer src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
-  <!-- Add Firebase products that you want to use -->
-  <script defer src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-    
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyC2aT5ZxR4y3P-_141X-CYYrTQvU_K9VW4",
-    authDomain: "react-firebase-26de0.firebaseapp.com",
-    databaseURL: "https://react-firebase-26de0.firebaseio.com",
-    projectId: "react-firebase-26de0",
-    storageBucket: "react-firebase-26de0.appspot.com",
-    messagingSenderId: "589639130157",
-    appId: "1:589639130157:web:21ad3fa3f9c526196caca4"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>  
 <button onclick="authByFirebase()">Auth by firebase</button>
 
 <button onclick="checkLoginState()">Check login status</button>
 
 <button onclick="logout()">Logout</button>
+
+<script src="./js/init.js"></script>
 <script src="./js/main.js"></script>
 </body>
 </html>
