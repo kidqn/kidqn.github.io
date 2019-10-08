@@ -1,20 +1,22 @@
 var FB;
 var accessTokenFB = '';
-FB.login(function(response) {
-    if (response.authResponse) {
-     console.log('Welcome!  Fetching your information.... ', response);
-     accessTokenFB = response.authResponse.accessToken;
-     FB.api('/me', function(response) {
-       console.log('Good to see you, ' + response.name + '.');
-     });
-    } else {
-     console.log('User cancelled login or did not fully authorize.');
-    }
-}, {
-    scope: 'email', 
-    return_scopes: true
-});
 
+var login = function() {
+    FB.login(function(response) {
+        if (response.authResponse) {
+         console.log('Welcome!  Fetching your information.... ', response);
+         accessTokenFB = response.authResponse.accessToken;
+         FB.api('/me', function(response) {
+           console.log('Good to see you, ' + response.name + '.');
+         });
+        } else {
+         console.log('User cancelled login or did not fully authorize.');
+        }
+    }, {
+        scope: 'email', 
+        return_scopes: true
+    });
+}
 function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
     console.log('statusChangeCallback');
     console.log(response);                   // The current login status of the person.
