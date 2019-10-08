@@ -1,4 +1,4 @@
 var FB;
-FB.login(['email', 'public_profile']).then((res) => {
+FB.login(['public_profile']).then((res) => {
     console.log(res);
 });
