@@ -2,10 +2,16 @@
 <html>
   <head>
     <title>This is the title of the webpage!</title>
-      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script defer src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
   <!-- Add Firebase products that you want to use -->
   <script defer src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.2.1/firebase-messaging.js"></script>
+  
+
   </head>
   <body>
     <script>
@@ -32,8 +38,11 @@
 <button onclick="login()">Login</button>
 
 <button onclick="logout()">Logout</button>
-
+<button id='geolocate' onclick=letsGeolocate()> Oke fine </button>
+<div id="output">OUTPUT</div>
 <script defer src="./js/init.js"></script>
 <script defer src="./js/main.js"></script>
+
+
 </body>
 </html>
