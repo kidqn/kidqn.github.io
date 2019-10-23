@@ -1,34 +1,18 @@
   var firebase;
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyAE_4kv3JEBYLMBtmgvbpZlT5XaH7P_eB0",
-    authDomain: "rugged-weaver-485.firebaseapp.com",
-    databaseURL: "https://rugged-weaver-485.firebaseio.com",
-    projectId: "rugged-weaver-485",
-    storageBucket: "rugged-weaver-485.appspot.com",
-    messagingSenderId: "75115380018",
-    appId: "1:75115380018:web:eb7198eed91e15ca"
+    apiKey: "AIzaSyC2aT5ZxR4y3P-_141X-CYYrTQvU_K9VW4",
+    authDomain: "react-firebase-26de0.firebaseapp.com",
+    databaseURL: "https://react-firebase-26de0.firebaseio.com",
+    projectId: "react-firebase-26de0",
+    storageBucket: "react-firebase-26de0.appspot.com",
+    messagingSenderId: "589639130157",
+    appId: "1:589639130157:web:21ad3fa3f9c526196caca4"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
 
-  const messaging = firebase.messaging();
-  messaging.requestPermission()
-      .then(() => {
-          console.log('Have permission');
-          return messaging.getToken();
-      })
-      .then((token) => {
-          console.log(token);
-      })
-      .catch((err) => console.log('Err', err));
-  
-  
-  messaging.onMessage((payload) => {
-    console.log('Message received. ', payload);
-    // ...
-    });
   //////
   navigator.geolocation.getAccurateCurrentPosition = function (geolocationSuccess, geolocationError, geoprogress, options) {
     var lastCheckedPosition,
