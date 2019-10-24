@@ -11,9 +11,9 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  messaging.usePublicVapidKey('BJg4xeVdl7UHHckQ9SK7hA2Ko20FWtbtgDkI0Gr2EwbMbMC5ICqr3hxKA7Fc4Yw_FB2OuGZiwBc39WKRw18aWkg');
 
 const messaging = firebase.messaging()
+messaging.usePublicVapidKey('BJg4xeVdl7UHHckQ9SK7hA2Ko20FWtbtgDkI0Gr2EwbMbMC5ICqr3hxKA7Fc4Yw_FB2OuGZiwBc39WKRw18aWkg');
 
   messaging.requestPermission()
   .then(() => {
