@@ -13,7 +13,7 @@
   firebase.initializeApp(firebaseConfig);
 
 const messaging = firebase.messaging()
-messaging.usePublicVapidKey('BJg4xeVdl7UHHckQ9SK7hA2Ko20FWtbtgDkI0Gr2EwbMbMC5ICqr3hxKA7Fc4Yw_FB2OuGZiwBc39WKRw18aWkg');
+messaging.usePublicVapidKey('BLuGEZLnElX-u9TGbAIRE_KWq_Z24Ms5N_BLNEfuVwxK_R5mOgw00O1ARXDcsxbNJk25dYBsfqJbI9NS9RjzVQU');
 
   messaging.requestPermission()
   .then(() => {
