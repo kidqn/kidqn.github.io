@@ -12,25 +12,7 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  const messaging = firebase.messaging();
-  messaging.usePublicVapidKey('BJg4xeVdl7UHHckQ9SK7hA2Ko20FWtbtgDkI0Gr2EwbMbMC5ICqr3hxKA7Fc4Yw_FB2OuGZiwBc39WKRw18aWkg');
 
-
-  messaging.requestPermission()
-  .then(() => {
-      console.log('Have permissions');
-      return messaging.getToken();
-  })
-  .then((token) => {
-      console.log(token);
-  })
-  .catch((err) => console.log('Err', err));
-
-
-messaging.onMessage((payload) => {
-  console.log('Message received. ', payload);
-  // ...
-  });
   //////
   navigator.geolocation.getAccurateCurrentPosition = function (geolocationSuccess, geolocationError, geoprogress, options) {
     var lastCheckedPosition,
