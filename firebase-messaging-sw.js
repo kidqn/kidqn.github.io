@@ -1,21 +1,34 @@
-self.addEventListener('push', function(event) {  
-    var title = 'Yay a message.';
-    var body = 'We have received a push message.';
-    var icon = 'setting.png';
-    var tag = 'simple-push-demo-notification-tag';
-  
-    event.waitUntil(
-        self.registration.pushManager.getSubscription().then(function(subscription) {
-            console.log('subscription', subscription);
-            console.info('Received a push message', event.data.json().data);
-            self.registration.showNotification(title, {
-                body: body,
-                icon: icon,
-                tag: tag
+self.addEventListener('push', function(event) {
+
+    var apiPath = 'https://fcm.googleapis.com/fcm/send';
+    event.waitUntil(registration.pushManager.getSubscription().then(function (subscription){
+    
+        return fetch(apiPath).then(function(response){
+            if(response.status !== 200){
+                throw new Error();
+            }
+    
+            return response.json().then(function(data){
+                console.log('notificaiton data', data);
+                var title = data.title;
+                var message = data.body;
+                var icon = data.icon;
+                var tag = data.tag;
+                var url = data.url;
+                return self.registration.showNotification(title,{
+                   body: message,
+                   icon: icon,
+                   tag: tag,
+                   data: url
+                });
             })
+        }).catch(function(err){
+    
         })
-    );
-  });
+    
+    }));
+    return;
+    });
   
   self.addEventListener('notificationclick', function(event) {
     console.log('On notification click: ', event.notification.tag);
