@@ -1,34 +1,14 @@
 self.addEventListener('push', function(event) {
-
-    var apiPath = 'https://fcm.googleapis.com/fcm/send';
-    event.waitUntil(registration.pushManager.getSubscription().then(function (subscription){
-    
-        return fetch(apiPath).then(function(response){
-            if(response.status !== 200){
-                throw new Error();
-            }
-    
-            return response.json().then(function(data){
-                console.log('notificaiton data', data);
-                var title = data.title;
-                var message = data.body;
-                var icon = data.icon;
-                var tag = data.tag;
-                var url = data.url;
-                return self.registration.showNotification(title,{
-                   body: message,
-                   icon: icon,
-                   tag: tag,
-                   data: url
-                });
-            })
-        }).catch(function(err){
-    
-        })
-    
-    }));
-    return;
-    });
+    var jsonData = JSON.parse(event.data.text());
+    console.log('notification data', jsonData);
+    // jsonData -> here is you data 
+    const options = {
+        body: 'set you body',
+        icon: 'setting.png',
+        badge: 'setting.png'
+    };
+    event.waitUntil(self.registration.showNotification(jsonData.data.title, options)); 
+});
   
   self.addEventListener('notificationclick', function(event) {
     console.log('On notification click: ', event.notification.tag);
