@@ -1,15 +1,43 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>AngularPushNotification</title>
-  <base href="/">
+<html>
+  <head>
+    <title>This is the title of the webpage!</title>
+      <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+      <script defer src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+      <!-- Add Firebase products that you want to use -->
+  <script defer src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.2.1/firebase-messaging.js"></script>
+  <link src="./manifest.json">
+  </head>
+  <body>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId            : '632947443561110',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v4.0'
+            });
+            FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+                statusChangeCallback(response);        // Returns the login status.
+            });
+        };
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <p>This is an example paragraph. Anything in the <strong>body</strong> tag will appear on the page, just like this <strong>p</strong> tag and its contents.</p>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="styles.3ff695c00d717f2d2a11.css"></head>
-<body>
-  <app-root></app-root>
-<script type="text/javascript" src="runtime.9501efa31c8a8e2cb4b8.js"></script><script type="text/javascript" src="es2015-polyfills.e17997aea7f522b8d49d.js" nomodule></script><script type="text/javascript" src="polyfills.8bbb231b43165d65d357.js"></script><script type="text/javascript" src="main.9b8533c4268ca1b975e4.js"></script></body>
+<button onclick="authByFirebase()">Auth by firebase</button>
+
+<button onclick="checkLoginState()">Check login status</button>
+
+<button onclick="login()">Login</button>
+
+<button onclick="logout()">Logout</button>
+<button id='geolocate' onclick=letsGeolocate()> Oke fine </button>
+<div id="output">OUTPUT</div>
+<script defer src="./js/init.js"></script>
+<script defer src="./js/main.js"></script>
+
+
+</body>
 </html>
