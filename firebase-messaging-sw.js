@@ -23,7 +23,7 @@ const messaging = firebase.messaging();
 messaging.setBackgroundMessageHandler((payload) => {
     const title = 'Hello';
     const options = {
-        body: payload.data.status,
+        body: payload.data.body,
         icon: '/setting.png',
         image: '/setting.png',
         badge: '/setting.png'
