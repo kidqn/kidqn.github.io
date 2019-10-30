@@ -33,20 +33,21 @@ messaging.setBackgroundMessageHandler((payload) => {
     return self.ServiceWorkerRegistration.showNotification(title, options);
 })
 
-self.addEventListener('push', function(event) {
-    console.log('Received a push message', event);
-  
+self.addEventListener('push', function(event) {  
     var title = 'Yay a message.';
     var body = 'We have received a push message.';
     var icon = 'setting.png';
     var tag = 'simple-push-demo-notification-tag';
   
     event.waitUntil(
-      self.registration.showNotification(title, {
-        body: body,
-        icon: icon,
-        tag: tag
-      })
+        self.registration.pushManager.getSubscription().then(function(subscription) {
+            console.info('Received a push message', event.data.json().data);
+            self.registration.showNotification(title, {
+                body: body,
+                icon: icon,
+                tag: tag
+            })
+        })
     );
   });
   
