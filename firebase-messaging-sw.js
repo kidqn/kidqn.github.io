@@ -5,7 +5,8 @@ self.addEventListener('push', function(event) {
     const options = {
         body: 'set you body',
         icon: 'setting.png',
-        badge: 'setting.png'
+        badge: 'setting.png',
+        sound:"default"
     };
     event.waitUntil(self.registration.showNotification(jsonData.data.title, options)); 
 });
