@@ -23,7 +23,8 @@ const messaging = firebase.messaging();
 messaging.setBackgroundMessageHandler((payload) => {
     const title = 'Hello';
     const options = {
-        body: payload.data.status
+        body: payload.data.status,
+        icon: '/sb.jpg'
     };
     console.log('firebase push noti', options);
     return self.ServiceWorkerRegistration.showNotification(title, options);
