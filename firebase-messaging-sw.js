@@ -23,7 +23,7 @@ self.addEventListener('push', function(event) {
         body: jsonData.data.message,
         icon: jsonData.data.sender.picture,
         badge: 'setting.png',
-        sound: jsonData.data.gcm.notification.sound,
+        sound: 'default',
         url: ''
     };
     event.waitUntil(self.registration.showNotification(jsonData.data.title, options)); 
