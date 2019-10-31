@@ -20,7 +20,7 @@ self.addEventListener('push', function(event) {
     console.log('notification data', jsonData);
     // jsonData -> here is you data 
     const options = {
-        body: jsonData.data.message,
+        body: 'Hello world',
         icon: jsonData.data.sender.picture,
         badge: 'setting.png',
         sound: 'default',
