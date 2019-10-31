@@ -10,6 +10,7 @@ firebase.initializeApp({
     messagingSenderId: "589639130157",
 });
 
+const messaging = firebase.messaging();
 
 self.addEventListener('push', function(event) {
     var jsonData = JSON.parse(event.data.text());
