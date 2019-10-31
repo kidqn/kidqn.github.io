@@ -20,9 +20,9 @@ messaging.setBackgroundMessageHandler(function(payload) {
   const notificationOptions = {
     icon: '/setting.png'
   };
-
-  return self.registration.showNotification(notificationTitle,
-      notificationOptions);
+  return;
+  // return self.registration.showNotification(notificationTitle,
+  //     notificationOptions);
 });
 
 // self.addEventListener('push', function(event) {
