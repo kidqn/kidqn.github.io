@@ -21,7 +21,6 @@ self.addEventListener('push', function(event) {
     // jsonData -> here is you data 
     const title = jsonData.data
     const options = {
-        body: 'Hello world',
         icon: jsonData.data.sender.picture,
         badge: 'setting.png',
         sound: 'default',
