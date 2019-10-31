@@ -16,7 +16,7 @@ const messaging = firebase.messaging()
 
 self.addEventListener('push', function(event) {
     var jsonData = JSON.parse(event.data.text());
-    jsonData.sender = JSON.parse(jsonData.sender);
+    jsonData.sender = JSON.parse(jsonData.data.sender);
     console.log('notification data', jsonData);
     // jsonData -> here is you data 
     const options = {
