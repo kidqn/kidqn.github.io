@@ -13,7 +13,7 @@ firebase.initializeApp({
 
 self.addEventListener('push', function(event) {
     var jsonData = JSON.parse(event.data.text());
-    jsonData.sender = JSON.parse(jsonData.data.sender);
+    jsonData.data.sender = JSON.parse(jsonData.data.sender);
     console.log('notification data', jsonData);
     console.log(`${jsonData.data.sender.picture}`);
     const title = jsonData.data.title;
