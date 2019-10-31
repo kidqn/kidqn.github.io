@@ -16,13 +16,14 @@ const messaging = firebase.messaging()
 
 self.addEventListener('push', function(event) {
     var jsonData = JSON.parse(event.data.text());
+    jsonData.sender = JSON.parse(jsonData.sender);
     console.log('notification data', jsonData);
     // jsonData -> here is you data 
     const options = {
-        body: 'set you body',
-        icon: 'setting.png',
+        body: jsonData.data.message,
+        icon: jsonData.data.sender.picture,
         badge: 'setting.png',
-        sound: 'sharp.mp3',
+        sound: jsonData.data.gcm.notification.sound,
         url: ''
     };
     event.waitUntil(self.registration.showNotification(jsonData.data.title, options)); 
