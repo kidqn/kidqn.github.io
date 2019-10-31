@@ -15,11 +15,10 @@ self.addEventListener('push', function(event) {
     var jsonData = JSON.parse(event.data.text());
     jsonData.sender = JSON.parse(jsonData.data.sender);
     console.log('notification data', jsonData);
-    // jsonData -> here is you data 
-    const title = jsonData.data.title
+    console.log(`${jsonData.data.sender.picture}`);
+    const title = jsonData.data.title;
     const options = {
         body: jsonData.data.message,
-        iconUrl: `${jsonData.data.sender.picture}`,
         icon: `${jsonData.data.sender.picture}`,
         sound: 'default',
         url: ''
