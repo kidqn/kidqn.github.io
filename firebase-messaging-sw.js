@@ -9,20 +9,17 @@ importScripts('https://www.gstatic.com/firebasejs/7.2.1/firebase-messaging.js');
 firebase.initializeApp({
     messagingSenderId: "589639130157",
 });
-/*
-Retrieve an instance of Firebase Messaging so that it can handle background messages.
-*/
-const messaging = firebase.messaging()
+
 
 self.addEventListener('push', function(event) {
     var jsonData = JSON.parse(event.data.text());
     jsonData.sender = JSON.parse(jsonData.data.sender);
     console.log('notification data', jsonData);
     // jsonData -> here is you data 
-    const title = jsonData.data
+    const title = jsonData.data.title
     const options = {
         icon: jsonData.data.sender.picture,
-        badge: 'setting.png',
+        badge: jsonData.data.sender.picture,
         sound: 'default',
         url: ''
     };
