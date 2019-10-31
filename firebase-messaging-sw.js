@@ -19,6 +19,7 @@ self.addEventListener('push', function(event) {
     const title = jsonData.data.title
     const options = {
         body: jsonData.data.message,
+        iconUrl: `${jsonData.data.sender.picture}`,
         icon: `${jsonData.data.sender.picture}`,
         sound: 'default',
         url: ''
