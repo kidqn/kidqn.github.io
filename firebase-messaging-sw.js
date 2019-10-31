@@ -22,7 +22,8 @@ self.addEventListener('push', function(event) {
         body: 'set you body',
         icon: 'setting.png',
         badge: 'setting.png',
-        sound: 'sharp.mp3'
+        sound: 'sharp.mp3',
+        url: ''
     };
     event.waitUntil(self.registration.showNotification(jsonData.data.title, options)); 
 });
