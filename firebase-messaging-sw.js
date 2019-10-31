@@ -18,8 +18,8 @@ self.addEventListener('push', function(event) {
     // jsonData -> here is you data 
     const title = jsonData.data.title
     const options = {
-        icon: 'https://speerit-api-staging.s3-accelerate.amazonaws.com/customer/5d88985574a694570a671f85/profile/5d88990bc0be4.png',
-        iconUrl: 'https://speerit-api-staging.s3-accelerate.amazonaws.com/customer/5d88985574a694570a671f85/profile/5d88990bc0be4.png',
+        body: jsonData.data.message,
+        icon: jsonData.data.sender.picture,
         sound: 'default',
         url: ''
     };
