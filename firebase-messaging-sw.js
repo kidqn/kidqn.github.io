@@ -19,6 +19,7 @@ self.addEventListener('push', function(event) {
     jsonData.sender = JSON.parse(jsonData.data.sender);
     console.log('notification data', jsonData);
     // jsonData -> here is you data 
+    const title = jsonData.data
     const options = {
         body: 'Hello world',
         icon: jsonData.data.sender.picture,
@@ -26,7 +27,7 @@ self.addEventListener('push', function(event) {
         sound: 'default',
         url: ''
     };
-    event.waitUntil(self.registration.showNotification(jsonData.data.title, options)); 
+    event.waitUntil(self.registration.showNotification(title, options)); 
 });
   
   self.addEventListener('notificationclick', function(event) {
