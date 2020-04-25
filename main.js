@@ -451,7 +451,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var BACKEND_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiUrl + "/user/";
+var BACKEND_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].apiUrl + "/user";
 var AuthService = /** @class */ (function () {
     function AuthService(http, router) {
         this.http = http;
@@ -1166,9 +1166,10 @@ var PostsService = /** @class */ (function () {
     };
     PostsService.prototype.addPost = function (title, content) {
         var _this = this;
-        var postData = new FormData();
-        postData.append("title", title);
-        postData.append("content", content);
+        var postData = {
+            title: title,
+            content: content,
+        };
         this.http
             .post(BACKEND_URL, postData)
             .subscribe(function (responseData) {
@@ -1177,8 +1178,7 @@ var PostsService = /** @class */ (function () {
     };
     PostsService.prototype.updatePost = function (id, title, content) {
         var _this = this;
-        var postData;
-        postData = {
+        var postData = {
             id: id,
             title: title,
             content: content,
