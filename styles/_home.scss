@@ -296,3 +296,33 @@ section.hot-deal {
         line-height: 29px;
     }
 }
+.list-deals {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -7px;
+    .deal {
+        flex: 1;
+        height: 350px;
+        margin: 0 7px 0 0;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        .deal-info {
+            height: 310px;
+            background: #FFFFFF;
+            border-radius: 4px 4px 0px 0px;
+        }
+        .buy-now {
+            background: #F15A25;
+            height: 40px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 0 4px 4px;
+            font-family: 'Helvetica Neue';
+            font-weight: 500;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+    }
+}
