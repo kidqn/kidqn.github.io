@@ -33,7 +33,7 @@
             background-image: url(../images/icon/search_white.svg);
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: 100% 100%;
+            background-size: 16px 16px;
         }
     }
 }
@@ -52,7 +52,7 @@
     justify-content: space-between;
     & > div {
         h4 {
-            margin: 0;
+            margin: 4px 0 0 0;
             font-family: 'Helvetica Neue';
             font-style: normal;
             font-weight: 500;
@@ -84,6 +84,7 @@
     left: 0;
     top: 56px;
     height: 40px;
+    background: #fff;
     border-bottom: 1px solid rgba(9,8,9, .2);
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
@@ -165,24 +166,12 @@ section.section-banner {
     margin: auto;
     position: relative;
   }
-  .swiper-wrapper{
-    -webkit-transition-timing-function:linear!important;    transition-timing-function:linear!important; 
-    position: relative;
-  }
-  .swiper-slide {
-    text-align: center;
-    font-size: 33px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    position: relative;
-    overflow: hidden;
-    padding: 0 50px;
-  }
-  .info-carousel {
-      .slide {
+.swiper-wrapper{
+-webkit-transition-timing-function:linear!important;    transition-timing-function:linear!important; 
+position: relative;
+}
+.info-carousel {
+    .slide {
         font-family: 'Helvetica Neue';
         font-weight: normal;
         font-size: 12px;
@@ -205,5 +194,105 @@ section.section-banner {
             color: #F15A25;
             border-bottom: 1px solid rgba(241,90,37, 1);
         }
-      }
-  }
+    }
+}
+
+section.news-update {
+    margin: 0 0 20px 0;
+    & > .container {
+        position: relative;
+    }
+    .heading {
+        display: flex;
+        align-items: center;
+        height: 32px;
+        background: rgba(241,90,37, 0.05);
+        border-radius: 16px;
+        margin: 0 10px 0 0;
+        font-family: 'Helvetica Neue';
+        font-weight: 500;
+        font-size: 12px;
+        color: #090809;
+        padding: 4px 20px 4px 12px;
+    }
+}
+.news-carousel {
+    flex: 1;
+    height: 32px;
+    &:after {
+        content: '';
+        display: block;
+        background: linear-gradient(270deg, #FFFFFF 14.13%, rgba(255, 255, 255, 0) 100%);
+        width: 90px;
+        height: 32px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+    }
+    .swiper-slide {
+        width: auto;
+        padding: 0 27px 0 0;
+        display: flex;
+        align-items: center;
+        p {
+            font-family: 'Helvetica Neue';
+            font-weight: normal;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            color: #090809;
+            margin: 0;
+            position: relative;
+            &:hover, &.active {
+                color: #F15A25;
+            }
+        }
+        &:not(:nth-last-of-type(1)):after {
+            content: '';
+            display: block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #F15A25;
+            margin-left: 20px;
+        }
+    }
+}
+
+section.promo {
+    margin: 0 0 30px 0;
+}
+
+section.hot-deal {
+    position: relative;
+    min-height: 510px;
+    background-image: url('../images/homep/hotdeal_banner.svg');
+    background-position: top right 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:before {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        bottom: 99.61%;
+        background: linear-gradient(270deg, rgba(241, 90, 37, 0) 0%, #F15A25 49.92%, rgba(241, 90, 37, 0) 100%);
+    }
+    h2.title {
+        width: 170px;
+        height: 48px;
+        margin: 0 auto 20px auto;
+        color: #FFFFFF;
+        background: #F15A25;
+        border-radius: 0px 0px 4px 4px;
+        font-family: 'Helvetica Neue';
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+    }
+}

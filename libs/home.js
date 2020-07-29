@@ -20,8 +20,20 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
 }
 
-let SwiperTop = new Swiper('.info-carousel', {
+let SwiperInfo = new Swiper('.info-carousel', {
   spaceBetween: 0,
+  slidesPerView:'auto',
+  allowTouchMove: true,
+  disableOnInteraction: true
+});
+let SwiperTop = new Swiper('.news-carousel', {
+  spaceBetween: 0,
+  centeredSlides: true,
+  speed: 6000,
+  autoplay: {
+    delay: 1,
+  },
+  loop: true,
   slidesPerView:'auto',
   allowTouchMove: true,
   disableOnInteraction: true
