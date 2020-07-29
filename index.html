@@ -6,7 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- CSS only -->
 <link rel="stylesheet" href="https://kidqn.github.io/libs/bootstrap-grid.min.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <link rel="stylesheet" href="main.css">
+
 </head>
 <body>
 
@@ -86,13 +88,47 @@
         </div>
     </div>
     <section class="section-banner">
-        <div class="left">
-            <div class="home-carousel"></div>
-            <div class="info-carousel"></div>
-        </div>
-        <div class="right">
-            <div class="banner"></div>
-            <div class="banner"></div>
+        <div class="container d-flex">
+            <div class="left">
+                <div id="home-carousel" class="carousel-container">
+                    <div class="slide fade">
+                        <img src="./images/homep/xiaomi.png" style="width:100%">
+                        <div class="text">Caption Text</div>
+                    </div>
+                    
+                    <div class="slide fade">
+                        <img src="./images/homep/xiaomi.png" style="width:100%">
+                        <div class="text">Caption Two</div>
+                    </div>
+                    
+                    <div class="slide fade">
+                        <img src="./images/homep/xiaomi.png" style="width:100%">
+                        <div class="text">Caption Three</div>
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <div class="info-container">
+                    <div class="swiper-container info-carousel">
+                        <div class="swiper-wrapper">
+                            <div class="slide">Mua sắm Online - Giảm thêm đến 300k</div>
+                            <div class="slide">PDP Energizer Giá giảm chỉ còn 299k</div>
+                            <div class="slide">Ngày vàng phụ kiện - Giảm hơn 50%</div>
+                            <div class="slide">Mua ngay iPhone SE 2020 hàng chính hãng VN/A</div>
+                            <div class="slide">OPPO A92 GIẢM SIÊU SỐC</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right d-flex flex-column">
+                <div class="banner">
+                    <img src="./images/homep/dattruoc-iphone.png" style="width:100%">
+                </div>
+                <div class="banner">
+                    <img src="./images/homep/mi10lite.png" style="width:100%">
+                </div>
+            </div>
         </div>
     </section>
     <section class="news-update"></section>
@@ -103,5 +139,9 @@
     </section>
     <section class="home-about"></section>
     <div class="footer"></div>
+
+    <!-- JS only -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="libs/home.js"></script>
 </body>
 </html>
