@@ -103,34 +103,34 @@
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
-    .ic-mobile {
+    &.ic-mobile {
         background-image: url('../images/cat-icon/mobile.svg');
     }
-    .ic-table {
+    &.ic-table {
         background-image: url('../images/cat-icon/tablet.svg');
     }
-    .ic-mac {
+    &.ic-mac {
         background-image: url('../images/cat-icon/mac.svg');
     }
-    .ic-headphone {
+    &.ic-headphone {
         background-image: url('../images/cat-icon/headphone.svg');
     }
-    .ic-watch {
+    &.ic-watch {
         background-image: url('../images/cat-icon/watch.svg');
     }
-    .ic-old-mobile {
+    &.ic-old-mobile {
         background-image: url('../images/cat-icon/old-mobile.svg');
     }
-    .ic-service {
+    &.ic-service {
         background-image: url('../images/cat-icon/service.svg');
     }
-    .ic-news {
+    &.ic-news {
         background-image: url('../images/cat-icon/news.svg');
     }
-    .ic-sim {
+    &.ic-sim {
         background-image: url('../images/cat-icon/sim.svg');
     }
-    .ic-pay {
+    &.ic-pay {
         background-image: url('../images/cat-icon/pay.svg');
     }
 }
