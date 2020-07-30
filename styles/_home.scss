@@ -409,6 +409,7 @@ section.hot-deal {
         font-size: 14px;
         line-height: 1.5;
         color: #000000;
+        text-align: left;
         margin: 0 0 8px 0;
     }
     .deal-price {
@@ -417,6 +418,7 @@ section.hot-deal {
         font-size: 14px;
         line-height: 1.5;
         color: #F15A25;
+        text-align: left;
         span {
             margin-left: 8px;
             text-decoration-line: line-through;
@@ -453,5 +455,161 @@ section.hot-deal {
                 border: 1px solid #F15A25;
             }
         }
+    }
+}
+
+section.products {
+    padding: 30px 0;
+    .product-header {
+        display: flex;
+        align-items: center;
+        height: 40px;
+        background: #F6F7F8;
+        border: 1px solid #F6F7F8;
+        border-radius: 2px 2px 0px 0px;
+        padding: 0 4px 0 20px;
+        .title {
+            font-family: 'Helvetica Neue';
+            font-weight: 500;
+            font-size: 16px;
+            color: #000000;
+            margin: 0 auto 0 0;
+        }
+        .tablink {
+            font-family: 'Helvetica Neue';
+            font-weight: normal;
+            font-size: 14px;
+            color: #636B7B;
+            background-color: #F6F7F8;
+        }
+    }
+}
+.list-products {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 40px 0;
+    .product {
+        background: #fff;
+        padding: 26px 0 0 0;
+        border-left: 1px solid #F6F7F8;
+        width: 20%;
+        &:nth-last-of-type(1) {
+            border-right: 1px solid #F6F7F8;
+        }
+        &:hover {
+            transform: scale(1,1);
+            -moz-transform: scale(1,1);
+            -webkit-transform: scale(1,1);
+            -o-transform: scale(1,1);
+            -ms-transform: scale(1,1);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
+            & + .product {
+                border-left: 1px solid #fff;
+            }
+            .product-bottom {
+               visibility: visible;
+            }
+        }
+    }
+    .product-top {
+        display: flex;
+        height: 1px;
+        padding: 0 16px;
+        justify-content: space-between;
+        position: relative;
+        .pay-0, .sale-off {
+            padding: 1px 4px;
+            color: #FFFFFF;
+            border-radius: 2px;
+            font-family: 'Helvetica Neue';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            height: 17px;
+            position: absolute;
+            top: -8px;
+        }
+        .pay-0 {
+            background: #27AE60;
+            left: 16px;
+
+        }
+        .sale-off {
+            background: #D62C2C;
+            right: 16px;
+        }
+    }
+    .product-image {
+        width: 180px;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 22px 0;
+        img {
+            object-position: center center;
+            object-fit: contain;
+        }
+    }
+    .product-name {
+        font-family: 'Helvetica Neue';
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0 0 4px 0;
+        padding: 0 16px;
+    }
+    .product-price {
+        display: flex;
+        align-items: center;
+        font-family: 'Helvetica Neue';
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #F15A25;
+        padding: 0 16px;
+        &.vat {
+            color: #2F80ED;
+        }
+        h4 {
+            color: #636B7B;
+            margin: 0 4px 0 0;
+            text-transform: uppercase;
+        }
+        span {
+            font-size: 12px;
+            margin-left: 8px;
+            color: #636B7B;
+        }
+    }
+    .product-bottom {
+        display: flex;
+        visibility: hidden;
+        padding: 8px;
+        button:nth-of-type(1) {
+            margin-right: 8px;
+        }
+        button {
+            padding: 2px 8px;
+            border-radius: 2px;
+            width: 50%;
+            height: 40px;
+            &.buy-now {
+                background: #F15A25;
+            }
+            &.pay-0 {
+                background: #636B7B;
+            }
+        }
+    }
+}
+
+section.home-about {
+    min-height: 502px;
+    & > .container {
+        background-image: url('../images/homep/home-about.svg');
+        background-position: bottom left -20px;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 }

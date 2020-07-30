@@ -9,8 +9,15 @@ body {
 }
 
 // common html tag
+a, button {
+  cursor: pointer;
+}
 button {
   border: 0;
+  font-family: 'Helvetica Neue';
+  font-weight: 500;
+  font-size: 14px;
+  color: #FFFFFF;
 }
 img {
   display: block;
@@ -188,8 +195,8 @@ img {
 }
 
 .tabcontent {
-  color: white;
   display: none;
+  background: #fff;
   &.active {
     display: block;
   }
