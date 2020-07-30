@@ -1043,4 +1043,17 @@ section.home-about {
             }
         }
     }
+    .carousel-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .slide {
+            display: inline-flex !important;
+            flex: 0 0 auto;
+        }
+    }
 }
