@@ -381,7 +381,7 @@ section.hot-deal {
         .view-all {
             position: absolute;
             right: 0;
-            top: 0;
+            top: 5px;
         }
     }
 }
@@ -977,7 +977,7 @@ section.home-about {
     }
     section.hot-deal {
         .bottom {
-            margin-bottom: 20px;
+            padding-bottom: 20px;
         }
     }
     section.home-about {
@@ -992,6 +992,36 @@ section.home-about {
                 width: 100%;
                 padding: 0;
                 margin: 0 0 8px 0;
+            }
+        }
+    }
+    #all-deals-carousel {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        & > .slide {
+            display: inline-flex !important;
+            flex: 0 0 auto;
+            margin: 0 7px 0 0;
+        }
+    }
+    .list-deals {
+        .deal {
+            width: 230px;
+        }
+    }
+    section.hot-deal {
+        .bottom {
+            .prev, .next, .per-page {
+                display: none;
+            }
+            .view-all {
+                position: static;
+                margin: 0 0 20px 0;
             }
         }
     }
@@ -1043,7 +1073,7 @@ section.home-about {
             }
         }
     }
-    .carousel-container {
+    #all-deals-carousel {
         display: flex;
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -1051,9 +1081,26 @@ section.home-about {
         &::-webkit-scrollbar {
             display: none;
         }
-        .slide {
+        & > .slide {
             display: inline-flex !important;
             flex: 0 0 auto;
+            margin: 0 7px 0 0;
+        }
+    }
+    .list-deals {
+        .deal {
+            width: 160px;
+        }
+    }
+    section.hot-deal {
+        .bottom {
+            .prev, .next, .per-page {
+                display: none;
+            }
+            .view-all {
+                position: static;
+                margin: 0 0 20px 0;
+            }
         }
     }
 }
