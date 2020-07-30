@@ -80,7 +80,6 @@
             padding: 0;
             display: flex;
             i {
-                background-size: 6px auto;
                 margin: 0 0 0 2px;
             }
         }
@@ -161,9 +160,11 @@
         background-image: url('../images/icon/info.svg');
     }
     &.ic_chervon_down-grey {
+        background-size: 8px auto;
         background-image: url('../images/icon/chervon_down_grey.svg');
     }
     &.ic_chervon_right-grey {
+        background-size: 6px auto;
         background-image: url('../images/icon/chervon_right_grey.svg');
     }
     &.ic_chervon_right-orange {
