@@ -49,8 +49,11 @@
 .header-right {
     flex: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     & > div {
+        &:not(:nth-last-of-type(1)) {
+            margin-right: 80px;
+        }
         h4 {
             margin: 4px 0 0 0;
             font-family: 'Helvetica Neue';
@@ -629,6 +632,7 @@ section.home-about {
         min-height: 502px;
         .dot-bg {
             position: absolute;
+            z-index: -1;
             left: -70px;
             bottom: 0;
             width: 139px;
@@ -736,8 +740,10 @@ section.home-about {
             flex: 1;
             .social {
                 display: flex;
-                justify-content: space-between;
                 margin: 0 0 63px 0;
+                li {
+                    margin-right: 32px;
+                }
             }
             .payment {
                 display: flex;
@@ -781,6 +787,8 @@ section.home-about {
                 border-radius: 2px 0px 0px 2px;
                 border-right: 1px solid #E2E4E8;
                 padding: 8px;
+                display: flex;
+                align-items: center;
             }
             input {
                 height: 100%;
