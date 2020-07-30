@@ -79,3 +79,21 @@ function openPage(pageName, contentId) {
   }
   document.getElementById(pageName).classList.add('active')
 }
+
+//mobile menu 
+function openMenu(x) {
+  if(x.classList.contains('change')) {
+    closeNav(); 
+  } else {
+    openNav();
+  }
+  x.classList.toggle("change");
+}
+function openNav() {
+  document.getElementById("mobile-menu").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mobile-menu").style.width = "0%";
+  document.getElementById("mobile-menu-btn").classList.remove("change");
+}
