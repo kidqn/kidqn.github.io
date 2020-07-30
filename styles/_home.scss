@@ -6,9 +6,14 @@
     width: 100%;
     height: 56px;
     background: #000000;
-    padding: 12px 40px;
-    display: flex;
-    align-items: center;
+    .header-container {
+        max-width: 1440px;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        padding: 12px 40px;
+    }
     .logo {
         width: 131px;
         height: 24px;
@@ -41,7 +46,6 @@
     width: 100%;
     border: 0;
     outline: 0;
-    font-family: 'Helvetica Neue';
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -56,14 +60,13 @@
         }
         h4 {
             margin: 4px 0 0 0;
-            font-family: 'Helvetica Neue';
             font-style: normal;
             font-weight: 500;
             font-size: 14px;
             color: #F15A25;
         }
         & > p {
-            font-family: 'Helvetica Neue';
+        
             font-weight: normal;
             font-size: 12px;
             color: #FFFFFF;
@@ -71,7 +74,7 @@
             margin: 0 0 3px 0;
         }
         .dropbtn {
-            font-family: 'Helvetica Neue';
+        
             font-weight: 500;
             font-size: 14px;
             color: #FFFFFF;
@@ -206,7 +209,7 @@ position: relative;
 }
 .info-carousel {
     .slide {
-        font-family: 'Helvetica Neue';
+    
         font-weight: normal;
         font-size: 12px;
         padding: 10px 6px;
@@ -243,7 +246,7 @@ section.news-update {
         background: rgba(241,90,37, 0.05);
         border-radius: 16px;
         margin: 0 10px 0 0;
-        font-family: 'Helvetica Neue';
+    
         font-weight: 500;
         font-size: 12px;
         color: #090809;
@@ -270,7 +273,7 @@ section.news-update {
         display: flex;
         align-items: center;
         p {
-            font-family: 'Helvetica Neue';
+        
             font-weight: normal;
             font-size: 14px;
             display: flex;
@@ -328,7 +331,7 @@ section.hot-deal {
         color: #FFFFFF;
         background: #F15A25;
         border-radius: 0px 0px 4px 4px;
-        font-family: 'Helvetica Neue';
+    
         font-weight: bold;
         font-size: 24px;
         line-height: 29px;
@@ -337,7 +340,7 @@ section.hot-deal {
         position: absolute;
         right: 10px;
         top: 40px;
-        font-family: 'Helvetica Neue';
+    
         font-weight: normal;
         font-size: 12px;
         color: #636B7B;
@@ -353,7 +356,7 @@ section.hot-deal {
             margin: 0;
         }
         .per-page {
-            font-family: 'Helvetica Neue';
+        
             font-weight: 500;
             font-size: 14px;
             text-align: center;
@@ -390,7 +393,7 @@ section.hot-deal {
                 background: rgba(9, 8, 9, 0.8);
                 border-radius: 2px;
                 padding: 2px 4px;
-                font-family: 'Helvetica Neue';
+            
                 font-weight: 500;
                 font-size: 12px;
                 line-height: 15px;
@@ -403,7 +406,7 @@ section.hot-deal {
                 color: #FFFFFF;
                 background: #D62C2C;
                 border-radius: 2px;
-                font-family: 'Helvetica Neue';
+            
                 font-style: normal;
                 font-weight: 500;
                 font-size: 12px;
@@ -417,14 +420,14 @@ section.hot-deal {
             align-items: center;
             justify-content: center;
             border-radius: 0 0 4px 4px;
-            font-family: 'Helvetica Neue';
+        
             font-weight: 500;
             font-size: 14px;
             color: #FFFFFF;
         }
     }
     .deal-name {
-        font-family: 'Helvetica Neue';
+    
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
@@ -434,7 +437,7 @@ section.hot-deal {
         margin: 0 0 8px 0;
     }
     .deal-price {
-        font-family: 'Helvetica Neue';
+    
         font-weight: 500;
         font-size: 14px;
         line-height: 1.5;
@@ -460,7 +463,7 @@ section.hot-deal {
         display: flex;
         justify-content: space-between;
         .color-text {
-            font-family: 'Helvetica Neue';
+        
             font-weight: normal;
             font-size: 12px;
             color: #636B7B;
@@ -490,18 +493,15 @@ section.products {
         border-radius: 2px 2px 0px 0px;
         padding: 0 4px 0 20px;
         .title {
-            font-family: 'Helvetica Neue';
+        
             font-weight: 500;
             font-size: 16px;
             color: #000000;
             margin: 0 auto 0 0;
         }
         .tablink {
-            font-family: 'Helvetica Neue';
             font-weight: normal;
             font-size: 14px;
-            color: #636B7B;
-            background-color: #F6F7F8;
         }
     }
 }
@@ -527,6 +527,13 @@ section.products {
             & + .product {
                 border-left: 1px solid #fff;
             }
+            .product-image {
+                img {
+                    -webkit-transform: scale(1.03);
+                    -ms-transform: scale(1.03);
+                    transform: scale(1.03);
+                }
+            }
             .product-bottom {
                visibility: visible;
             }
@@ -542,7 +549,7 @@ section.products {
             padding: 1px 4px;
             color: #FFFFFF;
             border-radius: 2px;
-            font-family: 'Helvetica Neue';
+        
             font-style: normal;
             font-weight: 500;
             font-size: 12px;
@@ -568,13 +575,16 @@ section.products {
         justify-content: center;
         margin: 0 0 22px 0;
         img {
-            max-width: 180px;
+            max-width: 150px;
             object-position: center center;
             object-fit: contain;
+            -webkit-transition: all .5s;
+            -o-transition: all .5s;
+            transition: all .5s;
         }
     }
     .product-name {
-        font-family: 'Helvetica Neue';
+    
         font-weight: normal;
         font-size: 14px;
         line-height: 1.5;
@@ -584,7 +594,7 @@ section.products {
     .product-price {
         display: flex;
         align-items: center;
-        font-family: 'Helvetica Neue';
+    
         font-weight: normal;
         font-size: 14px;
         line-height: 1.5;
@@ -666,7 +676,7 @@ section.home-about {
         .right-content {
             p {
                 margin: 0 0 8px 0;
-                font-family: 'Helvetica Neue';
+            
                 font-weight: normal;
                 font-size: 14px;
                 line-height: 1.5;
@@ -713,7 +723,7 @@ section.home-about {
             display: flex;
         }
         h4, p, a {
-            font-family: 'Helvetica Neue';
+        
             font-weight: normal;
             font-size: 14px;
             line-height: 1.5;
@@ -754,6 +764,7 @@ section.home-about {
                     align-items: center;
                     justify-content: center;
                     margin-right: 10px;
+                    background: #fff;
                 }
             }
         }
@@ -800,7 +811,7 @@ section.home-about {
                 top: 10px;
             }
             .newsletter-label, input {
-                font-family: 'Helvetica Neue';
+            
                 font-size: 14px;
                 line-height: 1.5;
                 color: #090809;
@@ -813,7 +824,7 @@ section.home-about {
         justify-content: space-between;
         padding: 20px 0 30px 0;
         h4, p {
-            font-family: 'Helvetica Neue';
+        
             font-weight: normal;
             font-size: 12px;
             line-height: 1.5;

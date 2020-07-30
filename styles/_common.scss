@@ -6,6 +6,7 @@ body {
   color: #000000;
   font-size: 16px;
   line-height: 1.33;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
 }
 
 // common html tag
@@ -14,7 +15,6 @@ a, button {
 }
 button {
   border: 0;
-  font-family: 'Helvetica Neue';
   font-weight: 500;
   font-size: 14px;
   color: #FFFFFF;
@@ -177,7 +177,6 @@ input {
 }
 /* end carousel */
 .view-all {
-  font-family: 'Helvetica Neue';
   font-weight: normal;
   font-size: 14px;
   line-height: 1.5;
@@ -192,8 +191,10 @@ input {
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
+  color: #636B7B;
+  background-color: #F6F7F8;
   &.active, &:hover {
-    background-color: #777;
+    color: #F15A25;
   }
 }
 
