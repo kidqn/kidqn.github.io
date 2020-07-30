@@ -284,7 +284,7 @@ section.hot-deal {
     background-image: url('../images/homep/hotdeal_banner.svg');
     background-position: top right 0;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 802px 748px;
     &:before {
         content: '';
         display: block;
@@ -607,9 +607,17 @@ section.products {
 section.home-about {
     min-height: 502px;
     & > .container {
-        background-image: url('../images/homep/home-about.svg');
-        background-position: bottom left -20px;
-        background-repeat: no-repeat;
-        background-size: contain;
+        position: relative;
+        .dot-bg {
+            position: absolute;
+            left: -70px;
+            bottom: 0;
+            width: 139px;
+            height: 139px;
+            background-image: url('../images/homep/home-about.svg');
+            background-position: bottom left -20px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
     }
 }
