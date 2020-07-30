@@ -26,6 +26,8 @@
         border-radius: 2px;
         padding: 10px 40px 10px 20px;
         margin: 0 74px 0 58px;
+        display: flex;
+        align-items: center;
         button {
             position: absolute;
             z-index: 1;
@@ -1268,6 +1270,11 @@ section.home-about {
             }
             .newsletter {
                 width: auto;
+                .newsletter-label {
+                    font-size: 11px;
+                    width: 200px;
+                    padding: 8px 4px;
+                }
             }
         }
         .copyright {
