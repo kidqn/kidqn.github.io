@@ -66,10 +66,13 @@ img {
 .carousel-container {
   position: relative;
   margin: auto;
-  .slide img{
-    width: 100%;
-    object-fit: cover;
-    object-position: center center;
+  .slide {
+    text-align: center;
+    img{
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
   }
 }
 /* Next & previous buttons */
@@ -80,23 +83,33 @@ img {
   width: auto;
   padding: 16px;
   margin-top: -22px;
-  color: white;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
   user-select: none;
+  background: #FFFFFF;
+  border: 1px solid #F5F1ED;
+  border-radius: 4px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+.prev {
+  left: 10px;
+  background-image: url('../images/icon/chervon_left_grey.svg');
+  &:hover {
+    background-image: url('../images/icon/chervon_left_orange.svg');
+  }
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.next {
+  right: 10px;
+  background-image: url('../images/icon/chervon_right_grey.svg');
+  &:hover {
+    background-image: url('../images/icon/chervon_right_orange.svg');
+  }
 }
 
 /* Caption text */
@@ -153,8 +166,36 @@ img {
   to {opacity: 1}
 }
 /* end carousel */
+.view-all {
+  font-family: 'Helvetica Neue';
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #F15A25;
+  margin-right: 6px;
+}
 
-/* responsive */
+/*-- TAB PANEL --*/
+/* Style tab links */
+.tablink {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  &.active, &:hover {
+    background-color: #777;
+  }
+}
+
+.tabcontent {
+  color: white;
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
+/*-- Responsive --*/
 
 @media (min-width: 1200px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl {

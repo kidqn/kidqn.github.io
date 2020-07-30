@@ -79,7 +79,7 @@
 
 #cat-nav {
     position: fixed;
-    z-index: 9999;
+    z-index: 10;
     width: 100%;
     left: 0;
     top: 56px;
@@ -106,6 +106,10 @@
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
+    &.size-14 {
+        width: 14px;
+        height: 14px;
+    }
     &.ic-mobile {
         background-image: url('../images/cat-icon/mobile.svg');
     }
@@ -135,6 +139,15 @@
     }
     &.ic-pay {
         background-image: url('../images/cat-icon/pay.svg');
+    }
+    &.ic-watcher {
+        background-image: url('../images/icon/watcher.svg');
+    }
+    &.ic-info {
+        background-image: url('../images/icon/info.svg');
+    }
+    &.ic_chervon_right-orange {
+        background-image: url('../images/icon/chervon_right_orange.svg');
     }
 }
 
@@ -267,6 +280,7 @@ section.promo {
 section.hot-deal {
     position: relative;
     min-height: 510px;
+    background: #F5F1ED;
     background-image: url('../images/homep/hotdeal_banner.svg');
     background-position: top right 0;
     background-repeat: no-repeat;
@@ -283,6 +297,9 @@ section.hot-deal {
         bottom: 99.61%;
         background: linear-gradient(270deg, rgba(241, 90, 37, 0) 0%, #F15A25 49.92%, rgba(241, 90, 37, 0) 100%);
     }
+    & > .container {
+        position: relative;
+    }
     h2.title {
         width: 170px;
         height: 48px;
@@ -294,6 +311,38 @@ section.hot-deal {
         font-weight: bold;
         font-size: 24px;
         line-height: 29px;
+    }
+    .deal-date {
+        position: absolute;
+        right: 10px;
+        top: 40px;
+        font-family: 'Helvetica Neue';
+        font-weight: normal;
+        font-size: 12px;
+        color: #636B7B;
+    }
+    .bottom {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        .prev, .next {
+            position: static;
+            margin: 0;
+        }
+        .per-page {
+            font-family: 'Helvetica Neue';
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+            margin: 0 30px;
+        }
+        .view-all {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
     }
 }
 .list-deals {
@@ -308,8 +357,36 @@ section.hot-deal {
         border-radius: 4px;
         .deal-info {
             height: 310px;
+            padding: 30px 16px 20px 16px;
             background: #FFFFFF;
             border-radius: 4px 4px 0px 0px;
+            position: relative;
+            .watcher {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                color: #FFFFFF;
+                background: rgba(9, 8, 9, 0.8);
+                border-radius: 2px;
+                padding: 2px 4px;
+                font-family: 'Helvetica Neue';
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+            }
+            .sale-off {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                padding: 1px 4px;
+                color: #FFFFFF;
+                background: #D62C2C;
+                border-radius: 2px;
+                font-family: 'Helvetica Neue';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 12px;
+            }
         }
         .buy-now {
             background: #F15A25;
@@ -323,6 +400,58 @@ section.hot-deal {
             font-weight: 500;
             font-size: 14px;
             color: #FFFFFF;
+        }
+    }
+    .deal-name {
+        font-family: 'Helvetica Neue';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #000000;
+        margin: 0 0 8px 0;
+    }
+    .deal-price {
+        font-family: 'Helvetica Neue';
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #F15A25;
+        span {
+            margin-left: 8px;
+            text-decoration-line: line-through;
+            color: #636B7B;
+        }
+    }
+}
+.deal-carousel {
+    .slide {
+        img{
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+    }
+    .color-area {
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        .color-text {
+            font-family: 'Helvetica Neue';
+            font-weight: normal;
+            font-size: 12px;
+            color: #636B7B;
+        }
+    }
+    .dots {
+        .dot {
+            margin: 0 4px;
+            width: 12px;
+            height: 12px;
+            border: 1px solid #F5F1ED;
+            &.active {
+                border: 1px solid #F15A25;
+            }
         }
     }
 }
