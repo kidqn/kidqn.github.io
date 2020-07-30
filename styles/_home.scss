@@ -202,6 +202,7 @@
         background-image: url('../images/icon/chervon_right_grey.svg');
     }
     &.ic_chervon_right-orange {
+        background-size: 6px 8px;
         background-image: url('../images/icon/chervon_right_orange.svg');
     }
     &.ic-facebook {
@@ -1141,6 +1142,7 @@ section.home-about {
         .heading {
             width: 32px;
             border-radius: 50%;
+            padding: 0;
             h3 {
                 display: none;
             }
