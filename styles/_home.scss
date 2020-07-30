@@ -712,6 +712,9 @@ section.home-about {
             line-height: 1.5;
             color: #636B7B;
             margin: 0 0 20px 0;
+            span {
+                color: #F15A25;
+            }
         };
         h4 {
             font-weight: 500;
@@ -778,7 +781,7 @@ section.home-about {
                 height: 100%;
                 padding: 12px 20px 12px 30px;
             }
-            i {
+            & > i {
                 position: absolute;
                 right: 10px;
                 top: 10px;
