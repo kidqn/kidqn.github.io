@@ -25,7 +25,7 @@ function currentSlide(n, no) {
 function showSlides(n, no) {
   let i;
   const slides = document.querySelectorAll(`#${slideId[no]} > .slide`);
-  const dots = document.querySelectorAll(`#${slideId[no]} > .color-area > .color-text > .dot`);
+  const dots = document.querySelectorAll(`#${slideId[no]} > .color-area > .dots > .dot`);
   const colorText = document.querySelector(`#${slideId[no]} > .color-area > .color-text`);
   if (n > slides.length) {slideIndex[no] = 1}    
   if (n < 1) {slideIndex[no] = slides.length}
