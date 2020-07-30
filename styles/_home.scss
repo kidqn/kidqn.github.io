@@ -149,17 +149,23 @@
     &.ic_chervon_right-orange {
         background-image: url('../images/icon/chervon_right_orange.svg');
     }
-    &.ic_check-facebook {
+    &.ic-facebook {
         background-image: url('../images/icon/facebook.svg');
     }
-    &.ic_check-youtube {
+    &.ic-youtube {
         background-image: url('../images/icon/youtube.svg');
     }
-    &.ic_zalo {
+    &.ic-zalo {
         background-image: url('../images/icon/zalo.svg');
     }
-    &.ic_hotline {
+    &.ic-hotline {
         background-image: url('../images/icon/hotline.svg');
+    }
+    &.ic-email {
+        background-image: url('../images/icon/email.svg');
+    }
+    &.ic_send-orange {
+        background-image: url('../images/icon/send-orange.svg');
     }
 }
 
@@ -735,6 +741,51 @@ section.home-about {
                     justify-content: center;
                     margin-right: 10px;
                 }
+            }
+        }
+    }
+    .bottom-footer {
+        .subscribe {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid #E2E4E8;
+        }
+        .branches {
+            display: flex;
+            img {
+                margin-right: 20px;;
+            }
+        }
+        .newsletter {
+            display: flex;
+            align-items: center;
+            width: 480px;
+            border: 1px solid #E2E4E8;
+            border-radius: 2px;
+            position: relative;
+            .newsletter-label {
+                width: 193px;
+                font-weight: 500;
+                background: #F6F7F8;
+                border-radius: 2px 0px 0px 2px;
+                border-right: 1px solid #E2E4E8;
+                padding: 8px;
+            }
+            input {
+                padding: 12px 20px 12px 30px;
+            }
+            i {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+            .newsletter-label, input {
+                font-family: 'Helvetica Neue';
+                font-size: 14px;
+                line-height: 1.5;
+                color: #090809;
+
             }
         }
     }

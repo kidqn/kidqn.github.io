@@ -24,7 +24,10 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+input {
+  border: 0;
+  outline: 0;
+}
 /* dropdown menu */
 .dropdown {
   float: left;
