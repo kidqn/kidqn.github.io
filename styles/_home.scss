@@ -74,11 +74,14 @@
             margin: 0 0 3px 0;
         }
         .dropbtn {
-        
             font-weight: 500;
             font-size: 14px;
             color: #FFFFFF;
             padding: 0;
+            display: flex;
+            i {
+                margin: 0 0 0 6px;
+            }
         }
     }
 }
