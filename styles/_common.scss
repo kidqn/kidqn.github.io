@@ -207,8 +207,7 @@ input {
 }
 
 /*-- Responsive --*/
-
-@media (min-width: 1200px) {
+@media  (min-width: 1200px) {
   .container, .container-lg, .container-md, .container-sm, .container-xl {
     max-width: 1200px;
     padding: 0 10px;
