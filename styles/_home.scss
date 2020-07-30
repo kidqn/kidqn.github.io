@@ -761,11 +761,13 @@ section.home-about {
             display: flex;
             align-items: center;
             width: 480px;
+            height: 40px;
             border: 1px solid #E2E4E8;
             border-radius: 2px;
             position: relative;
             .newsletter-label {
                 width: 193px;
+                height: 100%;
                 font-weight: 500;
                 background: #F6F7F8;
                 border-radius: 2px 0px 0px 2px;
@@ -773,6 +775,7 @@ section.home-about {
                 padding: 8px;
             }
             input {
+                height: 100%;
                 padding: 12px 20px 12px 30px;
             }
             i {
@@ -787,6 +790,24 @@ section.home-about {
                 color: #090809;
 
             }
+        }
+    }
+    .copyright {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0 30px 0;
+        h4, p {
+            font-family: 'Helvetica Neue';
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #636B7B;
+            margin: 0;
+        }
+        h4 {
+            font-weight: 500;
+            color: #000000;
+            margin: 0 0 2px 0;
         }
     }
 }
