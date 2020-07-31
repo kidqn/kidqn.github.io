@@ -971,8 +971,9 @@ section.home-about {
         }
         .branches {
             display: flex;
+            flex-wrap: wrap;
             img {
-                margin-right: 20px;;
+                margin: 0 20px 10px 0;
             }
         }
         .newsletter {
@@ -1271,6 +1272,7 @@ section.home-about {
             width: 32px;
             border-radius: 50%;
             padding: 0;
+            justify-content: center;
             h3 {
                 display: none;
             }
@@ -1394,8 +1396,12 @@ section.home-about {
                 flex-direction: column;
                 justify-content: center;
                 .branches {
-                    justify-content: center;
+                    justify-content: space-between;
                     margin: 0 0 20px 0;
+                    img {
+                        width: 20%;
+                        margin: 0;
+                    }
                 }
             }
             .newsletter {
