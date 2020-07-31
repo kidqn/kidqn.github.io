@@ -1292,8 +1292,8 @@ section.home-about {
         .list-stores-content {
             top: 48px;
             left: 0;
-            width: 100%;
-            margin: 0;
+            width: calc(100% - 80px);
+            margin: 0 auto;
             z-index: 2;
         }
     }
