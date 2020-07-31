@@ -27,7 +27,7 @@
                         <p> Vui lòng kiểm tra lại từ khoá, hoặc thử với một từ khoá khác :)</p>
                     </div>
                     <div class="search-wrapper">
-                        <div class="search-content">
+                        <div class="search-content custom-scrollbar">
                             <div class="list-item">
                                 <h3>Điện thoại</h3>
                                 <div class="item">
@@ -236,13 +236,13 @@
                     </div> 
                 </div>
                 <div class="list-stores">
-                    <i class="ic ic_location-white"></i>
+                    <i class="ic ic_location-white" onclick="showStores()"></i>
                     <p>Xem địa chỉ</p>
                     <div class="dropdown">
                         <button class="dropbtn">12 chi nhánh
                             <i class="ic ic_chervon_right-grey"></i>
                         </button>
-                        <div class="dropdown-content list-stores-content">
+                        <div id="hnam-stores" class="dropdown-content list-stores-content custom-scrollbar">
                             <div class="store">
                                 <h4 class="district">Quận 1</h4>
                                 <div class="address">
@@ -410,7 +410,7 @@
         <div class="container">
             <h2 class="title d-flex">HOT DEAL</h2>
             <div class="deal-date"><i class="ic ic-info"></i>Từ ngày 13/07 - 20/07/2020</div>
-            <div id="all-deals-carousel" class="carousel-container">
+            <div id="all-deals-carousel" class="carousel-container custom-scrollbar">
                 <div class="slide fade">
                     <div class="list-deals">
                         <div class="deal">

@@ -250,6 +250,9 @@
                 }
             }
         }
+        .dropdown-content {
+            top: 56px;
+        }
     }
 }
 
@@ -376,6 +379,9 @@
     &.ic_location-white {
         background-size: 11px 16px;
         background-image: url('../images/icon/location.svg');
+    }
+    &.ic-phone {
+        background-image: url('../images/icon/phone.svg');
     }
 }
 
@@ -1266,7 +1272,7 @@ section.home-about {
         .list-stores {
             display: flex;
             align-items: center;
-            p, .dropdown {
+            & > p, .dropbtn {
                 display: none;
             }
             i {
@@ -1282,6 +1288,13 @@ section.home-about {
                 opacity: 0.2;
                 border-radius: 2px;
             }
+        }
+        .list-stores-content {
+            top: 48px;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            z-index: 2;
         }
     }
     .mobile-menu-btn {

@@ -115,3 +115,8 @@ function checkShowResult(e){
 }
 window.addEventListener('click', (e) => this.checkShowResult(e));
 document.addEventListener('touchstart', (e) => this.checkShowResult(e));
+
+// show 12 chi nhanh
+function showStores() {
+  document.getElementById("hnam-stores").classList.toggle("show");
+}
