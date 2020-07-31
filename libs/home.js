@@ -101,6 +101,7 @@ function closeNav() {
 // search field handle
 function displaySearch() {
   document.getElementById("search-result").classList.toggle("show");
+  document.body.classList.toggle('no-scroll')
 }
 function checkShowResult(e){   
   if (document.getElementById('search-result').contains(e.target)){
@@ -108,6 +109,7 @@ function checkShowResult(e){
     console.log(e.target.className)
     if(e.target.className !== 'search-wrapper' && (document.getElementById('search-result').classList.contains('show'))) {
       document.getElementById("search-result").classList.remove("show");
+      document.body.classList.remove('no-scroll')
     }
   }
 }

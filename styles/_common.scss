@@ -8,7 +8,11 @@ body {
   line-height: 1.33;
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
 }
-
+.no-scroll {
+  height: 100%;
+  overflow: hidden;
+  padding-right: 16px;
+}
 // common html tag
 a, button {
   cursor: pointer;
