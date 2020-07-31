@@ -244,9 +244,9 @@
                     font-size: 14px;
                     margin: 0 0 2px 0;
                     color: #636B7B;
-                    span {
-                        color: #F15A25;
-                    }
+                }
+                .num {
+                    color: #F15A25;
                 }
             }
         }
@@ -659,7 +659,6 @@ section.hot-deal {
         margin: 0 0 8px 0;
     }
     .deal-price {
-    
         font-weight: 500;
         font-size: 14px;
         line-height: 1.5;
