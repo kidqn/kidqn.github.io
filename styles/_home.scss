@@ -182,7 +182,7 @@
         &:not(:nth-last-of-type(1)) {
             margin-right: 80px;
         }
-        h4 {
+        & > h4 {
             margin: 4px 0 0 0;
             font-style: normal;
             font-weight: 500;
@@ -211,6 +211,38 @@
     .list-stores {
         i {
             display: none;
+        }
+    }
+    .list-stores-content {
+        width: 380px;
+        height: 80vh;       
+        overflow-y: auto;
+        padding: 16px 20px 30px 16px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: none;
+        margin-left: -190px;
+        .store {
+            padding: 16px;
+            border-bottom: 1px solid rgba(0,0,0, 0.1);
+            h4.district {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 1.5;
+                text-transform: uppercase;
+                margin: 0 0 16px 0;
+            }
+            .address {
+                p {
+                    font-weight: normal;
+                    font-size: 14px;
+                    margin: 0 0 2px 0;
+                    color: #636B7B;
+                    span {
+                        color: #F15A25;
+                    }
+                }
+            }
         }
     }
 }
