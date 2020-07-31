@@ -1379,6 +1379,12 @@ section.home-about {
     section.products {
         .product-header {
             padding: 0 4px 0 15px;
+            .view-all {
+                text-indent: -9999px;
+                i {
+                    background-size: 12px 16px;
+                }
+            }
             .tablink {
                 display: none;
             }
