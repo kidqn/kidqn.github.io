@@ -102,7 +102,7 @@ function closeNav() {
 function displaySearch() {
   document.getElementById("search-result").classList.toggle("show");
 }
-window.addEventListener('click', function(e){   
+function checkShowResult(e){   
   if (document.getElementById('search-result').contains(e.target)){
     // Clicked in box
     console.log(e.target.className)
@@ -110,4 +110,6 @@ window.addEventListener('click', function(e){
       document.getElementById("search-result").classList.remove("show");
     }
   }
-});
+}
+window.addEventListener('click', (e) => this.checkShowResult(e));
+document.addEventListener('touchstart', (e) => this.checkShowResult(e));
