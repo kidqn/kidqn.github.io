@@ -269,4 +269,7 @@ input {
   input, select, textarea {
     font-size: 16px !important;
   }
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    padding: 0 0;
+  }
 }

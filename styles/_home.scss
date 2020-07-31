@@ -380,13 +380,17 @@ section.section-banner {
     }
 }
 #home-carousel {
-    .prev, .next {
-        visibility: hidden;
-        opacity: 0;
-        &:hover {
+    &:hover {
+        visibility: visible;
+        opacity: 1;
+        .prev, .next {
             visibility: visible;
             opacity: 1;
         }
+    }
+    .prev, .next {
+        visibility: hidden;
+        opacity: 0;
     }
 }
 .swiper-container {
