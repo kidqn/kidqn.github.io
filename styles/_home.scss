@@ -140,6 +140,9 @@
             flex-direction: column;
             flex: 0 0 auto;
             margin: 0 20px 0 0;
+            &:nth-last-of-type(1) {
+                padding-right: 30px;
+            }
             h3 {
                 font-weight: 500;
                 font-size: 18px;
@@ -244,6 +247,7 @@
                     font-size: 14px;
                     margin: 0 0 2px 0;
                     color: #636B7B;
+                    display: flex;
                 }
                 .num {
                     color: #F15A25;
@@ -1292,7 +1296,7 @@ section.home-about {
         .list-stores-content {
             top: 48px;
             left: 0;
-            width: calc(100% - 80px);
+            width: 100%;
             margin: 0 auto;
             z-index: 2;
         }

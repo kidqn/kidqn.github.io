@@ -104,6 +104,7 @@ function displaySearch() {
   document.body.classList.toggle('no-scroll')
 }
 function checkShowResult(e){   
+  e.stopPropagation();
   if (document.getElementById('search-result').contains(e.target)){
     // Clicked in box
     console.log(e.target.className)
