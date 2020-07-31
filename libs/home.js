@@ -97,3 +97,17 @@ function closeNav() {
   document.getElementById("mobile-menu").style.width = "0%";
   document.getElementById("mobile-menu-btn").classList.remove("change");
 }
+
+// search field handle
+function displaySearch() {
+  document.getElementById("search-result").classList.toggle("show");
+}
+window.addEventListener('click', function(e){   
+  if (document.getElementById('search-result').contains(e.target)){
+    // Clicked in box
+    console.log(e.target.className)
+    if(e.target.className !== 'search-wrapper' && (document.getElementById('search-result').classList.contains('show'))) {
+      document.getElementById("search-result").classList.remove("show");
+    }
+  }
+});

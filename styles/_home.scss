@@ -79,6 +79,101 @@
     font-weight: normal;
     font-size: 14px;
 }
+#search-result {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 56px;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    &.show {
+        display: flex;
+    }
+    .search-wrapper {
+        width: calc(100% - 80px);
+        border-radius: 4px;
+        margin: 0 auto;
+        max-height: 80vh;
+        background: #fff;
+        .bottom {
+            height: 48px;
+            color: #F15A25;
+            background: rgba(241,90,37, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .no-result {
+        width: calc(100% - 80px);
+        border-radius: 4px;
+        margin: 0 auto;
+        max-height: 80vh;
+        flex-direction: column;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px 30px 20px;
+        img {
+            margin: 0 0 24px 0;
+        }
+        h2,h3,h4 {
+            margin: 0;
+        }
+    }
+    .search-content {
+        height: calc(100% - 48px);
+        background: #fff;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 40px 20px 30px 20px;
+        & > .list-item {
+            display: inline-flex;
+            flex-direction: column;
+            flex: 0 0 auto;
+            margin: 0 7px 0 0;
+            h3 {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 1.5;
+                margin: 0 0 20px 0;
+            }
+            h4 {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 1.5;
+                margin: 0 0 4px 0;
+            }
+            p {
+                font-size: 14px;
+                line-height: 1.5;
+                margin: 0 0 20px 0;
+                color: #F15A25;
+                span {
+                    color: #636B7B;
+                }
+            }
+            .item {
+                display: flex;
+                img {
+                    width: 72px;
+                    height: 72px;
+                    object-fit: cover;
+                    margin: 0 16px 0 0;
+                }
+
+            }
+        }
+    }
+}
 .header-right {
     flex: 1;
     display: flex;
