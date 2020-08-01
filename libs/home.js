@@ -108,7 +108,7 @@ function checkShowResult(e){
   if (document.getElementById('search-result').contains(e.target)){
     // Clicked in box
     console.log(e.target.className)
-    if(e.target.className !== 'search-wrapper' && (document.getElementById('search-result').classList.contains('show'))) {
+    if(e.target.className !== 'search-wrapper' && e.target.id === 'search-result' && (document.getElementById('search-result').classList.contains('show'))) {
       document.getElementById("search-result").classList.remove("show");
       document.body.classList.remove('no-scroll')
     }
