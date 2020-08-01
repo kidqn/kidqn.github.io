@@ -6,6 +6,9 @@
 # coverage
 /coverage
 
+# sources
+/styles
+
 # production
 build*/
 
